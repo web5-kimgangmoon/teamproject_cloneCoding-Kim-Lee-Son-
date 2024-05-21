@@ -1,6 +1,8 @@
-const router = require("express").Router();
-const test = require("../../services/test.js");
+import { Router } from "express";
+const router = Router();
+
+import test from "../../services/test.js";
 
 router.get("/", test);
 
-module.exports = router;
+export default router;

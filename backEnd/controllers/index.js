@@ -1,7 +1,8 @@
-const router = require("express").Router();
+import { Router } from "express";
+import test from "./test/index.js";
 
-const test = require("./test");
+const router = Router();
 
 router.use("/", test);
 
-module.exports = router;
+export default router;

@@ -1,10 +1,14 @@
-const express = require("express");
-const morgan = require("morgan");
-const cookieParser = require("cookie-parser");
-require("dotenv").config();
+import express from "express";
+import morgan from "morgan";
+import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
+import multer from "multer";
+import cors from "cors";
 
-const router = require("./controllers");
-const { sequelize, User } = require("./models");
+import router from "./controllers/index.js";
+// import { Category, sequelize, User } from "./models/index.js";
+
+dotenv.config();
 
 const app = express();
 
