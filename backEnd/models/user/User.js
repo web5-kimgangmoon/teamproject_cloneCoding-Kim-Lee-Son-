@@ -4,7 +4,7 @@ export default class User extends Model {
   static init(sequelize) {
     return super.init(
       {
-        strid: {
+        strId: {
           type: DataTypes.STRING(32),
           unique: true,
           allowNull: false,
@@ -13,7 +13,7 @@ export default class User extends Model {
           type: DataTypes.STRING(64),
           allowNull: false,
         },
-        pw: {
+        hashedPassword: {
           type: DataTypes.STRING(64),
           allowNull: false,
         },
@@ -22,9 +22,9 @@ export default class User extends Model {
           unique: true,
           allowNull: false,
         },
-        profilImg: {
+        profileImg: {
           type: DataTypes.STRING(64),
-          // allowNull: false,
+          allowNull: false,
         },
       },
       {
@@ -37,12 +37,5 @@ export default class User extends Model {
       }
     );
   }
-  static associate({ User, Board, BoardLike, Comment, ChannelAdmin, BoardDislike }) {
-    User.hasMany(Board, { foreignKey: "userId" });
-    User.hasMany(BoardLike, { foreignKey: "userId" });
-    User.hasMany(BoardDislike, { foreignKey: "userId" });
-
-    User.hasMany(Comment, { foreignKey: "userId" });
-    User.hasMany(ChannelAdmin, { foreignKey: "userId" });
-  }
+  static associate({}) {}
 }

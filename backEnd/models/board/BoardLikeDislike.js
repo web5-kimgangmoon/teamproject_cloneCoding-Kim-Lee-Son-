@@ -1,29 +1,31 @@
 import { Model, DataTypes } from "sequelize";
 
-export default class ChannelAdmin extends Model {
+export default class BoardLikeDislike extends Model {
   static init(sequelize) {
     return super.init(
       {
+        boardId: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+        },
         userId: {
           type: DataTypes.INTEGER,
           allowNull: false,
         },
-        channelId: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
+        like: {
+          type: DataTypes.TINYINT,
         },
-        super_admin: {
-          type: DataTypes.BOOLEAN,
-          allowNull: false,
+        dislike: {
+          type: DataTypes.TINYINT,
         },
       },
       {
         sequelize,
-        modelName: "ChannelAdmin",
-        tableName: "channel_admin",
+        modelName: "BoardLikeDislike",
+        tableName: "Board_like_dislike",
         underscored: true,
-        timestamps: true,
-        paranoid: true,
+        updatedAt: false,
+        // timestamps: true,
       }
     );
   }

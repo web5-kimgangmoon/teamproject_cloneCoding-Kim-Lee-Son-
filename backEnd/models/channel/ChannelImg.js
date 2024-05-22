@@ -1,6 +1,6 @@
 import { Model, DataTypes } from "sequelize";
 
-export default class Category extends Model {
+export default class ChannelImg extends Model {
   static init(sequelize) {
     return super.init(
       {
@@ -8,15 +8,14 @@ export default class Category extends Model {
           type: DataTypes.INTEGER,
           allowNull: false,
         },
-        content: {
-          type: DataTypes.STRING(16),
-          allowNull: false,
+        path: {
+          type: DataTypes.STRING(300), // 이미지 설정안했을때(NULL) 기본이미지 넣어지게
         },
       },
       {
         sequelize,
-        modelName: "Category",
-        tableName: "category",
+        modelName: "ChannelImg",
+        tableName: "Channel_img",
         underscored: true,
         timestamps: true,
         paranoid: true,

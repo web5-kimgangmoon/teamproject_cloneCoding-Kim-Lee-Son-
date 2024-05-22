@@ -4,6 +4,17 @@ export default class Comment extends Model {
   static init(sequelize) {
     return super.init(
       {
+        boardId: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+        },
+        userId: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+        },
+        recommentId: {
+          type: DataTypes.INTEGER,
+        },
         contents: {
           type: DataTypes.STRING(1000),
         },
@@ -18,20 +29,5 @@ export default class Comment extends Model {
       }
     );
   }
-  static associate({ User, Board, Comment }) {
-    Comment.belongsTo(User, { foreignKey: "userId" });
-    Comment.belongsTo(Board, {
-      // as: "boardCount",
-      foreignKey: "boardId",
-    });
-
-    Comment.hasMany(Comment, {
-      as: "children",
-      foreignKey: "recommentId",
-    });
-    Comment.belongsTo(Comment, {
-      as: "parent",
-      foreignKey: "recommentId",
-    });
-  }
+  static associate({}) {}
 }
