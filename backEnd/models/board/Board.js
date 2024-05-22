@@ -4,10 +4,17 @@ export default class Board extends Model {
   static init(sequelize) {
     return super.init(
       {
-        viewPoint: {
-          type: DataTypes.INTEGER.UNSIGNED,
+        categoryId: {
+          type: DataTypes.INTEGER,
           allowNull: false,
-          defaultValue: 0,
+        },
+        userId: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+        },
+        looks: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
         },
         title: {
           type: DataTypes.STRING(32),
@@ -16,12 +23,6 @@ export default class Board extends Model {
         contents: {
           type: DataTypes.TEXT,
           allowNull: false,
-        },
-        notice: {
-          type: DataTypes.BOOLEAN,
-        },
-        superNotice: {
-          type: DataTypes.BOOLEAN,
         },
       },
       {
@@ -34,13 +35,5 @@ export default class Board extends Model {
       }
     );
   }
-  static associate({ User, Board, Category, BoardLike, Comment, BoardDislike, Channel }) {
-    Board.hasMany(BoardLike, { foreignKey: "boardId" });
-    Board.hasMany(BoardDislike, { foreignKey: "boardId" });
-    Board.hasMany(Comment, { foreignKey: "boardId" });
-
-    Board.belongsTo(User, { foreignKey: "userId" });
-    Board.belongsTo(Category, { foreignKey: "categoryId" });
-    Board.belongsTo(Channel, { foreignKey: "channelId" });
-  }
+  static associate({}) {}
 }
