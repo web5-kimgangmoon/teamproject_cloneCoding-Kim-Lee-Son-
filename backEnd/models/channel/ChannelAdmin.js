@@ -4,15 +4,7 @@ export default class ChannelAdmin extends Model {
   static init(sequelize) {
     return super.init(
       {
-        userId: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-        },
-        channelId: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-        },
-        super_admin: {
+        superAdmin: {
           type: DataTypes.BOOLEAN,
           allowNull: false,
         },
@@ -27,5 +19,8 @@ export default class ChannelAdmin extends Model {
       }
     );
   }
-  static associate({}) {}
+  static associate({ User, ChannelAdmin, Channel }) {
+    ChannelAdmin.belongsTo(User, { foreignKey: "userId" });
+    ChannelAdmin.belongsTo(Channel, { foreignKey: "channelId" });
+  }
 }

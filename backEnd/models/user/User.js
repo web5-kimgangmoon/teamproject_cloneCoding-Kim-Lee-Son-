@@ -37,5 +37,12 @@ export default class User extends Model {
       }
     );
   }
-  static associate({}) {}
+  static associate({ User, Board, BoardLike, Comment, ChannelAdmin, BoardDislike }) {
+    User.hasMany(Board, { foreignKey: "userId" });
+    User.hasMany(BoardLike, { foreignKey: "userId" });
+    User.hasMany(BoardDislike, { foreignKey: "userId" });
+
+    User.hasMany(Comment, { foreignKey: "userId" });
+    User.hasMany(ChannelAdmin, { foreignKey: "userId" });
+  }
 }

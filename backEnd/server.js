@@ -6,7 +6,17 @@ import multer from "multer";
 import cors from "cors";
 
 import router from "./controllers/index.js";
-import { sequelize } from "./models/index.js";
+import {
+  sequelize,
+  User,
+  Channel,
+  Category,
+  Board,
+  Comment,
+  ChannelAdmin,
+  BoardDislike,
+  BoardLike,
+} from "./models/index.js";
 
 dotenv.config();
 
@@ -25,8 +35,73 @@ const force = true;
 
 try {
   await sequelize.sync({ force });
+  if (force) {
+    await User.create({
+      strId: "qwer",
+      email: "qwera",
+      hashedPassword: "1q2w3e4r",
+      nick: "asdf",
+      profileImg: "zxv",
+    });
+    await Channel.create({
+      title: "가나다",
+      engTitle: "asd",
+      writePlaceholder: "qwer",
+      commentPlaceholder: "zxcv",
+      description: "설명칸",
+      iconPath: "mnbv",
+      imgPath: "poiiu",
+    });
+    await Category.create({
+      name: "일반",
+      engTitle: "normal",
+      channelId: "1",
+    });
+    await Board.create({
+      title: "제목",
+      contents: "내용",
+      notice: false,
+      superNotice: "0",
+      userId: "1",
+      categoryId: "1",
+    });
+    await Board.create({
+      title: "공지",
+      contents: "공지",
+      notice: false,
+      superNotice: "1",
+      userId: "1",
+      categoryId: "1",
+    });
+    await Comment.create({
+      contents: "124124",
+      boardId: "1",
+      userId: "1",
+    });
+    await ChannelAdmin.create({
+      superAdmin: "1",
+      userId: "1",
+      channelId: "1",
+    });
+    await BoardDislike.create({
+      userId: "1",
+      boardId: "1",
+      dislike: "1",
+    });
+    await BoardLike.create({
+      userId: "1",
+      boardId: "1",
+      like: "1",
+    });
+    await Comment.create({
+      recommentId: "2",
+      contents: "124124",
+      boardId: "1",
+      userId: "1",
+    });
+  }
 } catch (error) {
-  console.error(err);
+  console.error(error);
 }
 
 app.listen(app.get("port"), () => {
