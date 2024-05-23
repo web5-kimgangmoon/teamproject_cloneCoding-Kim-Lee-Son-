@@ -4,11 +4,15 @@ export default class Channel extends Model {
   static init(sequelize) {
     return super.init(
       {
-        content: {
+        title: {
           type: DataTypes.STRING(32),
           allowNull: false,
         },
-        writePaceholder: {
+        engTitle: {
+          type: DataTypes.STRING(32),
+          allowNull: false,
+        },
+        writePlaceholder: {
           type: DataTypes.STRING(2000),
         },
         commentPlaceholder: {
@@ -19,6 +23,9 @@ export default class Channel extends Model {
           type: DataTypes.STRING(300),
         },
         iconPath: {
+          type: DataTypes.STRING(300),
+        },
+        imgPath: {
           type: DataTypes.STRING(300),
         },
       },
@@ -32,5 +39,8 @@ export default class Channel extends Model {
       }
     );
   }
-  static associate({}) {}
+  static associate({ Channel, ChannelAdmin, Category, Board }) {
+    Channel.hasMany(ChannelAdmin, { foreignKey: "channelId" });
+    Channel.hasMany(Category, { sourceKey: "id", foreignKey: "channelId" });
+  }
 }
