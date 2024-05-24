@@ -9,74 +9,103 @@
 
 <body>
   <div id="container">
+    <div class="curtain"></div>
+    <div class="viewConfigBox out"></div>
+    <div class="shortCutHelpBox">
+      <div class="boxTop">
+        <div class="title">단축키 도움말</div>
+        <div class="X_shape">×</div>
+      </div>
+      <div class="siteShortCutSet">
+        <span class="shortCutSetTitle"></span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="boardShortCutSet">
+        <span class="shortCutSetTitle"></span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
     <div class="top">
       <div class="topMenu">
-        <div class="configMenuBox" style="position: absolute;">
-          <div class="out"></div>
-          <div class="out"></div>
-        </div>
         <div class="topCenter">
           <div class="topLeft">
             <a href="/" class="logo-img">
               <img src="./../../imgs/Arcalive_logo.svg">
             </a>
-            <div class="subscribeChanel">
-              <div class="chanelSelectorButton" title="구독 채널">
-                <span>구독</span><span class="topChanel">&nbsp;채널</span>
+            <div class="subscribechannel">
+              <div class="channelSelectorButton" title="구독 채널">
+                <span>구독</span><span class="topchannel">&nbsp;채널</span>
                 <div class="arrowButton"></div>
               </div>
-              <div class="chanelBox out">
-                <div class="chanelList"><a href="/">유머 채널</a></div>
-                <div class="chanelList"><a href="/">유머 채널</a></div>
-                <div class="chanelList"><a href="/">유머 채널</a></div>
-                <div class="chanelAreaLiner"></div>
-                <div class="chanelList"><a href="/">유머 채널</a></div>
+              <div class="channelBox out">
+                <div class="channelList"><a href="/">유머 채널</a></div>
+                <div class="channelList"><a href="/">유머 채널</a></div>
+                <div class="channelList"><a href="/">유머 채널</a></div>
+                <div class="channelAreaLiner"></div>
+                <div class="channelList"><a href="/">유머 채널</a></div>
               </div>
             </div>
-            <div class="primaryChanel">
-              <div class="chanelSelectorButton" title="채널">
-                <span>주요</span><span class="topChanel">&nbsp;채널</span>
+            <div class="primarychannel">
+              <div class="channelSelectorButton" title="채널">
+                <span>주요</span><span class="topchannel">&nbsp;채널</span>
                 <div class="arrowButton"></div>
               </div>
-              <div class="chanelBox out">
-                <div class="chanelList"><a href="/">유머 채널</a></div>
-                <div class="chanelList"><a href="/">유머 채널</a></div>
-                <div class="chanelList"><a href="/">유머 채널</a></div>
-                <div class="chanelAreaLiner"></div>
-                <div class="chanelList"><a href="/">유머 채널</a></div>
+              <div class="channelBox out">
+                <div class="channelList"><a href="/">유머 채널</a></div>
+                <div class="channelList"><a href="/">유머 채널</a></div>
+                <div class="channelList"><a href="/">유머 채널</a></div>
+                <div class="channelAreaLiner"></div>
+                <div class="channelList"><a href="/">유머 채널</a></div>
               </div>
             </div>
             <div class="search">
-              <div class="search-img"><img src="./../../imgs/searchImg.png" /></div>
-              <input type="search" name="chanelName" placeholder="찾기" autocomplete="off" />
-              <div class="chanelSearchBox">
-                <!-- <div class="chanelList">
+              <div class="searchIconBox">
+                <div class="search-img"><img src="./../../imgs/searchImg.png" /></div>
+                <input type="search" name="channelName" placeholder="찾기" autocomplete="off" />
+              </div>
+              <div class="searchMiniBox">
+                <div class="search-img"><img src="./../../imgs/searchImg.png" /></div>
+                <span>검색</span>
+              </div>
+              <div class="channelSearchBox out">
+                <!-- <div class="channelList">
                   <div class="no-search">채널 검색 결과가 없습니다.</div>
                 </div> -->
-                <div class="chanelList">
+                <div class="channelList loadingBox">
                   <div class="loading">
                     <div class="loadingWhite"></div>
                   </div>
                 </div>
-                <div class="chanelList">
+                <div class="channelList">
                   <a href="/">
                     <img class="logo" src="./../../imgs/Arcalive_logo.svg" />
                     <span>암니안ㅁ어ㅣ마넝ㄴ머</span>
                     <img class="playImg" src="./../../imgs/playShape.png" />
                   </a>
                 </div>
-                <div class="chanelList"><a href="/"><img class="logo" src="./../../imgs/Arcalive_logo.svg" /><span>암니안ㅁ어ㅣ마넝ㄴ머</span><img class="playImg" src="./../../imgs/playShape.png" /></a></div>
-                <div class="bottomChanelLiner"></div>
-                <div class="chanelSearchButtonLine"><a href="/"><span>"d"</span>검색 결과 이동...</a></div>
-                <div class="chanelcloseButtonLine">
-                  <div id="chanelSearchCloseButton">닫기</div>
+                <div class="channelList"><a href="/"><img class="logo" src="./../../imgs/Arcalive_logo.svg" /><span>암니안ㅁ어ㅣ마넝ㄴ머</span><img class="playImg" src="./../../imgs/playShape.png" /></a></div>
+                <div class="bottomchannelLiner"></div>
+                <div class="channelSearchButtonLine"><a href="/"><span>"d"</span>검색 결과 이동...</a></div>
+                <div class="channelcloseButtonLine">
+                  <div id="channelSearchCloseButton">닫기</div>
                 </div>
               </div>
             </div>
           </div>
           <div class="topRight">
             <div class="topEtc">
-              <a href=""><span>뉴스</span></a>
+              <a href="" class="new"><span>뉴스</span></a>
               <a href=""><span>위키</span></a>
             </div>
             <div class="notification">
@@ -123,7 +152,15 @@
           </div>
         </div>
       </div>
-      <div class="subTop" style="height: 1.5rem; width: 100%;">뉴스</div>
+      <div class="subTopSearchBox out">
+        <div class="search-img"><img src="./../../imgs/searchImg.png" /></div>
+        <input type="search" name="channelName" placeholder="찾기" autocomplete="off" />
+      </div>
+      <div class="subTop">
+        <div class="newsIcon">뉴스</div>
+        <div class="newsTitle"><a href="/">尹, 중소기업인들에 "어려운 일 말해주면 가능한 다 해결"(종합2보)</a></div>
+        <!-- js쪽에서 title을 달리 붙여줘야 한다. -->
+      </div>
     </div>
     <div class="body">
       <div class="bodyCenter">
@@ -135,7 +172,7 @@
           <div class="content-center">
             <div class="viewButtonList"></div>
             <div class="ad-bar"></div>
-            <div class="recently-visitChanelList"></div>
+            <div class="recently-visitchannelList"></div>
             <div class="boardsContent">
               <div class="categoryList"></div>
               <div class="boardTable">

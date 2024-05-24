@@ -19,10 +19,10 @@ submenu 요소추가
 작은 화면 검색 div혹은 span 추가
 도움말 창
 표시설정창
+position fixed와 bottom(위치 잡기)를 container 박스의 css에 넣어 화면 고정시키기
 
 상단 js
 클릭시 해당 박스 출력
-박스 안에 데이터 넣기
 
 ## position:absolute
 
