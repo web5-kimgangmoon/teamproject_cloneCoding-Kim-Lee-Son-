@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import multer from "multer";
 import cors from "cors";
+import crypto from "crypto";
 
 import router from "./controllers/index.js";
 import {
@@ -34,14 +35,15 @@ app.use(router);
 const force = true;
 
 try {
+  const testha = crypto.createHash("sha256").update("1q2w3e4r").digest("hex");
   await sequelize.sync({ force });
   if (force) {
     await User.create({
-      strId: "qwer",
+      strid: "qwer",
       email: "qwera",
-      hashedPassword: "1q2w3e4r",
+      pw: testha,
       nick: "asdf",
-      profileImg: "zxv",
+      profilImg: "zxv",
     });
     await Channel.create({
       title: "가나다",
