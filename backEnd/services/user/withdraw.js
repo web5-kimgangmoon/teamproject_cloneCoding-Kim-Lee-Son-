@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { User, Channel } from "../../models/index.js";
 
 export default async (req, res) => {
@@ -31,6 +32,20 @@ export default async (req, res) => {
     } else {
       res.status(419);
     }
+=======
+import { User } from "../../models/index.js";
+
+export default async (req, res) => {
+  try {
+    await User.destroy({ where: { id: req.user } });
+    await res.cookie("user", "", {
+      maxAge: 0,
+      signed: true,
+    });
+    res.json({ result: "ok" });
+  } catch (err) {
+    console.log(err);
+>>>>>>> 8895f13 (feat:userAll)
     res.json({ error: err.message });
   }
 };

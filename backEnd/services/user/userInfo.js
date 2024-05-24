@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { User, Channel } from "../../models/index.js";
 
 export default async (req, res) => {
@@ -40,6 +41,23 @@ export default async (req, res) => {
     } else {
       res.status(419);
     }
+=======
+import { User } from "../../models/index.js";
+
+export default async (req, res) => {
+  try {
+    if (req.user) {
+      const userinfo = await User.findAll({
+        where: { id: req.user },
+        attributes: ["email", "nick", "profilImg"],
+      });
+      res.json({ result: "ok", userinfo: userinfo });
+    } else {
+      throw new Error("not login");
+    }
+  } catch (err) {
+    console.error(err);
+>>>>>>> 8895f13 (feat:userAll)
     res.json({ error: err.message });
   }
 };
