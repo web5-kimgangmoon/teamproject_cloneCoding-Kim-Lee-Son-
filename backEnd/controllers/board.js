@@ -1,4 +1,5 @@
 import { Router } from "express";
+<<<<<<< HEAD
 
 import view from "./view.js";
 
@@ -28,5 +29,12 @@ router.post("/upload", ...upload);
 router.post("/channellist", channellist);
 
 router.post("/", channel);
+=======
+const router = Router();
+
+import channelboard from "../services/board/channelboard.js";
+
+router.post("/", channelboard);
+>>>>>>> 8895f13 (feat:userAll)
 
 export default router;

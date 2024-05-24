@@ -4,7 +4,7 @@ export default class User extends Model {
   static init(sequelize) {
     return super.init(
       {
-        strId: {
+        strid: {
           type: DataTypes.STRING(32),
           unique: true,
           allowNull: false,
@@ -13,7 +13,7 @@ export default class User extends Model {
           type: DataTypes.STRING(64),
           allowNull: false,
         },
-        hashedPassword: {
+        pw: {
           type: DataTypes.STRING(64),
           allowNull: false,
         },
@@ -22,9 +22,9 @@ export default class User extends Model {
           unique: true,
           allowNull: false,
         },
-        profileImg: {
+        profilImg: {
           type: DataTypes.STRING(64),
-          allowNull: false,
+          // allowNull: false,
         },
       },
       {
