@@ -15,11 +15,16 @@
 검색 로딩창(keyFrames 이용해서 만들기)(완성)
 
 창을 줄였을때 변화 추가하기
-submenu 요소추가
-작은 화면 검색 div혹은 span 추가
 도움말 창
 표시설정창
 position fixed와 bottom(위치 잡기)를 container 박스의 css에 넣어 화면 고정시키기
+subTop 수정 필요 overflow eclipse
+
+페이지 폭을 변경시키는 코드를 추가해주자
+페이지 변경에는 bodyWidthBox와 topCenter의 폭을 변경시켜주는 방식으로 해주고, 그다음에는 display: none을 광고 상자들에 적용시켜주자.
+
+issue 1. 화면에 음영이 생기고, 클릭 불가능 상태 적용, absoulte로는 도움말창이 따라오지 않음.(position:fixed로 해결)
+issue 2. 페이지 폭을 마음대로 변경시켜줄 수 있는 기능이 있다.(bodyWidth div로 해결)
 
 상단 js
 클릭시 해당 박스 출력
