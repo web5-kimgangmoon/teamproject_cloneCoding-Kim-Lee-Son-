@@ -9,34 +9,236 @@
 
 <body>
   <div id="container">
-    <div class="curtain"></div>
-    <div class="viewConfigBox out"></div>
-    <div class="shortCutHelpBox">
+    <div class="curtain out"></div>
+    <div class="viewConfigBox out">
+      <div class="boxTop">
+        <div class="title">표시 설정</div>
+        <div class="x_shape">×</div>
+      </div>
+      <div class="typeSelect">
+        <span class="">일반</span>
+        <span class="selected">컨텐츠</span>
+      </div>
+      <div class="configTemplate">
+        <div class="general out">
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_language"><span>언어<sup><i> α+</i></sup></span></label>
+              <div class="optionSelect">
+                <select name="userConfig_language" id="userConfig_language">
+                  <option>(자동 인식)</option>
+                  <option value="ko">한국어</option>
+                  <option value="en">English</option>
+                  <option value="ja">日本語</option>
+                  <option value="es">Español</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_font"><span>글꼴</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_font" id="userConfig_font">
+                  <option>자동</option>
+                  <option value="browser">브라우저 기본</option>
+                  <option value="nanum_barun_gothic">나눔바른고딕</option>
+                  <option value="nanum_gothic">나눔고딕</option>
+                  <option value="noto_sans_kr">Noto Sans KR</option>
+                  <option value="apple_sd_gothic_neo">Apple SD Gothic Neo</option>
+                  <option value="pretendard">Pretendard</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_font_size"><span>글자 크기</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_font_size" id="userConfig_font_size">
+                  <option value="browser">브라우저 기본</option>
+                  <option value="biggest">가장 크게</option>
+                  <option value="big">크게</option>
+                  <option value="medium">보통</option>
+                  <option value="small">작게</option>
+                  <option value="smallest">가장 작게</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_backgroundColor"><span>배경</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_backgroundColor" id="userConfig_backgroundColor">
+                  <option value="browser">브라우저 기본</option>
+                  <option value="light">밝게</option>
+                  <option value="dark">어둡게</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_backgroundColor_contrast"><span>어두운 배경 색상</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_backgroundColor_contrast" id="userConfig_backgroundColor_contrast">
+                  <option value="dart">어둡게</option>
+                  <option value="dark_black">완전 어둡게</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_pageWidth"><span>페이지 폭</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_pageWidth" id="userConfig_pageWidth">
+                  <option>고정안함</option>
+                  <option value="1100px">1100px</option>
+                  <option value="1200px">1200px</option>
+                  <option value="1300px">1300px</option>
+                  <option value="1500px">1500px</option>
+                  <option value="1600px">1600px</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_topLocation"><span>상단바 위치</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_topLocation" id="userConfig_topLocation">
+                  <option value="fixed">고정</option>
+                  <option value="scroll">스크롤</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contents">
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_arcacon_alarm"><span>알림 아카콘 표시</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_arcacon_alarm" id="userConfig_arcacon_alarm">
+                  <option value="use">사용</option>
+                  <option value="unuse">사용 안 함</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_favicon_alarm"><span>브라우저 아이콘 알림</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_favicon_alarm" id="userConfig_favicon_alarm">
+                  <option value="use">사용</option>
+                  <option value="unuse">사용 안 함</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_img_preview"><span>이미지 미리보기</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_arcacon_alarm" id="userConfig_img_preview">
+                  <option value="use">사용</option>
+                  <option value="unuse">사용 안 함</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_channelImg_view"><span>채널 기본 이미지 표시</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_channelImg_view" id="userConfig_channelImg_view">
+                  <option value="use">사용</option>
+                  <option value="unuse">사용 안 함</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_sideContents"><span>사이드바 컨텐츠</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_sideContents" id="userConfig_sideContents">
+                  <option value="random">랜덤</option>
+                  <option value="humor_dontLook">유머채널 안보기</option>
+                  <option value="hotDeal_dontLook">핫딜 안보기</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_arcacon_autoplayBlock"><span>아카콘 자동 재생 방지</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_backgroundColor_arcacon_autoplayBlock" id="userConfig_arcacon_autoplayBlock">
+                  <option value="use">사용</option>
+                  <option value="unuse">사용 안 함</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_sensitiveContents_view"><span>민감한 컨텐츠 표시</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_sensitiveContents_view" id="userConfig_sensitiveContents_view">
+                  <option value="auto">자동</option>
+                  <option value="view">표시</option>
+                  <option value="dontView">안 보기</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="shortCutHelpBox out">
       <div class="boxTop">
         <div class="title">단축키 도움말</div>
-        <div class="X_shape">×</div>
+        <div class="x_shape">×</div>
       </div>
       <div class="shortCutContent">
         <div class="siteShortCutSet">
           <div class="shortCutSetTitle">사이트에서</div>
           <ul>
             <li>
-              <div>sasa</div>
-              <div>dsadsad</div>
+              <div class="shortCut"><span class="shortCutWord">1</span>
+                <span>&nbsp;~</span><span class="shortCutWord">0</span>
+              </div>
+              <div class="description">구독 채널 바로가기</div>
             </li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">R</span></div>
+              <div class="description">새로고침</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">?</span></div>
+              <div class="description">단축키 도움말</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">T</span></div>
+              <div class="description">맨 위로</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">W</span></div>
+              <div class="description">글 작성</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">B</span></div>
+              <div class="description">채널 이동</div>
+            </li>
           </ul>
         </div>
         <div class="boardShortCutSet">
-          <div class="shortCutSetTitle"></div>
+          <div class="shortCutSetTitle">게시글에서</div>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">A</span></div>
+              <div class="description">이전 글</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">S</span></div>
+              <div class="description">다음 글</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">C</span></div>
+              <div class="description">댓글</div>
+            </li>
           </ul>
         </div>
       </div>
@@ -53,12 +255,10 @@
                 <span>구독</span><span class="topchannel">&nbsp;채널</span>
                 <div class="arrowButton"></div>
               </div>
-              <div class="channelBox out">
-                <div class="channelList"><a href="/">유머 채널</a></div>
-                <div class="channelList"><a href="/">유머 채널</a></div>
-                <div class="channelList"><a href="/">유머 채널</a></div>
+              <div class="channelBox">
+                <div class="channelList"><a href="/">구독 중인 채널</a></div>
                 <div class="channelAreaLiner"></div>
-                <div class="channelList"><a href="/">유머 채널</a></div>
+                <div class="channelList"><a href="/">유머 채널<span class="index_box">1</span></a></div>
               </div>
             </div>
             <div class="primarychannel">
@@ -99,13 +299,11 @@
                     <img class="playImg" src="./../../imgs/playShape.png" />
                   </a>
                 </div>
-                <div class="channelList"><a href="/"><img class="logo"
-                      src="./../../imgs/Arcalive_logo.svg" /><span>암니안ㅁ어ㅣ마넝ㄴ머</span><img class="playImg"
-                      src="./../../imgs/playShape.png" /></a></div>
+                <div class="channelList"><a href="/"><img class="logo" src="./../../imgs/Arcalive_logo.svg" /><span>암니안ㅁ어ㅣ마넝ㄴ머</span><img class="playImg" src="./../../imgs/playShape.png" /></a></div>
                 <div class="bottomchannelLiner"></div>
                 <div class="channelSearchButtonLine"><a href="/"><span>"d"</span>검색 결과 이동...</a></div>
                 <div class="channelcloseButtonLine">
-                  <div id="channelSearchCloseButton">닫기</div>
+                  <button id="channelSearchCloseButton">닫기</button>
                 </div>
               </div>
             </div>
@@ -117,7 +315,7 @@
             </div>
             <div class="notification">
               <div class="notification-img" title="notification"><img src="../../imgs/notification-bell.png" /></div>
-              <div class="notificationBox">
+              <div class="notificationBox out">
                 <div class="notificationBellTitle"><span>알림</span><button class="readAllButton">모두 읽기</button></div>
                 <div class="notificatetionMessages">
                   <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
@@ -149,11 +347,12 @@
                   <div class="person-img"><img src="../../imgs/person.png"></div>
                 </a>
               </div>
-              <div class="userInfoBox out">
-                <div class="userName"><a href="/"><span>길이에 따aaaaaaaaaaaaaaaaaaaaaaa라 늘어납니다</span></a></div>
+              <div class="userInfoBox">
+                <div class="userName"><a href="/"><span>길이에 따sssssssssssssss라 늘어납니다</span></a></div>
                 <div class="userPoint">10 ⓟ</div>
                 <div class="userInfoListLiner"></div>
                 <div class="userInfoList"><a href="/">ㅇㅇ</a></div>
+                <div class="userInfoList"><a>ㅇㅇ</a></div>
               </div>
             </div>
           </div>
@@ -163,77 +362,77 @@
         <div class="search-img"><img src="./../../imgs/searchImg.png" /></div>
         <input type="search" name="channelName" placeholder="찾기" autocomplete="off" />
       </div>
-      <div class="subTop">
+      <div class="subTop out">
         <div class="newsIcon">뉴스</div>
         <div class="newsTitle"><a href="/">尹, 중소기업인들에 "어려운 일 말해주면 가능한 다 해결"(종합2보)</a></div>
         <!-- js쪽에서 title을 달리 붙여줘야 한다. -->
       </div>
     </div>
+    <!-- <div class="body"> -->
     <div class="body">
-      <div class="bodyCenter">
-        <div class="left-adBar">
-          <div class="left-ad"></div>
-        </div>
-        <div class="bodyWidthBox">
-          <div class="boardsIndex">
-            <div class="title"></div>
-            <div class="content-center">
-              <div class="viewButtonList"></div>
-              <div class="ad-bar"></div>
-              <div class="recently-visitchannelList"></div>
-              <div class="boardsContent">
-                <div class="categoryList"></div>
-                <div class="boardTable">
-                  <div class="boardFeildList"></div>
-                  <div class="informList">
-                    <ol>
-                      <li></li>
-                    </ol>
-                  </div>
-                  <div class="boardList">
-                    <ol>
-                      <li>ㅁㅁㄴㅇㄴㅇ</li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                    </ol>
-                  </div>
+      <div class="left-adBar">
+        <div class="left-ad"></div>
+      </div>
+      <div class="bodyWidthBox">
+        <div class="boardsIndex">
+          <div class="title"></div>
+          <div class="content-center">
+            <div class="viewButtonList"></div>
+            <div class="ad-bar"></div>
+            <div class="recently-visitchannelList"></div>
+            <div class="boardsContent">
+              <div class="categoryList"></div>
+              <div class="boardTable">
+                <div class="boardFeildList"></div>
+                <div class="informList">
+                  <ol>
+                    <li></li>
+                  </ol>
+                </div>
+                <div class="boardList">
+                  <ol>
+                    <li>ㅁㅁㄴㅇㄴㅇ</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ol>
                 </div>
               </div>
-              <div class="viewButtonList"></div>
-              <div class="searchBar"></div>
-              <div class="pageButtons"></div>
-              <div class="selectTime"></div>
             </div>
-          </div>
-          <div class="informBox">
-            <div></div>
-            <div></div>
-            <div>
-              <div></div>
-              <div></div>
-            </div>
+            <div class="viewButtonList"></div>
+            <div class="searchBar"></div>
+            <div class="pageButtons"></div>
+            <div class="selectTime"></div>
           </div>
         </div>
-        <div class="rightEndBlock"></div>
+        <div class="informBox">
+          <div></div>
+          <div></div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
       </div>
+      <div class="rightEndBlock"></div>
     </div>
+    <!-- </div> -->
 
     <footer class="footer"></footer>
   </div>
