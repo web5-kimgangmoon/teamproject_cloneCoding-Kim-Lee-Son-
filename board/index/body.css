@@ -7,7 +7,6 @@
   display: flex;
   width: 1200px;
 }
-
 #container .body .left_adBar,
 #container .body .rightEndBlock {
   flex: 1;
@@ -18,7 +17,6 @@
 #container .body .left_adBar .left_ad {
   width: 160px;
   height: 600px;
-  background-color: red;
   margin: 1rem;
 }
 
@@ -29,7 +27,63 @@
   border-right: 1px solid #bbb;
   border-left: 1px solid #bbb;
 }
-
+#container .body .bodyCenter .bodyContent .channelInfoBox {
+  display: flex;
+  /* min-height: 4rem; */
+  border-bottom: 1px solid #bbb;
+}
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelImg {
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem;
+  margin-right: 0.5rem;
+}
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelImg a {
+  display: inline-block;
+}
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelImg a img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  border-radius: 100%;
+}
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo {
+  flex: 1;
+  margin: 1rem;
+  margin-left: 0.5rem;
+  background-color: red;
+}
+#container
+  .body
+  .bodyCenter
+  .bodyContent
+  .channelInfoBox
+  .channelInfo
+  .channelPathNButtons {
+  display: flex;
+  padding-bottom: 0.5rem;
+}
+#container
+  .body
+  .bodyCenter
+  .bodyContent
+  .channelInfoBox
+  .channelInfo
+  .channelPathNButtons
+  .channelPath {
+  text-align: left;
+}
+#container
+  .body
+  .bodyCenter
+  .bodyContent
+  .channelInfoBox
+  .channelInfo
+  .channelPathNButtons
+  .channelButtons {
+  display: flex;
+  justify-content: right;
+}
 #container .body .bodyCenter .informBox {
   width: 300px;
   margin: 0.8rem;
