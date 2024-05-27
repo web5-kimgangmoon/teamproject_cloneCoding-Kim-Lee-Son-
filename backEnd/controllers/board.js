@@ -33,16 +33,32 @@ router.post("/", channel);
 =======
 =======
 
-import channel from "../services/board/channel.js";
-import view from "../services/board/view.js";
+import view from "./view.js";
+
 import category from "../services/board/category.js";
+<<<<<<< HEAD
 // import write from "../services/board/write.js";
 >>>>>>> 27a56be (feat : channelmain)
+=======
+
+import write from "../services/board/write.js";
+import modifycheck from "../services/board/modifycheck.js";
+import modify from "../services/board/modify.js";
+import boarddelete from "../services/board/boarddelete.js";
+
+import channel from "../services/board/channel.js";
+
+>>>>>>> 4090055 (feat:board complete)
 const router = Router();
 
-router.post("/view", view);
+router.use("/view", view);
+
 router.post("/category", category);
-// router.post("/write", write);
+
+router.post("/write", write);
+router.patch("/modifycheck", modifycheck);
+router.patch("/modify", modify);
+router.delete("/delete", boarddelete);
 
 <<<<<<< HEAD
 router.post("/", channelboard);

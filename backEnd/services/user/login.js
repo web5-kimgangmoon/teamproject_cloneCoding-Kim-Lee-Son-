@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { User, Channel } from "../../models/index.js";
 import crypto from "crypto";
 
@@ -44,10 +45,18 @@ export default [
 ];
 =======
 import { User } from "../../models/index.js";
+=======
+import { User, Channel } from "../../models/index.js";
+>>>>>>> 4090055 (feat:board complete)
 import crypto from "crypto";
 
 export default async (req, res) => {
   try {
+    const channel = await Channel.findOne({
+      where: { engTitle: req.body.channel },
+      attributes: ["engTitle"],
+    });
+
     const pwhash = crypto.createHash("sha256").update(req.body.pw).digest("hex");
 
     const user = await User.findOne({
@@ -62,7 +71,7 @@ export default async (req, res) => {
         maxAge: 60 * 60 * 1000,
         signed: true,
       });
-      res.json({ result: "ok" });
+      res.json({ result: "ok", channel: channel });
     } else {
       throw new Error("not found user");
     }

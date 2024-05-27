@@ -6,8 +6,12 @@ export default async (req, res) => {
     if (!nowuser) {
       throw new Error("not logged in");
     }
+<<<<<<< HEAD
     const reqbody = req.body;
     const chname = reqbody.channel;
+=======
+    const chname = req.body.channel;
+>>>>>>> 4090055 (feat:board complete)
 
     const reqquery = req.query;
     const commentid = reqquery.commentId;
@@ -18,8 +22,16 @@ export default async (req, res) => {
 
     const comment = await Comment.findOne({
       where: { id: commentid, userId: nowuser.id },
+<<<<<<< HEAD
     });
     const channeladmin = await ChannelAdmin.findOne({
+=======
+      include: {
+        model: Category,
+      },
+    });
+    const channeladmin = await ChannelAdmin.findAll({
+>>>>>>> 4090055 (feat:board complete)
       where: { channelId: channel.id, userId: nowuser.id },
     });
     if (!comment || !channeladmin) {
@@ -32,6 +44,7 @@ export default async (req, res) => {
     res.json({ result: "ok" });
   } catch (err) {
     console.error(err);
+<<<<<<< HEAD
     if (err.message == "not logged in") {
       res.status(401);
     } else if (err.message == "not match user") {
@@ -39,6 +52,8 @@ export default async (req, res) => {
     } else {
       res.status(419);
     }
+=======
+>>>>>>> 4090055 (feat:board complete)
     res.json({ error: err.message });
   }
 };
