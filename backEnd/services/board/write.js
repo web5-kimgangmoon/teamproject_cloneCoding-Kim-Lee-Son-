@@ -2,6 +2,7 @@ import { Channel, ChannelAdmin, Category, Board } from "../../models/index.js";
 
 export default async (req, res) => {
   try {
+<<<<<<< HEAD
     const reqbody = req.body;
     console.log(reqbody);
     if (reqbody.contents == "" || reqbody.title == "" || reqbody.category == "") {
@@ -38,6 +39,13 @@ export default async (req, res) => {
     } else {
       res.status(419);
     }
+=======
+    if (!req.user) {
+      throw new Error("not logged in");
+    }
+  } catch (err) {
+    console.error(err);
+>>>>>>> 27a56be (feat : channelmain)
     res.json({ error: err.message });
   }
 };
