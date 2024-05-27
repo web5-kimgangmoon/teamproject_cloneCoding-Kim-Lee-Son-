@@ -1,8 +1,13 @@
-import { User } from "../../models/index.js";
+import { User, Channel } from "../../models/index.js";
 import crypto from "crypto";
 
 export default async (req, res) => {
   try {
+    const channel = await Channel.findOne({
+      where: { engTitle: req.body.channel },
+      attributes: ["engTitle"],
+    });
+
     // if (req.body.pw != req.body["pw-check"]) {
     //   throw new Error("not match password");
     // }
@@ -17,7 +22,7 @@ export default async (req, res) => {
       throw new Error("duplication email");
     }
     await User.create({ ...req.body, profilImg: randomNum });
-    res.json({ result: "ok" });
+    res.json({ result: "ok", channel: channel });
   } catch (err) {
     console.error(err);
     // if (err.message == "not match password") {

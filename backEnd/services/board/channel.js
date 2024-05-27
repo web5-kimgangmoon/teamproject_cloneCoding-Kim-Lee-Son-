@@ -15,14 +15,16 @@ export default async (req, res) => {
     const chname = reqbody.channel;
     const catename = reqbody.category;
     const nowuser = req.user;
-    const nowpage = req.query.page;
+    // const nowpage = req.query.page;
+    const nowpage = 1;
 
     const channel = await Channel.findOne({
       where: { engTitle: chname },
+      include: [{ model: ChannelAdmin }],
     });
-    const channemAdmin = await ChannelAdmin.findAll({
-      where: { channelId: channel.id },
-    });
+    // const channemAdmin = await ChannelAdmin.findAll({
+    //   where: { channelId: channel.id },
+    // });
 
     if (catename) {
       const category = await Category.findAll({
@@ -31,13 +33,18 @@ export default async (req, res) => {
           {
             model: Board,
             include: [{ model: BoardLike }, { model: BoardDislike }],
+            order: [["id", "DESC"]],
+            offset: (nowpage - 1) * 30,
+            limit: 30,
           },
         ],
-        order: [[Board, "id", "DESC"]],
-        offset: (nowpage - 1) * 30,
-        limit: 30,
       });
-      res.json({ category: category, user: nowuser, channel: channel, channemAdmin: channemAdmin });
+      res.json({
+        category: category,
+        user: nowuser,
+        channel: channel,
+        // channemAdmin: channemAdmin
+      });
     } else {
       const category = await Category.findAll({
         where: { channelId: channel.id },
@@ -45,13 +52,18 @@ export default async (req, res) => {
           {
             model: Board,
             include: [{ model: BoardLike }, { model: BoardDislike }],
+            order: [["id", "DESC"]],
+            offset: (nowpage - 1) * 30, // 현재 페이지 받아와서 보내기
+            limit: 30, // 페이지당 글 갯수
           },
         ],
-        order: [[Board, "id", "DESC"]],
-        offset: (nowpage - 1) * 30, // 현재 페이지 받아와서 보내기
-        limit: 30, // 페이지당 글 갯수
       });
-      res.json({ category: category, user: nowuser, channel: channel, channemAdmin: channemAdmin });
+      res.json({
+        category: category,
+        user: nowuser,
+        channel: channel,
+        // channemAdmin: channemAdmin
+      });
     }
   } catch (err) {
     console.error(err);

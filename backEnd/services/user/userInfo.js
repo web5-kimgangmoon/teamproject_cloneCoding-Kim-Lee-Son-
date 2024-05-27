@@ -1,13 +1,18 @@
-import { User } from "../../models/index.js";
+import { User, Channel } from "../../models/index.js";
 
 export default async (req, res) => {
   try {
+    const channel = await Channel.findOne({
+      where: { engTitle: req.body.channel },
+      attributes: ["engTitle"],
+    });
+
     if (req.user) {
       const userinfo = await User.findAll({
         where: { id: req.user },
         attributes: ["email", "nick", "profilImg"],
       });
-      res.json({ result: "ok", userinfo: userinfo });
+      res.json({ result: "ok", userinfo: userinfo, channel: channel });
     } else {
       throw new Error("not login");
     }
