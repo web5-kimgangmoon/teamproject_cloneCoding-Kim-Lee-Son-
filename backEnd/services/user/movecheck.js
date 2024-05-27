@@ -5,6 +5,11 @@ export default async (req, res, next) => {
     if (req.signedCookies.user) {
       req.user = await User.findOne({
         where: { id: req.signedCookies.user },
+        include: [
+          {
+            model: { ChannelAdmin },
+          },
+        ],
       });
       res.cookie("user", req.signedCookies.user, {
         maxAge: 60 * 60 * 1000,
