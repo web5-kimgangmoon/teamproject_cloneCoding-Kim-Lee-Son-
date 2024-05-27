@@ -32,16 +32,19 @@ form {
   /* position: fixed;
   bottom: 0px; */
 }
+
 #container .top {
   z-index: 1;
 }
+
 #container .top .topMenu .topCenter .topLeft .search .channelSearchBox {
   z-index: 2;
 }
 
 #container .top .topMenu .topCenter .topRight .notification .notificationBox,
 #container .top .topMenu .topCenter .topLeft .subscribechannel .channelBox,
-#container .top .topMenu .topCenter .topLeft .primarychannel .channelBox {
+#container .top .topMenu .topCenter .topLeft .primarychannel .channelBox,
+#container .top .topMenu .topCenter .topRight .login .userInfoBox {
   z-index: 3;
 }
 
@@ -70,6 +73,7 @@ form {
   background-color: white;
   padding-bottom: 1rem;
 }
+
 #container .viewConfigBox {
   left: calc(50% - 12.5rem);
   min-height: 30rem;
@@ -77,6 +81,7 @@ form {
   width: 25rem;
   border-radius: 2.5%;
 }
+
 #container .viewConfigBox .boxTop {
   display: flex;
   height: 4rem;
@@ -86,6 +91,7 @@ form {
   font-weight: 500;
   padding: 1rem;
 }
+
 #container .viewConfigBox .boxTop .x_shape {
   margin-bottom: 0.5rem;
   font-size: 2rem;
@@ -93,97 +99,59 @@ form {
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
+
 #container .viewConfigBox .typeSelect {
   user-select: none;
   padding: 1rem;
   text-wrap: nowrap;
   overflow-x: auto;
 }
+
 #container .viewConfigBox .typeSelect span {
   padding: 1rem 0.8rem;
   padding-bottom: 0.5rem;
   margin-right: 0.5rem;
   cursor: pointer;
 }
+
 #container .viewConfigBox .typeSelect .selected {
   border-bottom: 0.15rem solid #007bff;
 }
+
 #container .viewConfigBox .configTemplate {
   padding: 1rem;
 }
+
 #container .viewConfigBox .configTemplate .general .optionLine,
 #container .viewConfigBox .configTemplate .contents .optionLine {
   display: flex;
   column-gap: 1rem;
 }
+
 #container .viewConfigBox .configTemplate .general .optionLine .optionBox,
 #container .viewConfigBox .configTemplate .contents .optionLine .optionBox {
   padding-top: 1rem;
   flex: 1;
 }
-#container
-  .viewConfigBox
-  .configTemplate
-  .general
-  .optionLine
-  .optionBox
-  .optionName,
-#container
-  .viewConfigBox
-  .configTemplate
-  .contents
-  .optionLine
-  .optionBox
-  .optionName {
+
+#container .viewConfigBox .configTemplate .general .optionLine .optionBox .optionName,
+#container .viewConfigBox .configTemplate .contents .optionLine .optionBox .optionName {
   display: inline-block;
   margin-bottom: 0.5rem;
 }
-#container
-  .viewConfigBox
-  .configTemplate
-  .general
-  .optionLine
-  .optionBox
-  .optionName
-  span,
-#container
-  .viewConfigBox
-  .configTemplate
-  .contents
-  .optionLine
-  .optionBox
-  .optionName
-  span {
+
+#container .viewConfigBox .configTemplate .general .optionLine .optionBox .optionName span,
+#container .viewConfigBox .configTemplate .contents .optionLine .optionBox .optionName span {
   font-size: 0.8rem;
   color: #666;
 }
-#container
-  .viewConfigBox
-  .configTemplate
-  .general
-  .optionLine
-  .optionBox
-  .optionName
-  span
-  sup {
+
+#container .viewConfigBox .configTemplate .general .optionLine .optionBox .optionName span sup {
   color: red;
 }
-#container
-  .viewConfigBox
-  .configTemplate
-  .general
-  .optionLine
-  .optionBox
-  .optionSelect
-  select,
-#container
-  .viewConfigBox
-  .configTemplate
-  .contents
-  .optionLine
-  .optionBox
-  .optionSelect
-  select {
+
+#container .viewConfigBox .configTemplate .general .optionLine .optionBox .optionSelect select,
+#container .viewConfigBox .configTemplate .contents .optionLine .optionBox .optionSelect select {
   width: 100%;
   height: 2.5rem;
   padding: 0.5rem;
@@ -195,31 +163,17 @@ form {
   outline: 0.15rem solid white;
   /* 1px solid #007bff */
   /* background-color: white; */
-  background: white
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="black" fill-rule="evenodd" d="M12.2929,5.292875 C12.6834,4.902375 13.3166,4.902375 13.7071,5.292875 C14.0976,5.683375 14.0976,6.316555 13.7071,6.707085 L8.70711,11.707085 C8.31658,12.097605 7.68342,12.097605 7.29289,11.707085 L2.29289,6.707085 C1.90237,6.316555 1.90237,5.683375 2.29289,5.292875 C2.68342,4.902375 3.31658,4.902375 3.70711,5.292875 L8,9.585765 L12.2929,5.292875 Z"/></svg>')
-    no-repeat calc(100% - 4px) 50%;
+  background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="black" fill-rule="evenodd" d="M12.2929,5.292875 C12.6834,4.902375 13.3166,4.902375 13.7071,5.292875 C14.0976,5.683375 14.0976,6.316555 13.7071,6.707085 L8.70711,11.707085 C8.31658,12.097605 7.68342,12.097605 7.29289,11.707085 L2.29289,6.707085 C1.90237,6.316555 1.90237,5.683375 2.29289,5.292875 C2.68342,4.902375 3.31658,4.902375 3.70711,5.292875 L8,9.585765 L12.2929,5.292875 Z"/></svg>') no-repeat calc(100% - 4px) 50%;
   border-radius: 0.5rem;
   border: 1px solid #bbb;
   transition: 0.2s outline;
 }
-#container
-  .viewConfigBox
-  .configTemplate
-  .general
-  .optionLine
-  .optionBox
-  .optionSelect
-  select:focus,
-#container
-  .viewConfigBox
-  .configTemplate
-  .contents
-  .optionLine
-  .optionBox
-  .optionSelect
-  select:focus {
+
+#container .viewConfigBox .configTemplate .general .optionLine .optionBox .optionSelect select:focus,
+#container .viewConfigBox .configTemplate .contents .optionLine .optionBox .optionSelect select:focus {
   outline: 0.15rem solid rgba(100, 200, 250, 0.7);
 }
+
 #container .shortCutHelpBox {
   left: calc(50% - 15rem);
   min-height: 30rem;
@@ -237,6 +191,7 @@ form {
   padding: 1rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
+
 #container .shortCutHelpBox .boxTop .x_shape {
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
@@ -251,11 +206,7 @@ form {
 }
 
 #container .shortCutHelpBox .shortCutContent .siteShortCutSet .shortCutSetTitle,
-#container
-  .shortCutHelpBox
-  .shortCutContent
-  .boardShortCutSet
-  .shortCutSetTitle {
+#container .shortCutHelpBox .shortCutContent .boardShortCutSet .shortCutSetTitle {
   font-size: 1.2rem;
   font-weight: bold;
   padding: 1rem;
@@ -289,21 +240,9 @@ form {
   padding: 0rem 1rem;
   align-items: flex-end;
 }
-#container
-  .shortCutHelpBox
-  .shortCutContent
-  .siteShortCutSet
-  ul
-  li
-  .shortCut
-  .shortCutWord,
-#container
-  .shortCutHelpBox
-  .shortCutContent
-  .boardShortCutSet
-  ul
-  .shortCut
-  .shortCutWord {
+
+#container .shortCutHelpBox .shortCutContent .siteShortCutSet ul li .shortCut .shortCutWord,
+#container .shortCutHelpBox .shortCutContent .boardShortCutSet ul .shortCut .shortCutWord {
   display: inline-block;
   font-size: 0.8rem;
   width: 1rem;
@@ -316,24 +255,14 @@ form {
   margin-left: 0.2rem;
   /* margin-right: 0.3rem; */
 }
-#container
-  .shortCutHelpBox
-  .shortCutContent
-  .siteShortCutSet
-  ul
-  li
-  .description,
-#container
-  .shortCutHelpBox
-  .shortCutContent
-  .boardShortCutSet
-  ul
-  li
-  .description {
+
+#container .shortCutHelpBox .shortCutContent .siteShortCutSet ul li .description,
+#container .shortCutHelpBox .shortCutContent .boardShortCutSet ul li .description {
   width: 100%;
   padding: 0rem 1rem 0.5rem 1rem;
   /* padding: 0.3rem 0; */
 }
+
 /* #container . */
 #container .top .topMenu {
   display: flex;
@@ -380,51 +309,17 @@ form {
 }
 
 #container .top .topMenu .topCenter .topLeft .subscribechannel,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .subscribechannel
-  .channelSelectorButton,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .subscribechannel
-  .channelSelectorButton
-  .arrowButton,
+#container .top .topMenu .topCenter .topLeft .subscribechannel .channelSelectorButton,
+#container .top .topMenu .topCenter .topLeft .subscribechannel .channelSelectorButton .arrowButton,
 #container .top .topMenu .topCenter .topLeft .primarychannel,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .primarychannel
-  .channelSelectorButton,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .primarychannel
-  .channelSelectorButton
-  .arrowButton,
+#container .top .topMenu .topCenter .topLeft .primarychannel .channelSelectorButton,
+#container .top .topMenu .topCenter .topLeft .primarychannel .channelSelectorButton .arrowButton,
 #container .top .topMenu .topCenter .topLeft .search,
 #container .top .topMenu .topCenter .topLeft .search .channelSearchBox,
 #container .top .topMenu .topCenter .topRight .topEtc,
 #container .top .topMenu .topCenter .topRight .notification,
 #container .top .topMenu .topCenter .topRight .notification .notification-img,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .login
-  .loginIconBox
-  .personLogin-icon
-  .person-img,
+#container .top .topMenu .topCenter .topRight .login .loginIconBox .personLogin-icon .person-img,
 #container .top .topMenu .topCenter .topRight .login {
   display: inline-block;
 }
@@ -468,143 +363,49 @@ form {
   min-width: max-content;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .subscribechannel
-  .channelBox
-  .channelAreaLiner,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .primarychannel
-  .channelBox
-  .channelAreaLiner,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .login
-  .userInfoBox
-  .userInfoListLiner {
-  border-top: 1px solid rgba(0, 0, 0, 0.3);
-  margin-top: 0.3rem;
-  padding-top: 0.3rem;
+#container .top .topMenu .topCenter .topLeft .subscribechannel .channelBox .channelAreaLiner,
+#container .top .topMenu .topCenter .topLeft .primarychannel .channelBox .channelAreaLiner,
+#container .top .topMenu .topCenter .topRight .login .userInfoBox .userInfoListLiner {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.3rem;
+  padding-bottom: 0.3rem;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .subscribechannel
-  .channelBox
-  .channelList
-  a,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .primarychannel
-  .channelBox
-  .channelList
-  a,
+#container .top .topMenu .topCenter .topLeft .subscribechannel .channelBox .channelList a,
+#container .top .topMenu .topCenter .topLeft .primarychannel .channelBox .channelList a,
 #container .top .topMenu .topCenter .topRight .login .userInfoBox .userName,
 #container .top .topMenu .topCenter .topRight .login .userInfoBox .userPoint,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .login
-  .userInfoBox
-  .userInfoList
-  a {
+#container .top .topMenu .topCenter .topRight .login .userInfoBox .userInfoList a {
   display: flex;
   justify-content: left;
   align-items: center;
   height: 1.5rem;
-  font-size: 0.9rem;
-  padding: 0.1rem 1.5rem 0.1rem 1.5rem;
+  font-size: 1rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   width: 100%;
   text-decoration: none;
   color: black;
   word-break: keep-all;
 }
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .subscribechannel
-  .channelBox
-  .channelList
-  a:hover,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .primarychannel
-  .channelBox
-  .channelList
-  a:hover,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .login
-  .userInfoBox
-  .userInfoList
-  a:hover {
+
+#container .top .topMenu .topCenter .topRight .login .userInfoBox .userPoint {
+  padding: 0.1rem 1.5rem 0.1rem 1.5rem;
+
+}
+
+#container .top .topMenu .topCenter .topLeft .subscribechannel .channelBox .channelList a:hover,
+#container .top .topMenu .topCenter .topLeft .primarychannel .channelBox .channelList a:hover,
+#container .top .topMenu .topCenter .topRight .login .userInfoBox .userInfoList a:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .subscribechannel
-  .channelBox
-  .channelList
-  a:focus,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .primarychannel
-  .channelBox
-  .channelList
-  a:focus,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .login
-  .userInfoBox
-  .userInfoList
-  a:focus {
+
+#container .top .topMenu .topCenter .topLeft .subscribechannel .channelBox .channelList a:focus,
+#container .top .topMenu .topCenter .topLeft .primarychannel .channelBox .channelList a:focus,
+#container .top .topMenu .topCenter .topRight .login .userInfoBox .userInfoList a:focus {
   background-color: #007bff;
 }
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .subscribechannel
-  .channelBox
-  .channelList
-  a
-  .index_box {
+
+#container .top .topMenu .topCenter .topLeft .subscribechannel .channelBox .channelList a .index_box {
   display: inline-block;
   margin-left: 1.5rem;
   height: 100%;
@@ -617,6 +418,7 @@ form {
   border: 1px solid #bbbbbb;
   border-radius: 0.3rem;
 }
+
 #container .top .topMenu .topCenter .topLeft span {
   font-size: 0.92rem;
   color: white;
@@ -635,22 +437,8 @@ form {
   cursor: pointer;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .subscribechannel
-  .channelSelectorButton
-  .arrowButton::after,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .primarychannel
-  .channelSelectorButton
-  .arrowButton::after {
+#container .top .topMenu .topCenter .topLeft .subscribechannel .channelSelectorButton .arrowButton::after,
+#container .top .topMenu .topCenter .topLeft .primarychannel .channelSelectorButton .arrowButton::after {
   display: inline-block;
   content: "";
   height: 0;
@@ -662,20 +450,8 @@ form {
   border-bottom: 0.3rem solid transparent;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .subscribechannel
-  .channelSelectorButton,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .primarychannel
-  .channelSelectorButton {
+#container .top .topMenu .topCenter .topLeft .subscribechannel .channelSelectorButton,
+#container .top .topMenu .topCenter .topLeft .primarychannel .channelSelectorButton {
   cursor: pointer;
 }
 
@@ -687,14 +463,7 @@ form {
   margin-left: 1.5rem;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .searchIconBox
-  .search-img {
+#container .top .topMenu .topCenter .topLeft .search .searchIconBox .search-img {
   position: absolute;
   top: 0.5rem;
   /* right: 0;
@@ -704,15 +473,7 @@ form {
   height: 1.5rem;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .searchIconBox
-  .search-img
-  img {
+#container .top .topMenu .topCenter .topLeft .search .searchIconBox .search-img img {
   filter: invert(1);
   width: 100%;
   height: 100%;
@@ -736,26 +497,12 @@ form {
   font-weight: 500;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .searchIconBox
-  input:focus {
+#container .top .topMenu .topCenter .topLeft .search .searchIconBox input:focus {
   border: 0.2rem solid rgba(100, 200, 250, 0.4);
   transition: 0.15s border;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .searchIconBox
-  input::placeholder {
+#container .top .topMenu .topCenter .topLeft .search .searchIconBox input::placeholder {
   color: white;
   font-size: 0.9rem;
 }
@@ -768,14 +515,7 @@ form {
   width: auto;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .searchMiniBox
-  .search-img {
+#container .top .topMenu .topCenter .topLeft .search .searchMiniBox .search-img {
   position: absolute;
   top: 0;
   /* right: 0;
@@ -785,15 +525,7 @@ form {
   height: 1rem;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .searchMiniBox
-  .search-img
-  img {
+#container .top .topMenu .topCenter .topLeft .search .searchMiniBox .search-img img {
   filter: invert(1);
   width: 100%;
   height: 100%;
@@ -816,45 +548,16 @@ form {
   background-color: white;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelList,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelSearchButtonLine,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelcloseButtonLine {
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelList,
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelSearchButtonLine,
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelcloseButtonLine {
   padding: 0.2rem 0.8rem 0.2rem 0.8rem;
   width: 100%;
   color: black;
   height: 2rem;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelList
-  .loading {
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelList .loading {
   display: inline-block;
   width: 1rem;
   height: 1rem;
@@ -867,16 +570,7 @@ form {
   animation-timing-function: linear;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelList
-  .loading
-  .loadingWhite {
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelList .loading .loadingWhite {
   display: inline-block;
   width: 0.5rem;
   height: 0.5rem;
@@ -895,78 +589,25 @@ form {
   }
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .bottomchannelLiner {
-  width: auto;
-  height: auto;
-  border-top: 1px solid #4c5161;
-  margin-top: 0.6rem;
-  padding-top: 0.6rem;
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .searchedChannelList {
+
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #4c5161;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelList.loadingBox:hover {
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelList.loadingBox:hover {
   background-color: unset;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelList:hover,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelSearchButtonLine:hover {
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelList:hover,
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelSearchButtonLine:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelList
-  a,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelList
-  .no-search,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelSearchButtonLine
-  a {
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelList a,
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelList .no-search,
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelSearchButtonLine a {
   display: flex;
   padding: 0;
   margin: 0;
@@ -975,144 +616,52 @@ form {
   font-size: 0.9rem;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelList
-  a
-  span {
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelList a span {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelList
-  a,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelSearchButtonLine
-  a {
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelList a,
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelSearchButtonLine a {
   text-decoration: none;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelList
-  .no-search {
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelList .no-search {
   color: rgba(0, 0, 0, 0.3);
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelList
-  a
-  .logo {
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelList a .logo {
   width: 1.8rem;
   height: 1.8rem;
   padding-right: 0.5rem;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelList
-  a
-  .playImg {
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelList a .playImg {
   width: 1.2rem;
   height: 1.2rem;
   float: right;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelList
-  a
-  span,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelSearchButtonLine
-  a {
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelList a span,
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelSearchButtonLine a {
   font-size: 0.9rem;
   flex: 1;
   color: black;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelSearchButtonLine
-  a
-  span {
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelSearchButtonLine a span {
   color: black;
   font-weight: bold;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelcloseButtonLine {
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelcloseButtonLine {
   display: flex;
   justify-content: right;
   height: 2.5rem;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelcloseButtonLine
-  #channelSearchCloseButton {
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelcloseButtonLine #channelSearchCloseButton {
   display: inline-block;
   height: 100%;
   padding: 0 0.5rem 0 0.5rem;
@@ -1124,30 +673,17 @@ form {
   border: 0;
   background-color: white;
 }
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topLeft
-  .search
-  .channelSearchBox
-  .channelcloseButtonLine
-  #channelSearchCloseButton:focus {
+
+#container .top .topMenu .topCenter .topLeft .search .channelSearchBox .channelcloseButtonLine #channelSearchCloseButton:focus {
   outline-color: rgba(100, 200, 250, 0.7);
   transition: 0.1s outline;
 }
+
 #container .top .topMenu .topCenter .topRight .notification {
   margin-right: 1rem;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notification-img
-  img {
+#container .top .topMenu .topCenter .topRight .notification .notification-img img {
   width: 1rem;
   height: 1rem;
   object-fit: contain;
@@ -1155,13 +691,7 @@ form {
   cursor: pointer;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notification-img::after {
+#container .top .topMenu .topCenter .topRight .notification .notification-img::after {
   position: absolute;
   cursor: pointer;
   content: "";
@@ -1186,14 +716,7 @@ form {
   height: fit-content;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notificationBox
-  .notificationBellTitle {
+#container .top .topMenu .topCenter .topRight .notification .notificationBox .notificationBellTitle {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1207,15 +730,7 @@ form {
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notificationBox
-  .notificationBellTitle
-  .readAllButton {
+#container .top .topMenu .topCenter .topRight .notification .notificationBox .notificationBellTitle .readAllButton {
   width: fit-content;
   height: 1.6rem;
   font-size: 0.7rem;
@@ -1228,54 +743,23 @@ form {
   cursor: pointer;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notificationBox
-  .notificationBellTitle
-  .readAllButton:hover {
+#container .top .topMenu .topCenter .topRight .notification .notificationBox .notificationBellTitle .readAllButton:hover {
   background-color: rgba(0, 0, 0, 0.7);
   transition: background-color 1s;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notificationBox
-  .notificationBellTitle
-  .readAllButton:focus {
+#container .top .topMenu .topCenter .topRight .notification .notificationBox .notificationBellTitle .readAllButton:focus {
   border: 0.15rem solid #bbbbbb;
   background-color: rgba(0, 0, 0, 0.6);
   transition: border 0.3s;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notificationBox
-  .notificationBellTitle
-  .readAllButton:active {
+#container .top .topMenu .topCenter .topRight .notification .notificationBox .notificationBellTitle .readAllButton:active {
   background-color: rgba(0, 0, 0, 0.65);
   transition: background-color 0.1s;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notificationBox
-  .notificatetionMessages {
+#container .top .topMenu .topCenter .topRight .notification .notificationBox .notificatetionMessages {
   width: 17rem;
   height: 13rem;
   overflow-y: scroll;
@@ -1283,115 +767,41 @@ form {
   margin: 0.5rem 0;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notificationBox
-  .notificatetionMessages
-  .newLink,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notificationBox
-  .allLook {
-  height: fit-content;
+#container .top .topMenu .topCenter .topRight .notification .notificationBox .notificatetionMessages .newLink a {
   font-size: 1rem;
   word-break: break-all;
+  text-decoration: none;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notificationBox
-  .allLook {
+#container .top .topMenu .topCenter .topRight .notification .notificationBox .allLook {
   padding: 0.5rem 1rem;
   border-top: 1px solid rgba(0, 0, 0, 0.3);
   text-align: center;
+
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notificationBox
-  .notificatetionMessages
-  .newLink
-  a,
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notificationBox
-  .allLook
-  a {
+
+#container .top .topMenu .topCenter .topRight .notification .notificationBox .allLook a {
   font-size: 0.8rem;
   color: black;
   text-decoration: none;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notificationBox
-  .notificatetionMessages
-  .newLink
-  a {
+#container .top .topMenu .topCenter .topRight .notification .notificationBox .notificatetionMessages .newLink a {
   display: inline-block;
   padding: 0rem 1rem 1rem 1rem;
   width: 100%;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notificationBox
-  .notificatetionMessages
-  .newLink
-  a.grey {
-  color: rgba(189, 174, 174, 0.253);
+#container .top .topMenu .topCenter .topRight .notification .notificationBox .notificatetionMessages .newLink a.grey {
+  color: #bbb;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notificationBox
-  .notificatetionMessages
-  .newLink
-  a:visited {
-  color: rgba(189, 174, 174, 0.651);
+#container .top .topMenu .topCenter .topRight .notification .notificationBox .notificatetionMessages .newLink a:visited {
+  color: #bbb;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .notification
-  .notificationBox
-  .allLook
-  a:hover {
+#container .top .topMenu .topCenter .topRight .notification .notificationBox .allLook a:hover {
   text-decoration: underline;
 }
 
@@ -1399,29 +809,13 @@ form {
   cursor: pointer;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .login
-  .loginIconBox
-  .userName-login {
+#container .top .topMenu .topCenter .topRight .login .loginIconBox .userName-login {
   display: inline-block;
   color: white;
   font-size: 1.1rem;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .login
-  .loginIconBox
-  .personLogin-icon
-  .person-img
-  img {
+#container .top .topMenu .topCenter .topRight .login .loginIconBox .personLogin-icon .person-img img {
   width: 1rem;
   height: 1rem;
   object-fit: contain;
@@ -1452,16 +846,7 @@ form {
   text-decoration: none;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .login
-  .userInfoBox
-  .userName
-  a
-  span {
+#container .top .topMenu .topCenter .topRight .login .userInfoBox .userName a span {
   color: black;
   margin: 0;
   padding: 0;
@@ -1469,16 +854,8 @@ form {
   font-size: 1.2rem;
 }
 
-#container
-  .top
-  .topMenu
-  .topCenter
-  .topRight
-  .login
-  .userInfoBox
-  .userName
-  a:hover {
-  text-decoration: underline dashed black;
+#container .top .topMenu .topCenter .topRight .login .userInfoBox .userName a:hover {
+  text-decoration: underline black;
 }
 
 #container .top .subTopSearchBox {
@@ -1571,6 +948,7 @@ form {
 } */
 
 @media screen and (max-width: 575px) {
+
   #container .viewConfigBox,
   #container .shortCutHelpBox {
     position: fixed;
@@ -1579,42 +957,19 @@ form {
     width: 95%;
     background-color: white;
   }
+
   #container .shortCutHelpBox .shortCutContent .siteShortCutSet ul li,
   #container .shortCutHelpBox .shortCutContent .boardShortCutSet ul li {
     flex-direction: column;
   }
-  #container
-    .shortCutHelpBox
-    .shortCutContent
-    .siteShortCutSet
-    ul
-    li
-    .description,
-  #container
-    .shortCutHelpBox
-    .shortCutContent
-    .boardShortCutSet
-    ul
-    li
-    .description {
+
+  #container .shortCutHelpBox .shortCutContent .siteShortCutSet ul li .description,
+  #container .shortCutHelpBox .shortCutContent .boardShortCutSet ul li .description {
     padding-bottom: 1rem;
   }
-  #container
-    .top
-    .topMenu
-    .topCenter
-    .topLeft
-    .subscribechannel
-    .channelSelectorButton
-    .arrowButton::after,
-  #container
-    .top
-    .topMenu
-    .topCenter
-    .topLeft
-    .primarychannel
-    .channelSelectorButton
-    .arrowButton::after {
+
+  #container .top .topMenu .topCenter .topLeft .subscribechannel .channelSelectorButton .arrowButton::after,
+  #container .top .topMenu .topCenter .topLeft .primarychannel .channelSelectorButton .arrowButton::after {
     display: none;
   }
 
@@ -1639,14 +994,7 @@ form {
     box-shadow: 0 0.2rem 0.3rem 0 rgba(0, 0, 0, 0.199);
   }
 
-  #container
-    .top
-    .topMenu
-    .topCenter
-    .topLeft
-    .search
-    .channelSearchBox
-    .bottomchannelLiner {
+  #container .top .topMenu .topCenter .topLeft .search .channelSearchBox .searchedChannelList {
     display: none;
   }
 
@@ -1654,14 +1002,7 @@ form {
     position: unset;
   }
 
-  #container
-    .top
-    .topMenu
-    .topCenter
-    .topRight
-    .login
-    .loginIconBox
-    .userName-login {
+  #container .top .topMenu .topCenter .topRight .login .loginIconBox .userName-login {
     display: none;
   }
 
@@ -1676,24 +1017,12 @@ form {
 }
 
 @media screen and (max-width: 763px) {
-  #container
-    .top
-    .topMenu
-    .topCenter
-    .topLeft
-    .subscribechannel
-    .channelSelectorButton
-    .topchannel,
-  #container
-    .top
-    .topMenu
-    .topCenter
-    .topLeft
-    .primarychannel
-    .channelSelectorButton
-    .topchannel {
+
+  #container .top .topMenu .topCenter .topLeft .subscribechannel .channelSelectorButton .topchannel,
+  #container .top .topMenu .topCenter .topLeft .primarychannel .channelSelectorButton .topchannel {
     display: none;
   }
+
   #container .viewConfigBox .configTemplate .general .optionLine,
   #container .viewConfigBox .configTemplate .contents .optionLine {
     flex-direction: column;
