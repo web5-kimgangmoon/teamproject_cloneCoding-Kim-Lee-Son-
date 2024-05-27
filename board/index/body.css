@@ -7,6 +7,7 @@
   display: flex;
   width: 1200px;
 }
+
 #container .body .left_adBar,
 #container .body .rightEndBlock {
   flex: 1;
@@ -27,69 +28,204 @@
   border-right: 1px solid #bbb;
   border-left: 1px solid #bbb;
 }
+
 #container .body .bodyCenter .bodyContent .channelInfoBox {
   display: flex;
   /* min-height: 4rem; */
   border-bottom: 1px solid #bbb;
 }
+
 #container .body .bodyCenter .bodyContent .channelInfoBox .channelImg {
   width: 4rem;
   height: 4rem;
   margin: 1rem;
   margin-right: 0.5rem;
 }
+
 #container .body .bodyCenter .bodyContent .channelInfoBox .channelImg a {
   display: inline-block;
 }
+
 #container .body .bodyCenter .bodyContent .channelInfoBox .channelImg a img {
   width: 100%;
   height: 100%;
   object-fit: scale-down;
   border-radius: 100%;
 }
+
 #container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo {
   flex: 1;
   margin: 1rem;
   margin-left: 0.5rem;
-  background-color: red;
 }
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelPathNButtons {
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons,
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine {
   display: flex;
-  padding-bottom: 0.5rem;
+  justify-content: space-between;
 }
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelPathNButtons
-  .channelPath {
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelPath {
   text-align: left;
+  font-size: 1.3rem;
+
 }
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelPathNButtons
-  .channelButtons {
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelPath a {
+  text-decoration: none;
+  color: black;
+}
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelPath a:hover {
+  text-decoration: underline;
+}
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelButtons {
   display: flex;
   justify-content: right;
+  column-gap: 0.5rem;
 }
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelButtons a,
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .left_buttons a,
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .right_buttons a {
+  text-decoration: none;
+}
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelButtons button,
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .left_buttons button,
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .right_buttons button {
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  background-color: white;
+  outline: 0;
+  border: 1px solid #bbb;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelButtons button:focus {
+  outline: 0.15rem solid rgba(100, 200, 250, 0.7);
+  transition: outline 0.1s;
+}
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelButtons button .imgIcon,
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .left_buttons button .imgIcon,
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .right_buttons button .imgIcon {
+  /* display: inline-block; */
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.3rem;
+}
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo {
+  display: flex;
+  padding: 0.3rem 0;
+}
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo .baseInfoBox {
+  border-right: 1px solid black;
+
+  padding-right: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo .baseInfoBox:last-of-type {
+  border-right: 0;
+}
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo .channelAdmin a {
+  text-decoration: none;
+  color: #777;
+}
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo .channelAdmin a:hover {
+  text-decoration: underline;
+}
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo .channelAdmin {
+  display: flex;
+  align-items: center;
+}
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo .baseInfoBox .imgIcon {
+  width: 0.8rem;
+  height: 0.8rem;
+  padding: 0.1rem;
+
+  background-color: #eb6111;
+  border-radius: 100%;
+
+}
+
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo .baseInfoBox .imgIcon img {
+  /* filter: brightness(0); */
+  /* color: white; */
+  filter: invert(1);
+}
+
+#container .body .bodyCenter .bodyContent .boardBox {
+  padding: 0.5rem 1rem;
+}
+
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .left_buttons {
+  display: flex;
+}
+
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .left_buttons .redBackground {
+  color: white;
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .left_buttons button .recommendedBoardIcon {
+  filter: invert(1);
+}
+
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .left_buttons button,
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .right_buttons button {
+  width: 5rem;
+}
+
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .left_buttons select {
+  width: 5rem;
+  padding: 0.5rem;
+  padding-right: 1.4rem;
+  font-size: 0.9rem;
+  font-family: "NanumBarunGothic", system-ui, sans-serif;
+  appearance: none;
+  outline: 0;
+  background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="black" fill-rule="evenodd" d="M12.2929,5.292875 C12.6834,4.902375 13.3166,4.902375 13.7071,5.292875 C14.0976,5.683375 14.0976,6.316555 13.7071,6.707085 L8.70711,11.707085 C8.31658,12.097605 7.68342,12.097605 7.29289,11.707085 L2.29289,6.707085 C1.90237,6.316555 1.90237,5.683375 2.29289,5.292875 C2.68342,4.902375 3.31658,4.902375 3.70711,5.292875 L8,9.585765 L12.2929,5.292875 Z"/></svg>') no-repeat calc(100% - 4px) 50%;
+  border: 1px solid #bbb;
+  transition: 0.2s outline;
+
+}
+
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .left_buttons button:focus,
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .left_buttons select:focus,
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .right_buttons button:focus {
+  outline: 0.15rem solid rgba(100, 200, 250, 0.7);
+  transition: outline 0.1s;
+}
+
+#container .body .bodyCenter .bodyContent .boardBox .quickButtonsLine .left_buttons .redBackground:focus {
+  outline-color: #FF7989;
+  transition: outline 0.1s;
+}
+
 #container .body .bodyCenter .informBox {
   width: 300px;
   margin: 0.8rem;
   /* background-color: brown; */
   position: relative;
 }
+
 #container .body .bodyCenter .informBox .boardBox,
 #container .body .bodyCenter .informBox .stickyBox .newsBox {
   width: 300px;
@@ -100,72 +236,53 @@
   border: 1px solid #bbb;
   border-radius: 10px;
 }
+
 #container .body .bodyCenter .informBox .boardBox .title,
 #container .body .bodyCenter .informBox .stickyBox .newsBox .title {
   font-size: 1.3rem;
   padding-bottom: 1.2rem;
 }
+
 #container .body .bodyCenter .informBox .boardBox .content ul,
 #container .body .bodyCenter .informBox .stickyBox .newsBox .content ul {
   margin: 0;
   padding: 0;
 }
+
 #container .body .bodyCenter .informBox .boardBox .content ul a li,
 #container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a li {
   display: flex;
   padding-bottom: 0.2rem;
 }
+
 #container .body .bodyCenter .informBox .boardBox .content ul a,
 #container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a {
   text-decoration: none;
   color: black;
 }
+
 #container .body .bodyCenter .informBox .boardBox .content ul a:hover,
-#container
-  .body
-  .bodyCenter
-  .informBox
-  .stickyBox
-  .newsBox
-  .content
-  ul
-  a:hover {
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a:hover {
   text-decoration: underline;
 }
+
 #container .body .bodyCenter .informBox .boardBox .content ul a li .boardTitle,
-#container
-  .body
-  .bodyCenter
-  .informBox
-  .stickyBox
-  .newsBox
-  .content
-  ul
-  a
-  li
-  .boardTitle {
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a li .boardTitle {
   font-size: 0.9rem;
   overflow-x: hidden;
   text-overflow: ellipsis;
   text-wrap: nowrap;
   text-decoration: none;
 }
+
 #container .body .bodyCenter .informBox .boardBox .content ul a li .boardTitle {
   width: 70%;
 }
-#container
-  .body
-  .bodyCenter
-  .informBox
-  .stickyBox
-  .newsBox
-  .content
-  ul
-  a
-  li
-  .boardTitle {
+
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a li .boardTitle {
   width: 100%;
 }
+
 #container .body .bodyCenter .informBox .boardBox .content ul a li .timeBox {
   text-align: center;
   font-size: 0.7rem;
@@ -176,16 +293,19 @@
   margin-top: 0.1rem;
   margin-left: 0.3rem;
 }
+
 #container .body .bodyCenter .informBox .stickyBox {
   position: sticky;
   top: 0.8rem;
 }
+
 #container .body .bodyCenter .informBox .stickyBox .adBox {
   width: 300px;
   height: 600px;
   /* background-color: black; */
   margin-bottom: 0.8rem;
 }
+
 /* @media screen and (max-width: 575px) */
 /* @media screen and (max-width: 763px)  */
 @media screen and (max-width: 991px) {

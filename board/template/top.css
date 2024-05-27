@@ -408,7 +408,6 @@ form {
 #container .top .topMenu .topCenter .topLeft .subscribechannel .channelBox .channelList a .index_box {
   display: inline-block;
   margin-left: 1.5rem;
-  height: 100%;
   width: 1.2rem;
   color: black;
   font-size: 0.8rem;
@@ -995,7 +994,9 @@ form {
   }
 
   #container .top .topMenu .topCenter .topLeft .search .channelSearchBox .searchedChannelList {
-    display: none;
+    margin-bottom: unset;
+    padding-bottom: unset;
+    border-bottom: unset;
   }
 
   #container .top .topMenu .topCenter .topLeft .search {

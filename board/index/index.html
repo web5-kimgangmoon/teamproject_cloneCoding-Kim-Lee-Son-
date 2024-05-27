@@ -258,7 +258,7 @@
                 <span>구독</span><span class="topchannel">&nbsp;채널</span>
                 <div class="arrowButton"></div>
               </div>
-              <div class="channelBox">
+              <div class="channelBox out">
                 <div class="channelAreaLiner">
                   <div class="channelList"><a href="/">구독 중인 채널</a></div>
                 </div>
@@ -270,7 +270,7 @@
                 <span>주요</span><span class="topchannel">&nbsp;채널</span>
                 <div class="arrowButton"></div>
               </div>
-              <div class="channelBox">
+              <div class="channelBox out">
                 <div class="channelAreaLiner">
                   <div class="channelList"><a href="/">유머 채널</a></div>
                   <div class="channelList"><a href="/">유머 채널</a></div>
@@ -288,7 +288,7 @@
                 <div class="search-img"><img src="./../../imgs/searchImg.png" /></div>
                 <span>검색</span>
               </div>
-              <div class="channelSearchBox">
+              <div class="channelSearchBox out">
                 <!-- <div class="channelList">
                   <div class="no-search">채널 검색 결과가 없습니다.</div>
                 </div> -->
@@ -327,7 +327,7 @@
             </div>
             <div class="notification">
               <div class="notification-img" title="notification"><img src="../../imgs/notification-bell.png" /></div>
-              <div class="notificationBox">
+              <div class="notificationBox out">
                 <div class="notificationBellTitle"><span>알림</span><button class="readAllButton">모두 읽기</button></div>
                 <div class="notificatetionMessages">
                   <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
@@ -359,7 +359,7 @@
                   <div class="person-img"><img src="../../imgs/person.png"></div>
                 </a>
               </div>
-              <div class="userInfoBox">
+              <div class="userInfoBox out">
                 <div class="userInfoListLiner">
                   <div class="userName"><a href="/"><span>길이에 따sssssssssssssss라 늘어납니다</span></a></div>
                   <div class="userPoint">10 ⓟ</div>
@@ -394,10 +394,75 @@
             </div>
             <div class="channelInfo">
               <div class="channelPathNButtons">
-                <div class="channelPath"></div>
-                <div class="channelButtons"></div>
+                <div class="channelPath"><a href="/">원신 채널</a></div>
+                <div class="channelButtons">
+                  <a href="/">
+                    <button>
+                      <div class="bookIcon imgIcon"><img src="./../../imgs/book.svg" /></div><span>채널위키</span>
+                    </button>
+                  </a>
+                  <button>
+                    <div class="alarmIcon imgIcon"><img src="./../../imgs/notifications-outline.svg" /></div>
+                    <span>알림</span>
+                  </button>
+                  <button>
+                    <div class="plusIcon imgIcon"><img src="./../../imgs/add-outline.svg" /></div><span>구독</span>
+                  </button>
+                </div>
               </div>
-              <div class="channelDescription"></div>
+              <div class="channelDescription">
+                <div class="channelBaseInfo">
+                  <div class="subscribeCount baseInfoBox">구독자 96154명</div>
+                  <div class="alarmCount baseInfoBox">알림수신 1897명</div>
+                  <div class="channelAdmin baseInfoBox"><a href="/">@대포복어</a>
+                    <div class="checkIcon imgIcon"><img src="./../../imgs/checkmark-outline.svg" /></div>
+                  </div>
+                </div>
+                <div class="channelInfoText">🎂 에이미 생일 🎂 l 클로린드(☆5), 시그윈(☆5) 픽업예정</div>
+              </div>
+            </div>
+          </div>
+          <div class="boardBox">
+            <div class="quickButtonsLine">
+              <div class="left_buttons">
+                <a href="/">
+                  <button>
+                    <div class="allBoardIcon imgIcon"><img src="./../../imgs/reader.svg" /></div><span>전체글</span>
+                  </button>
+                </a>
+                <a href="/">
+                  <button class="redBackground">
+                    <div class="recommendedBoardIcon imgIcon"><img src="./../../imgs/star.svg" /></div>
+                    <span>개념글</span>
+                  </button>
+                </a>
+                <select name="sortType">
+                  <option value="">등록순</option>
+                  <option value="oneDay">추천순 (24시간)</option>
+                  <option value="threeDay">추천순 (3일)</option>
+                  <option value="allDay">추천순 (전체)</option>
+                  <option value="commentCount_threeDay">댓글갯수순 (3일)</option>
+                  <option value="recentComment">최근댓글순</option>
+                </select>
+                <select value="sortCount">
+                  <option value="">추천컷</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                  <option value="50">50</option>
+                  <option value="70">70</option>
+                  <option value="100">100</option>
+                  <option value="etc">기타</option>
+                </select>
+              </div>
+              <div class="right_buttons">
+                <a href="/">
+                  <button>
+                    <div class="writeIcon imgIcon"><img src="./../../imgs/create-outline.svg" /></div><span>글쓰기</span>
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
