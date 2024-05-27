@@ -36,7 +36,9 @@ issue 5. 이름 옆에 제곱수처럼 쓰여진 텍스트를 어떻게 모양�
 issue 6. select의 화살표 모양이 이상해서 확인해봤더니, 사이트에서 custom을 해놓은 상태였다.(appearance를 none으로 만들고, background 속성에서 svg를 추가했습니다. 그리고 padding-right를 실제 사이트에선 건드리지 말라고 아예 important까지 주었기에 padding-right에 1.4rem을 넣었습니다.(화살표가 차지하는 공간으로 최소한은 필요한 넓이로 보이며 사이트의 폰트 크기가 유동적으로 변화할때 최소한 차지해야 하는 넓이로 보입니다.))
 issue 7. 실제 페이지는 색과 글자색이 변경가능합니다.(css 변수를 만들어 관리하는 방법을 쓰는 편이 좋겠습니다. 시간이 되면 해보겠습니다.)
 issue 8. 실제 페이지에서 아이콘들을 유니코드도 아닌 의미모를 문자들을 css의 content 에 적어놨는데 icon들이 생성됐다.(ion.icons framework의 일부였다 검색해 찾아보고 svg 파일들을 다운로드했다)
-isuue 9. 게시판 채널 정보 UI가 페이지 크기에 따라 독특하게 움직였다.()
+isuue 9. iframe, iframe을 이용하는 편이 좋을까, 아니면 그대로 요소들을 추가해주는 편이 좋을까.
+issue 10. display:contents는?
+issue 11. 부드러운 애니메이션 주기
 
 ## 개인적으로 느낀점
 
