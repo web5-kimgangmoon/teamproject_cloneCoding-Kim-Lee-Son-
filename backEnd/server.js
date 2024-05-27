@@ -45,6 +45,13 @@ try {
       nick: "asdf",
       profilImg: "zxv",
     });
+    await User.create({
+      strid: "qwerasd",
+      email: "qwerasd",
+      pw: testha,
+      nick: "asdfzxc",
+      profilImg: "zxvcv",
+    });
     await Channel.create({
       title: "가나다",
       engTitle: "asd",
@@ -83,6 +90,11 @@ try {
     await ChannelAdmin.create({
       superAdmin: "1",
       userId: "1",
+      channelId: "1",
+    });
+    await ChannelAdmin.create({
+      superAdmin: "0",
+      userId: "2",
       channelId: "1",
     });
     await BoardDislike.create({

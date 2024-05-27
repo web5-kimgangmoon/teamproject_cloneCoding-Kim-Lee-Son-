@@ -7,15 +7,19 @@ import {
   Board,
   BoardLike,
   BoardDislike,
+<<<<<<< HEAD
   sequelize,
   Sequelize,
   Comment,
   User,
+=======
+>>>>>>> 27a56be (feat : channelmain)
 } from "../../models/index.js";
 
 export default async (req, res) => {
   try {
     const reqbody = req.body;
+<<<<<<< HEAD
     let chname = reqbody.channel;
     let catename = reqbody.category;
     const nowuser = req.user;
@@ -190,6 +194,51 @@ export default async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(419);
+=======
+    const chname = reqbody.channel;
+    const catename = reqbody.category;
+    const nowuser = req.user;
+    const nowpage = req.query.page;
+
+    const channel = await Channel.findOne({
+      where: { engTitle: chname },
+    });
+    const channemAdmin = await ChannelAdmin.findAll({
+      where: { channelId: channel.id },
+    });
+
+    if (catename) {
+      const category = await Category.findAll({
+        where: { channelId: channel.id, engTitle: catename },
+        include: [
+          {
+            model: Board,
+            include: [{ model: BoardLike }, { model: BoardDislike }],
+          },
+        ],
+        order: [[Board, "id", "DESC"]],
+        offset: (nowpage - 1) * 30,
+        limit: 30,
+      });
+      res.json({ category: category, user: nowuser, channel: channel, channemAdmin: channemAdmin });
+    } else {
+      const category = await Category.findAll({
+        where: { channelId: channel.id },
+        include: [
+          {
+            model: Board,
+            include: [{ model: BoardLike }, { model: BoardDislike }],
+          },
+        ],
+        order: [[Board, "id", "DESC"]],
+        offset: (nowpage - 1) * 30, // 현재 페이지 받아와서 보내기
+        limit: 30, // 페이지당 글 갯수
+      });
+      res.json({ category: category, user: nowuser, channel: channel, channemAdmin: channemAdmin });
+    }
+  } catch (err) {
+    console.error(err);
+>>>>>>> 27a56be (feat : channelmain)
     res.json({ error: err.message });
   }
 };
