@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Channel } from "../../models/index.js";
 
 export default async (req, res) => {
@@ -32,13 +33,22 @@ export default async (req, res) => {
       res.status(419);
     }
 =======
+=======
+import { Channel } from "../../models/index.js";
+
+>>>>>>> 4090055 (feat:board complete)
 export default async (req, res) => {
   try {
+    const channel = await Channel.findOne({
+      where: { engTitle: req.body.channel },
+      attributes: ["engTitle"],
+    });
+
     await res.cookie("user", "", {
       maxAge: 0,
       signed: true,
     });
-    await res.json({ result: "ok" });
+    await res.json({ result: "ok", channel: channel });
   } catch (err) {
     console.error(err);
 >>>>>>> 8895f13 (feat:userAll)

@@ -1,12 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { User, Channel } from "../../models/index.js";
 =======
 import { User } from "../../models/index.js";
 >>>>>>> 8895f13 (feat:userAll)
+=======
+import { User, Channel } from "../../models/index.js";
+>>>>>>> 4090055 (feat:board complete)
 import crypto from "crypto";
 
 export default async (req, res) => {
   try {
+<<<<<<< HEAD
 <<<<<<< HEAD
     const reqbody = req.body;
     const channel = await Channel.findOne({
@@ -41,6 +46,13 @@ export default async (req, res) => {
       res.status(419);
     }
 =======
+=======
+    const channel = await Channel.findOne({
+      where: { engTitle: req.body.channel },
+      attributes: ["engTitle"],
+    });
+
+>>>>>>> 4090055 (feat:board complete)
     // if (req.body.pw != req.body["pw-check"]) {
     //   throw new Error("not match password");
     // }
@@ -55,7 +67,7 @@ export default async (req, res) => {
       throw new Error("duplication email");
     }
     await User.create({ ...req.body, profilImg: randomNum });
-    res.json({ result: "ok" });
+    res.json({ result: "ok", channel: channel });
   } catch (err) {
     console.error(err);
     // if (err.message == "not match password") {
