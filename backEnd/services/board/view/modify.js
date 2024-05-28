@@ -16,15 +16,19 @@ export default async (req, res) => {
     const comment = await Comment.findOne({
       where: { id: commentid, userId: nowuser.id },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       include: {
         model: Category,
       },
 >>>>>>> 4090055 (feat:board complete)
+=======
+>>>>>>> 180d9a7 (feedback and admin)
     });
     if (!comment) {
       throw new Error("not match user");
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
     await Comment.update(reqbody);
 
@@ -40,8 +44,11 @@ export default async (req, res) => {
     }
 =======
     res.json({ result: "ok" });
+=======
+    await Comment.update(req.body);
+>>>>>>> 180d9a7 (feedback and admin)
 
-    await Comment.update({ ...req.body });
+    res.json({ result: "ok" });
   } catch (err) {
     console.error(err);
 >>>>>>> 4090055 (feat:board complete)

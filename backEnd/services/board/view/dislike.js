@@ -3,6 +3,7 @@ import { Board, BoardDislike } from "../../../models/index.js";
 export default async (req, res) => {
   try {
 <<<<<<< HEAD
+<<<<<<< HEAD
     const nowuser = req.user;
     if (!nowuser) {
       throw new Error("not logged in");
@@ -37,16 +38,35 @@ export default async (req, res) => {
       },
     });
     if (!req.user) {
+=======
+    const nowuser = req.user;
+    if (nowuser) {
+>>>>>>> 180d9a7 (feedback and admin)
       throw new Error("not found user");
-    } else if (dislike) {
+    }
+    const reqcuery = req.query;
+    const nowview = reqcuery.boardId;
+    // const nowview = 1;
+    const board = await Board.findOne({
+      where: { id: nowview },
+    });
+
+    const already = await BoardDislike.findOne({
+      where: { boardId: board.id, userId: nowuser.id },
+    });
+
+    if (already) {
       throw new Error("already dislike");
     } else {
-      await BoardDislike.create({
-        boardId: nowview,
-        userId: req.user.id,
+      const dislike = await BoardDislike.create({
         dislike: 1,
       });
+<<<<<<< HEAD
 >>>>>>> 4090055 (feat:board complete)
+=======
+      board.addBoardDislike(dislike);
+      nowuser.addBoardDislike(dislike);
+>>>>>>> 180d9a7 (feedback and admin)
       res.json({ result: "ok" });
     }
   } catch (err) {
