@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/translations/ko.js"></script>
+
+    <style>
+        .ck.ck-editor {
+            max-width: 500px;
+        }
+
+        .ck-editor__editable {
+            min-height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Classic editor</h3>
+    <div id="classic">
+        <p>This is some sample content.</p>
+    </div>
+    <script src="../ckeditor/build/ckeditor.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#classic'), {
+            language: "ko"
+        });
+    </script>
+</body>
+
+</html>

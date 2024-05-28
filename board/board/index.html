@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./body.css" />
   <link rel="stylesheet" href="./footer.css" />
   <link rel="stylesheet" href="./adBox.css" />
+  <link rel="stylesheet" href="./board.css" />
 </head>
 
 <body>
@@ -388,7 +389,6 @@
       </div>
       <div class="bodyCenter">
         <div class="bodyContent">
-
           <div class="channelInfoBox">
             <div class="channelImg">
               <a href="/"><img src="./../../imgs/gameImg.jpg" /></a>
@@ -423,49 +423,109 @@
               </div>
             </div>
           </div>
-          <form id="body_quickButonsLine_top">
-            <div class="quickButtonsLine">
-              <div class="left_buttons">
-                <a href="/">
-                  <button>
-                    <div class="allBoardIcon imgIcon"><img src="./../../imgs/reader.svg" /></div><span>전체글</span>
-                  </button>
-                </a>
-                <a href="/">
-                  <button class="redBackground">
-                    <div class="recommendedBoardIcon imgIcon"><img src="./../../imgs/star.svg" /></div>
-                    <span>개념글</span>
-                  </button>
-                </a>
-                <select name="sortType">
-                  <option value="">등록순</option>
-                  <option value="oneDay">추천순 (24시간)</option>
-                  <option value="threeDay">추천순 (3일)</option>
-                  <option value="allDay">추천순 (전체)</option>
-                  <option value="commentCount_threeDay">댓글갯수순 (3일)</option>
-                  <option value="recentComment">최근댓글순</option>
-                </select>
-                <select value="sortCount">
-                  <option value="">추천컷</option>
-                  <option value="5">5</option>
-                  <option value="10">10</option>
-                  <option value="20">20</option>
-                  <option value="30">30</option>
-                  <option value="50">50</option>
-                  <option value="70">70</option>
-                  <option value="100">100</option>
-                  <option value="etc">기타</option>
-                </select>
+          <div class="boardBox">
+            <div class="title">
+              <div class="titleContent"><span class="blackBox">유머</span>
+                나는 아무 생각이 없다 왜냐하면
               </div>
-              <div class="right_buttons">
-                <a href="/" title="글쓰기">
-                  <button>
-                    <div class="writeIcon imgIcon"><img src="./../../imgs/create-outline.svg" /></div><span>글쓰기</span>
-                  </button>
-                </a>
+              <div class="titleEtc">
+                <div class="writerBox left_line">
+                  <a href="/">
+                    <span>무호흡평타</span></a>
+                  <div class="greyCheckIcon checkIcon imgIcon" title="고정닉">
+                    <img src="./../../imgs/checkmark-outline.svg">
+                  </div>
+                  <div class="userProfile imgIcon">
+                    <img src="./../../imgs/gameImg.jpg">
+                  </div>
+                </div>
+                <div class="right_line">
+                  <div class="viewBox recommendView"><span class="type">추천</span><span class="count">1</span></div>
+                  <div class="viewBox unrecommendView"><span class="type">비추천</span><span class="count">2</span></div>
+                  <div class="viewBox commentView"><span class="type">댓글</span><span class="count">2</span></div>
+                  <div class="viewBox looksView"><span class="type">조회수</span><span class="count">137</span></div>
+                  <div class="viewBox dateView"><span class="type">작성일</span><span class="count">2024-05-28
+                      11:23:39</span></div>
+                </div>
               </div>
             </div>
-          </form>
+            <div class="linkSite"><a href="/"><span class="sharingLink">https://arca.live/b/???????/#######</span>
+                <div class="sharingIcon imgIcon">
+                  <img src="./../../imgs/share-social-sharp.svg">
+                </div>
+              </a></div>
+            <div class="channelImgWrapper">
+              <img src="../../imgs/gameImg.jpg" />
+              <!-- 채널 이미지는 채널 기본 이미지 크기 조정용 -->
+            </div>
+            <div class="boardContent">
+              <p>
+                너무 편해서 강제로 머리가 빠짐
+                <!-- 어차피 다 된 상태로 들어올것(건들지 말자) -->
+              </p>
+            </div>
+            <!-- js에서 처리해줘야하는 목록 -->
+            <div class="recommendButtonLine">
+              <button class="recommendButton">
+                <div class="textLine">추천!<span class="count">2</span></div>
+                <div class="imgLine">(<div class="imgIcon"><img src="../../imgs/help-outline.svg"></div><span
+                    class="recommendCount">0</span>)</div>
+              </button>
+              <button class="unrecommendButton">
+                <div class="textLine">비추천!<span class="count">100</span></div>
+                <div class="imgLine">(<div class="imgIcon"><img src="../../imgs/help-outline.svg"></div><span
+                    class="recommendCount">0</span>)</div>
+              </button>
+            </div>
+            <div class="boardFunction_ButtonList"></div>
+            <dic class="commentListBox">
+              <div class="commentInfo"></div>
+            </dic>
+            <form id="body_quickButonsLine_board_bottom">
+              <div class="quickButtonsLine">
+                <div class="left_buttons">
+                  <a href="/">
+                    <button>
+                      <div class="allBoardIcon imgIcon"><img src="./../../imgs/reader.svg" /></div><span>전체글</span>
+                    </button>
+                  </a>
+                  <a href="/">
+                    <button class="redBackground">
+                      <div class="recommendedBoardIcon imgIcon"><img src="./../../imgs/star.svg" /></div>
+                      <span>개념글</span>
+                    </button>
+                  </a>
+                  <select name="sortType">
+                    <option value="">등록순</option>
+                    <option value="oneDay">추천순 (24시간)</option>
+                    <option value="threeDay">추천순 (3일)</option>
+                    <option value="allDay">추천순 (전체)</option>
+                    <option value="commentCount_threeDay">댓글갯수순 (3일)</option>
+                    <option value="recentComment">최근댓글순</option>
+                  </select>
+                  <select value="sortCount">
+                    <option value="">추천컷</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="70">70</option>
+                    <option value="100">100</option>
+                    <option value="etc">기타</option>
+                  </select>
+                </div>
+                <div class="right_buttons">
+                  <a href="/" title="글쓰기">
+                    <button>
+                      <div class="writeIcon imgIcon"><img src="./../../imgs/create-outline.svg" /></div>
+                      <span>글쓰기</span>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
           <div class="boardTableListBox">
             <div class="adBox">
               <a href="/">
@@ -911,7 +971,8 @@
               <div class="right_buttons">
                 <a href="/" title="글쓰기">
                   <button>
-                    <div class="writeIcon imgIcon"><img src="./../../imgs/create-outline.svg" /></div><span>글쓰기</span>
+                    <div class="writeIcon imgIcon"><img src="./../../imgs/create-outline.svg" /></div>
+                    <span>글쓰기</span>
                   </button>
                 </a>
               </div>
@@ -1307,7 +1368,8 @@
               </svg>
             </a>
           </div>
-          <span class="divideLine">This site is protected by reCAPTCHA and the Google <a href="/">Privacy Policy</a> and
+          <span class="divideLine">This site is protected by reCAPTCHA and the Google <a href="/">Privacy Policy</a>
+            and
             <a href="/">Terms of Service</a> apply.</span>
         </div>
       </div>
