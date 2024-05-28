@@ -38,81 +38,117 @@ try {
   const testha = crypto.createHash("sha256").update("1q2w3e4r").digest("hex");
   await sequelize.sync({ force });
   if (force) {
-    await User.create({
+    const user = await User.create({
       strid: "qwer",
       email: "qwera",
       pw: testha,
       nick: "asdf",
       profilImg: "zxv",
     });
-    await User.create({
+    const usertwo = await User.create({
       strid: "qwerasd",
       email: "qwerasd",
       pw: testha,
       nick: "asdfzxc",
       profilImg: "zxvcv",
     });
-    await Channel.create({
-      title: "가나다",
-      engTitle: "asd",
+    const channel = await Channel.create({
+      title: "메인페이지",
+      engTitle: "main",
       writePlaceholder: "qwer",
       commentPlaceholder: "zxcv",
       description: "설명칸",
       iconPath: "mnbv",
       imgPath: "poiiu",
     });
-    await Category.create({
+    const cate = await Category.create({
       name: "일반",
       engTitle: "normal",
-      channelId: "1",
+      // channelId: "1",
     });
-    await Board.create({
-      title: "제목",
-      contents: "내용",
-      notice: false,
-      superNotice: "0",
-      userId: "1",
-      categoryId: "1",
-    });
-    await Board.create({
+    let board = await Board.create({
       title: "공지",
       contents: "공지",
       notice: false,
       superNotice: "1",
-      userId: "1",
-      categoryId: "1",
+      // userId: "1",
+      // categoryId: "1",
     });
-    await Comment.create({
+    await cate.addBoard(board);
+    await user.addBoard(board);
+    board = await Board.create({
+      title: "제목",
+      contents: "내용",
+      notice: false,
+      superNotice: "0",
+      // userId: "1",
+      // categoryId: "1",
+    });
+    await channel.addCategory(cate);
+    await cate.addBoard(board);
+    await user.addBoard(board);
+    let comment = await Comment.create({
       contents: "124124",
-      boardId: "1",
-      userId: "1",
+      // boardId: "1",
+      // userId: "1",
     });
-    await ChannelAdmin.create({
+    user.addComment(comment);
+    board.addComment(comment);
+    const suad = await ChannelAdmin.create({
       superAdmin: "1",
-      userId: "1",
-      channelId: "1",
+      // userId: "1",
+      // channelId: "1",
     });
-    await ChannelAdmin.create({
+    user.addChannelAdmin(suad);
+    channel.addChannelAdmin(suad);
+    const ad = await ChannelAdmin.create({
       superAdmin: "0",
-      userId: "2",
-      channelId: "1",
+      // userId: "2",
+      // channelId: "1",
     });
-    await BoardDislike.create({
-      userId: "1",
-      boardId: "1",
+    usertwo.addChannelAdmin(ad);
+    channel.addChannelAdmin(ad);
+    const dislike = await BoardDislike.create({
       dislike: "1",
+      // userId: "1",
+      // boardId: "1",
     });
-    await BoardLike.create({
-      userId: "1",
-      boardId: "1",
+    user.addBoardDislike(dislike);
+    board.addBoardDislike(dislike);
+    const like = await BoardLike.create({
       like: "1",
+      // userId: "1",
+      // boardId: "1",
     });
-    await Comment.create({
-      recommentId: "2",
+    const liketwo = await BoardLike.create({
+      like: "1",
+      // userId: "1",
+      // boardId: "1",
+    });
+    user.addBoardLike(like);
+    board.addBoardLike(like);
+    usertwo.addBoardLike(liketwo);
+    board.addBoardLike(liketwo);
+    let ccomment = await Comment.create({
       contents: "124124",
-      boardId: "1",
-      userId: "1",
+      // recommentId: "1",
+      // boardId: "1",
+      // userId: "1",
     });
+    let recomment = await Comment.create({
+      contents: "124124",
+    });
+    user.addComment(ccomment);
+    board.addComment(ccomment);
+    comment.addChildren(ccomment);
+
+    user.addComment(recomment);
+    board.addComment(recomment);
+    ccomment.addChildren(recomment);
+
+    // await User.destroy({
+    //   where: { id: "1" },
+    // });
   }
 } catch (error) {
   console.error(error);

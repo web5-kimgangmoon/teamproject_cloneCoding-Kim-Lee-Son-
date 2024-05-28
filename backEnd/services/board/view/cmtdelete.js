@@ -17,11 +17,8 @@ export default async (req, res) => {
 
     const comment = await Comment.findOne({
       where: { id: commentid, userId: nowuser.id },
-      include: {
-        model: Category,
-      },
     });
-    const channeladmin = await ChannelAdmin.findAll({
+    const channeladmin = await ChannelAdmin.findOne({
       where: { channelId: channel.id, userId: nowuser.id },
     });
     if (!comment || !channeladmin) {

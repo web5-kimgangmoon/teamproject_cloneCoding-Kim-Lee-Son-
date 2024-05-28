@@ -6,6 +6,7 @@ import {
   BoardLike,
   BoardDislike,
   Comment,
+  sequelize,
 } from "../../../models/index.js";
 
 export default async (req, res) => {
@@ -16,17 +17,27 @@ export default async (req, res) => {
     const nowuser = req.user;
 
     const reqcuery = req.query;
-    // const nowpage = reqcuery.page;
-    // const nowview = reqcuery.boardId;
-    // const commentpage = reqcuery.commentpage;
+    const nowpage = reqcuery.page;
+    const nowview = reqcuery.boardId;
+    const commentpage = reqcuery.commentpage;
 
-    const nowpage = 1;
-    const nowview = 1;
-    const commentpage = 1;
+    // const nowpage = 1;
+    // const nowview = 1;
+    // const commentpage = 1;
 
     const channel = await Channel.findOne({
       where: { engTitle: chname },
-      include: [{ model: ChannelAdmin }],
+      attributes: {
+        exclude: ["createdAt", "updatedAt", "deletedAt"],
+      },
+      include: [
+        {
+          model: ChannelAdmin,
+          attributes: {
+            exclude: ["createdAt", "updatedAt", "deletedAt"],
+          },
+        },
+      ],
     });
     // const channemAdmin = await ChannelAdmin.findAll({
     //   where: { channelId: channel.id },
@@ -34,16 +45,45 @@ export default async (req, res) => {
 
     const view = await Board.findOne({
       where: { id: nowview },
+      attributes: [
+        "id",
+        "viewPoint",
+        "title",
+        "contents",
+        "createdAt",
+        "updatedAt",
+        [sequelize.fn("count", sequelize.col("BoardLikes.id")), "like"],
+        [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
+      ],
+
       include: [
-        { model: BoardLike },
-        { model: BoardDislike },
+        { model: BoardLike, attributes: [] },
+        { model: BoardDislike, attributes: [] },
         {
           model: Comment,
           order: [["id", "DESC"]],
           offset: (commentpage - 1) * 50,
           limit: 50,
+          // as: "boardCt",
+          include: [
+            {
+              model: Comment,
+              as: "children",
+              include: [
+                {
+                  model: Comment,
+                  as: "parent",
+                },
+              ],
+            },
+          ],
         },
+        {
+          model: Category,
+        },
+        // { model: Comment, as: "boardCt" },
       ],
+      group: ["id"],
     });
 
     await Board.update(
@@ -53,16 +93,35 @@ export default async (req, res) => {
       }
     );
 
+    // console.log(catename);
+
     if (catename) {
       const category = await Category.findAll({
         where: { channelId: channel.id, engTitle: catename },
+        attributes: {
+          exclude: ["createdAt", "updatedAt", "deletedAt"],
+        },
         include: [
           {
             model: Board,
-            include: [{ model: BoardLike }, { model: BoardDislike }],
+            include: [
+              { model: BoardLike, attributes: [] },
+              { model: BoardDislike, attributes: [] },
+            ],
             order: [["id", "DESC"]],
             offset: (nowpage - 1) * 30,
             limit: 30,
+            attributes: [
+              "id",
+              "viewPoint",
+              "title",
+              "contents",
+              "createdAt",
+              "updatedAt",
+              [sequelize.fn("count", sequelize.col("BoardLikes.id")), "like"],
+              [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
+            ],
+            group: ["id"],
           },
         ],
       });
@@ -76,13 +135,30 @@ export default async (req, res) => {
     } else {
       const category = await Category.findAll({
         where: { channelId: channel.id },
+        attributes: {
+          exclude: ["createdAt", "updatedAt", "deletedAt"],
+        },
         include: [
           {
             model: Board,
-            include: [{ model: BoardLike }, { model: BoardDislike }],
+            include: [
+              { model: BoardLike, attributes: [] },
+              { model: BoardDislike, attributes: [] },
+            ],
             order: [["id", "DESC"]],
-            offset: (nowpage - 1) * 30, // 현재 페이지 받아와서 보내기
-            limit: 30, // 페이지당 글 갯수
+            offset: (nowpage - 1) * 30,
+            limit: 30,
+            attributes: [
+              "id",
+              "viewPoint",
+              "title",
+              "contents",
+              "createdAt",
+              "updatedAt",
+              [sequelize.fn("count", sequelize.col("BoardLikes.id")), "like"],
+              [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
+            ],
+            group: ["id"],
           },
         ],
       });

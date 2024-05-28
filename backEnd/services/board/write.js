@@ -18,9 +18,11 @@ export default async (req, res) => {
       where: { channelId: channel.id, engTitle: catename },
     });
 
-    await Board.create({ ...reqbody, categoryId: category.id, userId: req.user.id });
+    const board = await Board.create(reqbody);
+    category.addBoard(board);
+    req.user.addBoard(board);
 
-    res.json({ result: "ok" });
+    res.json({ result: "ok", nowboard: board.id });
   } catch (err) {
     console.error(err);
     res.json({ error: err.message });

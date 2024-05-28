@@ -12,8 +12,8 @@ export default async (req, res) => {
     const catename = reqbody.category;
 
     const reqcuery = req.query;
-    // const nowview = reqcuery.boardId;
-    const nowview = 1;
+    const nowview = reqcuery.boardId;
+    // const nowview = 1;
     const channel = await Channel.findOne({
       where: { engTitle: chname },
       include: [{ model: ChannelAdmin }],
@@ -37,15 +37,19 @@ export default async (req, res) => {
     const category = await Category.findOne({
       where: { channelId: channel.id, engTitle: catename },
     });
-
-    await Board.update(
-      { ...reqbody, categoryId: category.id },
-      {
-        where: {
-          id: nowview,
-        },
-      }
-    );
+    await board.update({
+      ...reqbody,
+      categoryId: category.id,
+    });
+    // await Board.update(
+    //   board,
+    //   { ...reqbody, categoryId: category.id },
+    //   {
+    //     where: {
+    //       id: nowview,
+    //     },
+    //   }
+    // );
     res.json({ result: "ok" });
   } catch (err) {
     console.error(err);

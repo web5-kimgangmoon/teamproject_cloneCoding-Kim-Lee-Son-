@@ -7,8 +7,8 @@ export default async (req, res) => {
   const nowuser = req.user;
 
   const reqcuery = req.query;
-  // const nowview = reqcuery.boardId;
-  const nowview = 1;
+  const nowview = reqcuery.boardId;
+  // const nowview = 1;
   const channel = await Channel.findOne({
     where: { engTitle: chname },
     include: [{ model: ChannelAdmin }],

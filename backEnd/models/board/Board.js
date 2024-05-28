@@ -37,7 +37,10 @@ export default class Board extends Model {
   static associate({ User, Board, Category, BoardLike, Comment, BoardDislike }) {
     Board.hasMany(BoardLike, { foreignKey: "boardId" });
     Board.hasMany(BoardDislike, { foreignKey: "boardId" });
-    Board.hasMany(Comment, { foreignKey: "boardId" });
+    Board.hasMany(Comment, {
+      // as: "boardCt",
+      foreignKey: "boardId",
+    });
 
     Board.belongsTo(User, { foreignKey: "userId" });
     Board.belongsTo(Category, { foreignKey: "categoryId" });

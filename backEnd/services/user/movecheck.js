@@ -1,4 +1,4 @@
-import { User } from "../../models/index.js";
+import { User, ChannelAdmin } from "../../models/index.js";
 
 export default async (req, res, next) => {
   try {
@@ -7,7 +7,7 @@ export default async (req, res, next) => {
         where: { id: req.signedCookies.user },
         include: [
           {
-            model: { ChannelAdmin },
+            model: ChannelAdmin,
           },
         ],
       });

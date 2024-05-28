@@ -7,6 +7,8 @@ import {
   Board,
   BoardLike,
   BoardDislike,
+  sequelize,
+  Comment,
 } from "../../models/index.js";
 
 export default async (req, res) => {
@@ -15,8 +17,8 @@ export default async (req, res) => {
     const chname = reqbody.channel;
     const catename = reqbody.category;
     const nowuser = req.user;
-    // const nowpage = req.query.page;
-    const nowpage = 1;
+    const nowpage = req.query.page;
+    // const nowpage = 1;
 
     const channel = await Channel.findOne({
       where: { engTitle: chname },
@@ -29,13 +31,32 @@ export default async (req, res) => {
     if (catename) {
       const category = await Category.findAll({
         where: { channelId: channel.id, engTitle: catename },
+        attributes: {
+          exclude: ["createdAt", "updatedAt", "deletedAt"],
+        },
         include: [
           {
             model: Board,
-            include: [{ model: BoardLike }, { model: BoardDislike }],
+            include: [
+              { model: BoardLike, attributes: [] },
+              { model: BoardDislike, attributes: [] },
+              // { model: Comment, attributes: [] },
+            ],
             order: [["id", "DESC"]],
             offset: (nowpage - 1) * 30,
             limit: 30,
+            attributes: [
+              "id",
+              "viewPoint",
+              "title",
+              "contents",
+              "createdAt",
+              "updatedAt",
+              [sequelize.fn("count", sequelize.col("BoardLikes.id")), "like"],
+              [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
+              // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "commentcount"],
+            ],
+            group: ["id"],
           },
         ],
       });
@@ -43,18 +64,36 @@ export default async (req, res) => {
         category: category,
         user: nowuser,
         channel: channel,
-        // channemAdmin: channemAdmin
       });
     } else {
       const category = await Category.findAll({
         where: { channelId: channel.id },
+        attributes: {
+          exclude: ["createdAt", "updatedAt", "deletedAt"],
+        },
         include: [
           {
             model: Board,
-            include: [{ model: BoardLike }, { model: BoardDislike }],
+            include: [
+              { model: BoardLike, attributes: [] },
+              { model: BoardDislike, attributes: [] },
+              { model: Comment, attributes: [] },
+            ],
             order: [["id", "DESC"]],
-            offset: (nowpage - 1) * 30, // 현재 페이지 받아와서 보내기
-            limit: 30, // 페이지당 글 갯수
+            offset: (nowpage - 1) * 30,
+            limit: 30,
+            attributes: [
+              "id",
+              "viewPoint",
+              "title",
+              "contents",
+              "createdAt",
+              "updatedAt",
+              [sequelize.fn("count", sequelize.col("BoardLikes.id")), "like"],
+              [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
+              [sequelize.fn("count", sequelize.col("Comments.id")), "commentcount"],
+            ],
+            group: ["id"],
           },
         ],
       });
@@ -62,7 +101,6 @@ export default async (req, res) => {
         category: category,
         user: nowuser,
         channel: channel,
-        // channemAdmin: channemAdmin
       });
     }
   } catch (err) {

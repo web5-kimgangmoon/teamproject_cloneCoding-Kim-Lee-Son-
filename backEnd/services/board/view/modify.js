@@ -11,16 +11,13 @@ export default async (req, res) => {
 
     const comment = await Comment.findOne({
       where: { id: commentid, userId: nowuser.id },
-      include: {
-        model: Category,
-      },
     });
     if (!comment) {
       throw new Error("not match user");
     }
-    res.json({ result: "ok" });
+    await Comment.update(req.body);
 
-    await Comment.update({ ...req.body });
+    res.json({ result: "ok" });
   } catch (err) {
     console.error(err);
     res.json({ error: err.message });

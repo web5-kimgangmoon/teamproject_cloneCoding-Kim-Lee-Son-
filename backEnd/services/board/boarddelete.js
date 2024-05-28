@@ -11,8 +11,8 @@ export default async (req, res) => {
     const chname = reqbody.channel;
 
     const reqcuery = req.query;
-    // const nowview = reqcuery.boardId;
-    const nowview = 1;
+    const nowview = reqcuery.boardId;
+    // const nowview = 1;
     const channel = await Channel.findOne({
       where: { engTitle: chname },
     });
