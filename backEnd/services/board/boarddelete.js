@@ -12,12 +12,17 @@ export default async (req, res) => {
 
     const reqcuery = req.query;
 <<<<<<< HEAD
+<<<<<<< HEAD
     const nowview = reqcuery.boardId;
     // const nowview = 1;
 =======
     // const nowview = reqcuery.boardId;
     const nowview = 1;
 >>>>>>> 4090055 (feat:board complete)
+=======
+    const nowview = reqcuery.boardId;
+    // const nowview = 1;
+>>>>>>> 180d9a7 (feedback and admin)
     const channel = await Channel.findOne({
       where: { engTitle: chname },
     });

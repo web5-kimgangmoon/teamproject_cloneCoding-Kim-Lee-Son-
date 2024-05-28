@@ -23,6 +23,7 @@ export default async (req, res) => {
     const comment = await Comment.findOne({
       where: { id: commentid, userId: nowuser.id },
 <<<<<<< HEAD
+<<<<<<< HEAD
     });
     const channeladmin = await ChannelAdmin.findOne({
 =======
@@ -32,6 +33,10 @@ export default async (req, res) => {
     });
     const channeladmin = await ChannelAdmin.findAll({
 >>>>>>> 4090055 (feat:board complete)
+=======
+    });
+    const channeladmin = await ChannelAdmin.findOne({
+>>>>>>> 180d9a7 (feedback and admin)
       where: { channelId: channel.id, userId: nowuser.id },
     });
     if (!comment || !channeladmin) {

@@ -12,6 +12,7 @@ export default async (req, res, next) => {
     await nowuser.addChannelAdmin(channeladmin);
     await channel.addChannelAdmin(channeladmin);
 
+<<<<<<< HEAD
     res.json({ result: "ok", newchannel: channel });
   } catch (err) {
     console.error(err);
@@ -20,6 +21,11 @@ export default async (req, res, next) => {
     } else {
       res.status(419);
     }
+=======
+    res.json({ result: "ok", nowchannel: channel.id });
+  } catch (err) {
+    console.error(err);
+>>>>>>> 180d9a7 (feedback and admin)
     res.json({ error: err.message });
   }
 };

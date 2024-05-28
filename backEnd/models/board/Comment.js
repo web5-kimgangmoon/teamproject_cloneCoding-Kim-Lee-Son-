@@ -20,9 +20,18 @@ export default class Comment extends Model {
   }
   static associate({ User, Board, Comment }) {
     Comment.belongsTo(User, { foreignKey: "userId" });
-    Comment.belongsTo(Board, { foreignKey: "boardId" });
+    Comment.belongsTo(Board, {
+      // as: "boardCount",
+      foreignKey: "boardId",
+    });
 
-    Comment.hasMany(Comment, { as: "children", foreignKey: "recommentId" });
-    Comment.belongsTo(Comment, { as: "parent", foreignKey: "recommentId" });
+    Comment.hasMany(Comment, {
+      as: "children",
+      foreignKey: "recommentId",
+    });
+    Comment.belongsTo(Comment, {
+      as: "parent",
+      foreignKey: "recommentId",
+    });
   }
 }

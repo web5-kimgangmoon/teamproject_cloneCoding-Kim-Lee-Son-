@@ -52,15 +52,17 @@ import crypto from "crypto";
 
 export default async (req, res) => {
   try {
+    const reqbody = req.body;
+    const channelname = reqbody.channel;
+
     const channel = await Channel.findOne({
-      where: { engTitle: req.body.channel },
-      attributes: ["engTitle"],
+      where: { engTitle: channelname },
     });
 
     const pwhash = crypto.createHash("sha256").update(req.body.pw).digest("hex");
 
     const user = await User.findOne({
-      where: { strid: req.body.strid },
+      where: { strid: reqbody.strid },
     });
     // const pruser = crypto.createHash("sha256").update(user.id).digest("hex");
 
@@ -73,7 +75,7 @@ export default async (req, res) => {
       });
       res.json({ result: "ok", channel: channel });
     } else {
-      throw new Error("not found user");
+      throw new Error("not found user qw");
     }
   } catch (err) {
     console.error(err);

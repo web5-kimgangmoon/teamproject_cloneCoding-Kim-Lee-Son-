@@ -17,11 +17,16 @@ export default async (req, res) => {
 
     const reqcuery = req.query;
 <<<<<<< HEAD
+<<<<<<< HEAD
     const nowview = reqcuery.boardId;
 =======
     // const nowview = reqcuery.boardId;
     const nowview = 1;
 >>>>>>> 4090055 (feat:board complete)
+=======
+    const nowview = reqcuery.boardId;
+    // const nowview = 1;
+>>>>>>> 180d9a7 (feedback and admin)
     const channel = await Channel.findOne({
       where: { engTitle: chname },
       include: [{ model: ChannelAdmin }],
@@ -46,10 +51,14 @@ export default async (req, res) => {
       where: { channelId: channel.id, engTitle: catename },
     });
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 180d9a7 (feedback and admin)
     await board.update({
       ...reqbody,
       categoryId: category.id,
     });
+<<<<<<< HEAD
 
     if (board.superNotice) {
       board.update({ notice: ture });
@@ -75,6 +84,17 @@ export default async (req, res) => {
         },
       }
     );
+=======
+    // await Board.update(
+    //   board,
+    //   { ...reqbody, categoryId: category.id },
+    //   {
+    //     where: {
+    //       id: nowview,
+    //     },
+    //   }
+    // );
+>>>>>>> 180d9a7 (feedback and admin)
     res.json({ result: "ok" });
   } catch (err) {
     console.error(err);
