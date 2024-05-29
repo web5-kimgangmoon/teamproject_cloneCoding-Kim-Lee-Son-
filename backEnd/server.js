@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import multer from "multer";
 import cors from "cors";
 import crypto from "crypto";
+import path from "path";
 
 import router from "./controllers/index.js";
 import {
@@ -29,7 +30,8 @@ app.use(morgan("dev"));
 app.use(cors({ origin: [/localhost\:?\d*/, /127.0.0.1\:?\d*/], credentials: true }));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cookieParser(process.env.COOKIE_SECRET || "test"));
+app.use(cookieParser("test"));
+app.use("/imgs", express.static("/Users/lee/Desktop/kga/teamproject_cloneCoding/backEnd/uploads"));
 
 app.use(router);
 const force = true;
@@ -61,7 +63,7 @@ try {
       iconPath: "mnbv",
       imgPath: "poiiu",
     });
-    const cate = await Category.create({
+    let cate = await Category.create({
       name: "일반",
       engTitle: "normal",
       // channelId: "1",
@@ -76,6 +78,8 @@ try {
     });
     await cate.addBoard(board);
     await user.addBoard(board);
+    await channel.addBoard(board);
+
     board = await Board.create({
       title: "제목",
       contents: "내용",
@@ -87,6 +91,8 @@ try {
     await channel.addCategory(cate);
     await cate.addBoard(board);
     await user.addBoard(board);
+    await channel.addBoard(board);
+
     let comment = await Comment.create({
       contents: "124124",
       // boardId: "1",
@@ -145,6 +151,13 @@ try {
     user.addComment(recomment);
     board.addComment(recomment);
     ccomment.addChildren(recomment);
+
+    cate = await Category.create({
+      name: "테스트",
+      engTitle: "test",
+      // channelId: "1",
+    });
+    await channel.addCategory(cate);
 
     // await User.destroy({
     //   where: { id: "1" },

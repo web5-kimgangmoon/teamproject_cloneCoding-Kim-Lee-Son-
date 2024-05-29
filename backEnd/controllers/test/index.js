@@ -3,6 +3,6 @@ const router = Router();
 
 import test from "../../services/test.js";
 
-router.get("/", test);
+router.use("/", test);
 
 export default router;

@@ -12,36 +12,35 @@ import {
 export default async (req, res) => {
   try {
     const reqbody = req.body;
-    const chname = reqbody.channel;
-    const catename = reqbody.category;
+    let chname = reqbody.channel;
+    let catename = reqbody.category;
     const nowuser = req.user;
 
     const reqcuery = req.query;
-    const nowpage = reqcuery.page;
+    let nowpage = reqcuery.page;
     const nowview = reqcuery.boardId;
-    const commentpage = reqcuery.commentpage;
+    let commentpage = reqcuery.commentpage;
 
-    // const nowpage = 1;
-    // const nowview = 1;
-    // const commentpage = 1;
+    if (!nowpage) {
+      nowpage = 1;
+    }
+    if (!chname) {
+      chname = "main";
+    }
+    if (!commentpage) {
+      commentpage = 1;
+    }
 
-    const channel = await Channel.findOne({
+    let channel = await Channel.findOne({
       where: { engTitle: chname },
-      attributes: {
-        exclude: ["createdAt", "updatedAt", "deletedAt"],
-      },
-      include: [
-        {
-          model: ChannelAdmin,
-          attributes: {
-            exclude: ["createdAt", "updatedAt", "deletedAt"],
-          },
-        },
-      ],
+      include: [{ model: ChannelAdmin }],
     });
-    // const channemAdmin = await ChannelAdmin.findAll({
-    //   where: { channelId: channel.id },
-    // });
+    if (!channel) {
+      channel = await Channel.findOne({
+        where: { engTitle: "main" },
+        include: [{ model: ChannelAdmin }],
+      });
+    }
 
     const view = await Board.findOne({
       where: { id: nowview },
@@ -52,19 +51,16 @@ export default async (req, res) => {
         "contents",
         "createdAt",
         "updatedAt",
-        [sequelize.fn("count", sequelize.col("BoardLikes.id")), "like"],
-        [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
+        // [sequelize.fn("count", sequelize.col("BoardLikes.id")), "like"],
+        // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
       ],
 
       include: [
-        { model: BoardLike, attributes: [] },
-        { model: BoardDislike, attributes: [] },
         {
           model: Comment,
           order: [["id", "DESC"]],
           offset: (commentpage - 1) * 50,
           limit: 50,
-          // as: "boardCt",
           include: [
             {
               model: Comment,
@@ -72,7 +68,7 @@ export default async (req, res) => {
               include: [
                 {
                   model: Comment,
-                  as: "parent",
+                  as: "children",
                 },
               ],
             },
@@ -81,9 +77,24 @@ export default async (req, res) => {
         {
           model: Category,
         },
-        // { model: Comment, as: "boardCt" },
       ],
       group: ["id"],
+    });
+
+    const commentcnt = await Comment.findAll({
+      where: { boardId: nowview },
+      attributes: [[sequelize.fn("count", "boardId"), "cnt"]],
+      group: ["board_id"],
+    });
+    const likecnt = await BoardLike.findAll({
+      where: { boardId: nowview },
+      attributes: [[sequelize.fn("count", "boardId"), "cnt"]],
+      group: ["board_id"],
+    });
+    const dislikecnt = await BoardDislike.findAll({
+      where: { boardId: nowview },
+      attributes: [[sequelize.fn("count", "boardId"), "cnt"]],
+      group: ["board_id"],
     });
 
     await Board.update(
@@ -93,83 +104,91 @@ export default async (req, res) => {
       }
     );
 
-    // console.log(catename);
-
+    let listcheck = false;
+    let category = await Category.findAll({
+      where: { channelId: channel.id },
+      attributes: {
+        exclude: ["createdAt", "updatedAt", "deletedAt"],
+      },
+    });
     if (catename) {
-      const category = await Category.findAll({
+      category = await Category.findAll({
         where: { channelId: channel.id, engTitle: catename },
         attributes: {
           exclude: ["createdAt", "updatedAt", "deletedAt"],
         },
-        include: [
-          {
-            model: Board,
-            include: [
-              { model: BoardLike, attributes: [] },
-              { model: BoardDislike, attributes: [] },
-            ],
-            order: [["id", "DESC"]],
-            offset: (nowpage - 1) * 30,
-            limit: 30,
-            attributes: [
-              "id",
-              "viewPoint",
-              "title",
-              "contents",
-              "createdAt",
-              "updatedAt",
-              [sequelize.fn("count", sequelize.col("BoardLikes.id")), "like"],
-              [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
-            ],
-            group: ["id"],
-          },
-        ],
       });
-      res.json({
-        category: category,
-        user: nowuser,
-        channel: channel,
-        // channemAdmin: channemAdmin,
-        view: view,
-      });
-    } else {
-      const category = await Category.findAll({
+      listcheck = true;
+    }
+    if (!category) {
+      category = await Category.findAll({
         where: { channelId: channel.id },
         attributes: {
           exclude: ["createdAt", "updatedAt", "deletedAt"],
         },
-        include: [
-          {
-            model: Board,
-            include: [
-              { model: BoardLike, attributes: [] },
-              { model: BoardDislike, attributes: [] },
-            ],
-            order: [["id", "DESC"]],
-            offset: (nowpage - 1) * 30,
-            limit: 30,
-            attributes: [
-              "id",
-              "viewPoint",
-              "title",
-              "contents",
-              "createdAt",
-              "updatedAt",
-              [sequelize.fn("count", sequelize.col("BoardLikes.id")), "like"],
-              [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
-            ],
-            group: ["id"],
-          },
-        ],
       });
-      res.json({
-        category: category,
-        user: nowuser,
-        channel: channel,
-        // channemAdmin: channemAdmin,
-        view: view,
+      listcheck = false;
+    }
+
+    let boardlist = await Board.findAll({
+      where: { channelId: channel.id },
+      include: [
+        { model: BoardLike },
+        // { model: BoardDislike, attributes: [] },
+        // { model: Comment, attributes: [] },
+      ],
+      order: [["id", "DESC"]],
+      offset: (nowpage - 1) * 30,
+      limit: 30,
+      attributes: [
+        "id",
+        "viewPoint",
+        "title",
+        "contents",
+        "createdAt",
+        "updatedAt",
+        // [sequelize.fn("count", sequelize.col("boardLikes.id")), "like"],
+        // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
+        // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "commentcount"],
+      ],
+      group: ["id"],
+    });
+    if (listcheck) {
+      boardlist = await Board.findAll({
+        where: { channelId: channel.id, categoryId: category.id },
+        include: [
+          { model: BoardLike },
+          // { model: BoardDislike, attributes: [] },
+          // { model: Comment, attributes: [] },
+        ],
+        order: [["id", "DESC"]],
+        offset: (nowpage - 1) * 30,
+        limit: 30,
+        attributes: [
+          "id",
+          "viewPoint",
+          "title",
+          "contents",
+          "createdAt",
+          "updatedAt",
+          // [sequelize.fn("count", sequelize.col("boardLikes.id")), "like"],
+          // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
+          // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "commentcount"],
+        ],
+        group: ["id"],
       });
     }
+    res.json({
+      category: category,
+      user: nowuser,
+      channel: channel,
+      // channemAdmin: channemAdmin,
+      view: view,
+      boardlist: boardlist,
+      commentcnt: commentcnt,
+      likecnt: likecnt,
+      dislikecnt: dislikecnt,
+    });
   } catch (err) {
     console.error(err);
     res.json({ error: err.message });

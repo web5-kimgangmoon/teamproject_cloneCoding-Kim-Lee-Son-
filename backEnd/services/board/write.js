@@ -2,10 +2,15 @@ import { Channel, ChannelAdmin, Category, Board } from "../../models/index.js";
 
 export default async (req, res) => {
   try {
+    const reqbody = req.body;
+    console.log(reqbody);
+    if (reqbody.contents == "") {
+      console.log("이건 빈값이야");
+    }
     if (!req.user) {
       throw new Error("not logged in");
     }
-    const reqbody = req.body;
+
     const chname = reqbody.channel;
     const catename = reqbody.category;
 
