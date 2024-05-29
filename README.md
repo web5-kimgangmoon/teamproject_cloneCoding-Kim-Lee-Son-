@@ -345,3 +345,13 @@ https://www.flaticon.com/kr/free-icon/bookmarks_1174447
 ```
 
 댓글의 형태는 이런식, 솔직히 내가 만들었는데도 헷갈린다.
+
+## axios와 multer의 이용 잘 정리해주었다.
+
+https://velog.io/@jeooooong/multer-axios
+
+formData 객체를 이용하면 axios로 이미지를 업로드할 수 있다. 여러 장도 가능하다, 하지만 한 번에 한 종류로만 보내야 됐다. 그리고 다른 데이터 타입은 보낼 수 없었다.
+
+## 이미지 업로드 문제는 해결
+
+교수님이 찾아주신 자료 덕에 ckeditor로도 이미지 받는 방법 확인 완료.

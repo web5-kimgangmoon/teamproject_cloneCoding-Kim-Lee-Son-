@@ -1,0 +1,98 @@
+카테고리
+카테고리 이름        
+name: {
+          type: DataTypes.STRING(32),
+          allowNull: false,
+
+카테고리 영어이름
+        engTitle: {
+          type: DataTypes.STRING(32),
+          allowNull: false,
+
+채널
+        title: {
+          type: DataTypes.STRING(32),
+          allowNull: false,
+        },
+        engTitle: {
+          type: DataTypes.STRING(32),
+          allowNull: false,
+        },
+        writePlaceholder: {
+          type: DataTypes.STRING(2000),
+        },
+        commentPlaceholder: {
+          type: DataTypes.STRING(1000),
+        },
+        description: {
+          // 설명
+          type: DataTypes.STRING(300),
+        },
+        iconPath: {
+          type: DataTypes.STRING(300),
+        },
+        imgPath: {
+          type: DataTypes.STRING(300),
+        },
+
+관리자
+        superAdmin: {
+          type: DataTypes.BOOLEAN,
+          allowNull: false,
+        },
+
+추천
+      {
+        like: {
+          type: DataTypes.BOOLEAN,
+        },
+      },
+비추천
+        dislike: {
+          type: DataTypes.BOOLEAN,
+        },
+      },
+
+보드
+        viewPoint: {
+          type: DataTypes.INTEGER.UNSIGNED,
+          allowNull: false,
+          defaultValue: 0,
+        },
+        title: {
+          type: DataTypes.STRING(32),
+          allowNull: false,
+        },
+        contents: {
+          type: DataTypes.TEXT,
+          allowNull: false,
+        },
+        notice: {
+          type: DataTypes.BOOLEAN,
+        },
+        superNotice: {
+          type: DataTypes.BOOLEAN,
+        },
+유저
+        strid: {
+          type: DataTypes.STRING(32),
+          unique: true,
+          allowNull: false,
+        },
+        email: {
+          type: DataTypes.STRING(64),
+          allowNull: false,
+        },
+        pw: {
+          type: DataTypes.STRING(64),
+          allowNull: false,
+        },
+        nick: {
+          type: DataTypes.STRING(16),
+          unique: true,
+          allowNull: false,
+        },
+        profilImg: {
+          type: DataTypes.STRING(64),
+          // allowNull: false,
+        },

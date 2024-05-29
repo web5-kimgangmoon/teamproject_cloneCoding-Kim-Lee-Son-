@@ -1,34 +1,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/translations/ko.js"></script>
-    <style>
-        .ck.ck-editor {
-            max-width: 500px;
-        }
-
-        .ck-editor__editable {
-            min-height: 300px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-    <h3>Classic editor</h3>
-    <form action="" <div id="classic">
-        <p>This is some sample content.</p>
-
+  <form id="newChannel" method="post" action="http://localhost:3080/upload" enctype="multipart/form-data">
+    <fieldset>
+      <div class="inputLine">
+        <div class="divideLine">
+          <label for="newChannel_icon">아이콘업로드 : </label>
+          <input type="file" class="adminInput" id="newChannel_icon" name="icon" accept="img/*" />
         </div>
-        <p><input type="submit" value="전송" /></p>
-        <script>
-            ClassicEditor.create(document.querySelector('#classic'), {
-                language: "ko"
-            });
-        </script>
+      </div>
+      <div class="titleLine">
+        <button id="newChannel_submit">제출</button>
+      </div>
+    </fieldset>
+  </form>
 </body>
 
 </html>
