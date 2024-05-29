@@ -42,5 +42,6 @@ export default class Channel extends Model {
   static associate({ Channel, ChannelAdmin, Category, Board }) {
     Channel.hasMany(ChannelAdmin, { foreignKey: "channelId" });
     Channel.hasMany(Category, { sourceKey: "id", foreignKey: "channelId" });
+    Channel.hasMany(Board, { sourceKey: "id", foreignKey: "channelId" });
   }
 }

@@ -1,4 +1,5 @@
 <html lang="en">
+<<<<<<< HEAD
 
 <head>
   <meta charset="UTF-8" />
@@ -10,10 +11,22 @@
 
 <body>
   <!-- <form action="/test" method="post" enctype="multipart/form-data">
+=======
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+  </head>
+  <body>
+    <!-- <form action="/test" method="post" enctype="multipart/form-data">
+>>>>>>> 73386c3 (multer and session)
       <input id="input-img" type="file" name="img" accept="image/*" multiple />
       <input type="hidden" name="name" value="testing" />
       <button>upload</button>
     </form> -->
+<<<<<<< HEAD
   <div id="editor"></div>
   <button id="login" class="login">로그인</button>
   <button id="logout" class="logout">로그아웃</button>
@@ -47,11 +60,33 @@
     //   ).data;
     // };
     ClassicEditor.create(document.querySelector("#editor"), {
+=======
+    <div id="editor"></div>
+    <button id="login" class="login">로그인</button>
+
+    <button id="submit" class="submit">작성완료</button>
+
+    <script>
+      // async () => {
+      //   const user = (
+      //     await axios.post(
+      //       "http://localhost:3001/b/upload", // url
+      //       {}, // body
+      //       {
+      //         // options
+      //         withCredentials: true,
+      //       }
+      //     )
+      //   ).data;
+      // };
+      ClassicEditor.create(document.querySelector("#editor"), {
+>>>>>>> 73386c3 (multer and session)
         ckfinder: {
           uploadUrl: "http://localhost:3001/b/upload",
           // uploadUrl: "/upload",
         },
       })
+<<<<<<< HEAD
       .then((newEditor) => {
         editor = newEditor;
       })
@@ -170,3 +205,41 @@
 </body>
 
 </html>
+=======
+        .then((newEditor) => {
+          editor = newEditor;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    </script>
+    <script>
+      document.getElementById("login").onclick = async (e) => {
+        e.preventDefault();
+        await axios.post(
+          "http://localhost:3001/u/login",
+          {
+            channel: "main",
+            strid: "qwer",
+            pw: "1q2w3e4r",
+          },
+          {
+            withCredentials: true,
+          }
+        );
+      };
+
+      document.getElementById("submit").onclick = async (e) => {
+        e.preventDefault();
+        await axios.post(
+          "http://localhost:3001/b/write",
+          { title: "12124", contents: editor.getData(), channel: "main", category: "normal" },
+          {
+            withCredentials: true,
+          }
+        );
+      };
+    </script>
+  </body>
+</html>
+>>>>>>> 73386c3 (multer and session)
