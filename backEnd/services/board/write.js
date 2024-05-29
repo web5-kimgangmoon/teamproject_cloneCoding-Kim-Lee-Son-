@@ -3,6 +3,7 @@ import { Channel, ChannelAdmin, Category, Board } from "../../models/index.js";
 export default async (req, res) => {
   try {
 <<<<<<< HEAD
+<<<<<<< HEAD
     const reqbody = req.body;
     console.log(reqbody);
     if (reqbody.contents == "" || reqbody.title == "" || reqbody.category == "") {
@@ -40,10 +41,17 @@ export default async (req, res) => {
       res.status(419);
     }
 =======
+=======
+    const reqbody = req.body;
+    console.log(reqbody);
+    if (reqbody.contents == "") {
+      console.log("이건 빈값이야");
+    }
+>>>>>>> 73386c3 (multer and session)
     if (!req.user) {
       throw new Error("not logged in");
     }
-    const reqbody = req.body;
+
     const chname = reqbody.channel;
     const catename = reqbody.category;
 
