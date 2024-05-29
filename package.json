@@ -1,0 +1,14 @@
+{
+  "name": "teamproject_clonecoding-kim-lee-son-",
+  "version": "1.0.0",
+  "description": "- 구현하는데 골칫거리 첫번쨰 유동적으로 변화하는 페이지(웹페이지 크기를 줄이고 늘리면 페이지의 모양이 변한다.) (무조건 margin:auto로 해결해야함 왜냐하면 그렇게 주지 않을경우 페이지가 유동적으로 움직이지 않는다.)X\r   (위치를 가운데로 잡아주고, 내용물에 따라 크기가 변화하도록만 해주면 된다, 그과정에서 margin auto나 grid나 flex나 아무거나 써줘도 된다.)\r - 왼쪽의 광고가 문제, 이 경우는 js로 width를 조작해서 해결해야 할 것으로 보인다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ckeditor/ckeditor5-upload": "^41.4.2"
+  }
+}

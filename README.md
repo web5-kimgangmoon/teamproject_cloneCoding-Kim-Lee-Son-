@@ -30,7 +30,9 @@ isuue 9. iframe, iframe을 이용하는 편이 좋을까, 아니면 그대로 �
 
 issue 10. display:contents는?(min-width, min-height를 쓰는 방법이 있다.)
 
-issue 11. 부드러운 애니메이션 주기(hover와 focus말고 직접 넣고, 외곽선은 아예 명암을 이용해 미리 넣어두자.)(시간 있으면 outline에 대해서도 자세히 찾아보기)
+issue 11. 부드러운 애니메이션 주기(hover와 focus말고 직접 넣고, 외곽선은 아예 명암을 이용해 미리 넣어두자.)(시간 있으면 outline에 대해서도 자세히 찾아보기)(해결, 아예 outline의 자리를 미리 배경색이나 명암을 없애주고 만들어준 다음에 애니메이션을 넣어준다.)
+
+issue 12. clip-path, 시간 나면 알아보자
 
 ## 개인적으로 느낀점
 

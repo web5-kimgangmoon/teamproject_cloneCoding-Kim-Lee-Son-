@@ -59,13 +59,7 @@
   margin-left: 0.5rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelPathNButtons,
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons,
 #container .body .bodyCenter .bodyContent form .quickButtonsLine {
   display: flex;
   flex-wrap: wrap;
@@ -76,111 +70,36 @@
   padding: 0.5rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelPathNButtons
-  .channelPath {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelPath {
   text-align: left;
   font-size: 1.3rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelPathNButtons
-  .channelPath
-  a {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelPath a {
   text-decoration: none;
   color: black;
-  font-weight: bold;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelPathNButtons
-  .channelPath
-  a:hover {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelPath a:hover {
   text-decoration: underline;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelPathNButtons
-  .channelButtons {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelButtons {
   display: flex;
   justify-content: right;
   column-gap: 0.5rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelPathNButtons
-  .channelButtons
-  a,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  a,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .right_buttons
-  a {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelButtons a,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons a,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .right_buttons a {
   height: max-content;
   text-decoration: none;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelPathNButtons
-  .channelButtons
-  button,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  button,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .right_buttons
-  button {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelButtons button,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons button,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .right_buttons button {
   display: flex;
   height: 2rem;
   padding: 0.35rem;
@@ -193,152 +112,55 @@
   transition: background-color 1s, outline 0.3s;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelPathNButtons
-  .channelButtons
-  button:focus {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelButtons button:focus {
   outline: 0.15rem solid rgba(100, 200, 250, 0.7);
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelPathNButtons
-  .channelButtons
-  button
-  .imgIcon,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  button
-  .imgIcon,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .right_buttons
-  button
-  .imgIcon {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelButtons button .imgIcon,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons button .imgIcon,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .right_buttons button .imgIcon {
   /* display: inline-block; */
   width: 0.8rem;
   height: 0.8rem;
   margin-right: 0.1rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelDescription {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription {
   font-size: 0.9rem;
   color: #777;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelDescription
-  .channelBaseInfo {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo {
   display: flex;
   padding: 0.3rem 0;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelDescription
-  .channelBaseInfo
-  .baseInfoBox {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo .baseInfoBox {
   border-right: 1px solid black;
 
   padding-right: 0.5rem;
   margin-right: 0.5rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelDescription
-  .channelBaseInfo
-  .baseInfoBox:last-of-type {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo .baseInfoBox:last-of-type {
   border-right: 0;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelDescription
-  .channelBaseInfo
-  .channelAdmin
-  a {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo .channelAdmin a {
   text-decoration: none;
   color: #777;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelDescription
-  .channelBaseInfo
-  .channelAdmin
-  a:hover {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo .channelAdmin a:hover {
   text-decoration: underline;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelDescription
-  .channelBaseInfo
-  .channelAdmin {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo .channelAdmin {
   display: flex;
   align-items: center;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelDescription
-  .channelBaseInfo
-  .baseInfoBox
-  .imgIcon {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo .baseInfoBox .imgIcon {
   min-width: 0.8rem;
   min-height: 0.8rem;
   padding: 0.1rem;
@@ -348,17 +170,7 @@
   border-radius: 100%;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelDescription
-  .channelBaseInfo
-  .baseInfoBox
-  .imgIcon
-  img {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription .channelBaseInfo .baseInfoBox .imgIcon img {
   /* filter: brightness(0); */
   /* color: white; */
   filter: invert(1);
@@ -372,96 +184,32 @@
   display: flex;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  button:hover,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .right_buttons
-  button:hover,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .searchLine_bottom
-  .searchButton:hover {
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons button:hover,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .right_buttons button:hover,
+#container .body .bodyCenter .bodyContent form .searchLine_bottom .searchButton:hover {
   background-color: #bbb;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  .redBackground {
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons .redBackground {
   color: white;
   background-color: #dc3545;
   border: 1px solid #dc3545;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  a
-  .redBackground:hover {
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons a .redBackground:hover {
   background-color: #be0419;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  button
-  .recommendedBoardIcon {
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons button .recommendedBoardIcon {
   filter: invert(1);
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  button,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .right_buttons
-  button {
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons button,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .right_buttons button {
   width: 4.5rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  select,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons select,
 #container .body .bodyCenter .bodyContent form .searchLine_bottom select {
   width: 4.5rem;
   height: 2rem;
@@ -471,57 +219,21 @@
   font-family: "NanumBarunGothic", system-ui, sans-serif;
   appearance: none;
   outline: 0.15rem solid rgba(100, 200, 250, 0);
-  background: white
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="black" fill-rule="evenodd" d="M12.2929,5.292875 C12.6834,4.902375 13.3166,4.902375 13.7071,5.292875 C14.0976,5.683375 14.0976,6.316555 13.7071,6.707085 L8.70711,11.707085 C8.31658,12.097605 7.68342,12.097605 7.29289,11.707085 L2.29289,6.707085 C1.90237,6.316555 1.90237,5.683375 2.29289,5.292875 C2.68342,4.902375 3.31658,4.902375 3.70711,5.292875 L8,9.585765 L12.2929,5.292875 Z"/></svg>')
-    no-repeat calc(100% - 4px) 50%;
+  background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="black" fill-rule="evenodd" d="M12.2929,5.292875 C12.6834,4.902375 13.3166,4.902375 13.7071,5.292875 C14.0976,5.683375 14.0976,6.316555 13.7071,6.707085 L8.70711,11.707085 C8.31658,12.097605 7.68342,12.097605 7.29289,11.707085 L2.29289,6.707085 C1.90237,6.316555 1.90237,5.683375 2.29289,5.292875 C2.68342,4.902375 3.31658,4.902375 3.70711,5.292875 L8,9.585765 L12.2929,5.292875 Z"/></svg>') no-repeat calc(100% - 4px) 50%;
   border: 1px solid #bbb;
   transition: outline 0.3s;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  button:focus,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  select:focus,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .right_buttons
-  button:focus,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .searchLine_bottom
-  .searchButton:focus,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons button:focus,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons select:focus,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .right_buttons button:focus,
+#container .body .bodyCenter .bodyContent form .searchLine_bottom .searchButton:focus,
 #container .body .bodyCenter .bodyContent form .searchLine_bottom select:focus,
 #container .body .bodyCenter .bodyContent form .searchLine_bottom input:focus {
   outline: 0.15rem solid rgba(100, 200, 250, 0.7);
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  .redBackground:focus {
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons .redBackground:focus {
   outline: 0.15rem solid #ff7989;
 }
 
@@ -534,13 +246,7 @@
   padding: 0;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .adBox
-  .imgWrapper {
+#container .body .bodyCenter .bodyContent .boardTableListBox .adBox .imgWrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -548,24 +254,12 @@
   height: 90px;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .adBox
-  .imgWrapper
-  img {
+#container .body .bodyCenter .bodyContent .boardTableListBox .adBox .imgWrapper img {
   width: 100%;
   height: 100%;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .recentChannelListWrapper {
+#container .body .bodyCenter .bodyContent .boardTableListBox .recentChannelListWrapper {
   position: relative;
   width: 100%;
   height: 2rem;
@@ -573,13 +267,7 @@
   overflow: hidden;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .recentChannelListWrapper
-  .recentChannelList {
+#container .body .bodyCenter .bodyContent .boardTableListBox .recentChannelListWrapper .recentChannelList {
   position: absolute;
   top: 0;
   left: 0;
@@ -591,27 +279,13 @@
   background-color: #eee;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .recentChannelListWrapper
-  .recentChannelList
-  .title {
+#container .body .bodyCenter .bodyContent .boardTableListBox .recentChannelListWrapper .recentChannelList .title {
   font-size: 0.8rem;
   font-weight: bold;
   padding: 0.2rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .recentChannelListWrapper
-  .recentChannelList
-  .channelList {
+#container .body .bodyCenter .bodyContent .boardTableListBox .recentChannelListWrapper .recentChannelList .channelList {
   display: flex;
   flex-wrap: nowrap;
   padding: 0.2rem;
@@ -619,66 +293,27 @@
   align-items: center;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .recentChannelListWrapper
-  .recentChannelList
-  .channelList
-  a {
+#container .body .bodyCenter .bodyContent .boardTableListBox .recentChannelListWrapper .recentChannelList .channelList a {
   text-decoration: none;
   color: black;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .recentChannelListWrapper
-  .recentChannelList
-  .channelList
-  a:hover {
+#container .body .bodyCenter .bodyContent .boardTableListBox .recentChannelListWrapper .recentChannelList .channelList a:hover {
   text-decoration: underline;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .recentChannelListWrapper
-  .recentChannelList
-  .channelList
-  .imgIcon {
+#container .body .bodyCenter .bodyContent .boardTableListBox .recentChannelListWrapper .recentChannelList .channelList .imgIcon {
   width: 0.8rem;
   height: 0.8rem;
   cursor: pointer;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .recentChannelListWrapper
-  .recentChannelList
-  .channelList
-  .imgIcon
-  img {
+#container .body .bodyCenter .bodyContent .boardTableListBox .recentChannelListWrapper .recentChannelList .channelList .imgIcon img {
   width: 100%;
   height: 100%;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .recentChannelListWrapper
-  .menuIconBox {
+#container .body .bodyCenter .bodyContent .boardTableListBox .recentChannelListWrapper .menuIconBox {
   position: absolute;
   top: 0;
   right: 0;
@@ -690,37 +325,19 @@
   background-color: #eee;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .recentChannelListWrapper
-  .menuIconBox
-  .imgIcon {
+#container .body .bodyCenter .bodyContent .boardTableListBox .recentChannelListWrapper .menuIconBox .imgIcon {
   width: 0.8rem;
   height: 0.8rem;
   cursor: pointer;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .categoryBoxWrapper {
+#container .body .bodyCenter .bodyContent .boardTableListBox .categoryBoxWrapper {
   height: 2.5rem;
   position: relative;
   overflow: hidden;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .categoryBoxWrapper
-  .categoryBox {
+#container .body .bodyCenter .bodyContent .boardTableListBox .categoryBoxWrapper .categoryBox {
   display: flex;
   position: absolute;
   top: 0;
@@ -732,14 +349,7 @@
   border-bottom: 1px solid #bbb;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .categoryBoxWrapper
-  .categoryBox
-  a {
+#container .body .bodyCenter .bodyContent .boardTableListBox .categoryBoxWrapper .categoryBox a {
   color: #777;
   text-decoration: none;
   background-color: white;
@@ -747,14 +357,7 @@
   font-size: 0.9rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .categoryBoxWrapper
-  .categoryBox
-  a.selected {
+#container .body .bodyCenter .bodyContent .boardTableListBox .categoryBoxWrapper .categoryBox a.selected {
   color: black;
   font-weight: bold;
   border: 1px solid #bbb;
@@ -763,15 +366,7 @@
   transform: translateY(1px);
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .categoryBoxWrapper
-  .categoryBox
-  a
-  .category {
+#container .body .bodyCenter .bodyContent .boardTableListBox .categoryBoxWrapper .categoryBox a .category {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -784,24 +379,11 @@
   text-decoration: none;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  a
-  .boardRow:hover {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox a .boardRow:hover {
   background-color: #eee;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow {
   display: flex;
   font-size: 0.9rem;
   min-height: 2.5rem;
@@ -809,85 +391,37 @@
   border-bottom: 1px solid #ddd;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow.boardFieldListBox {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow.boardFieldListBox {
   font-weight: bold;
   border-bottom: 1px solid #bbb;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow.boardInformRow {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow.boardInformRow {
   background-color: #eee;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow.boardInformStretchButton {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow.boardInformStretchButton {
   background-color: #eee;
   justify-content: center;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow.boardInformStretchButton
-  .imgIcon {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow.boardInformStretchButton .imgIcon {
   width: 1rem;
   height: 1rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow.boardInformStretchButton
-  .imgIcon
-  img {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow.boardInformStretchButton .imgIcon img {
   padding-left: 0.2rem;
   width: 100%;
   height: 100%;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineOne {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineOne {
   flex: 1;
   display: flex;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineOne
-  .numberColumn {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineOne .numberColumn {
   width: 8rem;
   padding: 0.5rem;
   text-align: center;
@@ -896,54 +430,21 @@
   white-space: nowrap;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow.boardInformRow
-  .divideLineOne
-  .numberColumn {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow.boardInformRow .divideLineOne .numberColumn {
   font-weight: bold;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow.boardFieldListBox
-  .divideLineOne
-  .numberColumn {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow.boardFieldListBox .divideLineOne .numberColumn {
   text-align: center;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineOne
-  .titleColumn {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineOne .titleColumn {
   flex: 1;
   display: flex;
   position: relative;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineOne
-  .titleColumn
-  .titleContent {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineOne .titleColumn .titleContent {
   position: absolute;
   top: 0;
   left: 0;
@@ -955,35 +456,14 @@
   flex-wrap: nowrap;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineOne
-  .titleColumn
-  .titleContent
-  .textWrapper {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineOne .titleColumn .titleContent .textWrapper {
   display: flex;
   overflow: hidden;
   /* text-overflow: ellipsis; */
   text-wrap: nowrap;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineOne
-  .titleColumn
-  .titleContent
-  .textWrapper
-  .blackBox {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineOne .titleColumn .titleContent .textWrapper .blackBox {
   /* width: fit-content; */
   font-size: 0.6rem;
   padding: 0.2rem;
@@ -992,116 +472,38 @@
   border-radius: 0.2rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineOne
-  .titleColumn
-  .titleContent
-  .textWrapper
-  .imgIcon {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineOne .titleColumn .titleContent .textWrapper .imgIcon {
   display: contents;
   width: 0.8rem;
   height: 0.8rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineOne
-  .titleColumn
-  .titleContent
-  .textWrapper
-  .imgIcon
-  img {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineOne .titleColumn .titleContent .textWrapper .imgIcon img {
   padding: 0 0.2rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineOne
-  .titleColumn
-  .titleContent
-  .textWrapper
-  .imgIcon.starIcon
-  img {
-  filter: invert(89%) sepia(32%) saturate(3570%) hue-rotate(355deg)
-    brightness(99%) contrast(92%);
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineOne .titleColumn .titleContent .textWrapper .imgIcon.starIcon img {
+  filter: invert(89%) sepia(32%) saturate(3570%) hue-rotate(355deg) brightness(99%) contrast(92%);
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineOne
-  .titleColumn
-  .textWrapper
-  .text {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineOne .titleColumn .textWrapper .text {
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineOne
-  .titleColumn
-  .commentCountBox {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineOne .titleColumn .commentCountBox {
   padding-left: 0.2rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow.boardInformRow
-  .divideLineOne
-  .titleColumn {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow.boardInformRow .divideLineOne .titleColumn {
   font-weight: bold;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineTwo {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineTwo {
   display: flex;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineTwo
-  .writerColumn {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineTwo .writerColumn {
   display: flex;
   width: 8rem;
   padding: 0.5rem;
@@ -1109,16 +511,7 @@
   align-items: center;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineTwo
-  .writerColumn
-  .imgIcon {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineTwo .writerColumn .imgIcon {
   width: 0.7rem;
   height: 0.7rem;
   min-width: 0.7rem;
@@ -1126,110 +519,38 @@
   margin-left: 0.2rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineTwo
-  .writerColumn
-  .imgIcon.checkIcon {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineTwo .writerColumn .imgIcon.checkIcon {
   padding: 0.1rem;
   border-radius: 100%;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineTwo
-  .writerColumn
-  .imgIcon.orangeCheckIcon {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineTwo .writerColumn .imgIcon.orangeCheckIcon {
   background-color: #eb6111;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineTwo
-  .writerColumn
-  .imgIcon.blueCheckIcon {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineTwo .writerColumn .imgIcon.blueCheckIcon {
   background-color: #0275d8;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineTwo
-  .writerColumn
-  .imgIcon.greyCheckIcon {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineTwo .writerColumn .imgIcon.greyCheckIcon {
   background-color: #777;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineTwo
-  .writerColumn
-  .imgIcon.checkIcon
-  img {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineTwo .writerColumn .imgIcon.checkIcon img {
   filter: invert(1);
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineTwo
-  .writerColumn
-  .text {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineTwo .writerColumn .text {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineTwo
-  .right_position {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineTwo .right_position {
   display: flex;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineTwo
-  .right_position
-  .dataColumn {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineTwo .right_position .dataColumn {
   width: 6rem;
   padding: 0.5rem;
   text-align: center;
@@ -1238,16 +559,7 @@
   white-space: nowrap;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineTwo
-  .right_position
-  .looksColumn {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineTwo .right_position .looksColumn {
   width: 4rem;
   padding: 0.5rem;
   text-align: center;
@@ -1256,16 +568,7 @@
   white-space: nowrap;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow
-  .divideLineTwo
-  .right_position
-  .recommendColumn {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow .divideLineTwo .right_position .recommendColumn {
   text-align: right;
   width: 4rem;
   padding: 0.5rem;
@@ -1294,13 +597,7 @@
   transition: outline 0.3s;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .searchLine_bottom
-  .searchButton {
+#container .body .bodyCenter .bodyContent form .searchLine_bottom .searchButton {
   padding: 0.35rem;
   background-color: white;
   outline: 0.15rem solid rgba(100, 200, 250, 0);
@@ -1330,25 +627,13 @@
   flex: 1;
   min-width: 2rem;
 }
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList.boardCommentPage
-  a {
+
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList.boardCommentPage a {
   min-width: unset;
   max-width: 2.5rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList
-  a
-  .pageBox {
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList a .pageBox {
   display: flex;
   height: 2.5rem;
   border: 1px solid #bbb;
@@ -1357,59 +642,23 @@
   align-items: center;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList
-  a
-  .pageBox:hover {
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList a .pageBox:hover {
   background-color: #ddd;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList
-  a
-  .pageBox.selected {
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList a .pageBox.selected {
   border: 1px solid #00a495;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList
-  a
-  .pageBox.selectedNext {
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList a .pageBox.selectedNext {
   border-left: 0;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList
-  a:last-of-type
-  .pageBox {
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList a:last-of-type .pageBox {
   border-right: 1px solid #bbb;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList
-  a
-  .pageBox
-  .imgIcon {
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList a .pageBox .imgIcon {
   width: 1rem;
   height: 1rem;
 }
@@ -1453,27 +702,11 @@
   outline: 0.15rem solid rgba(100, 200, 250, 0.7);
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList
-  a
-  .pageBox.doubleIcon
-  .imgIcon:first-of-type {
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList a .pageBox.doubleIcon .imgIcon:first-of-type {
   transform: translateX(0.2rem);
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList
-  a
-  .pageBox.doubleIcon
-  .imgIcon:last-of-type {
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList a .pageBox.doubleIcon .imgIcon:last-of-type {
   transform: translateX(-0.2rem);
 }
 
@@ -1525,30 +758,12 @@
 }
 
 #container .body .bodyCenter .informBox .boardBox .content ul a:hover,
-#container
-  .body
-  .bodyCenter
-  .informBox
-  .stickyBox
-  .newsBox
-  .content
-  ul
-  a:hover {
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a:hover {
   text-decoration: underline;
 }
 
 #container .body .bodyCenter .informBox .boardBox .content ul a li .boardTitle,
-#container
-  .body
-  .bodyCenter
-  .informBox
-  .stickyBox
-  .newsBox
-  .content
-  ul
-  a
-  li
-  .boardTitle {
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a li .boardTitle {
   font-size: 0.9rem;
   overflow-x: hidden;
   text-overflow: ellipsis;
@@ -1560,17 +775,7 @@
   width: 70%;
 }
 
-#container
-  .body
-  .bodyCenter
-  .informBox
-  .stickyBox
-  .newsBox
-  .content
-  ul
-  a
-  li
-  .boardTitle {
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a li .boardTitle {
   width: 100%;
 }
 
@@ -1598,41 +803,15 @@
 }
 
 @media screen and (max-width: 575px) {
-  #container
-    .body
-    .bodyCenter
-    .bodyContent
-    .channelInfoBox
-    .channelInfo
-    .channelPathNButtons
-    .channelButtons
-    button
-    span {
+  #container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelButtons button span {
     display: none;
   }
 
-  #container
-    .body
-    .bodyCenter
-    .bodyContent
-    .channelInfoBox
-    .channelInfo
-    .channelPathNButtons
-    .channelButtons
-    button {
+  #container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelButtons button {
     margin: 0;
   }
 
-  #container
-    .body
-    .bodyCenter
-    .bodyContent
-    .channelInfoBox
-    .channelInfo
-    .channelPathNButtons
-    .channelButtons
-    button
-    .imgIcon {
+  #container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons .channelButtons button .imgIcon {
     margin: 0;
   }
 

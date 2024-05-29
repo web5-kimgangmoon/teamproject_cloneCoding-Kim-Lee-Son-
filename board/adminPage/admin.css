@@ -1,0 +1,14 @@
+#container .body .bodyCenter .bodyContent .titleLine {
+    display: flex;
+    justify-content: center;
+}
+
+#container .body .bodyCenter .bodyContent .inputLine {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#container .body .bodyCenter .bodyContent .inputLine .divideLine {
+    flex: 1;
+}

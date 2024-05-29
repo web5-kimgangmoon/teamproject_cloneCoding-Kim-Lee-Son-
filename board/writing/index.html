@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="./body.css" />
   <link rel="stylesheet" href="./footer.css" />
   <link rel="stylesheet" href="./adBox.css" />
+  <link rel="stylesheet" href="./writing.css" />
+  <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/translations/ko.js"></script>
 </head>
 
 <body>
@@ -388,7 +391,6 @@
       </div>
       <div class="bodyCenter">
         <div class="bodyContent">
-
           <div class="channelInfoBox">
             <div class="channelImg">
               <a href="/"><img src="./../../imgs/gameImg.jpg" /></a>
@@ -421,567 +423,75 @@
                 </div>
                 <div class="channelInfoText">🎂 에이미 생일 🎂 l 클로린드(☆5), 시그윈(☆5) 픽업예정</div>
               </div>
-            </div>
-          </div>
-          <form id="body_quickButonsLine_top">
-            <div class="quickButtonsLine">
-              <div class="left_buttons">
-                <a href="/">
-                  <button>
-                    <div class="allBoardIcon imgIcon"><img src="./../../imgs/reader.svg" /></div><span>전체글</span>
-                  </button>
-                </a>
-                <a href="/">
-                  <button class="redBackground">
-                    <div class="recommendedBoardIcon imgIcon"><img src="./../../imgs/star.svg" /></div>
-                    <span>개념글</span>
-                  </button>
-                </a>
-                <select name="sortType">
-                  <option value="">등록순</option>
-                  <option value="oneDay">추천순 (24시간)</option>
-                  <option value="threeDay">추천순 (3일)</option>
-                  <option value="allDay">추천순 (전체)</option>
-                  <option value="commentCount_threeDay">댓글갯수순 (3일)</option>
-                  <option value="recentComment">최근댓글순</option>
-                </select>
-                <select value="sortCount">
-                  <option value="">추천컷</option>
-                  <option value="5">5</option>
-                  <option value="10">10</option>
-                  <option value="20">20</option>
-                  <option value="30">30</option>
-                  <option value="50">50</option>
-                  <option value="70">70</option>
-                  <option value="100">100</option>
-                  <option value="etc">기타</option>
-                </select>
-              </div>
-              <div class="right_buttons">
-                <a href="/" title="글쓰기">
-                  <button>
-                    <div class="writeIcon imgIcon"><img src="./../../imgs/create-outline.svg" /></div><span>글쓰기</span>
-                  </button>
-                </a>
-              </div>
-            </div>
-          </form>
-          <div class="boardTableListBox">
-            <div class="adBox">
-              <a href="/">
-                <div class="imgWrapper">
-                  <img src="./../../imgs/notification-bell.png" />
-                </div>
-              </a>
-            </div>
-            <div class="recentChannelListWrapper">
-              <div class="recentChannelList">
-                <div class="title">최근<span> 방문 채널</span></div>
 
-                <div class="channelList">
-                  <a href="/"><span>마비노기 블로니</span></a>
-                  <div class="imgIcon closeIcon"><img src="./../../imgs/close.svg" /></div>
+            </div>
+
+          </div>
+          <div class="writingBox">
+            <form id="writingContent">
+              <div class="categorySelectBox">
+                <select class="selectCategory" name="category">
+                  <option value="일반" selected="">일반</option>
+                  <option value="정보">
+                    정보
+                  </option>
+                  <option value="설문">
+                    설문
+                  </option>
+                  <option value="소식">
+                    소식
+                  </option>
+                  <option value="창작">
+                    창작
+                  </option>
+                  <option value="짤">
+                    짤
+                  </option>
+                  <option value="비경">
+                    비경
+                  </option>
+                  <option value="질문">
+                    질문
+                  </option>
+                  <option value="멀티">
+                    멀티
+                  </option>
+                </select>
+              </div>
+              <div class="titleInputBox">
+                <input type="text" placeholder="제목" name="title">
+              </div>
+              <div id="ckeditorBox"></div>
+              <div class="letterCount"></div>
+              <div class="checkBoxLine">
+                <div class="checkBox">
+                  <div class="checkBoxInput">
+                    <input type="checkbox" value="preview" id="previewConfig" />
+                  </div>
+                  <label for="previewConfig">미디어 미리보기를 숨기시겠습니까?</label>
+                  <div class="imgIcon helpCircleIcon">
+                    <img src="./../../imgs/help-outline.svg">
+                  </div>
+                </div>
+              </div>
+              <div class="checkBoxLine">
+                <div class="checkBox">
+                  <div class="checkBoxInput">
+                    <input type="checkbox" value="spoiler" id="spoilerConfig" />
+                  </div>
+                  <label for="spoilerConfig">스포일러 방지</label>
+                  <div class="imgIcon helpCircleIcon">
+                    <img src="./../../imgs/help-outline.svg">
+                  </div>
                 </div>
 
-                <div class="channelList">
-                  <a href="/"><span>마비노기 블로니</span></a>
-                  <div class="imgIcon closeIcon"><img src="./../../imgs/close.svg" /></div>
-                </div>
-                <div class="channelList">
-                  <a href="/"><span>마비노기 블로니</span></a>
-                  <div class="imgIcon closeIcon"><img src="./../../imgs/close.svg" /></div>
-                </div>
-                <div class="channelList">
-                  <a href="/"><span>마비노기 블로니</span></a>
-                  <div class="imgIcon closeIcon"><img src="./../../imgs/close.svg" /></div>
-                </div>
-                <div class="channelList">
-                  <a href="/"><span>마비노기 블로니</span></a>
-                  <div class="imgIcon closeIcon"><img src="./../../imgs/close.svg" /></div>
-                </div>
-                <div class="channelList">
-                  <a href="/"><span>마비노기 블로니</span></a>
-                  <div class="imgIcon closeIcon"><img src="./../../imgs/close.svg" /></div>
-                </div>
-                <div class="channelList">
-                  <a href="/"><span>마비노기 블로니</span></a>
-                  <div class="imgIcon closeIcon"><img src="./../../imgs/close.svg" /></div>
-                </div>
-                <div class="channelList">
-                  <a href="/"><span>마비노기 블로니</span></a>
-                  <div class="imgIcon closeIcon"><img src="./../../imgs/close.svg" /></div>
-                </div>
               </div>
-              <div class="menuIconBox">
-                <div class="imgIcon menuIcon"><img src="./../../imgs/menu.svg" /></div>
+              <div class="submitButtonLine">
+                <button>작성</button>
               </div>
-            </div>
-            <div class="categoryBoxWrapper">
-              <div class="categoryBox">
-                <a href="/" class="selected">
-                  <div class="category">전체</div>
-                </a>
-                <a href="/">
-                  <div class="category">전체</div>
-                </a>
-                <a href="/">
-                  <div class="category">전체</div>
-                </a>
-                <a href="/">
-                  <div class="category">전체</div>
-                </a>
-                <a href="/">
-                  <div class="category">전체</div>
-                </a>
-                <a href="/">
-                  <div class="category">전체</div>
-                </a>
-              </div>
-            </div>
-            <div class="boardTableBox">
-              <div class="boardFieldListBox boardRow">
-                <div class="divideLineOne">
-                  <div class="numberColumn">번호</div>
-                  <div class="titleColumn">
-                    <dlv class="titleContent">
-                      <div class="textWrapper">
-                        <!-- <div class="blackBox"></div> -->
-                        <div class="previewIcon imgIcon"></div>
-                        <div class="text">
-                          제목
-                        </div>
-                      </div>
-                      <div class="commentCountBox"></div>
-                    </dlv>
-                  </div>
-                </div>
-                <div class="divideLineTwo ">
-                  <div class="writerColumn left_position">
-                    <div class="text">작성자</div>
-                  </div>
-                  <div class="right_position">
-                    <div class="dataColumn">작성일</div>
-                    <div class="looksColumn">조회수</div>
-                    <div class="recommendColumn">추천</div>
-                  </div>
-                </div>
-              </div>
-              <a href="/">
-                <div class="boardInformRow boardRow">
-                  <div class="divideLineOne">
-                    <div class="numberColumn">번호</div>
-                    <div class="titleColumn">
-                      <dlv class="titleContent">
-                        <div class="textWrapper">
-                          <div class="blackBox">상자넣는 곳</div>
-                          <div class="previewIcon imgIcon"><img src="./../../imgs/copy-outline.svg" /></div>
-                          <div class="text">
-                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                          </div>
-                        </div>
-                        <div class="commentCountBox">[2]</div>
-                      </dlv>
-                    </div>
-                  </div>
-                  <div class="divideLineTwo ">
-                    <div class="writerColumn left_position">
-                      <div class="text">작성자</div>
-                      <div class="checkIcon orangeCheckIcon imgIcon" title="주황색"><img
-                          src="./../../imgs/checkmark-outline.svg" /></div>
-                    </div>
-                    <div class="right_position">
-                      <div class="dataColumn">작성일</div>
-                      <div class="looksColumn">조회수</div>
-                      <div class="recommendColumn">추천</div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="/">
-                <div class="boardInformRow boardRow">
-                  <div class="divideLineOne">
-                    <div class="numberColumn">번호</div>
-                    <div class="titleColumn">
-                      <dlv class="titleContent">
-                        <div class="textWrapper">
-                          <div class="blackBox">상자넣는 곳</div>
-                          <div class="previewIcon imgIcon"><img src="./../../imgs/copy-outline.svg" /></div>
-                          <div class="text">
-                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                          </div>
-                        </div>
-                        <div class="commentCountBox">[2]</div>
-                      </dlv>
-                    </div>
-                  </div>
-                  <div class="divideLineTwo ">
-                    <div class="writerColumn left_position">
-                      <div class="text">작성자</div>
-                      <div class="blueCheckIcon checkIcon imgIcon" title="주황색"><img
-                          src="./../../imgs/checkmark-outline.svg" /></div>
-                    </div>
-                    <div class="right_position">
-                      <div class="dataColumn">작성일</div>
-                      <div class="looksColumn">조회수</div>
-                      <div class="recommendColumn">추천</div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="/">
-                <div class="boardInformRow boardRow">
-                  <div class="divideLineOne">
-                    <div class="numberColumn">번호</div>
-                    <div class="titleColumn">
-                      <dlv class="titleContent">
-                        <div class="textWrapper">
-                          <div class="blackBox">상자넣는 곳</div>
-                          <div class="previewIcon imgIcon"><img src="./../../imgs/copy-outline.svg" /></div>
-                          <div class="text">
-                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                          </div>
-                        </div>
-                        <div class="commentCountBox">[2]</div>
-                      </dlv>
-                    </div>
-                  </div>
-                  <div class="divideLineTwo ">
-                    <div class="writerColumn left_position">
-                      <div class="text">작성자</div>
-                      <div class="greyCheckIcon checkIcon imgIcon" title="주황색"><img
-                          src="./../../imgs/checkmark-outline.svg" /></div>
-                    </div>
-                    <div class="right_position">
-                      <div class="dataColumn">작성일</div>
-                      <div class="looksColumn">조회수</div>
-                      <div class="recommendColumn">추천</div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="/">
-                <div class="boardInformRow boardRow">
-                  <div class="divideLineOne">
-                    <div class="numberColumn">번호</div>
-                    <div class="titleColumn">
-                      <dlv class="titleContent">
-                        <div class="textWrapper">
-                          <div class="blackBox">상자넣는 곳</div>
-                          <div class="previewIcon imgIcon"><img src="./../../imgs/copy-outline.svg" /></div>
-                          <div class="text">
-                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                          </div>
-                        </div>
-                        <div class="commentCountBox">[2]</div>
-                      </dlv>
-                    </div>
-                  </div>
-                  <div class="divideLineTwo ">
-                    <div class="writerColumn left_position">
-                      <div class="text">작성자</div>
-                      <div class="checkIcon imgIcon" title="주황색"><img src="./../../imgs/checkmark-outline.svg" /></div>
-                    </div>
-                    <div class="right_position">
-                      <div class="dataColumn">작성일</div>
-                      <div class="looksColumn">조회수</div>
-                      <div class="recommendColumn">추천</div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="/">
-                <div class="boardInformRow boardRow">
-                  <div class="divideLineOne">
-                    <div class="numberColumn">번호</div>
-                    <div class="titleColumn">
-                      <dlv class="titleContent">
-                        <div class="textWrapper">
-                          <div class="blackBox">상자넣는 곳</div>
-                          <div class="previewIcon imgIcon"><img src="./../../imgs/copy-outline.svg" /></div>
-                          <div class="text">
-                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                          </div>
-                        </div>
-                        <div class="commentCountBox">[2]</div>
-                      </dlv>
-                    </div>
-                  </div>
-                  <div class="divideLineTwo ">
-                    <div class="writerColumn left_position">
-                      <div class="text">작성자</div>
-                      <div class="checkIcon imgIcon" title="주황색"><img src="./../../imgs/checkmark-outline.svg" /></div>
-                    </div>
-                    <div class="right_position">
-                      <div class="dataColumn">작성일</div>
-                      <div class="looksColumn">조회수</div>
-                      <div class="recommendColumn">추천</div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <div class="boardInformStretchButton boardRow">
-                숨겨진 공지 펼치기(6개) <div class="unfoldIcon imgIcon" title="공지"><img src="./../../imgs/archive.svg" /></div>
-              </div>
-              <a href="/">
-                <div class="boardRow">
-                  <div class="divideLineOne">
-                    <div class="numberColumn">번호</div>
-                    <div class="titleColumn">
-                      <dlv class="titleContent">
-                        <div class="textWrapper">
-                          <div class="blackBox">상자넣는 곳</div>
-                          <div class="previewIcon imgIcon"><img src="./../../imgs/copy-outline.svg" /></div>
-                          <div class="text">
-                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                          </div>
-                        </div>
-                        <div class="commentCountBox">[2]</div>
-                      </dlv>
-                    </div>
-                  </div>
-                  <div class="divideLineTwo ">
-                    <div class="writerColumn left_position">
-                      <div class="text">작성자</div>
-                      <div class="checkIcon imgIcon" title="주황색"><img src="./../../imgs/checkmark-outline.svg" /></div>
-                    </div>
-                    <div class="right_position">
-                      <div class="dataColumn">작성일</div>
-                      <div class="looksColumn">조회수</div>
-                      <div class="recommendColumn">추천</div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="/">
-                <div class="boardRow">
-                  <div class="divideLineOne">
-                    <div class="numberColumn">번호</div>
-                    <div class="titleColumn">
-                      <dlv class="titleContent">
-                        <div class="textWrapper">
-                          <div class="blackBox">상자넣는 곳</div>
-                          <div class="previewIcon imgIcon"><img src="./../../imgs/copy-outline.svg" /></div>
-                          <div class="text">
-                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                          </div>
-                        </div>
-                        <div class="commentCountBox">[2]</div>
-                      </dlv>
-                    </div>
-                  </div>
-                  <div class="divideLineTwo ">
-                    <div class="writerColumn left_position">
-                      <div class="text">작성자</div>
-                      <div class="checkIcon imgIcon" title="주황색"><img src="./../../imgs/checkmark-outline.svg" /></div>
-                    </div>
-                    <div class="right_position">
-                      <div class="dataColumn">작성일</div>
-                      <div class="looksColumn">조회수</div>
-                      <div class="recommendColumn">추천</div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="/">
-                <div class="boardRow">
-                  <div class="divideLineOne">
-                    <div class="numberColumn">번호</div>
-                    <div class="titleColumn">
-                      <dlv class="titleContent">
-                        <div class="textWrapper">
-                          <div class="blackBox">상자넣는 곳</div>
-                          <div class="previewIcon imgIcon"><img src="./../../imgs/copy-outline.svg" /></div>
-                          <div class="text">
-                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                          </div>
-                        </div>
-                        <div class="commentCountBox">[2]</div>
-                      </dlv>
-                    </div>
-                  </div>
-                  <div class="divideLineTwo ">
-                    <div class="writerColumn left_position">
-                      <div class="text">작성자</div>
-                      <div class="checkIcon imgIcon" title="주황색"><img src="./../../imgs/checkmark-outline.svg" /></div>
-                    </div>
-                    <div class="right_position">
-                      <div class="dataColumn">작성일</div>
-                      <div class="looksColumn">조회수</div>
-                      <div class="recommendColumn">추천</div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="/">
-                <div class="boardRow">
-                  <div class="divideLineOne">
-                    <div class="numberColumn">번호</div>
-                    <div class="titleColumn">
-                      <dlv class="titleContent">
-                        <div class="textWrapper">
-                          <div class="blackBox">상자넣는 곳</div>
-                          <div class="previewIcon imgIcon"><img src="./../../imgs/copy-outline.svg" /></div>
-                          <div class="text">
-                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                          </div>
-                        </div>
-                        <div class="commentCountBox">[2]</div>
-                      </dlv>
-                    </div>
-                  </div>
-                  <div class="divideLineTwo ">
-                    <div class="writerColumn left_position">
-                      <div class="text">작성자</div>
-                      <div class="checkIcon imgIcon" title="주황색"><img src="./../../imgs/checkmark-outline.svg" /></div>
-                    </div>
-                    <div class="right_position">
-                      <div class="dataColumn">작성일</div>
-                      <div class="looksColumn">조회수</div>
-                      <div class="recommendColumn">추천</div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="/">
-                <div class="boardRow">
-                  <div class="divideLineOne">
-                    <div class="numberColumn">번호</div>
-                    <div class="titleColumn">
-                      <dlv class="titleContent">
-                        <div class="textWrapper">
-                          <div class="blackBox">상자넣는 곳</div>
-                          <div class="previewIcon imgIcon"><img src="./../../imgs/copy-outline.svg" /></div>
-                          <div class="text">
-                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                          </div>
-                        </div>
-                        <div class="commentCountBox">[2]</div>
-                      </dlv>
-                    </div>
-                  </div>
-                  <div class="divideLineTwo ">
-                    <div class="writerColumn left_position">
-                      <div class="text">작성자</div>
-                      <div class="checkIcon imgIcon" title="주황색"><img src="./../../imgs/checkmark-outline.svg" /></div>
-                    </div>
-                    <div class="right_position">
-                      <div class="dataColumn">작성일</div>
-                      <div class="looksColumn">조회수</div>
-                      <div class="recommendColumn">추천</div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
+            </form>
           </div>
-          <form id="body_quickButonsLine_bottom">
-            <div class="quickButtonsLine">
-              <div class="left_buttons">
-                <a href="/">
-                  <button>
-                    <div class="allBoardIcon imgIcon"><img src="./../../imgs/reader.svg" /></div><span>전체글</span>
-                  </button>
-                </a>
-                <a href="/">
-                  <button class="redBackground">
-                    <div class="recommendedBoardIcon imgIcon"><img src="./../../imgs/star.svg" /></div>
-                    <span>개념글</span>
-                  </button>
-                </a>
-                <select name="sortType">
-                  <option value="">등록순</option>
-                  <option value="oneDay">추천순 (24시간)</option>
-                  <option value="threeDay">추천순 (3일)</option>
-                  <option value="allDay">추천순 (전체)</option>
-                  <option value="commentCount_threeDay">댓글갯수순 (3일)</option>
-                  <option value="recentComment">최근댓글순</option>
-                </select>
-                <select value="sortCount">
-                  <option value="">추천컷</option>
-                  <option value="5">5</option>
-                  <option value="10">10</option>
-                  <option value="20">20</option>
-                  <option value="30">30</option>
-                  <option value="50">50</option>
-                  <option value="70">70</option>
-                  <option value="100">100</option>
-                  <option value="etc">기타</option>
-                </select>
-              </div>
-              <div class="right_buttons">
-                <a href="/" title="글쓰기">
-                  <button>
-                    <div class="writeIcon imgIcon"><img src="./../../imgs/create-outline.svg" /></div><span>글쓰기</span>
-                  </button>
-                </a>
-              </div>
-            </div>
-          </form>
-          <form id="body_searchLine_bottom">
-            <div class="searchLine_bottom">
-              <select name="sort">
-                <option value="all">전체</option>
-                <option value="titleNcontent">제목/내용</option>
-                <option value="title">제목</option>
-                <option value="content">내용</option>
-                <option value="writer">글쓴이</option>
-                <option value="comment">댓글</option>
-              </select>
-              <input type="text" name="search" />
-              <button class="searchButton">검색</button>
-            </div>
-          </form>
-          <div class="pageBoxWrapper">
-            <div class="pageBoxList">
-              <a href="/">
-                <div class="pageBox">1</div>
-              </a>
-              <a href="/">
-                <div class="pageBox">2</div>
-              </a>
-              <a href="/">
-                <div class="pageBox">3</div>
-              </a>
-              <a href="/">
-                <div class="pageBox">4</div>
-              </a>
-              <a href="/">
-                <div class="pageBox">5</div>
-              </a>
-              <a href="/">
-                <div class="pageBox">6</div>
-              </a>
-              <a href="/">
-                <div class="pageBox">7</div>
-              </a>
-              <a href="/">
-                <div class="pageBox">8</div>
-              </a>
-              <a href="/">
-                <div class="pageBox">9</div>
-              </a>
-              <a href="/">
-                <div class="pageBox">10</div>
-              </a>
-              <a href="/">
-                <div class="pageBox">
-                  <div class="writeIcon imgIcon"><img src="./../../imgs/chevron-forward-outline.svg" /></div>
-                </div>
-              </a>
-              <a href="/">
-                <div class="pageBox doubleIcon">
-                  <div class="writeIcon imgIcon"><img src="./../../imgs/chevron-forward-outline.svg" /></div>
-                  <div class="writeIcon imgIcon"><img src="./../../imgs/chevron-forward-outline.svg" /></div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="quickGoDate">
-            <input type="datetime-local" name="quickGoDate" class="quickSelectBox"
-              data-datetime="2024-05-27T13:07:02.396Z" data-format="Y-m-dTH:i" data-localdate="max"
-              max="2024-05-27T22:07">
-            <a href="/"><button>시간으로 바로가기</button></a>
-          </div>
+
         </div>
         <div class="informBox">
           <div class="boardBox otherChannel">
@@ -1307,7 +817,8 @@
               </svg>
             </a>
           </div>
-          <span class="divideLine">This site is protected by reCAPTCHA and the Google <a href="/">Privacy Policy</a> and
+          <span class="divideLine">This site is protected by reCAPTCHA and the Google <a href="/">Privacy Policy</a>
+            and
             <a href="/">Terms of Service</a> apply.</span>
         </div>
       </div>
@@ -1318,6 +829,13 @@
       <div class="icon" title="맨 아래로 이동"><img class="iconImg" src="./../../imgs/caret-down-outline.svg" /></div>
     </div>
   </div>
+  <script>
+    ClassicEditor.create(document.getElementById("ckeditorBox"), {
+      language: "ko",
+    }).catch(error => {
+      console.error(error);
+    })
+  </script>
 </body>
 
 </html>
