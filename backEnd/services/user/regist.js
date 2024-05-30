@@ -28,6 +28,7 @@ export default async (req, res) => {
     reqbody.pw = pwhash;
     if (await User.findOne({ where: { strid: reqbody.strid } })) {
       throw new Error("duplication strid");
+<<<<<<< HEAD
     } else if (await User.findOne({ where: { nick: reqbody.nick } })) {
       throw new Error("duplication nick");
     } else if (await User.findOne({ where: { email: reqbody.email } })) {
@@ -65,6 +66,8 @@ export default async (req, res) => {
     reqbody.pw = pwhash;
     if (await User.findOne({ where: { strid: reqbody.strid } })) {
       throw new Error(" duplication strid");
+=======
+>>>>>>> fe1a391 (status)
     } else if (await User.findOne({ where: { nick: reqbody.nick } })) {
       throw new Error("duplication nick");
     } else if (await User.findOne({ where: { email: reqbody.email } })) {
@@ -74,12 +77,24 @@ export default async (req, res) => {
     res.json({ result: "ok", channel: channel });
   } catch (err) {
     console.error(err);
+<<<<<<< HEAD
     // if (err.message == "not match password") {
     // res.status(400);
     // } else {
     //   res.status(409);
     // }
 >>>>>>> 8895f13 (feat:userAll)
+=======
+    if (
+      err.message == "duplication strid" ||
+      err.message == "duplication nick" ||
+      err.message == "duplication email"
+    ) {
+      res.status(409);
+    } else {
+      res.status(419);
+    }
+>>>>>>> fe1a391 (status)
     res.json({ error: err.message });
   }
 };

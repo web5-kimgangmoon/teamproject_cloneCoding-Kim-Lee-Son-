@@ -25,7 +25,15 @@ export default async (req, res, next) => {
     res.json({ result: "ok", nowchannel: channel.id });
   } catch (err) {
     console.error(err);
+<<<<<<< HEAD
 >>>>>>> 180d9a7 (feedback and admin)
+=======
+    if (err.message == "not logged in") {
+      res.status(401);
+    } else {
+      res.status(419);
+    }
+>>>>>>> fe1a391 (status)
     res.json({ error: err.message });
   }
 };

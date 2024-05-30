@@ -40,7 +40,11 @@ export default async (req, res) => {
   try {
   } catch (err) {
     console.error(err);
+<<<<<<< HEAD
 >>>>>>> 27a56be (feat : channelmain)
+=======
+    res.status(419);
+>>>>>>> fe1a391 (status)
     res.json({ error: err.message });
   }
 };

@@ -7,6 +7,9 @@ export default async (req, res) => {
     const reqbody = req.body;
     const nowuser = req.user;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fe1a391 (status)
     if (!nowuser) {
       throw new Error("not logged in");
     }
@@ -34,6 +37,7 @@ export default async (req, res) => {
     } else {
       res.status(419);
     }
+<<<<<<< HEAD
 =======
 import { User } from "../../models/index.js";
 =======
@@ -65,6 +69,8 @@ export default async (req, res) => {
   } catch (err) {
     console.log(err);
 >>>>>>> 8895f13 (feat:userAll)
+=======
+>>>>>>> fe1a391 (status)
     res.json({ error: err.message });
   }
 };

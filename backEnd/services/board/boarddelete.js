@@ -44,6 +44,9 @@ export default async (req, res) => {
   } catch (err) {
     console.error(err);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fe1a391 (status)
     if (err.message == "not logged in") {
       res.status(401);
     } else if (err.message == "not match user") {
@@ -51,8 +54,11 @@ export default async (req, res) => {
     } else {
       res.status(419);
     }
+<<<<<<< HEAD
 =======
 >>>>>>> 4090055 (feat:board complete)
+=======
+>>>>>>> fe1a391 (status)
     res.json({ error: err.message });
   }
 };

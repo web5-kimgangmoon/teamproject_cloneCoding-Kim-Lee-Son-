@@ -5,7 +5,11 @@ export default async (req, res) => {
 <<<<<<< HEAD
 <<<<<<< HEAD
     const nowuser = req.user;
+<<<<<<< HEAD
     if (!nowuser) {
+=======
+    if (nowuser) {
+>>>>>>> fe1a391 (status)
       throw new Error("not logged in");
     }
     const reqcuery = req.query;
@@ -71,6 +75,9 @@ export default async (req, res) => {
   } catch (err) {
     console.error(err);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fe1a391 (status)
     if (err.message == "not logged in") {
       res.status(401);
     } else if (err.message == "already dislike") {
@@ -78,8 +85,11 @@ export default async (req, res) => {
     } else {
       res.status(419);
     }
+<<<<<<< HEAD
 =======
 >>>>>>> 4090055 (feat:board complete)
+=======
+>>>>>>> fe1a391 (status)
     res.json({ error: err.message });
   }
 };
