@@ -268,6 +268,7 @@ export default async (req, res) => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     let catecheck = false;
     let category = await Category.findAll({
       where: { channelId: channel.id },
@@ -408,6 +409,9 @@ export default async (req, res) => {
 >>>>>>> 180d9a7 (feedback and admin)
 =======
     let listcheck = false;
+=======
+    let catecheck = false;
+>>>>>>> ec829b9 (임시)
     let category = await Category.findAll({
       where: { channelId: channel.id },
       attributes: {
@@ -422,7 +426,7 @@ export default async (req, res) => {
           exclude: ["createdAt", "updatedAt", "deletedAt"],
         },
       });
-      listcheck = true;
+      catecheck = true;
     }
     if (!category) {
       category = await Category.findAll({
@@ -431,7 +435,7 @@ export default async (req, res) => {
           exclude: ["createdAt", "updatedAt", "deletedAt"],
         },
       });
-      listcheck = false;
+      catecheck = false;
     }
 
     let boardlist = await Board.findAll({
@@ -457,7 +461,7 @@ export default async (req, res) => {
       ],
       group: ["id"],
     });
-    if (listcheck) {
+    if (catecheck) {
       boardlist = await Board.findAll({
         where: { channelId: channel.id, categoryId: category.id },
         include: [
@@ -486,7 +490,6 @@ export default async (req, res) => {
       category: category,
       user: nowuser,
       channel: channel,
-      // channemAdmin: channemAdmin,
       view: view,
       boardlist: boardlist,
       commentcnt: commentcnt,

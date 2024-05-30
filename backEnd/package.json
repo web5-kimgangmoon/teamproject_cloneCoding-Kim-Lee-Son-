@@ -62,6 +62,12 @@
     "nodemon": "^3.1.0",
     "sequelize-cli": "^6.6.2"
   },
-  "type": "module"
+  "type": "module",
+  "nodemonConfig": {
+    "ignore": [
+      "test-session",
+      "uploads"
+    ]
+  }
 }
 >>>>>>> 73386c3 (multer and session)

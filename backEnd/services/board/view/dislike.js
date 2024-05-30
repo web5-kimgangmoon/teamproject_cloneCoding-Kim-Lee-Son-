@@ -46,7 +46,6 @@ export default async (req, res) => {
     }
     const reqcuery = req.query;
     const nowview = reqcuery.boardId;
-    // const nowview = 1;
     const board = await Board.findOne({
       where: { id: nowview },
     });

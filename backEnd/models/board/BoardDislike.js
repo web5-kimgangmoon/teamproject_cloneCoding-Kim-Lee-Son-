@@ -18,7 +18,7 @@ export default class BoardDislike extends Model {
     );
   }
   static associate({ User, Board, BoardDislike }) {
-    BoardDislike.belongsTo(Board, { foreignKey: "boardId" });
+    BoardDislike.belongsTo(Board);
     BoardDislike.belongsTo(User, { foreignKey: "userId" });
   }
 }

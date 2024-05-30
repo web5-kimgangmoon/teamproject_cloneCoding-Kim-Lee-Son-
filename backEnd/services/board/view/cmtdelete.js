@@ -7,11 +7,16 @@ export default async (req, res) => {
       throw new Error("not logged in");
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     const reqbody = req.body;
     const chname = reqbody.channel;
 =======
     const chname = req.body.channel;
 >>>>>>> 4090055 (feat:board complete)
+=======
+    const reqbody = req.body;
+    const chname = reqbody.channel;
+>>>>>>> ec829b9 (임시)
 
     const reqquery = req.query;
     const commentid = reqquery.commentId;
