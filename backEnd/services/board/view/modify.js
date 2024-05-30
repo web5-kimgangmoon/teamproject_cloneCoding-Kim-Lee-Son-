@@ -7,9 +7,13 @@ export default async (req, res) => {
       throw new Error("not logged in");
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     const reqbody = req.body;
 =======
 >>>>>>> 4090055 (feat:board complete)
+=======
+    const reqbody = req.body;
+>>>>>>> ec829b9 (임시)
     const reqquery = req.query;
     const commentid = reqquery.commentId;
 
@@ -30,6 +34,9 @@ export default async (req, res) => {
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ec829b9 (임시)
     await Comment.update(reqbody);
 
     res.json({ result: "ok" });

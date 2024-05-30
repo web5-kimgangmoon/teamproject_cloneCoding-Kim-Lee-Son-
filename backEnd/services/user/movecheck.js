@@ -39,15 +39,29 @@ export default async (req, res, next) => {
       req.user = await User.findOne({
         where: { id: req.session.user },
       });
+<<<<<<< HEAD
       res.cookie("user", {
         maxAge: 60 * 60 * 1000,
         signed: true,
       });
 >>>>>>> 8895f13 (feat:userAll)
+=======
+      // res.cookie("user", {
+      //   maxAge: 60 * 60 * 1000,
+      //   signed: true,
+      // });
+      // } else {
+      //   req.session.destroy();
+      //   await res.cookie("user-session", "", {
+      //     maxAge: 0,
+      //     signed: true,
+      //   });
+>>>>>>> ec829b9 (임시)
     }
   } catch (err) {
     console.error(err);
   } finally {
+    console.log(req.user);
     next();
   }
 };

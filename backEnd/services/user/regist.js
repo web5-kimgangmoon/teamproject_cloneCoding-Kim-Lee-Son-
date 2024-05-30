@@ -13,6 +13,7 @@ export default async (req, res) => {
   try {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     const reqbody = req.body;
     const channel = await Channel.findOne({
       where: { engTitle: reqbody.channel },
@@ -47,8 +48,11 @@ export default async (req, res) => {
     }
 =======
 =======
+=======
+    const reqbody = req.body;
+>>>>>>> ec829b9 (임시)
     const channel = await Channel.findOne({
-      where: { engTitle: req.body.channel },
+      where: { engTitle: reqbody.channel },
       attributes: ["engTitle"],
     });
 
@@ -56,17 +60,17 @@ export default async (req, res) => {
     // if (req.body.pw != req.body["pw-check"]) {
     //   throw new Error("not match password");
     // }
-    const pwhash = crypto.createHash("sha256").update(req.body.pw).digest("hex");
+    const pwhash = crypto.createHash("sha256").update(reqbody.pw).digest("hex");
     const randomNum = Math.random().toString().split(".")[1];
-    req.body.pw = pwhash;
-    if (await User.findOne({ where: { strid: req.body.strid } })) {
+    reqbody.pw = pwhash;
+    if (await User.findOne({ where: { strid: reqbody.strid } })) {
       throw new Error(" duplication strid");
-    } else if (await User.findOne({ where: { nick: req.body.nick } })) {
+    } else if (await User.findOne({ where: { nick: reqbody.nick } })) {
       throw new Error("duplication nick");
-    } else if (await User.findOne({ where: { email: req.body.email } })) {
+    } else if (await User.findOne({ where: { email: reqbody.email } })) {
       throw new Error("duplication email");
     }
-    await User.create({ ...req.body, profilImg: randomNum });
+    await User.create({ ...reqbody, profilImg: randomNum });
     res.json({ result: "ok", channel: channel });
   } catch (err) {
     console.error(err);

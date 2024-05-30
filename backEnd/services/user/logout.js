@@ -5,15 +5,19 @@ import { Channel } from "../../models/index.js";
 export default async (req, res) => {
   try {
     const nowuser = req.user;
+<<<<<<< HEAD
     if (!nowuser) {
       throw new Error("not logged in");
     }
+=======
+>>>>>>> ec829b9 (임시)
     const reqbody = req.body;
     let chname = reqbody.channel;
 
     if (!chname) {
       chname = "main";
     }
+<<<<<<< HEAD
     const channel = await Channel.findOne({
       where: { engTitle: chname },
       attributes: ["engTitle"],
@@ -39,12 +43,15 @@ import { Channel } from "../../models/index.js";
 >>>>>>> 4090055 (feat:board complete)
 export default async (req, res) => {
   try {
+=======
+>>>>>>> ec829b9 (임시)
     const channel = await Channel.findOne({
-      where: { engTitle: req.body.channel },
+      where: { engTitle: chname },
       attributes: ["engTitle"],
     });
 
-    await res.cookie("user", "", {
+    req.session.destroy();
+    await res.cookie("user-session", "", {
       maxAge: 0,
       signed: true,
     });

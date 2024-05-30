@@ -1,6 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Comment, Board } from "../../../models/index.js";
+=======
+import { Comment, Board, Channel } from "../../../models/index.js";
+>>>>>>> ec829b9 (임시)
 
 export default async (req, res) => {
   try {
@@ -70,15 +74,15 @@ import { Comment, Board } from "../../../models/index.js";
 export default async (req, res) => {
   try {
     const nowuser = req.user;
-
     if (!nowuser) {
       throw new Error("not logged in");
     }
+
+    const reqbody = req.body;
+
     const reqquery = req.query;
     const boardid = reqquery.boardId;
     const commentid = reqquery.commentId;
-    // const boardid = 1;
-    // const commentid = 1;
 
     const nowboard = await Board.findOne({
       where: { id: boardid },
@@ -89,7 +93,7 @@ export default async (req, res) => {
 
     //댓글과 답글관련 코드
 
-    const comment = await Comment.create(req.body);
+    const comment = await Comment.create(reqbody);
     nowuser.addComment(comment);
     nowboard.addComment(comment);
     if (nowcomment) {

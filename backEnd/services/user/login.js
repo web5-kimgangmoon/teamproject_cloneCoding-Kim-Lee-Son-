@@ -2,11 +2,9 @@
 <<<<<<< HEAD
 import { User, Channel } from "../../models/index.js";
 import crypto from "crypto";
-import session from "express-session";
-import FileStor from "session-file-store";
-const FileStore = FileStor(session);
 
 export default [
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   session({
@@ -23,6 +21,8 @@ export default [
     },
   }),
 >>>>>>> 73386c3 (multer and session)
+=======
+>>>>>>> ec829b9 (임시)
   async (req, res) => {
     try {
       const reqbody = req.body;

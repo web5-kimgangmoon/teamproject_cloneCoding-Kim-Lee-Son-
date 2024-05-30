@@ -6,6 +6,7 @@ export default async (req, res) => {
   try {
     const reqbody = req.body;
     const nowuser = req.user;
+<<<<<<< HEAD
     console.log(nowuser);
     let chname = reqbody.channel;
     if (!chname) {
@@ -50,14 +51,16 @@ import { User, Channel } from "../../models/index.js";
 
 export default async (req, res) => {
   try {
+=======
+>>>>>>> ec829b9 (임시)
     const channel = await Channel.findOne({
-      where: { engTitle: req.body.channel },
+      where: { engTitle: reqbody.channel },
       attributes: ["engTitle"],
     });
 
-    if (req.user) {
+    if (nowuser) {
       const userinfo = await User.findAll({
-        where: { id: req.user },
+        where: { id: nowuser.id },
         attributes: ["email", "nick", "profilImg"],
       });
       res.json({ result: "ok", userinfo: userinfo, channel: channel });
