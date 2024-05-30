@@ -6,11 +6,17 @@ export default async (req, res) => {
   try {
     const nowuser = req.user;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (!nowuser) {
       throw new Error("not logged in");
     }
 =======
 >>>>>>> ec829b9 (임시)
+=======
+    if (!nowuser) {
+      throw new Error("not logged in");
+    }
+>>>>>>> fe1a391 (status)
     const reqbody = req.body;
     let chname = reqbody.channel;
 
@@ -36,6 +42,7 @@ export default async (req, res) => {
     } else {
       res.status(419);
     }
+<<<<<<< HEAD
 =======
 =======
 import { Channel } from "../../models/index.js";
@@ -59,6 +66,8 @@ export default async (req, res) => {
   } catch (err) {
     console.error(err);
 >>>>>>> 8895f13 (feat:userAll)
+=======
+>>>>>>> fe1a391 (status)
     res.json({ error: err.message });
   }
 };

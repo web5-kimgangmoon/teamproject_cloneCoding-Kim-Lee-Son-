@@ -49,6 +49,7 @@ export default async (req, res) => {
     } else {
       res.status(419);
     }
+<<<<<<< HEAD
 =======
     res.json({ result: "ok" });
 =======
@@ -59,6 +60,8 @@ export default async (req, res) => {
   } catch (err) {
     console.error(err);
 >>>>>>> 4090055 (feat:board complete)
+=======
+>>>>>>> fe1a391 (status)
     res.json({ error: err.message });
   }
 };

@@ -6,10 +6,14 @@ export default async (req, res) => {
     if (!nowuser) {
       throw new Error("not logged in");
 <<<<<<< HEAD
+<<<<<<< HEAD
     }
 =======
     } // 글을 너무 오래써서 쓰다가 시간지나서 로그인 풀리는경우 나오는 코드
 >>>>>>> 4090055 (feat:board complete)
+=======
+    }
+>>>>>>> fe1a391 (status)
 
     const reqbody = req.body;
     const chname = reqbody.channel;
@@ -25,8 +29,11 @@ export default async (req, res) => {
 >>>>>>> 4090055 (feat:board complete)
 =======
     const nowview = reqcuery.boardId;
+<<<<<<< HEAD
     // const nowview = 1;
 >>>>>>> 180d9a7 (feedback and admin)
+=======
+>>>>>>> fe1a391 (status)
     const channel = await Channel.findOne({
       where: { engTitle: chname },
       include: [{ model: ChannelAdmin }],
@@ -58,6 +65,7 @@ export default async (req, res) => {
       ...reqbody,
       categoryId: category.id,
     });
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     if (board.superNotice) {
@@ -99,6 +107,18 @@ export default async (req, res) => {
   } catch (err) {
     console.error(err);
 >>>>>>> 4090055 (feat:board complete)
+=======
+    res.json({ result: "ok" });
+  } catch (err) {
+    console.error(err);
+    if (err.message == "not logged in") {
+      res.status(401);
+    } else if (err.message == "not match user") {
+      res.status(403);
+    } else {
+      res.status(419);
+    }
+>>>>>>> fe1a391 (status)
     res.json({ err: err.message });
   }
 };

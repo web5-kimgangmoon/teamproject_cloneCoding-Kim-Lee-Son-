@@ -20,9 +20,13 @@ export default async (req, res) => {
   } catch (err) {
     console.error(err);
 <<<<<<< HEAD
+<<<<<<< HEAD
     res.status(419);
 =======
 >>>>>>> 180d9a7 (feedback and admin)
+=======
+    res.status(419);
+>>>>>>> fe1a391 (status)
     res.json({ error: err.message });
   }
 };

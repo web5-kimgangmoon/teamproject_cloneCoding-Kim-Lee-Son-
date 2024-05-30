@@ -69,7 +69,15 @@ export default async (req, res) => {
     }
   } catch (err) {
     console.error(err);
+<<<<<<< HEAD
 >>>>>>> 8895f13 (feat:userAll)
+=======
+    if (err.message == "not logged in") {
+      res.status(401);
+    } else {
+      res.status(419);
+    }
+>>>>>>> fe1a391 (status)
     res.json({ error: err.message });
   }
 };
