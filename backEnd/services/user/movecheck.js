@@ -17,14 +17,21 @@ export default async (req, res, next) => {
       req.user = await User.findOne({
         where: { id: req.session.user },
       });
-      res.cookie("user", {
-        maxAge: 60 * 60 * 1000,
-        signed: true,
-      });
+      // res.cookie("user", {
+      //   maxAge: 60 * 60 * 1000,
+      //   signed: true,
+      // });
+      // } else {
+      //   req.session.destroy();
+      //   await res.cookie("user-session", "", {
+      //     maxAge: 0,
+      //     signed: true,
+      //   });
     }
   } catch (err) {
     console.error(err);
   } finally {
+    console.log(req.user);
     next();
   }
 };

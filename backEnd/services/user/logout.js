@@ -2,12 +2,20 @@ import { Channel } from "../../models/index.js";
 
 export default async (req, res) => {
   try {
+    const nowuser = req.user;
+    const reqbody = req.body;
+    let chname = reqbody.channel;
+
+    if (!chname) {
+      chname = "main";
+    }
     const channel = await Channel.findOne({
-      where: { engTitle: req.body.channel },
+      where: { engTitle: chname },
       attributes: ["engTitle"],
     });
 
-    await res.cookie("user", "", {
+    req.session.destroy();
+    await res.cookie("user-session", "", {
       maxAge: 0,
       signed: true,
     });

@@ -121,20 +121,27 @@ try {
     });
     user.addBoardDislike(dislike);
     board.addBoardDislike(dislike);
+    const disliketwo = await BoardDislike.create({
+      dislike: "1",
+      // userId: "1",
+      // boardId: "1",
+    });
+    usertwo.addBoardDislike(disliketwo);
+    board.addBoardDislike(disliketwo);
     const like = await BoardLike.create({
       like: "1",
       // userId: "1",
       // boardId: "1",
     });
-    const liketwo = await BoardLike.create({
-      like: "1",
-      // userId: "1",
-      // boardId: "1",
-    });
+    // const liketwo = await BoardLike.create({
+    //   like: "1",
+    //   // userId: "1",
+    //   // boardId: "1",
+    // });
     user.addBoardLike(like);
     board.addBoardLike(like);
-    usertwo.addBoardLike(liketwo);
-    board.addBoardLike(liketwo);
+    // usertwo.addBoardLike(liketwo);
+    // board.addBoardLike(liketwo);
     let ccomment = await Comment.create({
       contents: "124124",
       // recommentId: "1",

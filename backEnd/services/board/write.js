@@ -4,8 +4,8 @@ export default async (req, res) => {
   try {
     const reqbody = req.body;
     console.log(reqbody);
-    if (reqbody.contents == "") {
-      console.log("이건 빈값이야");
+    if (reqbody.contents == "" || reqbody.title == "" || reqbody.category == "") {
+      throw new Error("not empty contents");
     }
     if (!req.user) {
       throw new Error("not logged in");
@@ -26,6 +26,7 @@ export default async (req, res) => {
     const board = await Board.create(reqbody);
     category.addBoard(board);
     req.user.addBoard(board);
+    channel.addBoard(board);
 
     res.json({ result: "ok", nowboard: board.id });
   } catch (err) {

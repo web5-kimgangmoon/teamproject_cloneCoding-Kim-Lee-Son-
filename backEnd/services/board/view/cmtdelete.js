@@ -6,7 +6,8 @@ export default async (req, res) => {
     if (!nowuser) {
       throw new Error("not logged in");
     }
-    const chname = req.body.channel;
+    const reqbody = req.body;
+    const chname = reqbody.channel;
 
     const reqquery = req.query;
     const commentid = reqquery.commentId;

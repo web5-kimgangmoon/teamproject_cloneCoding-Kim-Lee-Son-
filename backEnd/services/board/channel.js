@@ -8,6 +8,7 @@ import {
   BoardLike,
   BoardDislike,
   sequelize,
+  Sequelize,
   Comment,
 } from "../../models/index.js";
 
@@ -38,7 +39,7 @@ export default async (req, res) => {
       });
     }
 
-    let listcheck = false;
+    let catecheck = false;
     let category = await Category.findAll({
       where: { channelId: channel.id },
       attributes: {
@@ -52,7 +53,7 @@ export default async (req, res) => {
           exclude: ["createdAt", "updatedAt", "deletedAt"],
         },
       });
-      listcheck = true;
+      catecheck = true;
     }
     if (!category) {
       category = await Category.findAll({
@@ -61,19 +62,21 @@ export default async (req, res) => {
           exclude: ["createdAt", "updatedAt", "deletedAt"],
         },
       });
-      listcheck = false;
+      catecheck = false;
     }
 
     let boardlist = await Board.findAll({
       where: { channelId: channel.id },
       include: [
-        { model: BoardLike, attributes: [] },
-        // { model: BoardDislike, attributes: [] },
+        // { model: BoardLike, attributes: [] },
+        {
+          model: BoardDislike,
+          attributes: ["id"],
+          // where: { dislike: 1 },
+        },
         // { model: Comment, attributes: [] },
       ],
-      order: [["id", "DESC"]],
-      offset: (nowpage - 1) * 30,
-      limit: 30,
+
       attributes: [
         "id",
         "viewPoint",
@@ -81,13 +84,18 @@ export default async (req, res) => {
         "contents",
         "createdAt",
         "updatedAt",
-        [sequelize.fn("count", sequelize.col("boardLikes.id")), "like"],
-        // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
+        // [sequelize.fn("count", sequelize.col("boardLikes.id")), "like"],
+        [sequelize.fn("count", "`board_dislike`.`id`"), "dislikes"],
         // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "commentcount"],
       ],
+      order: [["id", "DESC"]],
+      offset: (nowpage - 1) * 30,
+      limit: 30,
+
       group: ["id"],
+      // group: ["board_id"],
     });
-    if (listcheck) {
+    if (catecheck) {
       boardlist = await Board.findAll({
         where: { channelId: channel.id, categoryId: category.id },
         include: [

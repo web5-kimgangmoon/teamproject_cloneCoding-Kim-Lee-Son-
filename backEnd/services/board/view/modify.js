@@ -6,6 +6,7 @@ export default async (req, res) => {
     if (!nowuser) {
       throw new Error("not logged in");
     }
+    const reqbody = req.body;
     const reqquery = req.query;
     const commentid = reqquery.commentId;
 
@@ -15,7 +16,7 @@ export default async (req, res) => {
     if (!comment) {
       throw new Error("not match user");
     }
-    await Comment.update(req.body);
+    await Comment.update(reqbody);
 
     res.json({ result: "ok" });
   } catch (err) {
