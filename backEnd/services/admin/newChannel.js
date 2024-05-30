@@ -12,7 +12,7 @@ export default async (req, res, next) => {
     await nowuser.addChannelAdmin(channeladmin);
     await channel.addChannelAdmin(channeladmin);
 
-    res.json({ result: "ok", nowchannel: channel.id });
+    res.json({ result: "ok", nowchannel: channel });
   } catch (err) {
     console.error(err);
     if (err.message == "not logged in") {
