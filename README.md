@@ -33,6 +33,7 @@ issue 10. display:contents는?(min-width, min-height를 쓰는 방법이 있다.
 issue 11. 부드러운 애니메이션 주기(hover와 focus말고 직접 넣고, 외곽선은 아예 명암을 이용해 미리 넣어두자.)(시간 있으면 outline에 대해서도 자세히 찾아보기)(해결, 아예 outline의 자리를 미리 배경색이나 명암을 없애주고 만들어준 다음에 애니메이션을 넣어준다.)
 
 issue 12. clip-path, 시간 나면 알아보자
+issue 13. aria-expanded, false나 true를 줘서 메뉴를 열었다 닫았다 가능하다. 알았으면 진작에 써먹는건데.
 
 ## 개인적으로 느낀점
 
@@ -355,3 +356,9 @@ formData 객체를 이용하면 axios로 이미지를 업로드할 수 있다. �
 ## 이미지 업로드 문제는 해결
 
 교수님이 찾아주신 자료 덕에 ckeditor로도 이미지 받는 방법 확인 완료.
+
+# axios 문법
+
+왠지 post로는 쿠키나 바디를 못 받아온다. 이유는 모르겠지만.
+일단 get으로는 되기 때문에 프런트에서 cookie를 받을거면 get으로 해주자.
+그리고 credential 스펠링을 잘 알아보자. s 하나 빼먹었다고 2시간을 그냥 날려먹었다.

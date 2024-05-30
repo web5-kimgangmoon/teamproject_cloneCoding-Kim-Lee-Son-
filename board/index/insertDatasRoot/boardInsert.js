@@ -1,4 +1,4 @@
-
+const boardTableBox = document.getElementById("boardTableBox");
 boardTableBox.innerHTML = `
 <div class="boardFieldListBox boardRow">
 <div class="divideLineOne">

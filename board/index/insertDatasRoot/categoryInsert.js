@@ -1,11 +1,5 @@
-const categoryList = [
-  "ㅇㅇ",
-  "ㄴㅁㄴ",
-  "ㅂㅂ",
-  "ㅈㅈ",
-  "ㄷㄷ",
-];
-
+const categoryList = ["ㅇㅇ", "ㄴㅁㄴ", "ㅂㅂ", "ㅈㅈ", "ㄷㄷ"];
+const categoryListBox = document.getElementById("categoryList");
 
 categoryListBox.innerHTML += `
   <a href="/" class="selected">
@@ -13,7 +7,7 @@ categoryListBox.innerHTML += `
   </a>
   `;
 categoryList.forEach((item) => {
-  document.getElementById("categoryList").innerHTML += `
+  categoryListBox.innerHTML += `
   <a href="/">
     <div class="category">${item}</div>
   </a>

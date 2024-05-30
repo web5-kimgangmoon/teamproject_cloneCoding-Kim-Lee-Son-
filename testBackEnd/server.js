@@ -21,10 +21,11 @@ app.use((req, res, next) => {
 });
 app.use(
   cors({
-    origin: [/http:\/\/127.0.0.1:*/, null],
+    origin: [/http:\/\/localhost*/, /http:\/\/127.0.0.1:*/],
     credentials: true,
   })
 );
+
 // app.use(cors());
 app.use(cookieParser(process.env.COOKIESECRET || "V"));
 
@@ -66,7 +67,7 @@ const upload = multer({
   }),
 });
 
-app.get("/test", async (req, res) => {
+app.post("/test", async (req, res) => {
   const test = await db.Test.findOne({
     where: { id: 1 },
   });
@@ -79,6 +80,10 @@ app.post("/upload", upload.array("icon"), (req, res) => {
   const fileurl = `/uploads/${req.files[0].filename}`;
   console.log(fileurl);
   res.json({ url: fileurl });
+});
+app.get("/getCookie", (req, res) => {
+  res.cookie("why", "dsad");
+  res.send({ 1: 1 });
 });
 app.listen(app.get("port"), () => {
   console.log("server open", app.get("port"));
