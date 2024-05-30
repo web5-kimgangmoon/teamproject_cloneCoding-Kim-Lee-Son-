@@ -71,7 +71,7 @@ try {
     let board = await Board.create({
       title: "공지",
       contents: "공지",
-      notice: false,
+      notice: true,
       superNotice: "1",
       // userId: "1",
       // categoryId: "1",
