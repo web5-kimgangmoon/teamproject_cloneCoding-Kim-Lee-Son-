@@ -13,7 +13,11 @@ export default async (req, res, next) => {
     await channel.addChannelAdmin(channeladmin);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     res.json({ result: "ok", newchannel: channel });
+=======
+    res.json({ result: "ok", nowchannel: channel });
+>>>>>>> cd5386a (newchannel modify)
   } catch (err) {
     console.error(err);
     if (err.message == "not logged in") {
