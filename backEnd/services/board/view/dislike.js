@@ -4,7 +4,7 @@ export default async (req, res) => {
   try {
     const nowuser = req.user;
     if (nowuser) {
-      throw new Error("not found user");
+      throw new Error("not logged in");
     }
     const reqcuery = req.query;
     const nowview = reqcuery.boardId;
@@ -28,6 +28,13 @@ export default async (req, res) => {
     }
   } catch (err) {
     console.error(err);
+    if (err.message == "not logged in") {
+      res.status(401);
+    } else if (err.message == "already dislike") {
+      res.status(409);
+    } else {
+      res.status(419);
+    }
     res.json({ error: err.message });
   }
 };

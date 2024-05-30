@@ -4,7 +4,9 @@ export default async (req, res) => {
   try {
     const reqbody = req.body;
     const nowuser = req.user;
-
+    if (!nowuser) {
+      throw new Error("not logged in");
+    }
     const channel = await Channel.findOne({
       where: { engTitle: reqbody.channel },
       attributes: ["engTitle"],
@@ -24,6 +26,11 @@ export default async (req, res) => {
     res.json({ result: "ok", channel: channel });
   } catch (err) {
     console.log(err);
+    if (err.message == "not logged in") {
+      res.status(401);
+    } else {
+      res.status(419);
+    }
     res.json({ error: err.message });
   }
 };

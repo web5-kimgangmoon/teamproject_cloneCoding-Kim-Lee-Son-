@@ -30,6 +30,11 @@ export default async (req, res) => {
     res.json({ result: "ok" });
   } catch (err) {
     console.error(err);
+    if (err.message == "not super admin") {
+      res.status(403);
+    } else {
+      res.status(419);
+    }
     res.json({ error: err.message });
   }
 };

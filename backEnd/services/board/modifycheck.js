@@ -1,14 +1,17 @@
 import { Channel, ChannelAdmin, Board, Category } from "../../models/index.js";
 
 export default async (req, res) => {
+  const nowuser = req.user;
+  if (!nowuser) {
+    throw new Error("not logged in");
+  }
+
   const reqbody = req.body;
   const chname = reqbody.channel;
   const catename = reqbody.category;
-  const nowuser = req.user;
 
   const reqcuery = req.query;
   const nowview = reqcuery.boardId;
-  // const nowview = 1;
   const channel = await Channel.findOne({
     where: { engTitle: chname },
     include: [{ model: ChannelAdmin }],
@@ -23,7 +26,7 @@ export default async (req, res) => {
   const channeladmin = await ChannelAdmin.findAll({
     where: { channelId: channel.id, userId: nowuser.id },
   });
-  if (!view || !channeladmin) {
+  if (!board || !channeladmin) {
     throw new Error("not match user");
   }
 
@@ -36,6 +39,13 @@ export default async (req, res) => {
   try {
   } catch (err) {
     console.error(err);
+    if (err.message == "not logged in") {
+      res.status(401);
+    } else if (err.message == "not match user") {
+      res.status(403);
+    } else {
+      res.status(419);
+    }
     res.json({ err: err.message });
   }
 };

@@ -3,6 +3,9 @@ import { Channel } from "../../models/index.js";
 export default async (req, res) => {
   try {
     const nowuser = req.user;
+    if (!nowuser) {
+      throw new Error("not logged in");
+    }
     const reqbody = req.body;
     let chname = reqbody.channel;
 
@@ -22,6 +25,11 @@ export default async (req, res) => {
     await res.json({ result: "ok", channel: channel });
   } catch (err) {
     console.error(err);
+    if (err.message == "not logged in") {
+      res.status(401);
+    } else {
+      res.status(419);
+    }
     res.json({ error: err.message });
   }
 };

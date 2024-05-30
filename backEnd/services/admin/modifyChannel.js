@@ -14,6 +14,7 @@ export default async (req, res) => {
     res.json({ result: "ok" });
   } catch (err) {
     console.error(err);
+    res.status(419);
     res.json({ error: err.message });
   }
 };

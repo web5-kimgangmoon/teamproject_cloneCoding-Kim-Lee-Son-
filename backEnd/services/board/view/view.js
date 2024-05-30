@@ -7,6 +7,8 @@ import {
   BoardDislike,
   Comment,
   sequelize,
+  Sequelize,
+  User,
 } from "../../../models/index.js";
 
 export default async (req, res) => {
@@ -44,58 +46,78 @@ export default async (req, res) => {
 
     const view = await Board.findOne({
       where: { id: nowview },
-      attributes: [
-        "id",
-        "viewPoint",
-        "title",
-        "contents",
-        "createdAt",
-        "updatedAt",
-        // [sequelize.fn("count", sequelize.col("BoardLikes.id")), "like"],
-        // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
-      ],
-
+      attributes: {
+        include: [
+          [
+            Sequelize.literal(`(
+            SELECT COUNT(*)
+            FROM board_like AS board_like
+            WHERE
+            board_like.board_id = Board.id
+          )`),
+            "likeCount",
+          ],
+          [
+            Sequelize.literal(`(
+            SELECT COUNT(*)
+            FROM board_dislike AS board_dislike
+            WHERE
+            board_dislike.board_id = Board.id
+          )`),
+            "dislikeCount",
+          ],
+          [
+            Sequelize.literal(`(
+            SELECT COUNT(*)
+            FROM comment AS comment
+            WHERE
+            comment.board_id = Board.id
+          )`),
+            "commentCount",
+          ],
+        ],
+      },
       include: [
         {
           model: Comment,
           order: [["id", "DESC"]],
           offset: (commentpage - 1) * 50,
           limit: 50,
-          include: [
-            {
-              model: Comment,
-              as: "children",
-              include: [
-                {
-                  model: Comment,
-                  as: "children",
-                },
-              ],
-            },
-          ],
+          // include: [
+          //   {
+          //     model: Comment,
+          //     as: "children",
+          //     include: [
+          //       {
+          //         model: Comment,
+          //         as: "children",
+          //       },
+          //     ],
+          //   },
+          // ],
         },
         {
           model: Category,
         },
+        { model: User },
       ],
-      group: ["id"],
     });
 
-    const commentcnt = await Comment.findAll({
-      where: { boardId: nowview },
-      attributes: [[sequelize.fn("count", "boardId"), "cnt"]],
-      group: ["board_id"],
-    });
-    const likecnt = await BoardLike.findAll({
-      where: { boardId: nowview },
-      attributes: [[sequelize.fn("count", "boardId"), "cnt"]],
-      group: ["board_id"],
-    });
-    const dislikecnt = await BoardDislike.findAll({
-      where: { boardId: nowview },
-      attributes: [[sequelize.fn("count", "boardId"), "cnt"]],
-      group: ["board_id"],
-    });
+    // const commentcnt = await Comment.findAll({
+    //   where: { boardId: nowview },
+    //   attributes: [[sequelize.fn("count", "boardId"), "cnt"]],
+    //   group: ["board_id"],
+    // });
+    // const likecnt = await BoardLike.findAll({
+    //   where: { boardId: nowview },
+    //   attributes: [[sequelize.fn("count", "boardId"), "cnt"]],
+    //   group: ["board_id"],
+    // });
+    // const dislikecnt = await BoardDislike.findAll({
+    //   where: { boardId: nowview },
+    //   attributes: [[sequelize.fn("count", "boardId"), "cnt"]],
+    //   group: ["board_id"],
+    // });
 
     await Board.update(
       { viewPoint: view.viewPoint + 1 },
@@ -132,64 +154,96 @@ export default async (req, res) => {
 
     let boardlist = await Board.findAll({
       where: { channelId: channel.id },
-      include: [
-        { model: BoardLike },
-        // { model: BoardDislike, attributes: [] },
-        // { model: Comment, attributes: [] },
-      ],
+      include: [{ model: User, attributes: ["nick"] }],
+      attributes: {
+        include: [
+          [
+            Sequelize.literal(`(
+            SELECT COUNT(*)
+            FROM board_like AS board_like
+            WHERE
+            board_like.board_id = Board.id
+          )`),
+            "likeCount",
+          ],
+          [
+            Sequelize.literal(`(
+            SELECT COUNT(*)
+            FROM board_dislike AS board_dislike
+            WHERE
+            board_dislike.board_id = Board.id
+          )`),
+            "dislikeCount",
+          ],
+          [
+            Sequelize.literal(`(
+            SELECT COUNT(*)
+            FROM comment AS comment
+            WHERE
+            comment.board_id = Board.id
+          )`),
+            "commentCount",
+          ],
+        ],
+      },
       order: [["id", "DESC"]],
       offset: (nowpage - 1) * 30,
       limit: 30,
-      attributes: [
-        "id",
-        "viewPoint",
-        "title",
-        "contents",
-        "createdAt",
-        "updatedAt",
-        // [sequelize.fn("count", sequelize.col("boardLikes.id")), "like"],
-        // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
-        // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "commentcount"],
-      ],
-      group: ["id"],
     });
-    if (catecheck) {
-      boardlist = await Board.findAll({
-        where: { channelId: channel.id, categoryId: category.id },
-        include: [
-          { model: BoardLike },
-          // { model: BoardDislike, attributes: [] },
-          // { model: Comment, attributes: [] },
-        ],
-        order: [["id", "DESC"]],
-        offset: (nowpage - 1) * 30,
-        limit: 30,
-        attributes: [
-          "id",
-          "viewPoint",
-          "title",
-          "contents",
-          "createdAt",
-          "updatedAt",
-          // [sequelize.fn("count", sequelize.col("boardLikes.id")), "like"],
-          // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
-          // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "commentcount"],
-        ],
-        group: ["id"],
-      });
-    }
+
+    // if (catecheck) {
+    //   boardlist = await Board.findAll({
+    //     where: { channelId: channel.id, categoryId: category.id },
+    //     include: [{ model: User, attributes: ["nick"] }],
+    //     attributes: {
+    //       include: [
+    //         [
+    //           Sequelize.literal(`(
+    //           SELECT COUNT(*)
+    //           FROM board_like AS board_like
+    //           WHERE
+    //           board_like.board_id = Board.id
+    //         )`),
+    //           "likeCount",
+    //         ],
+    //         [
+    //           Sequelize.literal(`(
+    //           SELECT COUNT(*)
+    //           FROM board_dislike AS board_dislike
+    //           WHERE
+    //           board_dislike.board_id = Board.id
+    //         )`),
+    //           "dislikeCount",
+    //         ],
+    //         [
+    //           Sequelize.literal(`(
+    //           SELECT COUNT(*)
+    //           FROM comment AS comment
+    //           WHERE
+    //           comment.board_id = Board.id
+    //         )`),
+    //           "commentCount",
+    //         ],
+    //       ],
+    //     },
+    //     order: [["id", "DESC"]],
+    //     offset: (nowpage - 1) * 30,
+    //     limit: 30,
+    //   });
+    // }
     res.json({
       category: category,
       user: nowuser,
       channel: channel,
       view: view,
       boardlist: boardlist,
-      commentcnt: commentcnt,
-      likecnt: likecnt,
-      dislikecnt: dislikecnt,
+      // commentcnt: commentcnt,
+      // likecnt: likecnt,
+      // dislikecnt: dislikecnt,
     });
   } catch (err) {
     console.error(err);
+    res.status(419);
     res.json({ error: err.message });
   }
 };

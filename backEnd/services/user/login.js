@@ -11,7 +11,7 @@ export default [
         where: { engTitle: channelname },
       });
 
-      const pwhash = crypto.createHash("sha256").update(req.body.pw).digest("hex");
+      const pwhash = crypto.createHash("sha256").update(reqbody.pw).digest("hex");
 
       const user = await User.findOne({
         where: { strid: reqbody.strid },
@@ -28,11 +28,15 @@ export default [
 
         res.json({ result: "ok", channel: channel });
       } else {
-        throw new Error("not found user qw");
+        throw new Error("not found user");
       }
     } catch (err) {
       console.error(err);
-      res.status(409);
+      if (err.message == "not found user") {
+        res.status(405);
+      } else {
+        res.status(419);
+      }
       res.json({ error: err.message });
     }
   },

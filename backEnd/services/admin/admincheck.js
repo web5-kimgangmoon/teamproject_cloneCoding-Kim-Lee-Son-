@@ -23,6 +23,13 @@ export default async (req, res, next) => {
     }
   } catch (err) {
     console.error(err);
+    if (err.message == "not admin") {
+      res.status(403);
+    } else if (err.message == "not logged in") {
+      res.status(401);
+    } else {
+      res.status(419);
+    }
     res.json({ error: err.message });
   } finally {
     next();

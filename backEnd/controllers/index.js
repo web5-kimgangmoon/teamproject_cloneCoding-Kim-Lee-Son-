@@ -17,7 +17,7 @@ const router = Router();
 router.use(
   session({
     resave: true,
-    saveUninitialized: true,
+    saveUninitialized: false,
     secret: "test",
     name: "user-session",
     store: new FileStore({

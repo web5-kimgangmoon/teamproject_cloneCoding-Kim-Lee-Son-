@@ -23,7 +23,7 @@ export default async (req, res, next) => {
       // });
       // } else {
       //   req.session.destroy();
-      //   await res.cookie("user-session", "", {
+      //   res.cookie("user-session", "", {
       //     maxAge: 0,
       //     signed: true,
       //   });
@@ -31,7 +31,6 @@ export default async (req, res, next) => {
   } catch (err) {
     console.error(err);
   } finally {
-    console.log(req.user);
     next();
   }
 };

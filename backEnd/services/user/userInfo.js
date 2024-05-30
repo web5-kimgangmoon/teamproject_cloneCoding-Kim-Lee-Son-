@@ -20,6 +20,11 @@ export default async (req, res) => {
     }
   } catch (err) {
     console.error(err);
+    if (err.message == "not logged in") {
+      res.status(401);
+    } else {
+      res.status(419);
+    }
     res.json({ error: err.message });
   }
 };

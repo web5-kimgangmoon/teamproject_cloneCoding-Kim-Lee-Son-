@@ -31,6 +31,13 @@ export default async (req, res) => {
     res.json({ result: "ok", nowboard: board.id });
   } catch (err) {
     console.error(err);
+    if (err.message == "not logged in") {
+      res.status(401);
+    } else if (err.message == "not empty contents") {
+      res.status(400);
+    } else {
+      res.status(419);
+    }
     res.json({ error: err.message });
   }
 };

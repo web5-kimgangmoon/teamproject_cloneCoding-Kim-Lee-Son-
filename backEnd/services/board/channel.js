@@ -10,6 +10,7 @@ import {
   sequelize,
   Sequelize,
   Comment,
+  User,
 } from "../../models/index.js";
 
 export default async (req, res) => {
@@ -67,57 +68,81 @@ export default async (req, res) => {
 
     let boardlist = await Board.findAll({
       where: { channelId: channel.id },
-      include: [
-        // { model: BoardLike, attributes: [] },
-        {
-          model: BoardDislike,
-          attributes: ["id"],
-          // where: { dislike: 1 },
-        },
-        // { model: Comment, attributes: [] },
-      ],
-
-      attributes: [
-        "id",
-        "viewPoint",
-        "title",
-        "contents",
-        "createdAt",
-        "updatedAt",
-        // [sequelize.fn("count", sequelize.col("boardLikes.id")), "like"],
-        [sequelize.fn("count", "`board_dislike`.`id`"), "dislikes"],
-        // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "commentcount"],
-      ],
+      include: [{ model: User, attributes: ["nick"] }],
+      attributes: {
+        include: [
+          [
+            Sequelize.literal(`(
+            SELECT COUNT(*)
+            FROM board_like AS board_like
+            WHERE
+            board_like.board_id = Board.id
+          )`),
+            "likeCount",
+          ],
+          [
+            Sequelize.literal(`(
+            SELECT COUNT(*)
+            FROM board_dislike AS board_dislike
+            WHERE
+            board_dislike.board_id = Board.id
+          )`),
+            "dislikeCount",
+          ],
+          [
+            Sequelize.literal(`(
+            SELECT COUNT(*)
+            FROM comment AS comment
+            WHERE
+            comment.board_id = Board.id
+          )`),
+            "commentCount",
+          ],
+        ],
+      },
       order: [["id", "DESC"]],
       offset: (nowpage - 1) * 30,
       limit: 30,
-
-      group: ["id"],
-      // group: ["board_id"],
     });
+
     if (catecheck) {
       boardlist = await Board.findAll({
         where: { channelId: channel.id, categoryId: category.id },
-        include: [
-          // { model: BoardLike },
-          // { model: BoardDislike, attributes: [] },
-          // { model: Comment, attributes: [] },
-        ],
+        include: [{ model: User, attributes: ["nick"] }],
+        attributes: {
+          include: [
+            [
+              Sequelize.literal(`(
+              SELECT COUNT(*)
+              FROM board_like AS board_like
+              WHERE
+              board_like.board_id = Board.id
+            )`),
+              "likeCount",
+            ],
+            [
+              Sequelize.literal(`(
+              SELECT COUNT(*)
+              FROM board_dislike AS board_dislike
+              WHERE
+              board_dislike.board_id = Board.id
+            )`),
+              "dislikeCount",
+            ],
+            [
+              Sequelize.literal(`(
+              SELECT COUNT(*)
+              FROM comment AS comment
+              WHERE
+              comment.board_id = Board.id
+            )`),
+              "commentCount",
+            ],
+          ],
+        },
         order: [["id", "DESC"]],
         offset: (nowpage - 1) * 30,
         limit: 30,
-        attributes: [
-          "id",
-          "viewPoint",
-          "title",
-          "contents",
-          "createdAt",
-          "updatedAt",
-          // [sequelize.fn("count", sequelize.col("boardLikes.id")), "like"],
-          // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "dislike"],
-          // [sequelize.fn("count", sequelize.col("BoardDislikes.id")), "commentcount"],
-        ],
-        group: ["id"],
       });
     }
     res.json({
@@ -128,6 +153,7 @@ export default async (req, res) => {
     });
   } catch (err) {
     console.error(err);
+    res.status(419);
     res.json({ error: err.message });
   }
 };
