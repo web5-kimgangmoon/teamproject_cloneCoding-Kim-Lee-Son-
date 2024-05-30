@@ -17,6 +17,7 @@
     <button id="logout" class="logout">로그아웃</button>
 
     <button id="submit" class="submit">작성완료</button>
+    <button id="submitcom" class="submitcom">댓글작성</button>
 
     <button id="newch" class="newch">채널생성</button>
 
@@ -53,7 +54,7 @@
           "http://localhost:3001/u/login",
           {
             channel: "main",
-            strid: "qwer",
+            strid: "qwerasd",
             pw: "1q2w3e4r",
           },
           {
@@ -87,6 +88,16 @@
         await axios.post(
           "http://localhost:3001/u/logout",
           {},
+          {
+            withCredentials: true,
+          }
+        );
+      };
+      document.getElementById("submitcom").onclick = async (e) => {
+        e.preventDefault();
+        await axios.post(
+          "http://localhost:3001/b/view/add?boardId=1&commentId=1",
+          { contents: "ㅁㅁㄴㅇㅁㄴ" },
           {
             withCredentials: true,
           }

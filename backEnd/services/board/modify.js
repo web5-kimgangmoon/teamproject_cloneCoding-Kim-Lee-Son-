@@ -40,6 +40,11 @@ export default async (req, res) => {
       ...reqbody,
       categoryId: category.id,
     });
+
+    if (board.superNotice) {
+      board.update({ notice: ture });
+    }
+
     res.json({ result: "ok" });
   } catch (err) {
     console.error(err);
