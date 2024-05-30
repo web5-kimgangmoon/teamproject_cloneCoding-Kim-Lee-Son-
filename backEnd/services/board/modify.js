@@ -67,6 +67,9 @@ export default async (req, res) => {
     });
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7505de7 (mainpage)
 
     if (board.superNotice) {
       board.update({ notice: ture });
