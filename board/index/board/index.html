@@ -1,0 +1,1704 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./top.css" />
+  <link rel="stylesheet" href="./body.css" />
+  <link rel="stylesheet" href="./footer.css" />
+  <link rel="stylesheet" href="./adBox.css" />
+  <link rel="stylesheet" href="./board.css" />
+</head>
+
+<body>
+  <div id="container">
+    <div class="curtain out"></div>
+    <div class="viewConfigBox out">
+      <div class="boxTop">
+        <div class="title">표시 설정</div>
+        <div class="x_shape">×</div>
+      </div>
+      <div class="typeSelect">
+        <span class="">일반</span>
+        <span class="selected">컨텐츠</span>
+      </div>
+      <div class="configTemplate">
+        <div class="general out">
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_language"><span>언어<sup><i> α+</i></sup></span></label>
+              <div class="optionSelect">
+                <select name="userConfig_language" id="userConfig_language">
+                  <option>(자동 인식)</option>
+                  <option value="ko">한국어</option>
+                  <option value="en">English</option>
+                  <option value="ja">日本語</option>
+                  <option value="es">Español</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_font"><span>글꼴</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_font" id="userConfig_font">
+                  <option>자동</option>
+                  <option value="browser">브라우저 기본</option>
+                  <option value="nanum_barun_gothic">나눔바른고딕</option>
+                  <option value="nanum_gothic">나눔고딕</option>
+                  <option value="noto_sans_kr">Noto Sans KR</option>
+                  <option value="apple_sd_gothic_neo">Apple SD Gothic Neo</option>
+                  <option value="pretendard">Pretendard</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_font_size"><span>글자 크기</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_font_size" id="userConfig_font_size">
+                  <option value="browser">브라우저 기본</option>
+                  <option value="biggest">가장 크게</option>
+                  <option value="big">크게</option>
+                  <option value="medium">보통</option>
+                  <option value="small">작게</option>
+                  <option value="smallest">가장 작게</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_backgroundColor"><span>배경</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_backgroundColor" id="userConfig_backgroundColor">
+                  <option value="browser">브라우저 기본</option>
+                  <option value="light">밝게</option>
+                  <option value="dark">어둡게</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_backgroundColor_contrast"><span>어두운 배경 색상</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_backgroundColor_contrast" id="userConfig_backgroundColor_contrast">
+                  <option value="dart">어둡게</option>
+                  <option value="dark_black">완전 어둡게</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_pageWidth"><span>페이지 폭</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_pageWidth" id="userConfig_pageWidth">
+                  <option>고정안함</option>
+                  <option value="1100px">1100px</option>
+                  <option value="1200px">1200px</option>
+                  <option value="1300px">1300px</option>
+                  <option value="1500px">1500px</option>
+                  <option value="1600px">1600px</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_topLocation"><span>상단바 위치</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_topLocation" id="userConfig_topLocation">
+                  <option value="fixed">고정</option>
+                  <option value="scroll">스크롤</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contents">
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_arcacon_alarm"><span>알림 아카콘 표시</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_arcacon_alarm" id="userConfig_arcacon_alarm">
+                  <option value="use">사용</option>
+                  <option value="unuse">사용 안 함</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_favicon_alarm"><span>브라우저 아이콘 알림</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_favicon_alarm" id="userConfig_favicon_alarm">
+                  <option value="use">사용</option>
+                  <option value="unuse">사용 안 함</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_img_preview"><span>이미지 미리보기</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_arcacon_alarm" id="userConfig_img_preview">
+                  <option value="use">사용</option>
+                  <option value="unuse">사용 안 함</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_channelImg_view"><span>채널 기본 이미지 표시</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_channelImg_view" id="userConfig_channelImg_view">
+                  <option value="use">사용</option>
+                  <option value="unuse">사용 안 함</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_sideContents"><span>사이드바 컨텐츠</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_sideContents" id="userConfig_sideContents">
+                  <option value="random">랜덤</option>
+                  <option value="humor_dontLook">유머채널 안보기</option>
+                  <option value="hotDeal_dontLook">핫딜 안보기</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_arcacon_autoplayBlock"><span>아카콘 자동 재생 방지</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_backgroundColor_arcacon_autoplayBlock" id="userConfig_arcacon_autoplayBlock">
+                  <option value="use">사용</option>
+                  <option value="unuse">사용 안 함</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_sensitiveContents_view"><span>민감한 컨텐츠 표시</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_sensitiveContents_view" id="userConfig_sensitiveContents_view">
+                  <option value="auto">자동</option>
+                  <option value="view">표시</option>
+                  <option value="dontView">안 보기</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="shortCutHelpBox out">
+      <div class="boxTop">
+        <div class="title">단축키 도움말</div>
+        <div class="x_shape">×</div>
+      </div>
+      <div class="shortCutContent">
+        <div class="siteShortCutSet">
+          <div class="shortCutSetTitle">사이트에서</div>
+          <ul>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">1</span>
+                <span>&nbsp;~</span><span class="shortCutWord">0</span>
+              </div>
+              <div class="description">구독 채널 바로가기</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">R</span></div>
+              <div class="description">새로고침</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">?</span></div>
+              <div class="description">단축키 도움말</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">T</span></div>
+              <div class="description">맨 위로</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">W</span></div>
+              <div class="description">글 작성</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">B</span></div>
+              <div class="description">채널 이동</div>
+            </li>
+          </ul>
+        </div>
+        <div class="boardShortCutSet">
+          <div class="shortCutSetTitle">게시글에서</div>
+          <ul>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">A</span></div>
+              <div class="description">이전 글</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">S</span></div>
+              <div class="description">다음 글</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">C</span></div>
+              <div class="description">댓글</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="top">
+      <div class="topMenu">
+        <div class="topCenter">
+          <div class="topLeft">
+            <a href="/" class="logo-img">
+              <img src="./../imgs/Arcalive_logo.svg">
+            </a>
+            <div class="subscribechannel">
+              <div class="channelSelectorButton" title="구독 채널">
+                <span>구독</span><span class="topchannel">&nbsp;채널</span>
+                <div class="arrowButton"></div>
+              </div>
+              <div class="channelBox out">
+                <div class="channelAreaLiner">
+                  <div class="channelList"><a href="/">구독 중인 채널</a></div>
+                </div>
+                <div class="channelList"><a href="/">유머 채널<span class="index_box">1</span></a></div>
+              </div>
+            </div>
+            <div class="primarychannel">
+              <div class="channelSelectorButton" title="채널">
+                <span>주요</span><span class="topchannel">&nbsp;채널</span>
+                <div class="arrowButton"></div>
+              </div>
+              <div class="channelBox out">
+                <div class="channelAreaLiner">
+                  <div class="channelList"><a href="/">유머 채널</a></div>
+                  <div class="channelList"><a href="/">유머 채널</a></div>
+                  <div class="channelList"><a href="/">유머 채널</a></div>
+                </div>
+                <div class="channelList"><a href="/">유머 채널</a></div>
+              </div>
+            </div>
+            <div class="search">
+              <div class="searchIconBox">
+                <div class="search-img"><img src="./../imgs/searchImg.png" /></div>
+                <input type="search" name="channelName" placeholder="찾기" autocomplete="off" />
+              </div>
+              <div class="searchMiniBox">
+                <div class="search-img"><img src="./../imgs/searchImg.png" /></div>
+                <span>검색</span>
+              </div>
+              <div class="channelSearchBox out">
+                <!-- <div class="channelList">
+                  <div class="no-search">채널 검색 결과가 없습니다.</div>
+                </div> -->
+                <div class="channelList loadingBox">
+                  <div class="loading">
+                    <div class="loadingWhite"></div>
+                  </div>
+                </div>
+                <div class="searchedChannelList">
+                  <div class="channelList">
+                    <a href="/">
+                      <img class="logo" src="./../imgs/Arcalive_logo.svg" />
+                      <span>암니안ㅁ어ㅣ마넝ㄴ머</span>
+                      <img class="playImg" src="./../imgs/playShape.png" />
+                    </a>
+                  </div>
+                  <div class="channelList">
+                    <a href="/">
+                      <img class="logo" src="./../imgs/Arcalive_logo.svg" />
+                      <span>암니안ㅁ어ㅣ마넝ㄴ머</span>
+                      <img class="playImg" src="./../imgs/playShape.png" />
+                    </a>
+                  </div>
+                </div>
+                <div class="channelSearchButtonLine"><a href="/"><span>"d"</span>검색 결과 이동...</a></div>
+                <div class="channelcloseButtonLine">
+                  <button type="button" id="channelSearchCloseButton">닫기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="topRight">
+            <div class="topEtc">
+              <a href="" class="new"><span>뉴스</span></a>
+              <a href=""><span>위키</span></a>
+            </div>
+            <div class="notification">
+              <div class="notification-img" title="notification"><img src="../imgs/notification-bell.png" /></div>
+              <div class="notificationBox out">
+                <div class="notificationBellTitle"><span>알림</span><button type="button" class="readAllButton">모두
+                    읽기</button></div>
+                <div class="notificatetionMessages">
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                </div>
+                <div class="allLook">
+                  <a href="/">전체보기</a>
+                </div>
+              </div>
+            </div>
+            <div class="login">
+              <div class="loginIconBox" title="Member menu">
+                <span class="userName-login">
+                  길이에 따라 늘어납니다</span>
+                <a class="personLogin-icon" href="">
+                  <div class="person-img"><img src="../imgs/person.png"></div>
+                </a>
+              </div>
+              <div class="userInfoBox out">
+                <div class="userInfoListLiner">
+                  <div class="userName"><a href="/"><span>길이에 따sssssssssssssss라 늘어납니다</span></a></div>
+                  <div class="userPoint">10 ⓟ</div>
+                </div>
+                <div class="userInfoList"><a href="/">ㅇㅇ</a></div>
+                <div class="userInfoList"><a>ㅇㅇ</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="subTopSearchBox">
+        <div class="search-img"><img src="./../imgs/searchImg.png" /></div>
+        <input type="search" name="channelName" placeholder="찾기" autocomplete="off" />
+      </div>
+      <div class="subTop">
+        <div class="newsIcon">뉴스</div>
+        <div class="newsTitle"><a href="/">尹, 중소기업인들에 "어려운 일 말해주면 가능한 다 해결"(종합2보)</a></div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="left_adBar">
+        <div class="left_ad">
+          <a href="/"><img src="./../imgs/notification-bell.png" /></a>
+        </div>
+      </div>
+      <div class="bodyCenter">
+        <div class="bodyContent">
+          <div class="channelInfoBox">
+            <div class="channelImg">
+              <a href="/"><img src="./../imgs/gameImg.jpg" /></a>
+            </div>
+            <div class="channelInfo">
+              <div class="channelPathNButtons">
+                <div class="channelPath" title="원신 채널"><a href="/">원신 채널</a></div>
+                <div class="channelButtons">
+                  <a href="/">
+                    <button type="button">
+                      <div class="bookIcon imgIcon"><img src="./../imgs/book.svg" /></div><span>채널위키</span>
+                    </button>
+                  </a>
+                  <button type="button">
+                    <div class="alarmIcon imgIcon"><img src="./../imgs/notifications-outline.svg" /></div>
+                    <span>알림</span>
+                  </button>
+                  <button type="button">
+                    <div class="plusIcon imgIcon"><img src="./../imgs/add-outline.svg" /></div><span>구독</span>
+                  </button>
+                </div>
+              </div>
+              <div class="channelDescription">
+                <div class="channelBaseInfo">
+                  <div class="subscribeCount baseInfoBox">구독자 96154명</div>
+                  <div class="alarmCount baseInfoBox">알림수신 1897명</div>
+                  <div class="channelAdmin baseInfoBox"><a href="/">@대포복어</a>
+                    <div class="checkIcon imgIcon"><img src="./../imgs/checkmark-outline.svg" /></div>
+                  </div>
+                </div>
+                <div class="channelInfoText">🎂 에이미 생일 🎂 l 클로린드(☆5), 시그윈(☆5) 픽업예정</div>
+              </div>
+            </div>
+          </div>
+          <div class="boardBox">
+            <div class="title">
+              <div class="titleContent"><span class="blackBox">유머</span>
+                나는 아무 생각이 없다 왜냐하면
+              </div>
+              <div class="titleEtc">
+                <div class="writerBox left_line">
+                  <a href="/">
+                    <span>무호흡평타</span></a>
+                  <div class="greyCheckIcon checkIcon imgIcon" title="고정닉">
+                    <img src="./../imgs/checkmark-outline.svg">
+                  </div>
+                  <div class="userProfile imgIcon">
+                    <img src="./../imgs/gameImg.jpg">
+                  </div>
+                </div>
+                <div class="right_line">
+                  <div class="viewBox recommendView"><span class="type">추천</span><span class="count">1</span></div>
+                  <div class="viewBox unrecommendView"><span class="type">비추천</span><span class="count">2</span></div>
+                  <div class="viewBox commentView"><span class="type">댓글</span><span class="count">2</span></div>
+                  <div class="viewBox looksView"><span class="type">조회수</span><span class="count">137</span></div>
+                  <div class="viewBox dateView"><span class="type">작성일</span><span class="count">2024-05-28
+                      11:23:39</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="linkSite"><a href="/"><span class="sharingLink">https://arca.live/b/???????/#######</span>
+                <div class="sharingIcon imgIcon">
+                  <img src="./../imgs/share-social-sharp.svg">
+                </div>
+              </a></div>
+            <div class="channelImgWrapper">
+              <img src="../imgs/gameImg.jpg" />
+              <!-- 채널 이미지는 채널 기본 이미지 크기 조정용 -->
+            </div>
+            <div class="boardContent">
+              너무 편해서 강제로 머리가 빠짐
+              <!-- 어차피 다 된 상태로 들어올것(건들지 말자) -->
+            </div>
+            <!-- js에서 처리해줘야하는 목록 -->
+            <div class="recommendButtonLine">
+              <button type="button" class="recommendButton">
+                <div class="textLine">추천!<span class="count"> 2</span></div>
+                <small class="imgLine"><span>(</span>
+                  <div class="imgIcon"><img src="../imgs/help-outline.svg"></div><span
+                    class="recommendCount">0</span><span>)</span>
+                </small>
+              </button>
+              <button type="button" class="unrecommendButton">
+                <div class="textLine">비추!<span class="count"> 100</span></div>
+                <small class="imgLine">(<div class="imgIcon"><img src="../imgs/help-outline.svg"></div><span
+                    class="recommendCount">0</span>)
+                </small>
+              </button>
+            </div>
+            <dic class="commentListBox">
+              <div class="board_buttonList">
+                <button type="button">
+                  <div class="imgIcon"><img src="./../imgs/bookmark.png"></img></div>스크랩
+                </button>
+                <button type="button" title="공유">
+                  <div class="imgIcon"><img src="./../imgs/arrow-redo.svg"></img></div>공유
+                </button>
+                <a href="/">
+                  <button type="button" class="redBackground" title="신고">
+                    <div class="imgIcon"><img src="./../imgs/notification-bell.png"></div>신고
+                  </button>
+                </a>
+              </div>
+              <div class="commentInfo">
+                <div class="left_line">
+                  <div class="imgIcon"><img src="./../imgs/chatbubbles-sharp.svg" /></div>
+                  <span class="text">댓글</span>
+                  <span class="count">[3]</span>
+                </div>
+                <div class="right_line">
+                  <a href="/">
+                    <button type="button">
+                      <div class="imgIcon"><img src="./../imgs/create-outline.svg" /></div>
+                      글쓰기
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div class="commentBoardListBox">
+                <div class="commentBoardBox">
+                  <div class="commentBoard">
+                    <div class="commentBoard_top">
+                      <div class="writerView left_line">
+                        <a href="/">ㅇㅇ</a>
+                        <div class="checkIcon orangeCheckIcon imgIcon">
+                          <img src="./../imgs/checkmark-outline.svg" />
+                        </div>
+                        <div class="imgIcon">
+                          <img src="./../imgs/gameImg.jpg" />
+                        </div>
+                      </div>
+                      <div class="right_line">
+                        <div class="dateView etcBox">
+                          2024-05-27 18:59:02
+                        </div>
+                        <div class="reportButton etcBox"><a href="/">
+                            <div class="imgIcon">
+                              <img src="./../imgs/alertImg.png" />
+                            </div>
+                            신고
+                          </a></div>
+                        <div class="deleteButton etcBox"><a href="/">
+                            <div class="imgIcon">
+                              <img src="./../imgs/trash.svg" />
+                            </div>
+                            삭제
+                          </a></div>
+                        <div class="updateButton etcBox">
+                          <div class="imgIcon">
+                            <img src="./../imgs/create-outline.svg" />
+                          </div>
+                          수정
+                        </div>
+                        <div class="replyButton etcBox">
+                          <div class="imgIcon">
+                            <img src="./../imgs/arrow-undo.svg" />
+                          </div>
+                          답글
+                        </div>
+                        <div class="alarmButton etcBox">
+                          <a href="/">
+                            <div class="imgIcon">
+                              <img src="./../imgs/notification-bell.png" />
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="commentBoard_content">
+                      <span
+                        class="remake_inform">*수정됨</span>ssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+                    </div>
+                  </div>
+                  <div class="commentWritingBox commentUpdateBox out">
+                    <div class="commentWritingBox_top">
+                      <div class="commentWritingBox_leftLine">
+                        <div class="titleText">댓글 수정</div>
+                        <div class="writerInfoWrapper">
+                          <div class="writerInfo">
+                            <div class="imgIcon">
+                              <img src="./../imgs/testimg.png">
+                            </div>
+                            <span class="buttonText">하히후헤호</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="commentWritingBox_rightLine">
+                        <button type="button" class="etcButton arcaCon">
+                          <div class="imgIcon">
+                            <img src="./../imgs/happy-outline.svg">
+                          </div>
+                          <span class="buttonText">아카콘</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="commentWritingBox_content">
+                      <button type="button" class="commitButton">작성</button>
+                      <textarea class="commentInput" name="commentContent" maxlength="8000"
+                        placeholder="ㅇㅇㅇㅇㅇ"></textarea>
+                    </div>
+                  </div>
+                  <div class="replyCommentBoardListBox">
+                    <div class="commentWritingBox commentReplyWritingBox out">
+                      <div class="commentWritingBox_top">
+                        <div class="commentWritingBox_leftLine">
+                          <div class="titleText">답글 작성</div>
+                          <div class="writerInfoWrapper">
+                            <div class="writerInfo">
+                              <div class="imgIcon">
+                                <img src="./../imgs/testimg.png">
+                              </div>
+                              <span class="buttonText">하히후헤호</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="commentWritingBox_rightLine">
+                          <button type="button" class="etcButton arcaCon">
+                            <div class="imgIcon">
+                              <img src="./../imgs/happy-outline.svg">
+                            </div>
+                            <span class="buttonText">아카콘</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="commentWritingBox_content">
+                        <button type="button" class="commitButton">작성</button>
+                        <textarea class="commentInput" name="commentContent" maxlength="8000"
+                          placeholder="ㅇㅇㅇㅇㅇ"></textarea>
+                      </div>
+                    </div>
+                    <div class="replyCommentBoardBox">
+                      <div class="upIcon imgIcon"><img src="./../imgs/caret-up-outline.svg" /></div>
+
+                      <div class="commentBoardBox">
+                        <div class="commentBoard">
+                          <div class="commentBoard_top">
+                            <div class="writerView left_line">
+                              <a href="/">ㅇㅇ</a>
+                              <div class="checkIcon orangeCheckIcon imgIcon">
+                                <img src="./../imgs/checkmark-outline.svg" />
+                              </div>
+                              <div class="imgIcon">
+                                <img src="./../imgs/gameImg.jpg" />
+                              </div>
+                            </div>
+                            <div class="right_line">
+                              <div class="dateView etcBox">
+                                2024-05-27 18:59:02
+                              </div>
+                              <div class="reportButton etcBox"><a href="/">
+                                  <div class="imgIcon">
+                                    <img src="./../imgs/alertImg.png" />
+                                  </div>
+                                  신고
+                                </a></div>
+                              <div class="deleteButton etcBox"><a href="/">
+                                  <div class="imgIcon">
+                                    <img src="./../imgs/trash.svg" />
+                                  </div>
+                                  삭제
+                                </a></div>
+                              <div class="updateButton etcBox">
+                                <div class="imgIcon">
+                                  <img src="./../imgs/create-outline.svg" />
+                                </div>
+                                수정
+                              </div>
+                              <div class="replyButton etcBox">
+                                <div class="imgIcon">
+                                  <img src="./../imgs/arrow-undo.svg" />
+                                </div>
+                                답글
+                              </div>
+                              <div class="alarmButton etcBox">
+                                <a href="/">
+                                  <div class="imgIcon">
+                                    <img src="./../imgs/notification-bell.png" />
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="commentBoard_content">
+                            <span
+                              class="remake_inform">*수정됨</span>ssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+                          </div>
+                        </div>
+                        <div class="commentWritingBox commentUpdateBox out">
+                          <div class="commentWritingBox_top">
+                            <div class="commentWritingBox_leftLine">
+                              <div class="titleText">댓글 수정</div>
+                              <div class="writerInfoWrapper">
+                                <div class="writerInfo">
+                                  <div class="imgIcon">
+                                    <img src="./../imgs/testimg.png">
+                                  </div>
+                                  <span class="buttonText">하히후헤호</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="commentWritingBox_rightLine">
+                              <button type="button" class="etcButton arcaCon">
+                                <div class="imgIcon">
+                                  <img src="./../imgs/happy-outline.svg">
+                                </div>
+                                <span class="buttonText">아카콘</span>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="commentWritingBox_content">
+                            <button type="button" class="commitButton">작성</button>
+                            <textarea class="commentInput" name="commentContent" maxlength="8000"
+                              placeholder="ㅇㅇㅇㅇㅇ"></textarea>
+                          </div>
+                        </div>
+                        <div class="replyCommentBoardListBox">
+                          <div class="commentWritingBox commentReplyWritingBox out">
+                            <div class="commentWritingBox_top">
+                              <div class="commentWritingBox_leftLine">
+                                <div class="titleText">답글 작성</div>
+                                <div class="writerInfoWrapper">
+                                  <div class="writerInfo">
+                                    <div class="imgIcon">
+                                      <img src="./../imgs/testimg.png">
+                                    </div>
+                                    <span class="buttonText">하히후헤호</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="commentWritingBox_rightLine">
+                                <button type="button" class="etcButton arcaCon">
+                                  <div class="imgIcon">
+                                    <img src="./../imgs/happy-outline.svg">
+                                  </div>
+                                  <span class="buttonText">아카콘</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="commentWritingBox_content">
+                              <button type="button" class="commitButton">작성</button>
+                              <textarea class="commentInput" name="commentContent" maxlength="8000"
+                                placeholder="ㅇㅇㅇㅇㅇ"></textarea>
+                            </div>
+                          </div>
+                          <!-- <div class="replyCommentBoardBox">
+                            <div class="upIcon imgIcon"><img src="./../imgs/caret-up-outline.svg" /></div>
+                          </div> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pageBoxWrapper">
+                  <div class="pageBoxList boardCommentPage">
+                    <a href="/">
+                      <div class="pageBox">1</div>
+                    </a>
+                    <a href="/">
+                      <div class="pageBox">2</div>
+                    </a>
+                    <a href="/">
+                      <div class="pageBox">3</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="commentWritingBox basic">
+                  <div class="commentWritingBox_top">
+                    <div class="commentWritingBox_leftLine">
+                      <div class="titleText">댓글 작성</div>
+                      <div class="writerInfoWrapper">
+                        <div class="writerInfo">
+                          <div class="imgIcon">
+                            <img src="./../imgs/testimg.png">
+                          </div>
+                          <span class="buttonText">하히후헤호</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="commentWritingBox_rightLine">
+                      <button type="button" class="etcButton voiceComment">
+                        <div class="imgIcon">
+                          <img src="./../imgs/mic-sharp.svg">
+                        </div>
+                        <span class="buttonText">음성댓글</span>
+                      </button>
+                      <button type="button" class="etcButton arcaCon">
+                        <div class="imgIcon">
+                          <img src="./../imgs/happy-outline.svg">
+                        </div>
+                        <span class="buttonText">아카콘</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="commentWritingBox_content">
+                    <button type="button" class="commitButton">작성</button>
+                    <textarea class="commentInput" name="commentContent" maxlength="8000"
+                      placeholder="ㅇㅇㅇㅇㅇ"></textarea>
+                  </div>
+                </div>
+              </div>
+
+            </dic>
+            <form id="body_quickButonsLine_board_bottom">
+              <div class="quickButtonsLine">
+                <div class="left_buttons">
+                  <a href="/">
+                    <button type="button">
+                      <div class="allBoardIcon imgIcon"><img src="./../imgs/reader.svg" /></div><span>전체글</span>
+                    </button>
+                  </a>
+                  <a href="/">
+                    <button type="button" class="redBackground">
+                      <div class="recommendedBoardIcon imgIcon"><img src="./../imgs/star.svg" /></div>
+                      <span>개념글</span>
+                    </button>
+                  </a>
+                  <select name="sortType">
+                    <option value="">등록순</option>
+                    <option value="oneDay">추천순 (24시간)</option>
+                    <option value="threeDay">추천순 (3일)</option>
+                    <option value="allDay">추천순 (전체)</option>
+                    <option value="commentCount_threeDay">댓글갯수순 (3일)</option>
+                    <option value="recentComment">최근댓글순</option>
+                  </select>
+                  <select value="sortCount">
+                    <option value="">추천컷</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="70">70</option>
+                    <option value="100">100</option>
+                    <option value="etc">기타</option>
+                  </select>
+                </div>
+                <div class="right_buttons">
+                  <a href="/" title="글쓰기">
+                    <button type="button">
+                      <div class="writeIcon imgIcon"><img src="./../imgs/create-outline.svg" /></div>
+                      <span>글쓰기</span>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="boardTableListBox">
+            <div class="adBox">
+              <a href="/">
+                <div class="imgWrapper">
+                  <img src="./../imgs/notification-bell.png" />
+                </div>
+              </a>
+            </div>
+            <div class="recentChannelListWrapper">
+              <div class="recentChannelList">
+                <div class="title">최근<span> 방문 채널</span></div>
+
+                <div class="channelList">
+                  <a href="/"><span>마비노기 블로니</span></a>
+                  <div class="imgIcon closeIcon"><img src="./../imgs/close.svg" /></div>
+                </div>
+
+                <div class="channelList">
+                  <a href="/"><span>마비노기 블로니</span></a>
+                  <div class="imgIcon closeIcon"><img src="./../imgs/close.svg" /></div>
+                </div>
+                <div class="channelList">
+                  <a href="/"><span>마비노기 블로니</span></a>
+                  <div class="imgIcon closeIcon"><img src="./../imgs/close.svg" /></div>
+                </div>
+                <div class="channelList">
+                  <a href="/"><span>마비노기 블로니</span></a>
+                  <div class="imgIcon closeIcon"><img src="./../imgs/close.svg" /></div>
+                </div>
+                <div class="channelList">
+                  <a href="/"><span>마비노기 블로니</span></a>
+                  <div class="imgIcon closeIcon"><img src="./../imgs/close.svg" /></div>
+                </div>
+                <div class="channelList">
+                  <a href="/"><span>마비노기 블로니</span></a>
+                  <div class="imgIcon closeIcon"><img src="./../imgs/close.svg" /></div>
+                </div>
+                <div class="channelList">
+                  <a href="/"><span>마비노기 블로니</span></a>
+                  <div class="imgIcon closeIcon"><img src="./../imgs/close.svg" /></div>
+                </div>
+                <div class="channelList">
+                  <a href="/"><span>마비노기 블로니</span></a>
+                  <div class="imgIcon closeIcon"><img src="./../imgs/close.svg" /></div>
+                </div>
+              </div>
+              <div class="menuIconBox">
+                <div class="imgIcon menuIcon"><img src="./../imgs/menu.svg" /></div>
+              </div>
+            </div>
+            <div class="categoryBoxWrapper">
+              <div class="categoryBox">
+                <a href="/" class="selected">
+                  <div class="category">전체</div>
+                </a>
+                <a href="/">
+                  <div class="category">전체</div>
+                </a>
+                <a href="/">
+                  <div class="category">전체</div>
+                </a>
+                <a href="/">
+                  <div class="category">전체</div>
+                </a>
+                <a href="/">
+                  <div class="category">전체</div>
+                </a>
+                <a href="/">
+                  <div class="category">전체</div>
+                </a>
+              </div>
+            </div>
+            <div class="boardTableBox">
+              <div class="boardFieldListBox boardRow">
+                <div class="divideLineOne">
+                  <div class="numberColumn">번호</div>
+                  <div class="titleColumn">
+                    <dlv class="titleContent">
+                      <div class="textWrapper">
+                        <!-- <div class="blackBox"></div> -->
+                        <div class="previewIcon imgIcon"></div>
+                        <div class="text">
+                          제목
+                        </div>
+                      </div>
+                      <div class="commentCountBox"></div>
+                    </dlv>
+                  </div>
+                </div>
+                <div class="divideLineTwo ">
+                  <div class="writerColumn left_position">
+                    <div class="text">작성자</div>
+                  </div>
+                  <div class="right_position">
+                    <div class="dataColumn">작성일</div>
+                    <div class="looksColumn">조회수</div>
+                    <div class="recommendColumn">추천</div>
+                  </div>
+                </div>
+              </div>
+              <a href="/">
+                <div class="boardInformRow boardRow">
+                  <div class="divideLineOne">
+                    <div class="numberColumn">번호</div>
+                    <div class="titleColumn">
+                      <dlv class="titleContent">
+                        <div class="textWrapper">
+                          <div class="blackBox">상자넣는 곳</div>
+                          <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div>
+                          <div class="text">
+                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                          </div>
+                        </div>
+                        <div class="commentCountBox">[2]</div>
+                      </dlv>
+                    </div>
+                  </div>
+                  <div class="divideLineTwo ">
+                    <div class="writerColumn left_position">
+                      <div class="text">작성자</div>
+                      <div class="checkIcon orangeCheckIcon imgIcon" title="주황색"><img
+                          src="./../imgs/checkmark-outline.svg" /></div>
+                    </div>
+                    <div class="right_position">
+                      <div class="dataColumn">작성일</div>
+                      <div class="looksColumn">조회수</div>
+                      <div class="recommendColumn">추천</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="/">
+                <div class="boardInformRow boardRow">
+                  <div class="divideLineOne">
+                    <div class="numberColumn">번호</div>
+                    <div class="titleColumn">
+                      <dlv class="titleContent">
+                        <div class="textWrapper">
+                          <div class="blackBox">상자넣는 곳</div>
+                          <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div>
+                          <div class="text">
+                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                          </div>
+                        </div>
+                        <div class="commentCountBox">[2]</div>
+                      </dlv>
+                    </div>
+                  </div>
+                  <div class="divideLineTwo ">
+                    <div class="writerColumn left_position">
+                      <div class="text">작성자</div>
+                      <div class="blueCheckIcon checkIcon imgIcon" title="주황색"><img
+                          src="./../imgs/checkmark-outline.svg" /></div>
+                    </div>
+                    <div class="right_position">
+                      <div class="dataColumn">작성일</div>
+                      <div class="looksColumn">조회수</div>
+                      <div class="recommendColumn">추천</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="/">
+                <div class="boardInformRow boardRow">
+                  <div class="divideLineOne">
+                    <div class="numberColumn">번호</div>
+                    <div class="titleColumn">
+                      <dlv class="titleContent">
+                        <div class="textWrapper">
+                          <div class="blackBox">상자넣는 곳</div>
+                          <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div>
+                          <div class="text">
+                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                          </div>
+                        </div>
+                        <div class="commentCountBox">[2]</div>
+                      </dlv>
+                    </div>
+                  </div>
+                  <div class="divideLineTwo ">
+                    <div class="writerColumn left_position">
+                      <div class="text">작성자</div>
+                      <div class="greyCheckIcon checkIcon imgIcon" title="주황색"><img
+                          src="./../imgs/checkmark-outline.svg" /></div>
+                    </div>
+                    <div class="right_position">
+                      <div class="dataColumn">작성일</div>
+                      <div class="looksColumn">조회수</div>
+                      <div class="recommendColumn">추천</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="/">
+                <div class="boardInformRow boardRow">
+                  <div class="divideLineOne">
+                    <div class="numberColumn">번호</div>
+                    <div class="titleColumn">
+                      <dlv class="titleContent">
+                        <div class="textWrapper">
+                          <div class="blackBox">상자넣는 곳</div>
+                          <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div>
+                          <div class="text">
+                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                          </div>
+                        </div>
+                        <div class="commentCountBox">[2]</div>
+                      </dlv>
+                    </div>
+                  </div>
+                  <div class="divideLineTwo ">
+                    <div class="writerColumn left_position">
+                      <div class="text">작성자</div>
+                      <div class="checkIcon imgIcon" title="주황색"><img src="./../imgs/checkmark-outline.svg" />
+                      </div>
+                    </div>
+                    <div class="right_position">
+                      <div class="dataColumn">작성일</div>
+                      <div class="looksColumn">조회수</div>
+                      <div class="recommendColumn">추천</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="/">
+                <div class="boardInformRow boardRow">
+                  <div class="divideLineOne">
+                    <div class="numberColumn">번호</div>
+                    <div class="titleColumn">
+                      <dlv class="titleContent">
+                        <div class="textWrapper">
+                          <div class="blackBox">상자넣는 곳</div>
+                          <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div>
+                          <div class="text">
+                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                          </div>
+                        </div>
+                        <div class="commentCountBox">[2]</div>
+                      </dlv>
+                    </div>
+                  </div>
+                  <div class="divideLineTwo ">
+                    <div class="writerColumn left_position">
+                      <div class="text">작성자</div>
+                      <div class="checkIcon imgIcon" title="주황색"><img src="./../imgs/checkmark-outline.svg" />
+                      </div>
+                    </div>
+                    <div class="right_position">
+                      <div class="dataColumn">작성일</div>
+                      <div class="looksColumn">조회수</div>
+                      <div class="recommendColumn">추천</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="boardInformStretchButton boardRow">
+                숨겨진 공지 펼치기(6개) <div class="unfoldIcon imgIcon" title="공지"><img src="./../imgs/archive.svg" />
+                </div>
+              </div>
+              <a href="/">
+                <div class="boardRow">
+                  <div class="divideLineOne">
+                    <div class="numberColumn">번호</div>
+                    <div class="titleColumn">
+                      <dlv class="titleContent">
+                        <div class="textWrapper">
+                          <div class="blackBox">상자넣는 곳</div>
+                          <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div>
+                          <div class="text">
+                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                          </div>
+                        </div>
+                        <div class="commentCountBox">[2]</div>
+                      </dlv>
+                    </div>
+                  </div>
+                  <div class="divideLineTwo ">
+                    <div class="writerColumn left_position">
+                      <div class="text">작성자</div>
+                      <div class="checkIcon imgIcon" title="주황색"><img src="./../imgs/checkmark-outline.svg" />
+                      </div>
+                    </div>
+                    <div class="right_position">
+                      <div class="dataColumn">작성일</div>
+                      <div class="looksColumn">조회수</div>
+                      <div class="recommendColumn">추천</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="/">
+                <div class="boardRow">
+                  <div class="divideLineOne">
+                    <div class="numberColumn">번호</div>
+                    <div class="titleColumn">
+                      <dlv class="titleContent">
+                        <div class="textWrapper">
+                          <div class="blackBox">상자넣는 곳</div>
+                          <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div>
+                          <div class="text">
+                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                          </div>
+                        </div>
+                        <div class="commentCountBox">[2]</div>
+                      </dlv>
+                    </div>
+                  </div>
+                  <div class="divideLineTwo ">
+                    <div class="writerColumn left_position">
+                      <div class="text">작성자</div>
+                      <div class="checkIcon imgIcon" title="주황색"><img src="./../imgs/checkmark-outline.svg" />
+                      </div>
+                    </div>
+                    <div class="right_position">
+                      <div class="dataColumn">작성일</div>
+                      <div class="looksColumn">조회수</div>
+                      <div class="recommendColumn">추천</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="/">
+                <div class="boardRow">
+                  <div class="divideLineOne">
+                    <div class="numberColumn">번호</div>
+                    <div class="titleColumn">
+                      <dlv class="titleContent">
+                        <div class="textWrapper">
+                          <div class="blackBox">상자넣는 곳</div>
+                          <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div>
+                          <div class="text">
+                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                          </div>
+                        </div>
+                        <div class="commentCountBox">[2]</div>
+                      </dlv>
+                    </div>
+                  </div>
+                  <div class="divideLineTwo ">
+                    <div class="writerColumn left_position">
+                      <div class="text">작성자</div>
+                      <div class="checkIcon imgIcon" title="주황색"><img src="./../imgs/checkmark-outline.svg" />
+                      </div>
+                    </div>
+                    <div class="right_position">
+                      <div class="dataColumn">작성일</div>
+                      <div class="looksColumn">조회수</div>
+                      <div class="recommendColumn">추천</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="/">
+                <div class="boardRow">
+                  <div class="divideLineOne">
+                    <div class="numberColumn">번호</div>
+                    <div class="titleColumn">
+                      <dlv class="titleContent">
+                        <div class="textWrapper">
+                          <div class="blackBox">상자넣는 곳</div>
+                          <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div>
+                          <div class="text">
+                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                          </div>
+                        </div>
+                        <div class="commentCountBox">[2]</div>
+                      </dlv>
+                    </div>
+                  </div>
+                  <div class="divideLineTwo ">
+                    <div class="writerColumn left_position">
+                      <div class="text">작성자</div>
+                      <div class="checkIcon imgIcon" title="주황색"><img src="./../imgs/checkmark-outline.svg" />
+                      </div>
+                    </div>
+                    <div class="right_position">
+                      <div class="dataColumn">작성일</div>
+                      <div class="looksColumn">조회수</div>
+                      <div class="recommendColumn">추천</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="/">
+                <div class="boardRow">
+                  <div class="divideLineOne">
+                    <div class="numberColumn">번호</div>
+                    <div class="titleColumn">
+                      <dlv class="titleContent">
+                        <div class="textWrapper">
+                          <div class="blackBox">상자넣는 곳</div>
+                          <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div>
+                          <div class="text">
+                            제목ㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                          </div>
+                        </div>
+                        <div class="commentCountBox">[2]</div>
+                      </dlv>
+                    </div>
+                  </div>
+                  <div class="divideLineTwo ">
+                    <div class="writerColumn left_position">
+                      <div class="text">작성자</div>
+                      <div class="checkIcon imgIcon" title="주황색"><img src="./../imgs/checkmark-outline.svg" />
+                      </div>
+                    </div>
+                    <div class="right_position">
+                      <div class="dataColumn">작성일</div>
+                      <div class="looksColumn">조회수</div>
+                      <div class="recommendColumn">추천</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <form id="body_quickButonsLine_bottom">
+            <div class="quickButtonsLine">
+              <div class="left_buttons">
+                <a href="/">
+                  <button type="button">
+                    <div class="allBoardIcon imgIcon"><img src="./../imgs/reader.svg" /></div><span>전체글</span>
+                  </button>
+                </a>
+                <a href="/">
+                  <button type="button" class="redBackground">
+                    <div class="recommendedBoardIcon imgIcon"><img src="./../imgs/star.svg" /></div>
+                    <span>개념글</span>
+                  </button>
+                </a>
+                <select name="sortType">
+                  <option value="">등록순</option>
+                  <option value="oneDay">추천순 (24시간)</option>
+                  <option value="threeDay">추천순 (3일)</option>
+                  <option value="allDay">추천순 (전체)</option>
+                  <option value="commentCount_threeDay">댓글갯수순 (3일)</option>
+                  <option value="recentComment">최근댓글순</option>
+                </select>
+                <select value="sortCount">
+                  <option value="">추천컷</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                  <option value="50">50</option>
+                  <option value="70">70</option>
+                  <option value="100">100</option>
+                  <option value="etc">기타</option>
+                </select>
+              </div>
+              <div class="right_buttons">
+                <a href="/" title="글쓰기">
+                  <button type="button">
+                    <div class="writeIcon imgIcon"><img src="./../imgs/create-outline.svg" /></div>
+                    <span>글쓰기</span>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </form>
+          <form id="body_searchLine_bottom">
+            <div class="searchLine_bottom">
+              <select name="sort">
+                <option value="all">전체</option>
+                <option value="titleNcontent">제목/내용</option>
+                <option value="title">제목</option>
+                <option value="content">내용</option>
+                <option value="writer">글쓴이</option>
+                <option value="comment">댓글</option>
+              </select>
+              <input type="text" name="search" />
+              <button type="button" class="searchButton">검색</button>
+            </div>
+          </form>
+          <div class="pageBoxWrapper">
+            <div class="pageBoxList">
+              <a href="/">
+                <div class="pageBox">1</div>
+              </a>
+              <a href="/">
+                <div class="pageBox">2</div>
+              </a>
+              <a href="/">
+                <div class="pageBox">3</div>
+              </a>
+              <a href="/">
+                <div class="pageBox">4</div>
+              </a>
+              <a href="/">
+                <div class="pageBox">5</div>
+              </a>
+              <a href="/">
+                <div class="pageBox">6</div>
+              </a>
+              <a href="/">
+                <div class="pageBox">7</div>
+              </a>
+              <a href="/">
+                <div class="pageBox">8</div>
+              </a>
+              <a href="/">
+                <div class="pageBox">9</div>
+              </a>
+              <a href="/">
+                <div class="pageBox">10</div>
+              </a>
+              <a href="/">
+                <div class="pageBox">
+                  <div class="writeIcon imgIcon"><img src="./../imgs/chevron-forward-outline.svg" /></div>
+                </div>
+              </a>
+              <a href="/">
+                <div class="pageBox doubleIcon">
+                  <div class="writeIcon imgIcon"><img src="./../imgs/chevron-forward-outline.svg" /></div>
+                  <div class="writeIcon imgIcon"><img src="./../imgs/chevron-forward-outline.svg" /></div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="quickGoDate">
+            <input type="datetime-local" name="quickGoDate" class="quickSelectBox"
+              data-datetime="2024-05-27T13:07:02.396Z" data-format="Y-m-dTH:i" data-localdate="max"
+              max="2024-05-27T22:07">
+            <a href="/"><button type="button">시간으로 바로가기</button></a>
+          </div>
+        </div>
+        <div class="informBox">
+          <div class="boardBox otherChannel">
+            <div class="title">유머 채널의 개념글</div>
+            <div class="content">
+              <ul>
+                <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a>
+                <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a> <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a> <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a> <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a>
+              </ul>
+            </div>
+          </div>
+          <div class="boardBox thisChannel">
+            <div class="title">이 채널의 개념글</div>
+            <div class="content">
+              <ul>
+                <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a> <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a> <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a> <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a> <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a>
+              </ul>
+            </div>
+          </div>
+          <div class="stickyBox">
+            <div class="adBox">
+              <div class="upDownSlide out">
+                <div class="divideAd adOne">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adTwo">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adThree">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adFour">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adFive">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adSix">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adSeven">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adEight">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adNine">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adTen">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="basicSlide">
+                <div class="adImgBox">
+                  <a href="/"><img src="./../imgs/notification-bell.png" /></a>
+                  <a href="/"><img src="./../imgs/person.png" /></a>
+                  <a href="/"><img src="./../imgs/notification-bell.png" /></a>
+                </div>
+              </div>
+            </div>
+            <div class="newsBox">
+              <div class="title">나무뉴스 주요</div>
+              <div class="content">
+                <ul>
+                  <a href="/">
+                    <li>
+                      <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    </li>
+                  </a> <a href="/">
+                    <li>
+                      <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    </li>
+                  </a> <a href="/">
+                    <li>
+                      <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    </li>
+                  </a> <a href="/">
+                    <li>
+                      <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    </li>
+                  </a> <a href="/">
+                    <li>
+                      <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    </li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rightEndBlock"></div>
+    </div>
+    <footer class="footer">
+      <div class="footerCenter">
+        <div class="footerLine">
+          <div class="divideLine withImg"><span class="title">프로젝트 팀원</span>
+            <div class="imgWrapper"><img src="./../imgs/people.svg" /></div>
+          </div><span class="divideLine">김강문</span><span class="divideLine">이승배</span><span
+            class="divideLine">손민복</span>
+        </div>
+        <div class="footerLine">
+          <div class="divideLine"><span class="title">HELP</span></div><span class="divideLine"><a
+              href="/">Ads</a></span><span class="divideLine"><a href="/">Contáctenos</a></span><span
+            class="divideLine"><a href="/">POLÍTICA DE PRIVACIDAD Y REGLAS DE USO</a></span>
+        </div>
+        <div class="footerLine">
+          <div class="divideLine"><span class="title">Application</span></div>
+          <div class="divideLine iconBox">
+            <a href="/">
+              <svg class="kOqhQd" style="max-width: 3rem;" aria-hidden="true" viewBox="0 0 40 40"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" d="M0,0h40v40H0V0z"></path>
+                <g>
+                  <path
+                    d="M19.7,19.2L4.3,35.3c0,0,0,0,0,0c0.5,1.7,2.1,3,4,3c0.8,0,1.5-0.2,2.1-0.6l0,0l17.4-9.9L19.7,19.2z"
+                    fill="#EA4335"></path>
+                  <path
+                    d="M35.3,16.4L35.3,16.4l-7.5-4.3l-8.4,7.4l8.5,8.3l7.5-4.2c1.3-0.7,2.2-2.1,2.2-3.6C37.5,18.5,36.6,17.1,35.3,16.4z"
+                    fill="#FBBC04"></path>
+                  <path d="M4.3,4.7C4.2,5,4.2,5.4,4.2,5.8v28.5c0,0.4,0,0.7,0.1,1.1l16-15.7L4.3,4.7z" fill="#4285F4">
+                  </path>
+                  <path d="M19.8,20l8-7.9L10.5,2.3C9.9,1.9,9.1,1.7,8.3,1.7c-1.9,0-3.6,1.3-4,3c0,0,0,0,0,0L19.8,20z"
+                    fill="#34A853"></path>
+                </g>
+              </svg>
+            </a>
+            <a href="/">
+              <svg style=" max-width: 3rem;" enable-background="new 0 0 800 800" version="1.1" viewBox="0 0 800 800"
+                xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                <linearGradient id="a" x1="400.05" x2="400.05" y1="798.77" y2="-1.2283"
+                  gradientTransform="matrix(1 0 0 -1 0 798.77)" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#18BFFB" offset="0"></stop>
+                  <stop stop-color="#2072F3" offset="1"></stop>
+                </linearGradient>
+                <path
+                  d="M638.4,0H161.6C72.3,0,0,72.3,0,161.6v476.9C0,727.7,72.3,800,161.6,800h476.9  c89.2,0,161.6-72.3,161.6-161.6V161.6C800,72.3,727.7,0,638.4,0z"
+                  fill="url(#a)"></path>
+                <path
+                  d="m396.6 183.8 16.2-28c10-17.5 32.3-23.4 49.8-13.4s23.4 32.3 13.4 49.8l-156.1 270.2h112.9c36.6 0 57.1 43 41.2 72.8h-331c-20.2 0-36.4-16.2-36.4-36.4s16.2-36.4 36.4-36.4h92.8l118.8-205.9-37.1-64.4c-10-17.5-4.1-39.6 13.4-49.8 17.5-10 39.6-4.1 49.8 13.4l15.9 28.1zm-140.4 388.9-35 60.7c-10 17.5-32.3 23.4-49.8 13.4s-23.4-32.3-13.4-49.8l26-45c29.4-9.1 53.3-2.1 72.2 20.7zm301.4-110.1h94.7c20.2 0 36.4 16.2 36.4 36.4s-16.2 36.4-36.4 36.4h-52.6l35.5 61.6c10 17.5 4.1 39.6-13.4 49.8-17.5 10-39.6 4.1-49.8-13.4-59.8-103.7-104.7-181.3-134.5-233-30.5-52.6-8.7-105.4 12.8-123.3 23.9 41 59.6 102.9 107.3 185.5z"
+                  fill="#fff"></path>
+              </svg>
+            </a>
+          </div>
+          <span class="divideLine">This site is protected by reCAPTCHA and the Google <a href="/">Privacy Policy</a>
+            and
+            <a href="/">Terms of Service</a> apply.</span>
+        </div>
+      </div>
+    </footer>
+    <div class="bottomIconLine">
+      <div class="icon" title=""><img class="iconImg" src="./../imgs/settings-sharp.svg" /></div>
+      <div class="icon" title="맨 위로 이동"><img class="iconImg" src="./../imgs/caret-up-outline.svg" /></div>
+      <div class="icon" title="맨 아래로 이동"><img class="iconImg" src="./../imgs/caret-down-outline.svg" /></div>
+    </div>
+  </div>
+</body>
+
+</html>

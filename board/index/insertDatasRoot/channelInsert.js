@@ -5,7 +5,7 @@ const channelDescription = "dd.";
 const channelInfoBox = document.getElementById("channelInfo");
 channelInfoBox.innerHTML = `
 <div class="channelImg">
-<a href="/"><img src="./../imgs/gameImg.jpg" /></a>
+<a href="/"><img src="./imgs/gameImg.jpg" /></a>
 </div>
 <div class="channelInfo">
 <div class="channelPathNButtons">
@@ -13,15 +13,15 @@ channelInfoBox.innerHTML = `
   <div class="channelButtons">
     <a href="/">
       <button>
-        <div class="bookIcon imgIcon"><img src="./../imgs/book.svg" /></div><span>채널위키</span>
+        <div class="bookIcon imgIcon"><img src="./imgs/book.svg" /></div><span>채널위키</span>
       </button>
     </a>
     <button>
-      <div class="alarmIcon imgIcon"><img src="./../imgs/notifications-outline.svg" /></div>
+      <div class="alarmIcon imgIcon"><img src="./imgs/notifications-outline.svg" /></div>
       <span>알림</span>
     </button>
     <button>
-      <div class="plusIcon imgIcon"><img src="./../imgs/add-outline.svg" /></div><span>구독</span>
+      <div class="plusIcon imgIcon"><img src="./imgs/add-outline.svg" /></div><span>구독</span>
     </button>
   </div>
 </div>
@@ -30,7 +30,7 @@ channelInfoBox.innerHTML = `
     <div class="subscribeCount baseInfoBox">구독자 96154명</div>
     <div class="alarmCount baseInfoBox">알림수신 1897명</div>
     <div class="channelAdmin baseInfoBox" id="channelInfo_adminName"><a href="/">@${adminName}</a>
-      <div class="checkIcon imgIcon"><img src="./../imgs/checkmark-outline.svg" /></div>
+      <div class="checkIcon imgIcon"><img src="./imgs/checkmark-outline.svg" /></div>
     </div>
   </div>
   <div class="channelInfoText">${channelDescription}</div>

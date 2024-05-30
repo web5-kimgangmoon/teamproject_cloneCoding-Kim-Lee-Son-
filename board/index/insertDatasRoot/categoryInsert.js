@@ -5,7 +5,7 @@ const categoryList = [
   "ㅈㅈ",
   "ㄷㄷ",
 ];
-const categoryListBox = document.getElementById("categoryList");
+
 
 categoryListBox.innerHTML += `
   <a href="/" class="selected">

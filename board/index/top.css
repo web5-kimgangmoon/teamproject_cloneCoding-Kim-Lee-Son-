@@ -388,6 +388,16 @@ form {
   word-break: keep-all;
 }
 
+#container .top .topMenu .topCenter .topRight .login .userInfoBox .userInfoList {
+  display: block;
+  background-color: white;
+  outline: 0;
+  cursor: pointer;
+  border: 0;
+  width: 100%;
+  padding: 0;
+}
+
 #container .top .topMenu .topCenter .topRight .login .userInfoBox .userPoint {
   padding: 0.1rem 1.5rem 0.1rem 1.5rem;
 
@@ -401,7 +411,8 @@ form {
 
 #container .top .topMenu .topCenter .topLeft .subscribechannel .channelBox .channelList a:focus,
 #container .top .topMenu .topCenter .topLeft .primarychannel .channelBox .channelList a:focus,
-#container .top .topMenu .topCenter .topRight .login .userInfoBox .userInfoList a:focus {
+#container .top .topMenu .topCenter .topRight .login .userInfoBox .userInfoList a:focus,
+#container .top .topMenu .topCenter .topRight .login .userInfoBox .userInfoList:focus a {
   background-color: #007bff;
 }
 
@@ -1014,6 +1025,10 @@ form {
 
   #container .top .topMenu .topCenter .topRight .topEtc .new {
     display: none;
+  }
+
+  #container .top .subTopSearchBox {
+    display: block;
   }
 }
 

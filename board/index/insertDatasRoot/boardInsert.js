@@ -1,4 +1,4 @@
-const boardTableBox = document.getElementById("boardTableBox");
+
 boardTableBox.innerHTML = `
 <div class="boardFieldListBox boardRow">
 <div class="divideLineOne">
@@ -48,7 +48,7 @@ function boardInformInsert({
         <dlv class="titleContent">
           <div class="textWrapper">
             <div class="blackBox">${blackBox}</div>
-            <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div>
+            <div class="previewIcon imgIcon"><img src="./imgs/copy-outline.svg" /></div>
             <div class="text">
             ${title}
             </div>
@@ -60,7 +60,7 @@ function boardInformInsert({
     <div class="divideLineTwo ">
       <div class="writerColumn left_position">
         <div class="text">${writer}</div>
-        <div class="checkIcon imgIcon" title="주황색"><img src="./../imgs/checkmark-outline.svg" /></div>
+        <div class="checkIcon imgIcon" title="주황색"><img src="./imgs/checkmark-outline.svg" /></div>
       </div>
       <div class="right_position">
         <div class="dataColumn">${created_at}</div>
@@ -91,7 +91,7 @@ function normalBoardInsert({
         <dlv class="titleContent">
           <div class="textWrapper">
             <div class="blackBox">${blackBox}</div>
-            <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div>
+            <div class="previewIcon imgIcon"><img src="./imgs/copy-outline.svg" /></div>
             <div class="text">
             ${title}
             </div>
@@ -103,7 +103,7 @@ function normalBoardInsert({
     <div class="divideLineTwo ">
       <div class="writerColumn left_position">
         <div class="text">${writer}</div>
-        <div class="checkIcon imgIcon" title="주황색"><img src="./../imgs/checkmark-outline.svg" /></div>
+        <div class="checkIcon imgIcon" title="주황색"><img src="./imgs/checkmark-outline.svg" /></div>
       </div>
       <div class="right_position">
         <div class="dataColumn">${created_at}</div>
@@ -118,7 +118,7 @@ function normalBoardInsert({
 function boardStretchButtonInsert(concealInformCount) {
   boardTableBox += `
   <div class="boardInformStretchButton boardRow">
-  숨겨진 공지 펼치기(${concealInformCount}개) <div class="unfoldIcon imgIcon" title="공지"><img src="./../imgs/archive.svg" /></div>
+  숨겨진 공지 펼치기(${concealInformCount}개) <div class="unfoldIcon imgIcon" title="공지"><img src="./imgs/archive.svg" /></div>
   </div>`;
 }
 
