@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
     <link rel="stylesheet" href="index.css">
-    <link href="import.css" media="screen and (min-width:512px) and (max-width:1024px)" rel="stylesheet">
-    <script src="index.js"></script>
+    <!-- <link href="import.css" media="screen and (min-width:512px) and (max-width:1024px)" rel="stylesheet"> -->
 </head>
-<body class="Login">
+<body>
+    <form action="" class="Login" id="idForm">
     <div class="idBox">
         
             <span class="left">
@@ -32,7 +32,7 @@
                 <!-- <div class="innerText input"></div> -->
                 <div class="Purple">아이디/비밀번호 찾기</div>
                 <!-- <a from="/" class="input-a"><button type="button">다음</button></a> -->
-                <button type="button" class="btn-a center">다음</button>
+                <button type="button" class="btn-a center" id="btn">다음</button>
                 <div class="createdId center Purple">계정 만들기</div>
             </span>
             
@@ -44,26 +44,8 @@
             </span>   
         
     </div>
-    <div class="pwBox">
-        <div class="box">
-            <div><h1>아카라이브 로그인</h1></div>
-            <div class="username-block ">
-                <button class="username-wrap" data-tostage="1" type="button">
-                <span class="back-icon ion-chevron-left"></span>
-                <span class="will-fill-username">USERNAME</span>
-                </button>
-            </div>
-            <div class="fallback"></div>
-            <div class="blurry">비밀번호</div>
-            <input type="text" id="idInput" class="input" name="username" minlength="1" maxlength="64" spellcheck="false" autocomplete="on" >
-            <!-- <div class="input-b">
-                <input type="text" id="idInput" name="username" minlength="1" maxlength="64" spellcheck="false" enterkeyhint="next" autocomplete="username" data-listener-added_d090e0e7="true" class="" style="animation-duration: 0.5s;">
-            </div> -->
-            <div class="Purple">아이디/비밀번호 찾기</div>
-            <button type="button" class="btn-a center">로그인</button>
-            <div class="createdId center Purple">계정 만들기</div>
-        <div></div>
-    </div>
     
+</form>
 </body>
+<script src="index.js"></script>
 </html>
