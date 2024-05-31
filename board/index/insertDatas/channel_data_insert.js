@@ -8,7 +8,7 @@ recentChannelList.forEach((item) => {
   recentChannelListBox.innerHTML += `
   <div class="channelList">
   <a href="${item[0]}"><span>${item[1]}</span></a>
-  <div class="imgIcon closeIcon"><img src="./imgs/close.svg" /></div>
+  <div class="imgIcon closeIcon"><img src="./../imgs/close.svg" /></div>
 </div>`;
 });
 
@@ -47,7 +47,7 @@ categoryListBox.onmouseup = (e) => {
 
 document.getElementById("channelInfo").innerHTML = `
 <div class="channelImg">
-<a href="/"><img src="./imgs/gameImg.jpg" /></a>
+<a href="/"><img src="./../imgs/gameImg.jpg" /></a>
 </div>
 <div class="channelInfo">
 <div class="channelPathNButtons">
@@ -55,15 +55,15 @@ document.getElementById("channelInfo").innerHTML = `
   <div class="channelButtons">
     <a href="/">
       <button>
-        <div class="bookIcon imgIcon"><img src="./imgs/book.svg" /></div><span>채널위키</span>
+        <div class="bookIcon imgIcon"><img src="./../imgs/book.svg" /></div><span>채널위키</span>
       </button>
     </a>
     <button>
-      <div class="alarmIcon imgIcon"><img src="./imgs/notifications-outline.svg" /></div>
+      <div class="alarmIcon imgIcon"><img src="./../imgs/notifications-outline.svg" /></div>
       <span>알림</span>
     </button>
     <button>
-      <div class="plusIcon imgIcon"><img src="./imgs/add-outline.svg" /></div><span>구독</span>
+      <div class="plusIcon imgIcon"><img src="./../imgs/add-outline.svg" /></div><span>구독</span>
     </button>
   </div>
 </div>
@@ -72,7 +72,7 @@ document.getElementById("channelInfo").innerHTML = `
     <div class="subscribeCount baseInfoBox">구독자 96154명</div>
     <div class="alarmCount baseInfoBox">알림수신 1897명</div>
     <div class="channelAdmin baseInfoBox" id="channelInfo_adminName"><a href="/">@${adminName}</a>
-      <div class="checkIcon imgIcon"><img src="./imgs/checkmark-outline.svg" /></div>
+      <div class="checkIcon imgIcon"><img src="./../imgs/checkmark-outline.svg" /></div>
     </div>
   </div>
   <div class="channelInfoText">${channelDescription}</div>
@@ -127,7 +127,7 @@ channelBoardInformList.forEach((item) => {
           <div class="blackBox ${item["blackBox"] == "" && "out"}">${
     item["blackBox"]
   }</div>
-          <!-- <div class="previewIcon imgIcon"><img src="./imgs/copy-outline.svg" /></div> --!>
+          <!-- <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div> --!>
           <div class="text">
           ${item["title"]}
           </div>
@@ -143,7 +143,7 @@ channelBoardInformList.forEach((item) => {
         item["isSub"] ? "blueCheckIcon" : "orangeCheckIcon"
       }" title="${
     item["isSub"] ? "부관리자" : "주관리자"
-  }"><img src="./imgs/checkmark-outline.svg" /></div>
+  }"><img src="./../imgs/checkmark-outline.svg" /></div>
     </div>
     <div class="right_position">
       <div class="dataColumn">${item["created_at"]}</div>
@@ -168,7 +168,7 @@ channelBoardInformList_concealed.forEach((item) => {
           <div class="blackBox ${item["blackBox"] == "" && "out"}">${
     item["blackBox"]
   }</div>
-          <!-- <div class="previewIcon imgIcon"><img src="./imgs/copy-outline.svg" /></div> --!>
+          <!-- <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div> --!>
           <div class="text">
           ${item["title"]}
           </div>
@@ -184,7 +184,7 @@ channelBoardInformList_concealed.forEach((item) => {
     item["isSub"] && "blueCheckIcon"
   }" title="${item["isSub"] ? "" : "주관리자"} ${
     item["isSub"] ? "부관리자" : ""
-  }"><img src="./imgs/checkmark-outline.svg" /></div>
+  }"><img src="./../imgs/checkmark-outline.svg" /></div>
     </div>
     <div class="right_position">
       <div class="dataColumn">${item["created_at"]}</div>
@@ -199,7 +199,7 @@ channelBoardInformList_concealed.forEach((item) => {
 if (channelBoardInformList_concealed_count > 0) {
   boardTableBox.innerHTML += `<a>
 <div class="boardInformStretchButton boardRow" id="boardInformStretchButton">
-숨겨진 공지 펼치기(${channelBoardInformList_concealed_count}개) <div class="unfoldIcon imgIcon" title="공지"><img src="./imgs/archive.svg" /></div>
+숨겨진 공지 펼치기(${channelBoardInformList_concealed_count}개) <div class="unfoldIcon imgIcon" title="공지"><img src="./../imgs/archive.svg" /></div>
 </div></a>`;
 }
 
@@ -215,7 +215,7 @@ channelBoardList.forEach((item) => {
             <div class="blackBox ${item["blackBox"] == "" && "out"}">${
     item["blackBox"]
   }</div>
-            <!-- <div class="previewIcon imgIcon"><img src="./imgs/copy-outline.svg" /></div> --!>
+            <!-- <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div> --!>
             <div class="text">
             ${item["title"]}
             </div>
@@ -228,17 +228,18 @@ channelBoardList.forEach((item) => {
       <div class="writerColumn left_position">
         <div class="text">${item["writer"]}</div>
         <div class="${
-          item["isAdmin"] ? item["isSub"] || "orangeCheckIcon" : ""
-        } ${item["isAdmin"] ? item["isSub"] && "blueCheckIcon" : ""} ${
-    item["isAdmin"] && "checkIcon"
-  } imgIcon" title="${item["isAdmin"] ? item["isSub"] || "주관리자" : ""} ${
-    item["isAdmin"] ? item["isSub"] && "부관리자" : ""
+          item["isAdmin"]
+            ? item["isSub"]
+              ? "blueCheckIcon"
+              : "orangeCheckIcon"
+            : ""
+        } ${item["isAdmin"] ? "" : "greyCheckIcon"} checkIcon imgIcon" title="${
+    item["isAdmin"] ? (item["isSub"] ? "부관리자" : "주관리자") : ""
   }
         ${item["isAdmin"] ? "" : "사용자"}">
-        <img src="${
-          item["isAdmin"] ? "./imgs/checkmark-outline.svg" : "./imgs/person.svg"
-        }" /></div>
-      </div>
+        <img src="./../imgs/checkmark-outline.svg" /></div>
+    </div>
+
       <div class="right_position">
         <div class="dataColumn">${item["created_at"]}</div>
         <div class="looksColumn">${item["looks"]}</div>
@@ -283,7 +284,7 @@ channelBoardList.forEach((item) => {
     temp = `<a href="/?page=${
       page - count
     }&category=${category}&channel=${channel}">
-        <div class="pageBox">  <div class="imgIcon"><img src="./imgs/chevron-back-outline.svg" /></div></div>
+        <div class="pageBox">  <div class="imgIcon"><img src="./../imgs/chevron-back-outline.svg" /></div></div>
         </a>`.concat(temp);
   }
 
@@ -299,7 +300,7 @@ channelBoardList.forEach((item) => {
   temp += `<a href="/?page=${page + 1}&category=${category}&channel=${channel}">
   <div class="pageBox">
     <div class="imgIcon">
-      <img src="./imgs/chevron-forward-outline.svg" />
+      <img src="./../imgs/chevron-forward-outline.svg" />
     </div>
   </div>
 </a>`;
@@ -308,13 +309,13 @@ channelBoardList.forEach((item) => {
 
 // <a href="/">
 // <div class="pageBox">
-//   <div class="writeIcon imgIcon"><img src="./imgs/chevron-forward-outline.svg" /></div>
+//   <div class="writeIcon imgIcon"><img src="./../imgs/chevron-forward-outline.svg" /></div>
 // </div>
 // </a>
 // <a href="/">
 // <div class="pageBox doubleIcon">
-//   <div class="writeIcon imgIcon"><img src="./imgs/chevron-forward-outline.svg" /></div>
-//   <div class="writeIcon imgIcon"><img src="./imgs/chevron-forward-outline.svg" /></div>
+//   <div class="writeIcon imgIcon"><img src="./../imgs/chevron-forward-outline.svg" /></div>
+//   <div class="writeIcon imgIcon"><img src="./../imgs/chevron-forward-outline.svg" /></div>
 // </div>
 // </a>
 
@@ -345,15 +346,15 @@ document.getElementById(
   "topButtonLine_Board_writing"
 ).innerHTML = `                <a href="${writingPagePath}" title="글쓰기">
 <button type="button">
-  <div class="writeIcon imgIcon"><img src="./imgs/create-outline.svg" /></div><span>글쓰기</span>
+  <div class="writeIcon imgIcon"><img src="./../imgs/create-outline.svg" /></div><span>글쓰기</span>
 </button>
 </a>
 `;
 document.getElementById(
   "bottomButtonLine_Board_writing"
-).innerHTML = `                <a href="/${writingPagePath}" title="글쓰기">
+).innerHTML = `                <a href="${writingPagePath}" title="글쓰기">
 <button type="button">
-  <div class="writeIcon imgIcon"><img src="./imgs/create-outline.svg" /></div><span>글쓰기</span>
+  <div class="writeIcon imgIcon"><img src="./../imgs/create-outline.svg" /></div><span>글쓰기</span>
 </button>
 </a>
 `;

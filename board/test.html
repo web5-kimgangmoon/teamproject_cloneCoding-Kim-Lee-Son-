@@ -9,6 +9,7 @@
       display: none;
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.js"></script>
 </head>
 
 <body>
@@ -28,6 +29,17 @@
     </fieldset>
   </form>
   <script>
+    (async () => {
+      console.log(await axios({
+        method: "post",
+        url: `http://localhost:3080/getCookie`,
+        data: {
+          1: "123",
+          3: "323"
+        },
+        withCredentials: true
+      }))
+    })();
   </script>
 </body>
 
