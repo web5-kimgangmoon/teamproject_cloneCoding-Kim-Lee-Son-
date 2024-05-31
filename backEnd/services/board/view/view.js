@@ -20,8 +20,12 @@ export default async (req, res) => {
 
     const reqcuery = req.query;
     let nowpage = reqcuery.page;
-    const nowview = reqcuery.boardId;
+    let nowview = reqcuery.boardId;
     let commentpage = reqcuery.commentpage;
+
+    if (!nowview) {
+      nowview = 1;
+    }
 
     if (!nowpage) {
       nowpage = 1;
@@ -102,6 +106,10 @@ export default async (req, res) => {
         { model: User },
       ],
     });
+
+    if (!view) {
+      throw new Error("not find board");
+    }
 
     // const commentcnt = await Comment.findAll({
     //   where: { boardId: nowview },
@@ -191,46 +199,46 @@ export default async (req, res) => {
       limit: 30,
     });
 
-    // if (catecheck) {
-    //   boardlist = await Board.findAll({
-    //     where: { channelId: channel.id, categoryId: category.id },
-    //     include: [{ model: User, attributes: ["nick"] }],
-    //     attributes: {
-    //       include: [
-    //         [
-    //           Sequelize.literal(`(
-    //           SELECT COUNT(*)
-    //           FROM board_like AS board_like
-    //           WHERE
-    //           board_like.board_id = Board.id
-    //         )`),
-    //           "likeCount",
-    //         ],
-    //         [
-    //           Sequelize.literal(`(
-    //           SELECT COUNT(*)
-    //           FROM board_dislike AS board_dislike
-    //           WHERE
-    //           board_dislike.board_id = Board.id
-    //         )`),
-    //           "dislikeCount",
-    //         ],
-    //         [
-    //           Sequelize.literal(`(
-    //           SELECT COUNT(*)
-    //           FROM comment AS comment
-    //           WHERE
-    //           comment.board_id = Board.id
-    //         )`),
-    //           "commentCount",
-    //         ],
-    //       ],
-    //     },
-    //     order: [["id", "DESC"]],
-    //     offset: (nowpage - 1) * 30,
-    //     limit: 30,
-    //   });
-    // }
+    if (catecheck) {
+      boardlist = await Board.findAll({
+        where: { channelId: channel.id, categoryId: category.id },
+        include: [{ model: User, attributes: ["nick"] }],
+        attributes: {
+          include: [
+            [
+              Sequelize.literal(`(
+              SELECT COUNT(*)
+              FROM board_like AS board_like
+              WHERE
+              board_like.board_id = Board.id
+            )`),
+              "likeCount",
+            ],
+            [
+              Sequelize.literal(`(
+              SELECT COUNT(*)
+              FROM board_dislike AS board_dislike
+              WHERE
+              board_dislike.board_id = Board.id
+            )`),
+              "dislikeCount",
+            ],
+            [
+              Sequelize.literal(`(
+              SELECT COUNT(*)
+              FROM comment AS comment
+              WHERE
+              comment.board_id = Board.id
+            )`),
+              "commentCount",
+            ],
+          ],
+        },
+        order: [["id", "DESC"]],
+        offset: (nowpage - 1) * 30,
+        limit: 30,
+      });
+    }
     res.json({
       category: category,
       user: nowuser,
@@ -243,7 +251,11 @@ export default async (req, res) => {
     });
   } catch (err) {
     console.error(err);
-    res.status(419);
+    if (err.message == "not find board") {
+      res.status(405);
+    } else {
+      res.status(419);
+    }
     res.json({ error: err.message });
   }
 };
