@@ -27,8 +27,8 @@ export default [
 
     res.json({
       uploaded: true,
-      // url: fileUrl,
-      urls: fileUrls,
+      url: fileUrls,
+      // urls: fileUrls,
     });
   },
 ];
