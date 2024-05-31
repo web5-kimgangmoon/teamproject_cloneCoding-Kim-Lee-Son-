@@ -28,12 +28,17 @@ export default [
     res.json({
       uploaded: true,
 <<<<<<< HEAD
+<<<<<<< HEAD
       url: fileUrls,
       // urls: fileUrls,
 =======
       // url: fileUrl,
       urls: fileUrls,
 >>>>>>> 73386c3 (multer and session)
+=======
+      url: fileUrls,
+      // urls: fileUrls,
+>>>>>>> a4022a9 (upload modify)
     });
   },
 ];
