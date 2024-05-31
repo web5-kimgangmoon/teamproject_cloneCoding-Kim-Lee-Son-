@@ -82,10 +82,11 @@ app.post("/upload", upload.array("icon"), (req, res) => {
   console.log(fileurl);
   res.json({ url: fileurl });
 });
-// app.get("/getCookie", (req, res) => {
-//   res.cookie("why", "dsad");
-//   res.send({ 1: 1 });
-// });
+app.post("/getCookie", (req, res) => {
+  console.log(req.body);
+  res.cookie("why", "dsad");
+  res.send({ 1: 1 });
+});
 app.listen(app.get("port"), () => {
   console.log("server open", app.get("port"));
 });
