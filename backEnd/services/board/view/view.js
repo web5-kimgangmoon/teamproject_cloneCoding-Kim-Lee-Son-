@@ -33,6 +33,7 @@ export default async (req, res) => {
     const reqcuery = req.query;
     let nowpage = reqcuery.page;
     let nowview = reqcuery.boardId;
+<<<<<<< HEAD
     // let commentpage = reqcuery.commentpage;
 
     if (!nowview) {
@@ -179,7 +180,13 @@ export default async (req, res) => {
     const reqcuery = req.query;
     let nowpage = reqcuery.page;
     const nowview = reqcuery.boardId;
+=======
+>>>>>>> 6243287 (view)
     let commentpage = reqcuery.commentpage;
+
+    if (!nowview) {
+      nowview = 1;
+    }
 
     if (!nowpage) {
       nowpage = 1;
@@ -263,6 +270,7 @@ export default async (req, res) => {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 4090055 (feat:board complete)
 =======
     const commentcnt = await Comment.findAll({
@@ -281,6 +289,12 @@ export default async (req, res) => {
       group: ["board_id"],
     });
 =======
+=======
+    if (!view) {
+      throw new Error("not find board");
+    }
+
+>>>>>>> 6243287 (view)
     // const commentcnt = await Comment.findAll({
     //   where: { boardId: nowview },
     //   attributes: [[sequelize.fn("count", "boardId"), "cnt"]],
@@ -518,46 +532,46 @@ export default async (req, res) => {
       limit: 30,
     });
 
-    // if (catecheck) {
-    //   boardlist = await Board.findAll({
-    //     where: { channelId: channel.id, categoryId: category.id },
-    //     include: [{ model: User, attributes: ["nick"] }],
-    //     attributes: {
-    //       include: [
-    //         [
-    //           Sequelize.literal(`(
-    //           SELECT COUNT(*)
-    //           FROM board_like AS board_like
-    //           WHERE
-    //           board_like.board_id = Board.id
-    //         )`),
-    //           "likeCount",
-    //         ],
-    //         [
-    //           Sequelize.literal(`(
-    //           SELECT COUNT(*)
-    //           FROM board_dislike AS board_dislike
-    //           WHERE
-    //           board_dislike.board_id = Board.id
-    //         )`),
-    //           "dislikeCount",
-    //         ],
-    //         [
-    //           Sequelize.literal(`(
-    //           SELECT COUNT(*)
-    //           FROM comment AS comment
-    //           WHERE
-    //           comment.board_id = Board.id
-    //         )`),
-    //           "commentCount",
-    //         ],
-    //       ],
-    //     },
-    //     order: [["id", "DESC"]],
-    //     offset: (nowpage - 1) * 30,
-    //     limit: 30,
-    //   });
-    // }
+    if (catecheck) {
+      boardlist = await Board.findAll({
+        where: { channelId: channel.id, categoryId: category.id },
+        include: [{ model: User, attributes: ["nick"] }],
+        attributes: {
+          include: [
+            [
+              Sequelize.literal(`(
+              SELECT COUNT(*)
+              FROM board_like AS board_like
+              WHERE
+              board_like.board_id = Board.id
+            )`),
+              "likeCount",
+            ],
+            [
+              Sequelize.literal(`(
+              SELECT COUNT(*)
+              FROM board_dislike AS board_dislike
+              WHERE
+              board_dislike.board_id = Board.id
+            )`),
+              "dislikeCount",
+            ],
+            [
+              Sequelize.literal(`(
+              SELECT COUNT(*)
+              FROM comment AS comment
+              WHERE
+              comment.board_id = Board.id
+            )`),
+              "commentCount",
+            ],
+          ],
+        },
+        order: [["id", "DESC"]],
+        offset: (nowpage - 1) * 30,
+        limit: 30,
+      });
+    }
     res.json({
       category: category,
       user: nowuser,
@@ -571,10 +585,18 @@ export default async (req, res) => {
   } catch (err) {
     console.error(err);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 4090055 (feat:board complete)
 =======
     res.status(419);
 >>>>>>> fe1a391 (status)
+=======
+    if (err.message == "not find board") {
+      res.status(405);
+    } else {
+      res.status(419);
+    }
+>>>>>>> 6243287 (view)
     res.json({ error: err.message });
   }
 };
