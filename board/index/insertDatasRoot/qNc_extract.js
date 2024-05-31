@@ -23,4 +23,5 @@ let cookie = {};
     cookie = undefined;
   }
 })();
+
 // query.get(찾을 변수명) 혹은 query.getAll(찾을 변수명)으로 찾을 수 있다.

@@ -27,7 +27,7 @@ app.use(
 );
 
 // app.use(cors());
-app.use(cookieParser(process.env.COOKIESECRET || "V"));
+app.use(cookieParser(process.env.COOKIESECRET | "V"));
 
 // const FileStore = store(session);
 // app.use(
@@ -77,14 +77,15 @@ app.post("/test", async (req, res) => {
 app.post("/upload", upload.array("icon"), (req, res) => {
   // console.log(req.files);
   //   console.log(req?.data.title);
+  console.log(req.body);
   const fileurl = `/uploads/${req.files[0].filename}`;
   console.log(fileurl);
   res.json({ url: fileurl });
 });
-app.get("/getCookie", (req, res) => {
-  res.cookie("why", "dsad");
-  res.send({ 1: 1 });
-});
+// app.get("/getCookie", (req, res) => {
+//   res.cookie("why", "dsad");
+//   res.send({ 1: 1 });
+// });
 app.listen(app.get("port"), () => {
   console.log("server open", app.get("port"));
 });
