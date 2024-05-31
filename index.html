@@ -70,6 +70,10 @@
 
     <button id="newch" class="newch">채널생성</button>
 
+    <button id="newboard" class="newboard">글 가져오기</button>
+
+    <div id="poiulkjh"></div>
+
     <script>
       // async () => {
       //   const user = (
@@ -272,6 +276,21 @@
             withCredentials: true,
           }
         );
+      };
+
+      document.getElementById("newboard").onclick = async (e) => {
+        e.preventDefault();
+        const viewboard = await (
+          await axios.post(
+            "http://localhost:3001/b/view?boardId=3",
+            {},
+            {
+              withCredentials: true,
+            }
+          )
+        ).data;
+        console.log(viewboard.view.contents);
+        document.getElementById("poiulkjh").innerHTML += viewboard.view.contents;
       };
     </script>
   </body>
