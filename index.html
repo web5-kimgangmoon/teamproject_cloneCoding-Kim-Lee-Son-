@@ -71,7 +71,7 @@
         e.preventDefault();
         await axios.post(
           "http://localhost:3001/b/write",
-          { title: "12124", contents: editor.getData(), channel: "main", category: "normal" },
+          { title: "12124", contents: editor.getData(), channel: "main", category: "test" },
           {
             withCredentials: true,
           }

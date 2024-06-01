@@ -21,7 +21,7 @@ export default async (req, res) => {
     const reqcuery = req.query;
     let nowpage = reqcuery.page;
     let nowview = reqcuery.boardId;
-    let commentpage = reqcuery.commentpage;
+    // let commentpage = reqcuery.commentpage;
 
     if (!nowview) {
       nowview = 1;
@@ -33,9 +33,9 @@ export default async (req, res) => {
     if (!chname) {
       chname = "main";
     }
-    if (!commentpage) {
-      commentpage = 1;
-    }
+    // if (!commentpage) {
+    //   commentpage = 1;
+    // }
 
     let channel = await Channel.findOne({
       where: { engTitle: chname },
@@ -85,8 +85,8 @@ export default async (req, res) => {
         {
           model: Comment,
           order: [["id", "DESC"]],
-          offset: (commentpage - 1) * 50,
-          limit: 50,
+          // offset: (commentpage - 1) * 50, // 댓글 한번에 보여주는 수 관련
+          // limit: 50,  // 댓글 한번에 보여주는 수 관련
           // include: [
           //   {
           //     model: Comment,
@@ -159,6 +159,16 @@ export default async (req, res) => {
       });
       catecheck = false;
     }
+
+    const boardcount = await Board.findAll({
+      where: { channelId: channel.id },
+      include: [{ model: Category, attributes: ["name", "engTitle"] }],
+      attributes: [
+        "category_id",
+        [sequelize.fn("count", Sequelize.col("category_id")), "catecount"],
+      ],
+      group: ["category_id"],
+    });
 
     let boardlist = await Board.findAll({
       where: { channelId: channel.id },
@@ -245,6 +255,7 @@ export default async (req, res) => {
       channel: channel,
       view: view,
       boardlist: boardlist,
+      boardcount: boardcount,
       // commentcnt: commentcnt,
       // likecnt: likecnt,
       // dislikecnt: dislikecnt,
