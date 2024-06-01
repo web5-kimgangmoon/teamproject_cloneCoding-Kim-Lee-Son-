@@ -72,6 +72,8 @@
 
     <button id="newboard" class="newboard">글 가져오기</button>
 
+    <button id="userinfo" class="userinfo">로그인한 유저정보 가져오기</button>
+
     <div id="poiulkjh"></div>
 
     <script>
@@ -291,6 +293,20 @@
         ).data;
         console.log(viewboard.view.contents);
         document.getElementById("poiulkjh").innerHTML += viewboard.view.contents;
+      };
+
+      document.getElementById("userinfo").onclick = async (e) => {
+        e.preventDefault();
+        const userinfo = await (
+          await axios.post(
+            "http://localhost:3001/u/userinfo",
+            {},
+            {
+              withCredentials: true,
+            }
+          )
+        ).data;
+        console.log(userinfo.userinfo[0].nick);
       };
     </script>
   </body>
