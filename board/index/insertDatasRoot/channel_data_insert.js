@@ -155,19 +155,20 @@ channelBoardInformList.forEach((item) => {
 </a>`;
 });
 
-let channelBoardInformList_concealed_count = 0;
-channelBoardInformList_concealed.forEach((item) => {
-  boardTableBox.innerHTML += `<a href="${
-    item["href"]
-  }" class="out"><div class="boardInformRow boardRow">
+(() => {
+  let channelBoardInformList_concealed_count = 0;
+  channelBoardInformList_concealed.forEach((item) => {
+    boardTableBox.innerHTML += `<a href="${
+      item["href"]
+    }" class="out"><div class="boardInformRow boardRow">
   <div class="divideLineOne">
     <div class="numberColumn">${item["number"]}</div>
     <div class="titleColumn">
       <dlv class="titleContent">
         <div class="textWrapper">
           <div class="blackBox ${item["blackBox"] == "" && "out"}">${
-    item["blackBox"]
-  }</div>
+      item["blackBox"]
+    }</div>
           <!-- <div class="previewIcon imgIcon"><img src="./imgs/copy-outline.svg" /></div> --!>
           <div class="text">
           ${item["title"]}
@@ -181,10 +182,10 @@ channelBoardInformList_concealed.forEach((item) => {
     <div class="writerColumn left_position">
       <div class="text">${item["writer"]}</div>
       <div class="checkIcon imgIcon ${item["isSub"] || "orangeCheckIcon"} ${
-    item["isSub"] && "blueCheckIcon"
-  }" title="${item["isSub"] ? "" : "주관리자"} ${
-    item["isSub"] ? "부관리자" : ""
-  }"><img src="./imgs/checkmark-outline.svg" /></div>
+      item["isSub"] && "blueCheckIcon"
+    }" title="${item["isSub"] ? "" : "주관리자"} ${
+      item["isSub"] ? "부관리자" : ""
+    }"><img src="./imgs/checkmark-outline.svg" /></div>
     </div>
     <div class="right_position">
       <div class="dataColumn">${item["created_at"]}</div>
@@ -193,15 +194,16 @@ channelBoardInformList_concealed.forEach((item) => {
     </div>
   </div>
 </div></a>`;
-  channelBoardInformList_concealed_count++;
-});
+    channelBoardInformList_concealed_count++;
+  });
 
-if (channelBoardInformList_concealed_count > 0) {
-  boardTableBox.innerHTML += `<a>
+  if (channelBoardInformList_concealed_count > 0) {
+    boardTableBox.innerHTML += `<a>
 <div class="boardInformStretchButton boardRow" id="boardInformStretchButton">
 숨겨진 공지 펼치기(${channelBoardInformList_concealed_count}개) <div class="unfoldIcon imgIcon" title="공지"><img src="./imgs/archive.svg" /></div>
 </div></a>`;
-}
+  }
+})();
 
 channelBoardList.forEach((item) => {
   boardTableBox.innerHTML += `
@@ -228,17 +230,18 @@ channelBoardList.forEach((item) => {
       <div class="writerColumn left_position">
         <div class="text">${item["writer"]}</div>
         <div class="${
-          item["isAdmin"] ? item["isSub"] || "orangeCheckIcon" : ""
-        } ${item["isAdmin"] ? item["isSub"] && "blueCheckIcon" : ""} ${
-    item["isAdmin"] && "checkIcon"
-  } imgIcon" title="${item["isAdmin"] ? item["isSub"] || "주관리자" : ""} ${
-    item["isAdmin"] ? item["isSub"] && "부관리자" : ""
+          item["isAdmin"]
+            ? item["isSub"]
+              ? "blueCheckIcon"
+              : "orangeCheckIcon"
+            : ""
+        } ${item["isAdmin"] ? "" : "greyCheckIcon"} checkIcon imgIcon" title="${
+    item["isAdmin"] ? (item["isSub"] ? "부관리자" : "주관리자") : ""
   }
         ${item["isAdmin"] ? "" : "사용자"}">
-        <img src="${
-          item["isAdmin"] ? "./imgs/checkmark-outline.svg" : "./imgs/person.svg"
-        }" /></div>
-      </div>
+        <img src="./imgs/checkmark-outline.svg" /></div>
+    </div>
+
       <div class="right_position">
         <div class="dataColumn">${item["created_at"]}</div>
         <div class="looksColumn">${item["looks"]}</div>
@@ -351,7 +354,7 @@ document.getElementById(
 `;
 document.getElementById(
   "bottomButtonLine_Board_writing"
-).innerHTML = `                <a href="/${writingPagePath}" title="글쓰기">
+).innerHTML = `                <a href="${writingPagePath}" title="글쓰기">
 <button type="button">
   <div class="writeIcon imgIcon"><img src="./imgs/create-outline.svg" /></div><span>글쓰기</span>
 </button>

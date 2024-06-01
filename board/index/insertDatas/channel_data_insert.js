@@ -154,20 +154,20 @@ channelBoardInformList.forEach((item) => {
 </div>
 </a>`;
 });
-
-let channelBoardInformList_concealed_count = 0;
-channelBoardInformList_concealed.forEach((item) => {
-  boardTableBox.innerHTML += `<a href="${
-    item["href"]
-  }" class="out"><div class="boardInformRow boardRow">
+(() => {
+  let channelBoardInformList_concealed_count = 0;
+  channelBoardInformList_concealed.forEach((item) => {
+    boardTableBox.innerHTML += `<a href="${
+      item["href"]
+    }" class="out"><div class="boardInformRow boardRow">
   <div class="divideLineOne">
     <div class="numberColumn">${item["number"]}</div>
     <div class="titleColumn">
       <dlv class="titleContent">
         <div class="textWrapper">
           <div class="blackBox ${item["blackBox"] == "" && "out"}">${
-    item["blackBox"]
-  }</div>
+      item["blackBox"]
+    }</div>
           <!-- <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div> --!>
           <div class="text">
           ${item["title"]}
@@ -181,10 +181,10 @@ channelBoardInformList_concealed.forEach((item) => {
     <div class="writerColumn left_position">
       <div class="text">${item["writer"]}</div>
       <div class="checkIcon imgIcon ${item["isSub"] || "orangeCheckIcon"} ${
-    item["isSub"] && "blueCheckIcon"
-  }" title="${item["isSub"] ? "" : "주관리자"} ${
-    item["isSub"] ? "부관리자" : ""
-  }"><img src="./../imgs/checkmark-outline.svg" /></div>
+      item["isSub"] && "blueCheckIcon"
+    }" title="${item["isSub"] ? "" : "주관리자"} ${
+      item["isSub"] ? "부관리자" : ""
+    }"><img src="./../imgs/checkmark-outline.svg" /></div>
     </div>
     <div class="right_position">
       <div class="dataColumn">${item["created_at"]}</div>
@@ -193,15 +193,15 @@ channelBoardInformList_concealed.forEach((item) => {
     </div>
   </div>
 </div></a>`;
-  channelBoardInformList_concealed_count++;
-});
-
-if (channelBoardInformList_concealed_count > 0) {
-  boardTableBox.innerHTML += `<a>
-<div class="boardInformStretchButton boardRow" id="boardInformStretchButton">
-숨겨진 공지 펼치기(${channelBoardInformList_concealed_count}개) <div class="unfoldIcon imgIcon" title="공지"><img src="./../imgs/archive.svg" /></div>
-</div></a>`;
-}
+    channelBoardInformList_concealed_count++;
+  });
+  if (channelBoardInformList_concealed_count > 0) {
+    boardTableBox.innerHTML += `<a>
+  <div class="boardInformStretchButton boardRow" id="boardInformStretchButton">
+  숨겨진 공지 펼치기(${channelBoardInformList_concealed_count}개) <div class="unfoldIcon imgIcon" title="공지"><img src="./../imgs/archive.svg" /></div>
+  </div></a>`;
+  }
+})();
 
 channelBoardList.forEach((item) => {
   boardTableBox.innerHTML += `

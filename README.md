@@ -87,272 +87,6 @@ https://www.flaticon.com/kr/free-icon/bookmarks_1174447
 
 실제 페이지의 구조를 살펴보고 생각하니 떠올랐다.
 
-```html
-<div class="commentBoardBox">
-  <div class="commentBoard">
-    <div class="commentBoard_top">
-      <div class="writerView left_line">
-        <a href="/">ㅇㅇ</a>
-        <div class="checkIcon orangeCheckIcon imgIcon">
-          <img src="./../../imgs/checkmark-outline.svg" />
-        </div>
-        <div class="imgIcon">
-          <img src="./../../imgs/gameImg.jpg" />
-        </div>
-      </div>
-      <div class="right_line">
-        <div class="dateView etcBox">2024-05-27 18:59:02</div>
-        <div class="reportButton etcBox">
-          <a href="/">
-            <div class="imgIcon">
-              <img src="./../../imgs/alertImg.png" />
-            </div>
-            신고
-          </a>
-        </div>
-        <div class="deleteButton etcBox">
-          <a href="/">
-            <div class="imgIcon">
-              <img src="./../../imgs/trash.svg" />
-            </div>
-            삭제
-          </a>
-        </div>
-        <div class="updateButton etcBox">
-          <div class="imgIcon">
-            <img src="./../../imgs/create-outline.svg" />
-          </div>
-          수정
-        </div>
-        <div class="replyButton etcBox">
-          <div class="imgIcon">
-            <img src="./../../imgs/arrow-undo.svg" />
-          </div>
-          답글
-        </div>
-        <div class="alarmButton etcBox">
-          <a href="/">
-            <div class="imgIcon">
-              <img src="./../../imgs/notification-bell.png" />
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="commentBoard_content">
-      <span class="remake_inform">*수정됨</span
-      >ssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-    </div>
-  </div>
-  <div class="commentWritingBox commentUpdateBox out">
-    <div class="commentWritingBox_top">
-      <div class="commentWritingBox_leftLine">
-        <div class="titleText">댓글 수정</div>
-        <div class="writerInfoWrapper">
-          <div class="writerInfo">
-            <div class="imgIcon">
-              <img src="./../../imgs/testimg.png" />
-            </div>
-            <span class="buttonText">하히후헤호</span>
-          </div>
-        </div>
-      </div>
-      <div class="commentWritingBox_rightLine">
-        <button class="etcButton arcaCon">
-          <div class="imgIcon">
-            <img src="./../../imgs/happy-outline.svg" />
-          </div>
-          <span class="buttonText">아카콘</span>
-        </button>
-      </div>
-    </div>
-    <div class="commentWritingBox_content">
-      <button class="commitButton">작성</button>
-      <textarea
-        class="commentInput"
-        name="commentContent"
-        maxlength="8000"
-        placeholder="ㅇㅇㅇㅇㅇ"
-      ></textarea>
-    </div>
-  </div>
-  <div class="replyCommentBoardListBox">
-    <div class="commentWritingBox commentReplyWritingBox out">
-      <div class="commentWritingBox_top">
-        <div class="commentWritingBox_leftLine">
-          <div class="titleText">답글 작성</div>
-          <div class="writerInfoWrapper">
-            <div class="writerInfo">
-              <div class="imgIcon">
-                <img src="./../../imgs/testimg.png" />
-              </div>
-              <span class="buttonText">하히후헤호</span>
-            </div>
-          </div>
-        </div>
-        <div class="commentWritingBox_rightLine">
-          <button class="etcButton arcaCon">
-            <div class="imgIcon">
-              <img src="./../../imgs/happy-outline.svg" />
-            </div>
-            <span class="buttonText">아카콘</span>
-          </button>
-        </div>
-      </div>
-      <div class="commentWritingBox_content">
-        <button class="commitButton">작성</button>
-        <textarea
-          class="commentInput"
-          name="commentContent"
-          maxlength="8000"
-          placeholder="ㅇㅇㅇㅇㅇ"
-        ></textarea>
-      </div>
-    </div>
-    <div class="replyCommentBoardBox">
-      <div class="upIcon imgIcon">
-        <img src="./../../imgs/caret-up-outline.svg" />
-      </div>
-
-      <div class="commentBoardBox">
-        <div class="commentBoard">
-          <div class="commentBoard_top">
-            <div class="writerView left_line">
-              <a href="/">ㅇㅇ</a>
-              <div class="checkIcon orangeCheckIcon imgIcon">
-                <img src="./../../imgs/checkmark-outline.svg" />
-              </div>
-              <div class="imgIcon">
-                <img src="./../../imgs/gameImg.jpg" />
-              </div>
-            </div>
-            <div class="right_line">
-              <div class="dateView etcBox">2024-05-27 18:59:02</div>
-              <div class="reportButton etcBox">
-                <a href="/">
-                  <div class="imgIcon">
-                    <img src="./../../imgs/alertImg.png" />
-                  </div>
-                  신고
-                </a>
-              </div>
-              <div class="deleteButton etcBox">
-                <a href="/">
-                  <div class="imgIcon">
-                    <img src="./../../imgs/trash.svg" />
-                  </div>
-                  삭제
-                </a>
-              </div>
-              <div class="updateButton etcBox">
-                <div class="imgIcon">
-                  <img src="./../../imgs/create-outline.svg" />
-                </div>
-                수정
-              </div>
-              <div class="replyButton etcBox">
-                <div class="imgIcon">
-                  <img src="./../../imgs/arrow-undo.svg" />
-                </div>
-                답글
-              </div>
-              <div class="alarmButton etcBox">
-                <a href="/">
-                  <div class="imgIcon">
-                    <img src="./../../imgs/notification-bell.png" />
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="commentBoard_content">
-            <span class="remake_inform">*수정됨</span
-            >ssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-          </div>
-        </div>
-        <div class="commentWritingBox commentUpdateBox out">
-          <div class="commentWritingBox_top">
-            <div class="commentWritingBox_leftLine">
-              <div class="titleText">댓글 수정</div>
-              <div class="writerInfoWrapper">
-                <div class="writerInfo">
-                  <div class="imgIcon">
-                    <img src="./../../imgs/testimg.png" />
-                  </div>
-                  <span class="buttonText">하히후헤호</span>
-                </div>
-              </div>
-            </div>
-            <div class="commentWritingBox_rightLine">
-              <button class="etcButton arcaCon">
-                <div class="imgIcon">
-                  <img src="./../../imgs/happy-outline.svg" />
-                </div>
-                <span class="buttonText">아카콘</span>
-              </button>
-            </div>
-          </div>
-          <div class="commentWritingBox_content">
-            <button class="commitButton">작성</button>
-            <textarea
-              class="commentInput"
-              name="commentContent"
-              maxlength="8000"
-              placeholder="ㅇㅇㅇㅇㅇ"
-            ></textarea>
-          </div>
-        </div>
-        <div class="replyCommentBoardListBox">
-          <div class="commentWritingBox commentReplyWritingBox out">
-            <div class="commentWritingBox_top">
-              <div class="commentWritingBox_leftLine">
-                <div class="titleText">답글 작성</div>
-                <div class="writerInfoWrapper">
-                  <div class="writerInfo">
-                    <div class="imgIcon">
-                      <img src="./../../imgs/testimg.png" />
-                    </div>
-                    <span class="buttonText">하히후헤호</span>
-                  </div>
-                </div>
-              </div>
-              <div class="commentWritingBox_rightLine">
-                <button class="etcButton arcaCon">
-                  <div class="imgIcon">
-                    <img src="./../../imgs/happy-outline.svg" />
-                  </div>
-                  <span class="buttonText">아카콘</span>
-                </button>
-              </div>
-            </div>
-            <div class="commentWritingBox_content">
-              <button class="commitButton">작성</button>
-              <textarea
-                class="commentInput"
-                name="commentContent"
-                maxlength="8000"
-                placeholder="ㅇㅇㅇㅇㅇ"
-              ></textarea>
-            </div>
-          </div>
-          <!-- <div class="replyCommentBoardBox">
-                            <div class="upIcon imgIcon"><img src="./../../imgs/caret-up-outline.svg" /></div>
-                          </div> -->
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-댓글의 형태는 이런식, 솔직히 내가 만들었는데도 헷갈린다.
-
-## axios와 multer의 이용 잘 정리해주었다.
-
-https://velog.io/@jeooooong/multer-axios
-
-formData 객체를 이용하면 axios로 이미지를 업로드할 수 있다. 여러 장도 가능하다, 하지만 한 번에 한 종류로만 보내야 됐다. 그리고 다른 데이터 타입은 보낼 수 없었다.
-
 ## 이미지 업로드 문제는 해결
 
 교수님이 찾아주신 자료 덕에 ckeditor로도 이미지 받는 방법 확인 완료.
@@ -363,3 +97,34 @@ post로는 쿠키나 바디를 받아올 수 있다.
 일단 get으로는 되기 때문에 프런트에서 cookie를 받을거면 get으로 해주자.
 그리고 credential 스펠링을 잘 알아보자. s 하나 빼먹었다고 2시간을 그냥 날려먹었다.
 하지만 get은 데이터를 못 보낸다.
+
+## multer활용
+
+### axios와 multer의 이용 잘 정리해주었다.
+
+https://velog.io/@jeooooong/multer-axios
+
+formData 객체를 이용하면 axios로 이미지를 업로드할 수 있다. 여러 장도 가능하다, 하지만 한 번에 한 종류로만 보내야 됐다. 그리고 다른 데이터 타입은 보낼 수 없었다.
+
+```js
+document.getElementById("insertChannel_icon").onchange = (e) => {
+  const formData = new FormData();
+  let data;
+  [...e.target.files].forEach((item) => {
+    formData.append("icon", item);
+  });
+  (async () =>
+    (data = await axios({
+      method: "post",
+      url: "http://localhost:3080/upload",
+      Headers: {
+        "Content-type": "multipart/form-data",
+      },
+      data: formData,
+      withCredentials: true,
+    })))();
+  console.log(data);
+  const src = JSON.parse(data);
+  console.log(src);
+};
+```

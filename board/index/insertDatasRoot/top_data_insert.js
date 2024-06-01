@@ -71,7 +71,7 @@ subscribechannelList.forEach((item, index) => {
 document.getElementById("top_login").innerHTML = `
 <div class="loginIconBox" title="Member menu" id="top_userInfoBoxButton">
   <span class="userName-login">${username}</span>
-  <a class="personLogin-icon" ${userIconHref}>
+  <a class="personLogin-icon" ${!userExists ? `href="${userIconHref}"` : ""}>
     <div class="person-img"><img src="./imgs/person.png"></div>
   </a>
 </div>

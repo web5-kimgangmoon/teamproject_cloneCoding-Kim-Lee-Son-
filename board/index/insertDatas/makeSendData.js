@@ -10,5 +10,3 @@ if (query.get("channel") != null) {
 if (query.get("category") != null) {
   category = query.get("category");
 }
-
-const writingPagePath = "/";

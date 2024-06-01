@@ -74,10 +74,10 @@ document.getElementById("boardContentBox").innerHTML = `
       <img src="./../imgs/share-social-sharp.svg">
     </div>
   </a></div>
-<div class="channelImgWrapper">
+  <!--<div class="channelImgWrapper">
   <img src="../imgs/gameImg.jpg" />
-  <!-- 채널 이미지는 채널 기본 이미지 크기 조정용 -->
-</div>
+   채널 이미지는 채널 기본 이미지 크기 조정용
+</div>  -->
 <div class="boardContent">
 ${boardContent.content}
   <!-- 어차피 다 된 상태로 들어올것(건들지 말자) -->
@@ -92,8 +92,8 @@ ${boardContent.content}
       <div class="imgIcon"><img src="../imgs/help-outline.svg"></div><span class="recommendCount">0</span><span>)</span>
     </small>
   </button>
-  <button type="button" class="unrecommendButton">
-    <div class="textLine">비추!<span class="count" id="boardUnrecommendButton"> ${
+  <button type="button" class="unrecommendButton" id="boardUnrecommendButton">
+    <div class="textLine">비추!<span class="count"> ${
       boardContent.unrecommend
     }</span></div>
     <small class="imgLine">(<div class="imgIcon"><img src="../imgs/help-outline.svg"></div><span class="recommendCount">0</span>)
@@ -127,6 +127,231 @@ document.getElementById("commentContainer").innerHTML = `
 </div>
 </div>
 <div class="commentBoardListBox" id="commentBoardListBox">
+</div>`;
+
+// commentBoardListBox_data_insert
+
+const commentBoardListBox = document.getElementById("commentBoardListBox");
+
+(() => {
+  const idStack = [];
+  commentList.forEach((item) => {
+    const temp = document.createElement("div");
+    temp.classList = "commentBoardBox";
+    temp.innerHTML = `
+  <div class="commentBoard">
+    <div class="commentBoard_top">
+      <div class="writerView left_line">
+        <a href="${item.userInfoHref}">${item.writer}</a>
+              <div class="${
+                item["isAdmin"]
+                  ? item["isSub"]
+                    ? "blueCheckIcon"
+                    : "orangeCheckIcon"
+                  : ""
+              } ${
+      item["isAdmin"] ? "" : "greyCheckIcon"
+    } checkIcon imgIcon" title="${
+      item["isAdmin"] ? (item["isSub"] ? "부관리자" : "주관리자") : ""
+    }
+                ${item["isAdmin"] ? "" : "사용자"}">
+                <img src="./../imgs/checkmark-outline.svg" /></div>
+      </div>
+      <div class="right_line">
+        <div class="dateView etcBox">
+          ${item["created_at"]}
+        </div>
+        <div class="reportButton etcBox"><a href="/">
+            <div class="imgIcon">
+              <img src="./../imgs/alertImg.png" />
+            </div>
+            신고
+          </a></div>
+        <div class="deleteButton etcBox ${
+          boardContent["isWriter"] ? "" : "out"
+        }" id="deleteButton${item.id}">
+            <div class="imgIcon">
+              <img src="./../imgs/trash.svg" />
+            </div>
+            삭제
+          </div>
+        <div class="updateButton etcBox ${
+          boardContent["isWriter"] ? "" : "out"
+        }" id="updateButton${item.id}">
+          <div class="imgIcon">
+            <img src="./../imgs/create-outline.svg" />
+          </div>
+          수정
+        </div>
+        <div class="replyButton etcBox ${
+          userExists ? "" : "out"
+        }" id="replyButton${item.id}">
+          <div class="imgIcon">
+            <img src="./../imgs/arrow-undo.svg" />
+          </div>
+          답글
+        </div>
+        <div class="alarmButton etcBox">
+          <a href="/">
+            <div class="imgIcon">
+              <img src="./../imgs/notification-bell.png" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="commentBoard_content">
+      <span class="remake_inform">${item["isUpdated"] ? "*수정됨" : ""}</span>${
+      item["content"]
+    }
+    </div>
+  </div>
+  <div class="commentWritingBox commentUpdateBox out" id="commentUpdateBox${
+    item.id
+  }">
+    <div class="commentWritingBox_top">
+      <div class="commentWritingBox_leftLine">
+        <div class="titleText">댓글 수정</div>
+        <div class="writerInfoWrapper">
+          <div class="writerInfo">
+            <div class="imgIcon">
+              <img src="./../imgs/testimg.png">
+            </div>
+            <span class="buttonText">${item.writer}</span>
+          </div>
+        </div>
+      </div>
+      <div class="commentWritingBox_rightLine">
+        <button type="button" class="etcButton arcaCon">
+          <div class="imgIcon">
+            <img src="./../imgs/happy-outline.svg">
+          </div>
+          <span class="buttonText">아카콘</span>
+        </button>
+      </div>
+    </div>
+    <div class="commentWritingBox_content">
+      <button type="button" class="commitButton" id="update_commitButton${
+        item.id
+      }">작성</button>
+      <textarea class="commentInput" name="commentContent" id="update_commentContent${
+        item.id
+      }" maxlength="8000" placeholder="${
+      boardContent.channelCommentPlaceHolder
+    }"></textarea>
+    </div>
+  </div>
+  <div class="replyCommentBoardListBox" id="replyCommentBoardListBox${item.id}">
+    <div class="commentWritingBox commentReplyWritingBox out" id="commentReplyWritingBox${
+      item.id
+    }">
+      <div class="commentWritingBox_top">
+        <div class="commentWritingBox_leftLine">
+          <div class="titleText">답글 작성</div>
+          <div class="writerInfoWrapper">
+            <div class="writerInfo">
+              <div class="imgIcon">
+                <img src="./../imgs/testimg.png">
+              </div>
+              <span class="buttonText">${username}</span>
+            </div>
+          </div>
+        </div>
+        <div class="commentWritingBox_rightLine">
+          <button type="button" class="etcButton arcaCon">
+            <div class="imgIcon">
+              <img src="./../imgs/happy-outline.svg">
+            </div>
+            <span class="buttonText">아카콘</span>
+          </button>
+        </div>
+      </div>
+      <div class="commentWritingBox_content">
+        <button type="button" class="commitButton" id="reply_commitButton${
+          item.id
+        }">작성</button>
+        <textarea class="commentInput" id="reply_commentContent${
+          item.id
+        }" name="commentContent" maxlength="8000" placeholder="${
+      boardContent.channelCommentPlaceHolder
+    }"></textarea>
+      </div>
+    </div>
+  </div>
+  `;
+    // temp.getElementsByClassName("updateButton")[0];
+    // temp.getElementsByClassName("replyButton")[0];
+
+    const idIndex = idStack.indexOf(item.replyId);
+    if (idIndex != -1) {
+      const temp2 = document.createElement("div");
+      temp2.classList = "replyCommentBoardBox";
+      temp2.innerHTML = `<div class="upIcon imgIcon">
+      <img src="./../imgs/caret-up-outline.svg" />
+    </div>`;
+      temp2.appendChild(temp);
+      document
+        .getElementById(`replyCommentBoardListBox${idStack[idIndex]}`)
+        .appendChild(temp2);
+    } else {
+      commentBoardListBox.append(temp);
+    }
+    idStack.push(item.id);
+  });
+})();
+
+// commentBoardListBox.innerHTML += `
+// <div class="pageBoxWrapper">
+// <div class="pageBoxList boardCommentPage">
+//   <a href="/">
+//     <div class="pageBox">1</div>
+//   </a>
+//   <a href="/">
+//     <div class="pageBox">2</div>
+//   </a>
+//   <a href="/">
+//     <div class="pageBox">3</div>
+//   </a>
+// </div>
+// </div>
+// `
+//구현 포기
+
+commentBoardListBox.innerHTML += `
+<div class="commentWritingBox basic ${userExists ? "" : "out"}">
+<div class="commentWritingBox_top">
+  <div class="commentWritingBox_leftLine">
+    <div class="titleText">댓글 작성</div>
+    <div class="writerInfoWrapper">
+      <div class="writerInfo">
+        <div class="imgIcon">
+          <img src="./../imgs/testimg.png">
+        </div>
+        <span class="buttonText">${username}</span>
+      </div>
+    </div>
+  </div>
+  <div class="commentWritingBox_rightLine">
+    <button type="button" class="etcButton voiceComment">
+      <div class="imgIcon">
+        <img src="./../imgs/mic-sharp.svg">
+      </div>
+      <span class="buttonText">음성댓글</span>
+    </button>
+    <button type="button" class="etcButton arcaCon">
+      <div class="imgIcon">
+        <img src="./../imgs/happy-outline.svg">
+      </div>
+      <span class="buttonText">아카콘</span>
+    </button>
+  </div>
+</div>
+<div class="commentWritingBox_content">
+  <button type="button" class="commitButton" id="basic_commentCommitButton">작성</button>
+  <textarea class="commentInput" name="commentContent" maxlength="8000" placeholder="${
+    boardContent.channelCommentPlaceHolder
+  }" id="basic_commentContent"></textarea>
+</div>
 </div>`;
 
 // commentButtonLine_Board_writing_insert

@@ -68,10 +68,10 @@ const upload = multer({
 });
 
 app.post("/test", async (req, res) => {
-  const test = await db.Test.findOne({
-    where: { id: 1 },
-  });
-  await test.update({ content: 5 });
+  // const test = await db.Test.findOne({
+  //   where: { id: 1 },
+  // });
+  // await test.update({ content: 5 });
   res.json({ ok: "ok" });
 });
 app.post("/upload", upload.array("icon"), (req, res) => {

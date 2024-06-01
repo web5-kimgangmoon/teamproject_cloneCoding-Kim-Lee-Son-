@@ -8,6 +8,8 @@ const searchedChannelList = [
 
 // subscribechannel_data
 
+// 채널 리스트 받아오는 코드가 필요, 백엔드에 요청
+
 const subscribechannelList = [
   ["forExample", "예를 들면"],
   ["thisChannel", "이런 채널"],
@@ -17,10 +19,25 @@ const subscribechannelList = [
 
 // login_data
 
-const username = "하하";
-const userPoint = 200;
-const userExists = true;
-const userIconHref = userExists ? "" : "href='http://localhost/login'";
+(async () => {
+  try {
+    await axios({
+      method: "post",
+      url: `${reqHostPort}/u/userInfo`,
+      data: { channel: "" },
+      withCredentials: true,
+    });
+  } catch (err) {
+    if (err.request.status == 419) {
+    }
+  }
+})();
+
+let username = "하하";
+// username은 channel_data_insert, channelBoard에서도 사용한다.
+let userPoint = 200;
+let userExists = true;
+const userIconHref = "http://localhost/login";
 
 // notification_data
 

@@ -5,6 +5,7 @@ const recentChannelList = [
   ["/dksa", "아아아"],
   ["/dksa", "아아아"],
 ];
+// 최근 방문 채널(구현 힘듬, 수정하게 되면 나중에)
 
 // categoryList_data
 
@@ -25,11 +26,12 @@ const categoryList = [
   ["/link", "ㅇㅇ", false],
   ["/link", "ㅇㅇ", false],
 ];
+//카테고리 경로, 카테고리명, 선택된 상태
 
 // channelInfo_data
 
 const channelName = "dd";
-const channelHref = "/dasd";
+const channelHref = "/dasd"; //채널의 indexPage
 const adminName = "dd";
 const channelDescription = "dd.";
 

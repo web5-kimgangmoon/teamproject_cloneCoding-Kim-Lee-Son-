@@ -6,4 +6,4 @@
 //   axios.pose("http")
 // };
 
-value, category 업데이트 때, 추가로 넣어줘야 함
+// value, category 업데이트 때, 추가로 넣어줘야 함

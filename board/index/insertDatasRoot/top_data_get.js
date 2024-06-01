@@ -20,7 +20,7 @@ const subscribechannelList = [
 const username = "하하";
 const userPoint = 200;
 const userExists = true;
-const userIconHref = userExists ? "" : "href='http://localhost/login'";
+const userIconHref = "http://localhost/login";
 
 // notification_data
 

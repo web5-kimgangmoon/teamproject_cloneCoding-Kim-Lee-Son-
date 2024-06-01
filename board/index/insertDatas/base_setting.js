@@ -1,8 +1,9 @@
 const container = document.getElementById("container");
 const shortCutHelpBox = document.getElementById("shortCutHelpBox");
 const viewConfigBox = document.getElementById("viewConfigBox");
-
 const curtain = document.getElementById("curtain");
+const reqHostPort = "http://127.0.0.1:3000";
+
 const bottom_convenience_buttons = document.getElementById(
   "bottom_convenience_buttons"
 );
