@@ -259,6 +259,16 @@ export default async (req, res) => {
       catecheck = false;
     }
 
+    const boardcount = await Board.findAll({
+      where: { channelId: channel.id },
+      include: [{ model: Category, attributes: ["name", "engTitle"] }],
+      attributes: [
+        "category_id",
+        [sequelize.fn("count", Sequelize.col("category_id")), "catecount"],
+      ],
+      group: ["category_id"],
+    });
+
     let boardlist = await Board.findAll({
       where: { channelId: channel.id },
       include: [{ model: User, attributes: ["nick"] }],
@@ -343,6 +353,7 @@ export default async (req, res) => {
       user: nowuser,
       channel: channel,
       boardlist: boardlist,
+      boardcount: boardcount,
     });
   } catch (err) {
     console.error(err);
