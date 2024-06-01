@@ -4,10 +4,24 @@ export default async (req, res) => {
   try {
     const reqbody = req.body;
     const nowuser = req.user;
-    const channel = await Channel.findOne({
-      where: { engTitle: reqbody.channel },
-      attributes: ["engTitle"],
+    let chname = reqbody.channel;
+    if (!chname) {
+      chname = "main";
+    }
+    let channel = await Channel.findOne({
+      where: { engTitle: chname },
+      attributes: {
+        exclude: ["createdAt", "updatedAt", "deletedAt"],
+      },
     });
+    if (!channel) {
+      channel = await Channel.findOne({
+        where: { engTitle: "main" },
+        attributes: {
+          exclude: ["createdAt", "updatedAt", "deletedAt"],
+        },
+      });
+    }
 
     if (nowuser) {
       const userinfo = await User.findAll({
@@ -16,7 +30,7 @@ export default async (req, res) => {
       });
       res.json({ result: "ok", userinfo: userinfo, channel: channel });
     } else {
-      throw new Error("not login");
+      throw new Error("not logged in");
     }
   } catch (err) {
     console.error(err);
