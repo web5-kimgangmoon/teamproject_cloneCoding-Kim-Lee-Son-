@@ -19,25 +19,30 @@ const subscribechannelList = [
 
 // login_data
 
-(async () => {
-  try {
-    await axios({
-      method: "post",
-      url: `${reqHostPort}/u/userInfo`,
-      data: { channel: "" },
-      withCredentials: true,
-    });
-  } catch (err) {
-    if (err.request.status == 419) {
-    }
-  }
-})();
-
-let username = "하하";
+let username = "";
 // username은 channel_data_insert, channelBoard에서도 사용한다.
 let userPoint = 200;
 let userExists = true;
 const userIconHref = "http://localhost/login";
+
+(async () => {
+  try {
+    const data = (
+      await axios({
+        method: "post",
+        url: `${reqHostPort}/u/userInfo`,
+        data: { channel: "" },
+        withCredentials: true,
+      })
+    ).data.user;
+    username = data;
+  } catch (err) {
+    if (err.request.status == 419) {
+      userExists = false;
+    }
+  } finally {
+  }
+})();
 
 // notification_data
 

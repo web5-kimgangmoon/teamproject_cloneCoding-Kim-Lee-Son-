@@ -1,12 +1,12 @@
 // boardContentBox_data_insert
 document.getElementById("boardContentBox").innerHTML = `
 <div class="writerFunctionBox ${boardContent["isWriter"] ? "" : "out"}">
-<a href="${boardContent.deleteHref}">
+<a id="boardDeleteButton">
 <button class="writerFunctionButton first">
 <div class="imgIcon"><img src="./../imgs/trash.svg"></img></div>삭제
 </button>
 </a>
-<a href="${boardContent.updateHref}">
+<a id="boardUpdateButton">
 <button class="writerFunctionButton">
 <div class="imgIcon"><img src="./../imgs/create-outline.svg"></img></div>수정
 </button>
@@ -184,7 +184,7 @@ const commentBoardListBox = document.getElementById("commentBoardListBox");
           수정
         </div>
         <div class="replyButton etcBox ${
-          userExists ? "" : "out"
+          boardContent.userexists ? "" : "out"
         }" id="replyButton${item.id}">
           <div class="imgIcon">
             <img src="./../imgs/arrow-undo.svg" />
@@ -253,7 +253,7 @@ const commentBoardListBox = document.getElementById("commentBoardListBox");
               <div class="imgIcon">
                 <img src="./../imgs/testimg.png">
               </div>
-              <span class="buttonText">${username}</span>
+              <span class="buttonText">${boardContent.usesrname}</span>
             </div>
           </div>
         </div>
@@ -318,7 +318,7 @@ const commentBoardListBox = document.getElementById("commentBoardListBox");
 //구현 포기
 
 commentBoardListBox.innerHTML += `
-<div class="commentWritingBox basic ${userExists ? "" : "out"}">
+<div class="commentWritingBox basic ${boardContent.userexists ? "" : "out"}">
 <div class="commentWritingBox_top">
   <div class="commentWritingBox_leftLine">
     <div class="titleText">댓글 작성</div>
@@ -327,7 +327,7 @@ commentBoardListBox.innerHTML += `
         <div class="imgIcon">
           <img src="./../imgs/testimg.png">
         </div>
-        <span class="buttonText">${username}</span>
+        <span class="buttonText">${boardContent.usesrname}</span>
       </div>
     </div>
   </div>

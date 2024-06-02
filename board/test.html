@@ -28,18 +28,42 @@
       <span class="" id="text">체크필요</span>
     </fieldset>
   </form>
+  <div id="preview"></div>
   <script>
+    // (async () => {
+    //   const data = await axios({
+    //     method: "post",
+    //     url: `http://localhost:3080/getCookie`,
+    //     data: {
+    //       1: "123",
+    //       3: "323"
+    //     },
+    //     withCredentials: true
+    //   });
+    // })();
+    let data;
     (async () => {
-      const data = await axios({
-        method: "post",
-        url: `http://localhost:3080/test`,
-        data: {
-          1: "123",
-          3: "323"
-        },
-        withCredentials: true
-      });
-      console.log(data.data);
+      try {
+        data = (
+          await axios({
+            method: "post",
+            url: `http://localhost:3001/b/`,
+            data: {
+              channel: "main",
+              category: ""
+            },
+            params: {
+              page: 1,
+              boardId: 2
+            },
+          })
+        ).data;
+      } catch (err) {
+        data = 0;
+        console.error(err);
+      } finally {
+        document.getElementById("preview").innerHTML = data;
+      }
     })();
   </script>
 </body>

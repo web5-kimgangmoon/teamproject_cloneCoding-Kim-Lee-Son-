@@ -5,22 +5,52 @@
 // document.getElementById("newChannel_icon").onchange = (e) => {
 //   axios.pose("http")
 // };
-document.getElementById("newChannel_icon").onchange = (e) => {
-  const formData = new FormData();
-  let data;
-  [...e.target.files].forEach((item) => {
-    formData.append("icon", item);
-  });
-  axios({
-    method: "post",
-    url: "http://localhost:3080/upload",
-    Headers: {
-      "Content-type": "multipart/form-data",
+// document.getElementById("newChannel_icon").onchange = (e) => {
+//   const formData = new FormData();
+//   let data;
+//   [...e.target.files].forEach((item) => {
+//     formData.append("icon", item);
+//   });
+//   axios({
+//     method: "post",
+//     url: "http://localhost:3080/upload",
+//     Headers: {
+//       "Content-type": "multipart/form-data",
+//     },
+//     data: formData,
+//     withCredentials: true,
+//   }).then((res) => {
+//     console.log(res.data.url);
+//     // document.getElementsByClassName("informBox")[0].innerHTML = `<img src="${res.data.url}" />`;
+//   });
+// };
+(async () => {
+  await axios.post(
+    "http://localhost:3001/u/login",
+    {
+      channel: "main",
+      strid: "qwerasd",
+      pw: "1q2w3e4r",
     },
-    data: formData,
-    withCredentials: true,
-  }).then((res) => {
-    console.log(res.data.url);
-    // document.getElementsByClassName("informBox")[0].innerHTML = `<img src="${res.data.url}" />`;
-  });
+    {
+      withCredentials: true,
+    }
+  );
+})();
+
+document.getElementById("newChannel_open").onclick = async (e) => {
+  e.preventDefault();
+  try {
+    const data = await axios({
+      method: "post",
+      url: `http://localhost:3001/u/userInfo`,
+      data: { channel: "" },
+      withCredentials: true,
+    });
+    console.log(data.data.userinfo);
+  } catch (err) {
+    console.log(err);
+    if (err.request.status == 419) {
+    }
+  }
 };

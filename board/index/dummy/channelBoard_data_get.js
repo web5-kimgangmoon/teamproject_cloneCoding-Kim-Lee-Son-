@@ -17,6 +17,8 @@ const boardContent = {
   updateHref: "dsad",
   subscribeHref: "fdf",
   channelCommentPlaceHolder: "daskjdlkasjdklsajd",
+  username: "", // 로그인한 유저의 이름
+  userExists: true, //로그인 유저 존재
 };
 
 // commentBoardListBox_data_get

@@ -75,7 +75,7 @@ document.getElementById("insertChannel_submit").onclick = (e) => {
       window.location.replace(adminSiteLocation);
     })
     .catch((err) => {
-      alert(err);
+      alert(err.response.data.error);
       window.location.replace(adminSiteLocation);
     });
 };
@@ -125,7 +125,7 @@ document.getElementById("updateChannel_submit").onclick = (e) => {
       window.location.replace(adminSiteLocation);
     })
     .catch((err) => {
-      alert(err);
+      alert(err.response.data.error);
       window.location.replace(adminSiteLocation);
     });
 };
@@ -152,7 +152,8 @@ document.getElementById("deleteChannel_submit").onclick = (e) => {
       window.location.replace(adminSiteLocation);
     })
     .catch((err) => {
-      alert(err);
+      alert(err.response.data.error);
+
       window.location.replace(adminSiteLocation);
     });
 };
@@ -198,7 +199,8 @@ document.getElementById("insertCategory_submit").onclick = (e) => {
       window.location.replace(adminSiteLocation);
     })
     .catch((err) => {
-      alert(err);
+      alert(err.response.data.error);
+
       window.location.replace(adminSiteLocation);
     });
 };
@@ -244,7 +246,8 @@ document.getElementById("updateCategory_submit").onclick = (e) => {
       window.location.replace(adminSiteLocation);
     })
     .catch((err) => {
-      alert(err);
+      alert(err.response.data.error);
+
       window.location.replace(adminSiteLocation);
     });
 };
@@ -284,7 +287,8 @@ document.getElementById("deleteCategory_submit").onclick = (e) => {
       window.location.replace(adminSiteLocation);
     })
     .catch((err) => {
-      alert(err);
+      alert(err.response.data.error);
+
       window.location.replace(adminSiteLocation);
     });
   //   window.location.replace(adminSiteLocation);
@@ -315,7 +319,8 @@ document.getElementById("grantSubadmin_submit").onclick = (e) => {
       window.location.replace(adminSiteLocation);
     })
     .catch((err) => {
-      alert(err);
+      alert(err.response.data.error);
+
       window.location.replace(adminSiteLocation);
     });
 };
@@ -345,7 +350,8 @@ document.getElementById("deleteSubadmin_submit").onclick = (e) => {
       window.location.replace(adminSiteLocation);
     })
     .catch((err) => {
-      alert(err);
+      alert(err.response.data.error);
+
       window.location.replace(adminSiteLocation);
     });
 };
@@ -375,7 +381,8 @@ document.getElementById("deleteUser_submit").onclick = (e) => {
       window.location.replace(adminSiteLocation);
     })
     .catch((err) => {
-      alert(err);
+      alert(err.response.data.error);
+
       window.location.replace(adminSiteLocation);
     });
 };

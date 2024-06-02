@@ -72,7 +72,15 @@ app.post("/test", async (req, res) => {
   //   where: { id: 1 },
   // });
   // await test.update({ content: 5 });
-  res.json({ ok: "ok" });
+  try {
+    console.log(req.body);
+
+    if (req.body["1"] == 1) throw new error("ㅇㅇ");
+    else res.json({ ok: "ok" });
+  } catch (error) {
+    res.status(400);
+    res.json({ ok: "eroor" });
+  }
 });
 app.post("/upload", upload.array("icon"), (req, res) => {
   // console.log(req.files);
@@ -84,6 +92,8 @@ app.post("/upload", upload.array("icon"), (req, res) => {
 });
 app.post("/getCookie", (req, res) => {
   console.log(req.body);
+  // console.log(res.cookies);
+  console.log(req.cookies["why"]);
   res.cookie("why", "dsad");
   res.send({ 1: 1 });
 });
