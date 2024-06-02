@@ -27,6 +27,8 @@
 
     <button id="channellist" class="channellist">모든채널리스트 가져오기</button>
 
+    <button id="channel" class="channel">현재채널정보 가져오기</button>
+
     <div id="poiulkjh"></div>
 
     <script>
@@ -153,6 +155,20 @@
           )
         ).data;
         console.log(chli.allchannellist);
+      };
+
+      document.getElementById("channel").onclick = async (e) => {
+        e.preventDefault();
+        const nowch = await (
+          await axios.post(
+            "http://localhost:3001/b/",
+            { channel: "" },
+            {
+              withCredentials: true,
+            }
+          )
+        ).data;
+        console.log(nowch);
       };
     </script>
   </body>

@@ -28,15 +28,16 @@ export default async (req, res) => {
     if (!chname) {
       chname = "main";
     }
+    // include: [{ model: User, attributes: ["nick"] }],
 
     let channel = await Channel.findOne({
       where: { engTitle: chname },
-      include: [{ model: ChannelAdmin }],
+      include: [{ model: ChannelAdmin, include: [{ model: User, attributes: ["nick"] }] }],
     });
     if (!channel) {
       channel = await Channel.findOne({
         where: { engTitle: "main" },
-        include: [{ model: ChannelAdmin }],
+        include: [{ model: ChannelAdmin, include: [{ model: User, attributes: ["nick"] }] }],
       });
     }
 
