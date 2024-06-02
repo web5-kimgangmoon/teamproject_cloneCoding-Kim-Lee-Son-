@@ -85,6 +85,7 @@ export default async (req, res) => {
         {
           model: Comment,
           order: [["id", "DESC"]],
+          include: [{ model: User, attributes: ["nick"] }],
           // offset: (commentpage - 1) * 50, // 댓글 한번에 보여주는 수 관련
           // limit: 50,  // 댓글 한번에 보여주는 수 관련
           // include: [
