@@ -74,6 +74,8 @@
 
     <button id="userinfo" class="userinfo">로그인한 유저정보 가져오기</button>
 
+    <button id="channellist" class="channellist">모든채널리스트 가져오기</button>
+
     <div id="poiulkjh"></div>
 
     <script>
@@ -306,7 +308,21 @@
             }
           )
         ).data;
-        console.log(userinfo.userinfo[0].nick);
+        console.log({ ...userinfo.userinfo[0] }.nick);
+      };
+
+      document.getElementById("channellist").onclick = async (e) => {
+        e.preventDefault();
+        const chli = await (
+          await axios.post(
+            "http://localhost:3001/b/channellist",
+            {},
+            {
+              withCredentials: true,
+            }
+          )
+        ).data;
+        console.log(chli.allchannellist);
       };
     </script>
   </body>
