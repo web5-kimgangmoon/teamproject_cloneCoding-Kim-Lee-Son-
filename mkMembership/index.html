@@ -1,0 +1,761 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./top.css" />
+  <link rel="stylesheet" href="./body.css" />
+  <link rel="stylesheet" href="./footer.css" />
+  <link rel="stylesheet" href="./adBox.css" />
+  <link rel="stylesheet" href="./index.css">
+  /폴더명/폴더명/index.html
+  /imgs/이미지명
+</head>
+
+<body>
+  <div id="container">
+    <div class="curtain out"></div>
+    <div class="viewConfigBox out">
+      <div class="boxTop">
+        <div class="title">표시 설정</div>
+        <div class="x_shape">×</div>
+      </div>
+      <div class="typeSelect">
+        <span class="">일반</span>
+        <span class="selected">컨텐츠</span>
+      </div>
+      <div class="configTemplate">
+        <div class="general out">
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_language"><span>언어<sup><i> α+</i></sup></span></label>
+              <div class="optionSelect">
+                <select name="userConfig_language" id="userConfig_language">
+                  <option>(자동 인식)</option>
+                  <option value="ko">한국어</option>
+                  <option value="en">English</option>
+                  <option value="ja">日本語</option>
+                  <option value="es">Español</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_font"><span>글꼴</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_font" id="userConfig_font">
+                  <option>자동</option>
+                  <option value="browser">브라우저 기본</option>
+                  <option value="nanum_barun_gothic">나눔바른고딕</option>
+                  <option value="nanum_gothic">나눔고딕</option>
+                  <option value="noto_sans_kr">Noto Sans KR</option>
+                  <option value="apple_sd_gothic_neo">Apple SD Gothic Neo</option>
+                  <option value="pretendard">Pretendard</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_font_size"><span>글자 크기</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_font_size" id="userConfig_font_size">
+                  <option value="browser">브라우저 기본</option>
+                  <option value="biggest">가장 크게</option>
+                  <option value="big">크게</option>
+                  <option value="medium">보통</option>
+                  <option value="small">작게</option>
+                  <option value="smallest">가장 작게</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_backgroundColor"><span>배경</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_backgroundColor" id="userConfig_backgroundColor">
+                  <option value="browser">브라우저 기본</option>
+                  <option value="light">밝게</option>
+                  <option value="dark">어둡게</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_backgroundColor_contrast"><span>어두운 배경 색상</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_backgroundColor_contrast" id="userConfig_backgroundColor_contrast">
+                  <option value="dart">어둡게</option>
+                  <option value="dark_black">완전 어둡게</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_pageWidth"><span>페이지 폭</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_pageWidth" id="userConfig_pageWidth">
+                  <option>고정안함</option>
+                  <option value="1100px">1100px</option>
+                  <option value="1200px">1200px</option>
+                  <option value="1300px">1300px</option>
+                  <option value="1500px">1500px</option>
+                  <option value="1600px">1600px</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_topLocation"><span>상단바 위치</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_topLocation" id="userConfig_topLocation">
+                  <option value="fixed">고정</option>
+                  <option value="scroll">스크롤</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contents">
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_arcacon_alarm"><span>알림 아카콘 표시</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_arcacon_alarm" id="userConfig_arcacon_alarm">
+                  <option value="use">사용</option>
+                  <option value="unuse">사용 안 함</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_favicon_alarm"><span>브라우저 아이콘 알림</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_favicon_alarm" id="userConfig_favicon_alarm">
+                  <option value="use">사용</option>
+                  <option value="unuse">사용 안 함</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_img_preview"><span>이미지 미리보기</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_arcacon_alarm" id="userConfig_img_preview">
+                  <option value="use">사용</option>
+                  <option value="unuse">사용 안 함</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_channelImg_view"><span>채널 기본 이미지 표시</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_channelImg_view" id="userConfig_channelImg_view">
+                  <option value="use">사용</option>
+                  <option value="unuse">사용 안 함</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_sideContents"><span>사이드바 컨텐츠</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_sideContents" id="userConfig_sideContents">
+                  <option value="random">랜덤</option>
+                  <option value="humor_dontLook">유머채널 안보기</option>
+                  <option value="hotDeal_dontLook">핫딜 안보기</option>
+                </select>
+              </div>
+            </div>
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_arcacon_autoplayBlock"><span>아카콘 자동 재생 방지</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_backgroundColor_arcacon_autoplayBlock" id="userConfig_arcacon_autoplayBlock">
+                  <option value="use">사용</option>
+                  <option value="unuse">사용 안 함</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="optionLine">
+            <div class="optionBox">
+              <label class="optionName" for="userConfig_sensitiveContents_view"><span>민감한 컨텐츠 표시</span></label>
+              <div class="optionSelect">
+                <select name="userConfig_sensitiveContents_view" id="userConfig_sensitiveContents_view">
+                  <option value="auto">자동</option>
+                  <option value="view">표시</option>
+                  <option value="dontView">안 보기</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="shortCutHelpBox out">
+      <div class="boxTop">
+        <div class="title">단축키 도움말</div>
+        <div class="x_shape">×</div>
+      </div>
+      <div class="shortCutContent">
+        <div class="siteShortCutSet">
+          <div class="shortCutSetTitle">사이트에서</div>
+          <ul>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">1</span>
+                <span>&nbsp;~</span><span class="shortCutWord">0</span>
+              </div>
+              <div class="description">구독 채널 바로가기</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">R</span></div>
+              <div class="description">새로고침</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">?</span></div>
+              <div class="description">단축키 도움말</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">T</span></div>
+              <div class="description">맨 위로</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">W</span></div>
+              <div class="description">글 작성</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">B</span></div>
+              <div class="description">채널 이동</div>
+            </li>
+          </ul>
+        </div>
+        <div class="boardShortCutSet">
+          <div class="shortCutSetTitle">게시글에서</div>
+          <ul>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">A</span></div>
+              <div class="description">이전 글</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">S</span></div>
+              <div class="description">다음 글</div>
+            </li>
+            <li>
+              <div class="shortCut"><span class="shortCutWord">C</span></div>
+              <div class="description">댓글</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="top">
+      <div class="topMenu">
+        <div class="topCenter">
+          <div class="topLeft">
+            <a href="/" class="logo-img">
+              <img src="./../../imgs/Arcalive_logo.svg">
+              <img src="./../">
+            </a>
+            <div class="subscribechannel">
+              <div class="channelSelectorButton" title="구독 채널">
+                <span>구독</span><span class="topchannel">&nbsp;채널</span>
+                <div class="arrowButton"></div>
+              </div>
+              <div class="channelBox out">
+                <div class="channelAreaLiner">
+                  <div class="channelList"><a href="/">구독 중인 채널</a></div>
+                </div>
+                <div class="channelList"><a href="/">유머 채널<span class="index_box">1</span></a></div>
+              </div>
+            </div>
+            <div class="primarychannel out">
+              <div class="channelSelectorButton" title="채널">
+                <span>주요</span><span class="topchannel">&nbsp;채널</span>
+                <div class="arrowButton"></div>
+              </div>
+              <div class="channelBox">
+                <div class="channelAreaLiner">
+                  <div class="channelList"><a href="/">유머 채널</a></div>
+                  <div class="channelList"><a href="/">유머 채널</a></div>
+                  <div class="channelList"><a href="/">유머 채널</a></div>
+                </div>
+                <div class="channelList"><a href="/">유머 채널</a></div>
+              </div>
+            </div>
+            <div class="search">
+              <div class="searchIconBox">
+                <div class="search-img"><img src="./../../imgs/searchImg.png" /></div>
+                <input type="search" name="channelName" placeholder="찾기" autocomplete="off" />
+              </div>
+              <div class="searchMiniBox">
+                <div class="search-img"><img src="./../../imgs/searchImg.png" /></div>
+                <span>검색</span>
+              </div>
+              <div class="channelSearchBox out">
+                <!-- <div class="channelList">
+                  <div class="no-search">채널 검색 결과가 없습니다.</div>
+                </div> -->
+                <div class="channelList loadingBox">
+                  <div class="loading">
+                    <div class="loadingWhite"></div>
+                  </div>
+                </div>
+                <div class="searchedChannelList">
+                  <div class="channelList">
+                    <a href="/">
+                      <img class="logo" src="./../../imgs/Arcalive_logo.svg" />
+                      <span>암니안ㅁ어ㅣ마넝ㄴ머</span>
+                      <img class="playImg" src="./../../imgs/playShape.png" />
+                    </a>
+                  </div>
+                  <div class="channelList">
+                    <a href="/">
+                      <img class="logo" src="./../../imgs/Arcalive_logo.svg" />
+                      <span>암니안ㅁ어ㅣ마넝ㄴ머</span>
+                      <img class="playImg" src="./../../imgs/playShape.png" />
+                    </a>
+                  </div>
+                </div>
+                <div class="channelSearchButtonLine"><a href="/"><span>"d"</span>검색 결과 이동...</a></div>
+                <div class="channelcloseButtonLine">
+                  <button id="channelSearchCloseButton">닫기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="topRight">
+            <div class="topEtc">
+              <a href="" class="new"><span>뉴스</span></a>
+              <a href=""><span>위키</span></a>
+            </div>
+            <div class="notification out">
+              <div class="notification-img" title="notification"><img src="../../imgs/notification-bell.png" /></div>
+              <div class="notificationBox">
+                <div class="notificationBellTitle"><span>알림</span><button class="readAllButton">모두 읽기</button></div>
+                <div class="notificatetionMessages">
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                  <div class="newLink"><a href="/">daaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></div>
+                </div>
+                <div class="allLook">
+                  <a href="/">전체보기</a>
+                </div>
+              </div>
+            </div>
+            <div class="login">
+              <div class="loginIconBox" title="Member menu">
+                <span class="userName-login">
+                  길이에 따라 늘어납니다</span>
+                <a class="personLogin-icon" href="">
+                  <div class="person-img"><img src="../../imgs/person.png"></div>
+                </a>
+              </div>
+              <div class="userInfoBox out">
+                <div class="userInfoListLiner">
+                  <div class="userName"><a href="/"><span>길이에 따sssssssssssssss라 늘어납니다</span></a></div>
+                  <div class="userPoint">10 ⓟ</div>
+                </div>
+                <div class="userInfoList"><a href="/">ㅇㅇ</a></div>
+                <div class="userInfoList"><a>ㅇㅇ</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="subTopSearchBox">
+        <div class="search-img"><img src="./../../imgs/searchImg.png" /></div>
+        <input type="search" name="channelName" placeholder="찾기" autocomplete="off" />
+      </div>
+      <div class="subTop">
+        <div class="newsIcon">뉴스</div>
+        <div class="newsTitle"><a href="/">尹, 중소기업인들에 "어려운 일 말해주면 가능한 다 해결"(종합2보)</a></div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="left_adBar">
+        <div class="left_ad">
+          <a href="/"><img src="./../../imgs/notification-bell.png" /></a>
+        </div>
+      </div>
+      <div class="bodyCenter">
+        <div class="bodyContent">
+          <div class="sideCut">
+            <div class="MembershipBox">
+              <div class="MembershipBoxSideCut">
+                <div class="headText">아카라이브 계정 만들기</div>
+                <form action="" id="idForm" onsubmit="return validateForm()">
+                  <div class="AgreementsBox">
+                    <div class="Agreements">
+                      <div class="headText">POLÍTICA DE PRIVACIDAD Y REGLAS DE USO</div>
+                      <ul>1. Disposiciones generales
+                        <li>1.1. Las disposiciones que se establecen en el presente sitio son reglas de cumplimiento obligatorio que el usuario las acepta en todo su término, bajo las reglas del contrato de adhesión.</li>
+                        <li>1.2. El simple acceso por parte del usuario, aunque sea casual, así como la proposición de debates y redacción y envío de post, implica aceptación tácita de los términos y condiciones de estas reglas.</li>
+                        <li>1.3. Los administradores del sitio quedan facultados a arbitrar las medidas necesarias en uso de sus atribuciones de administración del sitio, en caso de constatarse alguna de las violaciones de las presentes reglas.</li>
+                        <li>1.4. El sitio …………… se erige como una mancomunión de comunidades, ideas individuales y colectivas, sobre todo género legal y moralmente permitido dentro de la sociedad, sin restricción de ideologías, en la cual se genere un debate dentro de la cordura, convivencia social, y respeto a los semejantes, sin discriminación por razones de raza, orientación sexual o religión.</li>
+                        <li>1.5. El sitio ……………… se considera amplio, pudiendo los debates resultar en posibilidades de transacciones de índole comercial individual entre los miembros, o para terceros que accedan como simples visitantes, cuando el debate del tema sugiera dichas posibilidades, y toda vez que los objetos se encuentren permitidos por las leyes de cada país.</li>
+                        <li>1.6. Los temas propuestos por los usuarios son de autoría exclusiva de cada uno de los proponentes, siendo responsabilidad exclusiva e individual de cada uno en forma personal conforme a las legislaciones del territorio del domicilio del autor del post, y a través de la aceptación tácita por adhesión de las presentes reglas, el autor del post exime de toda responsabilidad subsidiaria que pudiera reclamarse al sitio, a la compañía propietaria y a los administradores.</li>
+                        <li>1.7. El sitio …………. no se hace responsable de los efectos que pudiere provocar cada post propuesto por un usuario, y quien se sienta afectado por las publicaciones deberá de realizar los reclamos ante las instancias correspondientes en contra de la persona del autor, y no contra los administradores de esta comunidad virtual.</li>
+                        <li>1.8. No obstante, los administradores del sitio …………….., tendrán la facultad de arbitrar los medios necesarios para hacer cumplir las presentes reglas, y en todo caso, a revisar los post conforme a las reglas en materia de contenidos y reglas de debates que serán expuestas en un apartado siguiente.</li>
+                      </ul>
+                      <ul>2. Disposiciones particulares en cuanto a datos.
+                        <li>2.1. El sitio …………. se reserva el derecho a mantener la confidencialidad de los datos básicos que sean proporcionados por los usuarios que se inscriban como integrantes de la comunidad, siendo visibles para el público los seudónimos que son proporcionados para su individualización dentro de la comunidad, así como su dirección de correo electrónico, y fotos de perfil.</li>
+                        <li>2.2. Los administradores y la firma propietaria del sitio ……… no se hace responsable en caso de que algún usuario se sienta afectado por la proporción de información falsa en cuanto a datos que facilitare algún usuario a otro en sus conversaciones y tratos particulares, o privados, que deriven en algún negocio posterior, cuyos actos de transacciones serán consideradas fuera de la órbita de influencia del sitio siendo responsabilidad exclusiva de los particulares.</li>
+                        <li>2.3. Los administradores no se encuentran obligados a proporcionar los datos de los perfiles a las autoridades que lo requieran. No obstante, los administradores deberán de arbitrar los medios necesarios para que los sitios IP de donde provengan datos manifiestamente falsos y que afecten las seguridades de los estados, sean de acceso libre para las autoridades encargadas de las investigaciones, así como las direcciones de correo electrónico. La investigación sobre los datos corresponde exclusivamente a las autoridades a través de sus técnicos y departamentos, así como a los particulares, no pudiendo involucrar al presente sitio web y los usuarios tienen prohibido proponer a las autoridades a que requieran la proporción de datos, toda vez que exista flagrante comisión de delitos que ameriten actuación de oficio, en materia de pornografía infantil, apología al delito o instigación a la comisión de crímenes, pudiendo en este caso los administradores proporcionar la dirección IP del cual provienen a requerimiento judicial que reúna los requisitos formales de la legislación del país donde provienen. El usuario exime a los administradores y al representante legal de la firma propietaria de este sitio web a comparecer ante las autoridades a prestar declaración, y acepta ésta prohibición.</li>
+                        <li>2.4. El sitio …………. no es una base de datos de informaciones personales, por lo que los datos privados que puedan afectar los derechos de intimidad y privacidad de los usuarios no serán exigidos ni serán expuestos a la vista de cualquier persona, salvo la excepción señalada en el inciso anterior, en cuyo caso, será proporcionado sólo la dirección IP.</li>
+                        <li>2.5. Los administradores así como la firma propietaria no se hacen responsables en caso que el autor del post o los usuarios proporcionen en forma pública o en alguno de sus debates que permitan la localización o la individualización total de datos relacionados a su persona, o por el uso de aplicaciones sean informáticos o móviles que revelen en forma automática tales datos, de tal modo que terceros o autoridades, sin requerimiento a los administradores, hayan logrado acceder, que luego derive en localización (GPS, Google Maps, etc.), o facilidad para la revelación por parte de terceros de datos privados relacionados al mismo, y en caso de calificarse dicha revelación de datos como negligencia, será responsabilidad exclusiva del autor del post o usuario.</li>
+                      </ul>
+                      <ul>3. Reglas sobre contenidos
+                        <li>3.1. El sitio ………… garantiza la plena vigencia del derecho a la libre expresión comunicacional y personal de toda persona, toda vez que los administradores consideren que infringe las presentes reglas, así como las leyes y los tratados y acuerdos internacionales, y la dignidad humana.</li>
+                        <li>3.2. El sitio ………… no se hace responsable de las consecuencias particulares, agravios y ofensas que pueda sentir el usuario para el cual el autor del post haya dirigido el sentido y alcance de sus expresiones. No obstante, los administradores, a pedido del afectado o de oficio, podrán realizar las revisiones pertinentes, y en su caso, ejercerán la facultad de eliminar el posteo que se considere en infracción, siendo esta decisión solamente recurrible por pedido de reconsideración del usuario autor del post, y no siendo recurrible a instancias fuera de esta instancia.</li>
+                        <li>3.3. Queda prohibido post que levanten datos, documentos, reproducciones, que sean consideradas ilegales por las legislaciones nacionales del país de origen o del país de recepción o en su caso, del país donde residen los administradores. Igualmente quedan prohibidas las reproducciones que puedan ser consideradas como pornografía, exposición de desnudos y órganos sexuales en forma explícita, la apología al delito, la incitación a cometer crímenes, la apología a los delitos, amenazas de muerte y de todo tipo de daños que sean dirigidas a personas particulares, las palabras ofensivas que sean calificadas como injurias por parte de los administradores una vez sometida a revisión, cuando se afirmen cuestiones correspondientes a la intimidad de las personas, o sometidas a secreto profesional propias de cierto tipo de profesiones, o cuando se constate con las revisiones, que el perfil se hace pasar por otra persona, o post que pretendan propagar virus, spam, pishing, troyanos o equivalentes.</li>
+                        <li>3.4. Queda prohibido post que pretenda utilizar el medio para fines políticos y proselitidas con el fin de captar votos para elecciones políticas de algún país, campañas políticas.</li>
+                        <li>3.5. Cualquier post que infrinja estas prohibiciones o violen cualquiera de las reglas generales, será revisado y eliminado por los administradores, sin notificación al autor. Esta decisión será irrecurrible, y de persistir en reiteraciones, los administradores se reservan el derecho de remitir los antecedentes a las autoridades en caso de constituir los post en flagrante comisión de delitos penados por la legislación del país de origen.</li>
+                        <li>3.6. Los administradores y la firma propietaria no se hacen responsables en caso que el autor del post en su propio contenido levantado voluntaria o involuntariamente revele sus propios datos privados que luego puedan ser utilizados por terceros para fines prohibidos que resulten en agravios y ofensas, o daño a su imagen y honor. En caso de considerarse negligente la conducta, será imputable exclusivamente al autor quedando éste responsable de las consecuencias.</li>
+                      </ul>
+                      <ul>4. Reglas de los debates
+                        <li>4.1. Quedan prohibidas las opiniones, manifestaciones, que tiendan a ofender, agraviar, calumniar, injuriar, o revelar secretos profesionales o datos privados de terceros.</li>
+                        <li>4.2. Quedan prohibidas las manifestaciones que inciten al odio, violencia, violencia de género, discriminación por razones de sexo, raza, religión, orientación sexual.</li>
+                        <li>4.3. Quedan prohibidas las manifestaciones que instiguen a la comisión de delitos o realicen apología del delito.</li>
+                        <li>4.4. Cada opinión o debate será analizado por los administradores, y en su caso será eliminado.</li>
+                        <li>4.5. Durante los debates, cuando opiniones resulten ofensivas en forma particular a alguna de las personas, sin que haya sido motivo de revisión por los administradores, quien se considere ofendido o afectado, tendrá las siguientes facultades:</li>
+                        <li>a) Requerir al autor a título particular, pero a la vista de terceros, que ponga fin a sus manifestaciones. Sin embargo, queda prohibido el pedido que igualmente utilice palabras ofensivas o agraviantes.</li>
+                        <li>b) Agotada la instancia anterior, solicitar a los administradores la revisión de dichas opiniones o debates, con una exposición de los motivos que el afectado o en su caso, mencionar las reglas que infringe. Los administradores en este caso se reservan el derecho de tomarse el tiempo prudencial necesario para la revisión y de considerar procedente el pedido, formularán una advertencia y aviso al autor del debate u opinión, sugiriendo a éste la eliminación pertinente.</li>
+                        <li>c) En caso de que el autor de la opinión o debate no eliminare el mismo a pesar de la sugerencia señalada en el apartado anterior dentro del plazo perentorio de 15 días, los administradores procederán a eliminar dicha opinión o debate. Esta decisión será irrecurrible, y no podrá ser sometido a arbitraje ni mediación de terceras personas ni de instancias jurisdiccionales o administrativas públicas.</li>
+                        <li>d) En caso que el autor de la opinión o debate a pesar de la eliminación conforme a las reglas anteriores, vuelva a levantar la misma opinión o debate o plantee otro con similares temas, los administradores, a requerimiento de cualquier miembro o de oficio, procederán a la revisión y en su caso, podrán hacer uso del derecho de expulsión del miembro y bloqueo, siendo esta decisión irrecurrible y no se admitirá arbitraje alguno de terceros.</li>
+                        <li>e) En caso que el autor de la opinión o debate que haya sido expulsado conforme al apartado anterior, vuelva a introducirse en la comunidad con otro seudónimo y datos falsos, los administradores no se hacen responsables de esta circunstancia, pero, no obstante, se reservan el derecho de proceder nuevamente en las formas señaladas en los apartados anteriores.</li>
+                      </ul>
+                      <ul>Si usted, usuario o visitante, ha leído íntegramente estas reglas y su lectura ha llegado a este punto, acepta en este acto acatar todas las reglas precedentes, y el simple hecho de levantar el correspondiente post será considerada como prueba de aceptación y conformidad. Si no está de acuerdo, se le invita respetuosamente a abandonar el sitio y no levantar post alguno.</ul>
+                      <ul>Con los debidos respetos, los administradores le dan la bienvenida y los saludos cordiales</ul>
+                      El idioma por defecto de esta Política de Privacidad y Reglas de Uso es el español(hispanoamericano). En caso de discrepancia con las versiones traducidas, prevalecerá el idioma español.
+                    </div>
+                  </div>
+                  <div class="labelInter">
+                    <label for="keep" >
+                      <input type="checkbox" id="keep"/>
+                      I accept the privacy policy and terms
+                    </label>
+                  </div>
+                  <!-- <script>
+                    if($("input:checkbox[id='keep']").is(":checked") != true){
+                        document.addEventListener('이용 약관에 동의해주시기 바랍니다.');
+                        return; 
+                    }
+                  </script> -->
+                  
+                  <div class="hidden" id="hide-1">이용 약관에 동의해주시기 바랍니다.</div>
+                  <div class="mailAddress">
+                    <div>메일 주소
+                      
+                      <select name="email" class="email right">
+                        <option disabled selected>골라주세요.</option>
+                        <option value="gmail">@gmail.com</option>
+                        <option value="naver">@naver.com</option>
+                        <option value="docomo">@docomo.ne.jp</option>
+                        <option value="softbank">@softbank.ne.jp</option>
+                        <option value="yahoo.ne">@yahoo.co.jp</option>
+                        <option value="yahoo.co">@yahoo.co.jp</option>
+                        <option value="kakao.com">@kakao.com</option>
+                      </select>
+                      <div class="at right">@</div>
+                      <input type="text" id="email" class="inputEmail right" minlength="1" maxlength="64" autocomplete="on">
+                      <!-- <br>
+                      <br> -->
+                      
+                    </div>
+                    <div class="hidden" id="hide">메일 주소를 입력해주세요</div>
+                    <ul>
+                      <li class="isusse ">메일 주소는 공개되지 않습니다.</li>
+                      <li class="isusse ">입력하신 메일 주소로 인증 메일을 보냅니다. 메일이 도착하지 않을 경우, 스팸함 또는 프로모션을 확인하시기 바랍니다</li>
+                    </ul>
+                    <div></div>
+                  </div>
+                  <button class="createdAccount" id="createdBTN">계정 만들기</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="informBox">
+          <div class="stickyBox">
+            <div class="adBox">
+              <div class="upDownSlide out">
+                <div class="divideAd adOne">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adTwo">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adThree">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adFour">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adFive">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adSix">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adSeven">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adEight">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adNine">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adTen">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="basicSlide">
+                <div class="adImgBox">
+                  <a href="/"><img src="./../../imgs/notification-bell.png" /></a>
+                  <a href="/"><img src="./../../imgs/person.png" /></a>
+                  <a href="/"><img src="./../../imgs/notification-bell.png" /></a>
+                </div>
+              </div>
+            </div>
+            <div class="newsBox">
+              <div class="title">나무뉴스 주요</div>
+              <div class="content">
+                <ul>
+                  <a href="/">
+                    <li>
+                      <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    </li>
+                  </a> <a href="/">
+                    <li>
+                      <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    </li>
+                  </a> <a href="/">
+                    <li>
+                      <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    </li>
+                  </a> <a href="/">
+                    <li>
+                      <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    </li>
+                  </a> <a href="/">
+                    <li>
+                      <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    </li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rightEndBlock"></div>
+    </div>
+    <footer class="footer">
+      <div class="footerCenter">
+        <div class="footerLine">
+          <div class="divideLine withImg"><span class="title">프로젝트 팀원</span>
+            <div class="imgWrapper"><img src="./../../imgs/people.svg" /></div>
+          </div><span class="divideLine">김강문</span><span class="divideLine">이승배</span><span
+            class="divideLine">손민복</span>
+        </div>
+        <div class="footerLine">
+          <div class="divideLine"><span class="title">HELP</span></div><span class="divideLine"><a
+              href="/">Ads</a></span><span class="divideLine"><a href="/">Contáctenos</a></span><span
+            class="divideLine"><a href="/">POLÍTICA DE PRIVACIDAD Y REGLAS DE USO</a></span>
+        </div>
+        <div class="footerLine">
+          <div class="divideLine"><span class="title">Application</span></div>
+          <div class="divideLine iconBox">
+            <a href="/">
+              <svg class="kOqhQd" style="max-width: 3rem;" aria-hidden="true" viewBox="0 0 40 40"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill="none" d="M0,0h40v40H0V0z"></path>
+                <g>
+                  <path
+                    d="M19.7,19.2L4.3,35.3c0,0,0,0,0,0c0.5,1.7,2.1,3,4,3c0.8,0,1.5-0.2,2.1-0.6l0,0l17.4-9.9L19.7,19.2z"
+                    fill="#EA4335"></path>
+                  <path
+                    d="M35.3,16.4L35.3,16.4l-7.5-4.3l-8.4,7.4l8.5,8.3l7.5-4.2c1.3-0.7,2.2-2.1,2.2-3.6C37.5,18.5,36.6,17.1,35.3,16.4z"
+                    fill="#FBBC04"></path>
+                  <path d="M4.3,4.7C4.2,5,4.2,5.4,4.2,5.8v28.5c0,0.4,0,0.7,0.1,1.1l16-15.7L4.3,4.7z" fill="#4285F4">
+                  </path>
+                  <path d="M19.8,20l8-7.9L10.5,2.3C9.9,1.9,9.1,1.7,8.3,1.7c-1.9,0-3.6,1.3-4,3c0,0,0,0,0,0L19.8,20z"
+                    fill="#34A853"></path>
+                </g>
+              </svg>
+            </a>
+            <a href="/">
+              <svg style=" max-width: 3rem;" enable-background="new 0 0 800 800" version="1.1" viewBox="0 0 800 800"
+                xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                <linearGradient id="a" x1="400.05" x2="400.05" y1="798.77" y2="-1.2283"
+                  gradientTransform="matrix(1 0 0 -1 0 798.77)" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#18BFFB" offset="0"></stop>
+                  <stop stop-color="#2072F3" offset="1"></stop>
+                </linearGradient>
+                <path
+                  d="M638.4,0H161.6C72.3,0,0,72.3,0,161.6v476.9C0,727.7,72.3,800,161.6,800h476.9  c89.2,0,161.6-72.3,161.6-161.6V161.6C800,72.3,727.7,0,638.4,0z"
+                  fill="url(#a)"></path>
+                <path
+                  d="m396.6 183.8 16.2-28c10-17.5 32.3-23.4 49.8-13.4s23.4 32.3 13.4 49.8l-156.1 270.2h112.9c36.6 0 57.1 43 41.2 72.8h-331c-20.2 0-36.4-16.2-36.4-36.4s16.2-36.4 36.4-36.4h92.8l118.8-205.9-37.1-64.4c-10-17.5-4.1-39.6 13.4-49.8 17.5-10 39.6-4.1 49.8 13.4l15.9 28.1zm-140.4 388.9-35 60.7c-10 17.5-32.3 23.4-49.8 13.4s-23.4-32.3-13.4-49.8l26-45c29.4-9.1 53.3-2.1 72.2 20.7zm301.4-110.1h94.7c20.2 0 36.4 16.2 36.4 36.4s-16.2 36.4-36.4 36.4h-52.6l35.5 61.6c10 17.5 4.1 39.6-13.4 49.8-17.5 10-39.6 4.1-49.8-13.4-59.8-103.7-104.7-181.3-134.5-233-30.5-52.6-8.7-105.4 12.8-123.3 23.9 41 59.6 102.9 107.3 185.5z"
+                  fill="#fff"></path>
+              </svg>
+            </a>
+          </div>
+          <span class="divideLine">This site is protected by reCAPTCHA and the Google <a href="/">Privacy Policy</a> and
+            <a href="/">Terms of Service</a> apply.</span>
+        </div>
+      </div>
+    </footer>
+    <div class="bottomIconLine">
+      <div class="icon" title=""><img class="iconImg" src="./../../imgs/settings-sharp.svg" /></div>
+      <div class="icon" title="맨 위로 이동"><img class="iconImg" src="./../../imgs/caret-up-outline.svg" /></div>
+      <div class="icon" title="맨 아래로 이동"><img class="iconImg" src="./../../imgs/caret-down-outline.svg" /></div>
+    </div>
+  </div>
+</body>
+<script src="index.js"></script>
+</html>
