@@ -9,6 +9,7 @@ import modifycheck from "../services/board/modifycheck.js";
 import modify from "../services/board/modify.js";
 import boarddelete from "../services/board/boarddelete.js";
 import upload from "../services/board/upload.js";
+import channellist from "../services/board/channellist.js";
 
 import channel from "../services/board/channel.js";
 
@@ -24,6 +25,7 @@ router.patch("/modify", modify);
 router.delete("/delete", boarddelete);
 
 router.post("/upload", ...upload);
+router.post("/channellist", channellist);
 
 router.post("/", channel);
 
