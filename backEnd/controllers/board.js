@@ -12,9 +12,13 @@ import modify from "../services/board/modify.js";
 import boarddelete from "../services/board/boarddelete.js";
 import upload from "../services/board/upload.js";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import channellist from "../services/board/channellist.js";
 =======
 >>>>>>> 73386c3 (multer and session)
+=======
+import channellist from "../services/board/channellist.js";
+>>>>>>> 5f15296 (allchannellist)
 
 import channel from "../services/board/channel.js";
 
@@ -31,9 +35,13 @@ router.delete("/delete", boarddelete);
 
 router.post("/upload", ...upload);
 <<<<<<< HEAD
+<<<<<<< HEAD
 router.post("/channellist", channellist);
 =======
 >>>>>>> 73386c3 (multer and session)
+=======
+router.post("/channellist", channellist);
+>>>>>>> 5f15296 (allchannellist)
 
 router.post("/", channel);
 =======
