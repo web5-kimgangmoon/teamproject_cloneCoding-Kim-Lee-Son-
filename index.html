@@ -331,7 +331,7 @@
         e.preventDefault();
         const nowch = await (
           await axios.post(
-            "http://localhost:3001/b/",
+            "http://localhost:3001/b/view/?boardId=2",
             { channel: "" },
             {
               withCredentials: true,
