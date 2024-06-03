@@ -278,7 +278,7 @@ export default async (req, res) => {
       });
     }
     res.json({
-      category: category,
+      category: [category],
       user: nowuserinfo,
       channel: channel,
       view: view,
