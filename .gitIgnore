@@ -2,8 +2,5 @@ node_modules
 .DS_Store
 .env
 config
-<<<<<<< HEAD
-=======
 test-session
 uploads
->>>>>>> ec829b9 (임시)
