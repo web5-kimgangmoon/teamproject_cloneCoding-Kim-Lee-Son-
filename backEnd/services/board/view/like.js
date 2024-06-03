@@ -6,10 +6,14 @@ export default async (req, res) => {
 <<<<<<< HEAD
     const nowuser = req.user;
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (!nowuser) {
 =======
     if (nowuser) {
 >>>>>>> fe1a391 (status)
+=======
+    if (!nowuser) {
+>>>>>>> 53d11f5 (like error modify)
       throw new Error("not logged in");
     }
     const reqcuery = req.query;
