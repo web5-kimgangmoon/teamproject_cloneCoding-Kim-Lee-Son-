@@ -7,12 +7,10 @@ export default class Channel extends Model {
         title: {
           type: DataTypes.STRING(32),
           allowNull: false,
-          unique: true,
         },
         engTitle: {
           type: DataTypes.STRING(32),
           allowNull: false,
-          unique: true,
         },
         writePlaceholder: {
           type: DataTypes.STRING(2000),
