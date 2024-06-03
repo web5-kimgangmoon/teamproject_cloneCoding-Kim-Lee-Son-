@@ -234,7 +234,7 @@
           "http://localhost:3001/u/login",
           {
             channel: "main",
-            strid: "qwerasd",
+            strid: "qwer",
             pw: "1q2w3e4r",
           },
           {
@@ -329,9 +329,9 @@
 
       document.getElementById("channel").onclick = async (e) => {
         e.preventDefault();
-        const nowch = await (
+        const nowch = (
           await axios.patch(
-            "http://localhost:3001/b/modifycheck",
+            "http://localhost:3001/b/modifycheck?boardId=2",
             {},
             {
               withCredentials: true,
