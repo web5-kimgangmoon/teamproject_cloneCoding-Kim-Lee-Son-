@@ -161,8 +161,8 @@
         e.preventDefault();
         const nowch = await (
           await axios.post(
-            "http://localhost:3001/b/",
-            { channel: "" },
+            "http://localhost:3001/b/view/like?boardId=2",
+            {},
             {
               withCredentials: true,
             }
