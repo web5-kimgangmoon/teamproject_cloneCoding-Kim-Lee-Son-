@@ -1,5 +1,6 @@
 let page = 1;
 let category = "";
+let boardId = 1;
 if (query.get("page") != null && !isNaN(query.get("page"))) {
   page = Number(query.get("page"));
 }

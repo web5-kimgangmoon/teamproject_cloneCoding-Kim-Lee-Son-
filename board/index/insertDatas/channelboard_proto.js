@@ -528,7 +528,7 @@
             if (e.target.id.search(/deleteButton/) == 0) {
               const data = await axios({
                 method: "delete",
-                url: `${reqHostPort}/b/views/delete`,
+                url: `${reqHostPort}/b/view/delete`,
                 data: {
                   channel: channel,
                 },
@@ -543,7 +543,7 @@
             if (e.target.id.search(/update_commitButton/) == 0) {
               await axios({
                 method: "patch",
-                url: `${reqHostPort}/b/views/modify`,
+                url: `${reqHostPort}/b/view/modify`,
                 data: {
                   contents: document.getElementById(
                     `update_commentContent${e.target.id.split("update_commitButton")[1]
@@ -562,7 +562,7 @@
             if (e.target.id.search(/reply_commitButton/) == 0) {
               await axios({
                 method: "post",
-                url: `${reqHostPort}/b/views/add`,
+                url: `${reqHostPort}/b/view/add`,
                 data: {
                   contents: document.getElementById(
                     `reply_commentContent${e.target.id.split("reply_commitButton")[1]
@@ -590,7 +590,7 @@
           e.preventDefault();
           axios({
             method: "post",
-            url: `${reqHostPort}/b/views/like`,
+            url: `${reqHostPort}/b/view/like`,
             params: {
               boardId: boardId,
             },
@@ -609,7 +609,7 @@
           e.preventDefault();
           axios({
             method: "post",
-            url: `${reqHostPort}/b/views/dislike`,
+            url: `${reqHostPort}/b/view/dislike`,
             params: {
               boardId: boardId,
             },
@@ -631,7 +631,7 @@
           e.preventDefault();
           axios({
             method: "post",
-            url: `${reqHostPort}/b/views/add`,
+            url: `${reqHostPort}/b/view/add`,
             data: {
               contents: document.getElementById("basic_commentContent").value,
             },

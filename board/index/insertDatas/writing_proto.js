@@ -204,9 +204,9 @@
             })
           ).data;
           if (!writingUserInfo.userExists) {
-            // alert("비회원은 글작성이 불가능합니다!");
-            // window.location.replace(`${clientAddress}?channel=${channel}`);
-            // return;
+            alert("비회원은 글작성이 불가능합니다!");
+            window.location.replace(`${clientAddress}?channel=${channel}`);
+            return;
           }
           for (let item of data.channel.ChannelAdmins) {
             if (item.superAdmin) adminName_writing = item.User.nick;

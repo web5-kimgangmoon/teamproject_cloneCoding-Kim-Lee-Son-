@@ -28,7 +28,7 @@ let cookie = {};
 
 let page = 1;
 let category = "";
-let boardId = "";
+// let boardId = 2; 필요하면 넣자
 if (query.get("page") != null && !isNaN(query.get("page"))) {
   page = Number(query.get("page"));
 }

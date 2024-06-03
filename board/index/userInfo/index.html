@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="./body.css" />
   <link rel="stylesheet" href="./footer.css" />
   <link rel="stylesheet" href="./adBox.css" />
-  <link rel="stylesheet" href="./admin.css" />
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/translations/ko.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.js"></script>
+
 </head>
 
 <body>
@@ -56,14 +58,282 @@
     </div>
     <div class="body">
       <div class="left_adBar">
-        <div class="left_ad">
+        <div class="left_ad" id="left_ad">
           <a href="/"><img src="./../imgs/notification-bell.png" /></a>
         </div>
       </div>
       <div class="bodyCenter">
-        <div class="bodyContent">
+        <div class="bodyContent" id="userInfoBox">
         </div>
         <div class="informBox">
+          <div class="boardBox otherChannel">
+            <div class="title">유머 채널의 개념글</div>
+            <div class="content">
+              <ul>
+                <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a>
+                <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a> <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a> <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a> <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a>
+              </ul>
+            </div>
+          </div>
+          <div class="boardBox thisChannel">
+            <div class="title">이 채널의 개념글</div>
+            <div class="content">
+              <ul>
+                <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a> <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a> <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a> <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a> <a href="/">
+                  <li>
+                    <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    <div class="timeBox">05-26 23:20</div>
+                  </li>
+                </a>
+              </ul>
+            </div>
+          </div>
+          <div class="stickyBox">
+            <div class="adBox">
+              <div class="upDownSlide out" id="upDownSlide">
+                <div class="divideAd adOne">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/maxresdefault.jpg" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/img2.gif" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adTwo">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adThree">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adFour">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adFive">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/maxresdefault.jpg" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/img2.gif" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/maxresdefault.jpg" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adSix">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adSeven">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adEight">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adNine">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="divideAd adTen">
+                  <div class="adImgBox">
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/notification-bell.png" /></div>
+                    </a>
+                    <a href="/">
+                      <div class="adImg"><img src="./../imgs/person.png" /></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="basicSlide" id="basicSlide">
+                <div class="adImgBox">
+                  <a href="/"><img src="./../imgs/notification-bell.png" /></a>
+                  <a href="/"><img src="./../imgs/person.png" /></a>
+                  <a href="/"><img src="./../imgs/notification-bell.png" /></a>
+                </div>
+              </div>
+            </div>
+            <div class="newsBox">
+              <div class="title">나무뉴스 주요</div>
+              <div class="content">
+                <ul>
+                  <a href="/">
+                    <li>
+                      <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    </li>
+                  </a> <a href="/">
+                    <li>
+                      <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    </li>
+                  </a> <a href="/">
+                    <li>
+                      <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    </li>
+                  </a> <a href="/">
+                    <li>
+                      <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    </li>
+                  </a> <a href="/">
+                    <li>
+                      <div class="boardTitle">아까 조선군이 뭐 어쩌고 욕하다가 글짤린 애 있었는데</div>
+                    </li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="rightEndBlock"></div>
@@ -128,12 +398,11 @@
     <div class="bottom_convenience_buttons" id="bottom_convenience_buttons">
     </div>
   </div>
-  <script src="./index.js"></script>
+  <script src="./../insertDatas/qNc_extract.js"></script>
   <script src="./../insertDatas/makeSendData.js"></script>
   <script src="./../insertDatas/base_setting.js"></script>
-  <script src="./../insertDatas/top_data_get.js"></script>
-  <script src="./../insertDatas/top_data_insert.js"></script>
-  <script src="./../insertDatas/top_function.js"></script>
+  <script src="./../insertDatas/top_proto.js"></script>
+  <script src="./../insertDatas/userInfo_proto.js"></script>
 </body>
 
 </html>
