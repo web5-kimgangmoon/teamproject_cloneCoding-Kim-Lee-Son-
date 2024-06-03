@@ -480,7 +480,7 @@ export default async (req, res) => {
     });
 >>>>>>> 73386c3 (multer and session)
     if (catename) {
-      category = await Category.findAll({
+      category = await Category.findOne({
         where: { channelId: channel.id, engTitle: catename },
         attributes: {
           exclude: ["createdAt", "updatedAt", "deletedAt"],
