@@ -1,0 +1,172 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>test</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+</head>
+
+<body>
+  <!-- <form action="/test" method="post" enctype="multipart/form-data">
+      <input id="input-img" type="file" name="img" accept="image/*" multiple />
+      <input type="hidden" name="name" value="testing" />
+      <button>upload</button>
+    </form> -->
+  <div id="editor"></div>
+  <button id="login" class="login">로그인</button>
+  <button id="logout" class="logout">로그아웃</button>
+
+  <button id="submit" class="submit">작성완료</button>
+  <button id="submitcom" class="submitcom">댓글작성</button>
+
+  <button id="newch" class="newch">채널생성</button>
+
+  <button id="newboard" class="newboard">글 가져오기</button>
+
+  <button id="userinfo" class="userinfo">로그인한 유저정보 가져오기</button>
+
+  <button id="channellist" class="channellist">모든채널리스트 가져오기</button>
+
+  <button id="channel" class="channel">현재채널정보 가져오기</button>
+
+  <div id="poiulkjh"></div>
+
+  <script>
+    // async () => {
+    //   const user = (
+    //     await axios.post(
+    //       "http://localhost:3001/b/upload", // url
+    //       {}, // body
+    //       {
+    //         // options
+    //         withCredentials: true,
+    //       }
+    //     )
+    //   ).data;
+    // };
+    ClassicEditor.create(document.querySelector("#editor"), {
+        ckfinder: {
+          uploadUrl: "http://localhost:3001/b/upload",
+          // uploadUrl: "/upload",
+        },
+      })
+      .then((newEditor) => {
+        editor = newEditor;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  </script>
+  <script>
+    document.getElementById("login").onclick = async (e) => {
+      e.preventDefault();
+      await axios.post(
+        "http://localhost:3001/u/login", {
+          channel: "main",
+          strid: "qwer",
+          pw: "1q2w3e4r",
+        }, {
+          withCredentials: true,
+        }
+      );
+    };
+
+    document.getElementById("submit").onclick = async (e) => {
+      e.preventDefault();
+      await axios.post(
+        "http://localhost:3001/b/write", {
+          title: "12124",
+          contents: editor.getData(),
+          channel: "main",
+          category: "test"
+        }, {
+          withCredentials: true,
+        }
+      );
+    };
+    document.getElementById("newch").onclick = async (e) => {
+      e.preventDefault();
+      await axios.post(
+        "http://localhost:3001/a/newchannel", {
+          title: "12124",
+          engTitle: "asdasdas"
+        }, {
+          withCredentials: true,
+        }
+      );
+    };
+    document.getElementById("logout").onclick = async (e) => {
+      e.preventDefault();
+      await axios.post(
+        "http://localhost:3001/u/logout", {}, {
+          withCredentials: true,
+        }
+      );
+    };
+    document.getElementById("submitcom").onclick = async (e) => {
+      e.preventDefault();
+      await axios.post(
+        "http://localhost:3001/b/view/add?boardId=1&commentId=1", {
+          contents: "ㅁㅁㄴㅇㅁㄴ"
+        }, {
+          withCredentials: true,
+        }
+      );
+    };
+
+    document.getElementById("newboard").onclick = async (e) => {
+      e.preventDefault();
+      const viewboard = await (
+        await axios.post(
+          "http://localhost:3001/b/view?boardId=3", {}, {
+            withCredentials: true,
+          }
+        )
+      ).data;
+      console.log(viewboard.view.contents);
+      document.getElementById("poiulkjh").innerHTML += viewboard.view.contents;
+    };
+
+    document.getElementById("userinfo").onclick = async (e) => {
+      e.preventDefault();
+      const userinfo = await (
+        await axios.post(
+          "http://localhost:3001/u/userinfo", {}, {
+            withCredentials: true,
+          }
+        )
+      ).data;
+      console.log({
+        ...userinfo.userinfo[0]
+      }.nick);
+    };
+
+    document.getElementById("channellist").onclick = async (e) => {
+      e.preventDefault();
+      const chli = await (
+        await axios.post(
+          "http://localhost:3001/b/channellist", {}, {
+            withCredentials: true,
+          }
+        )
+      ).data;
+      console.log(chli.allchannellist);
+    };
+
+    document.getElementById("channel").onclick = async (e) => {
+      e.preventDefault();
+      const nowch = (
+        await axios.patch(
+          "http://localhost:3001/b/modifycheck?boardId=2", {}, {
+            withCredentials: true,
+          }
+        )
+      ).data;
+      console.log(nowch);
+    };
+  </script>
+</body>
+
+</html>
