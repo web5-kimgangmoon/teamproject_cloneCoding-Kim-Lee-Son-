@@ -1,0 +1,137 @@
+#container .body {
+  display: flex;
+  min-height: 61rem;
+}
+
+#container .body .bodyCenter {
+  display: flex;
+  width: 1200px;
+}
+
+#container .body .left_adBar,
+#container .body .rightEndBlock {
+  flex: 1;
+  display: flex;
+  justify-content: right;
+}
+
+#container .body .left_adBar .left_ad {
+  width: 160px;
+  height: 600px;
+  margin: 1rem;
+}
+
+#container .body .bodyCenter .bodyContent {
+  flex: 1;
+  height: 100%;
+  background-color: white;
+  border-right: 1px solid #bbb;
+  border-left: 1px solid #bbb;
+}
+
+
+#container .body .bodyCenter .informBox {
+  width: 300px;
+  margin: 0.8rem;
+  /* background-color: brown; */
+  position: relative;
+}
+
+#container .body .bodyCenter .informBox .boardBox,
+#container .body .bodyCenter .informBox .stickyBox .newsBox {
+  width: 300px;
+  min-height: 10rem;
+  margin-bottom: 0.8rem;
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+}
+
+#container .body .bodyCenter .informBox .boardBox .title,
+#container .body .bodyCenter .informBox .stickyBox .newsBox .title {
+  font-size: 1.3rem;
+  padding-bottom: 1.2rem;
+}
+
+#container .body .bodyCenter .informBox .boardBox .content ul,
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul {
+  margin: 0;
+  padding: 0;
+}
+
+#container .body .bodyCenter .informBox .boardBox .content ul a li,
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a li {
+  display: flex;
+  padding-bottom: 0.2rem;
+}
+
+#container .body .bodyCenter .informBox .boardBox .content ul a,
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a {
+  text-decoration: none;
+  color: black;
+}
+
+#container .body .bodyCenter .informBox .boardBox .content ul a:hover,
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a:hover {
+  text-decoration: underline;
+}
+
+#container .body .bodyCenter .informBox .boardBox .content ul a li .boardTitle,
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a li .boardTitle {
+  font-size: 0.9rem;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  text-decoration: none;
+}
+
+#container .body .bodyCenter .informBox .boardBox .content ul a li .boardTitle {
+  width: 70%;
+}
+
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a li .boardTitle {
+  width: 100%;
+}
+
+#container .body .bodyCenter .informBox .boardBox .content ul a li .timeBox {
+  text-align: center;
+  font-size: 0.7rem;
+  padding: 0.2rem;
+  background-color: #3d414d;
+  color: white;
+  border-radius: 0.3rem;
+  margin-top: 0.1rem;
+  margin-left: 0.3rem;
+}
+
+#container .body .bodyCenter .informBox .stickyBox {
+  position: sticky;
+  top: 0.8rem;
+}
+
+#container .body .bodyCenter .informBox .stickyBox .adBox {
+  width: 300px;
+  height: 600px;
+  /* background-color: black; */
+  margin-bottom: 0.8rem;
+}
+
+/* @media screen and (max-width: 575px) */
+/* @media screen and (max-width: 763px)  */
+@media screen and (max-width: 991px) {
+  #container .body .bodyCenter .informBox {
+    display: none;
+  }
+
+  #container .body .bodyCenter .boardsIndex {
+    border: none;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  #container .body .left_adBar .left_ad {
+    display: none;
+  }
+}
