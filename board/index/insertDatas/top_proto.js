@@ -128,9 +128,8 @@
     );
 
     subscribechannelList.forEach((item, index) => {
-      top_subscribechannel_channelBox.innerHTML += `<div class="channelList"><a href="${
-        item[0]
-      }">${item[1]} 채널<span class="index_box">${index + 1}</span></a></div>`;
+      top_subscribechannel_channelBox.innerHTML += `<div class="channelList"><a href="${item[0]
+        }">${item[1]} 채널<span class="index_box">${index + 1}</span></a></div>`;
     });
 
     // notification_insert
@@ -319,10 +318,10 @@
         data: { channel: "" },
         withCredentials: true,
       })
-    ).data.userInfo;
+    ).data;
 
-    username = data.nick;
-    userExists = true;
+    if (data?.userinfo) username = data.userinfo.nick;
+    if (data?.userinfo) userExists = true;
   } catch (err) {
     username = "";
     userExists = false;
@@ -330,19 +329,18 @@
     document.getElementById("top_login").innerHTML = `
     <div class="loginIconBox" title="Member menu" id="top_userInfoBoxButton">
       <span class="userName-login">${username}</span>
-      <a class="personLogin-icon" ${
-        !userExists ? `href="${userIconHref}"` : ""
+      <a class="personLogin-icon" ${!userExists ? `href="${userIconHref}"` : ""
       }>
         <div class="person-img"><img src="./../imgs/person.png"></div>
       </a>
     </div>
     <div class="userInfoBox out" id="top_userInfoBox">
       <div class="userInfoListLiner">
-        <div class="userName"><a href="/userInfo"><span>${username}</span></a></div>
+        <div class="userName"><a href="/userInfo?channel=${channel}"><span>${username}</span></a></div>
         <div class="userPoint">${userPoint} ⓟ</div>
       </div>
       <div class="userInfoListLiner">
-        <button class="userInfoList" type="button"><a href="/userInfo">유저 정보</a></button>
+        <button class="userInfoList" type="button"><a href="/userInfo?channel=${channel}">유저 정보</a></button>
         <button class="userInfoList" type="button"><a>표시설정</a></button>
         <button class="userInfoList" type="button"><a>시리즈</a></button>
         <button class="userInfoList" type="button"><a>포인트 내역</a></button>

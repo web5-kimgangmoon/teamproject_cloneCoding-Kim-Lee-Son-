@@ -90,13 +90,16 @@
         data: { channel: "" },
         withCredentials: true,
       })
-    ).data.userInfo;
-    if (data2) boardContent.username = data2.nick;
-    if (data2) boardContent.userExists = true;
+    ).data;
+    if (data2?.userinfo) boardContent.username = data2.userinfo.nick;
+    if (data2?.userinfo) boardContent.userExists = true;
+    else {
+      boardContent.username = "";
+      boardContent.userExists = false;
+      boardContent.isWriter = false;
+    }
   } catch (err) {
-    boardContent.username = "";
-    boardContent.userExists = false;
-    boardContent.isWriter = false;
+
   } finally {
     (async () => {
       try {

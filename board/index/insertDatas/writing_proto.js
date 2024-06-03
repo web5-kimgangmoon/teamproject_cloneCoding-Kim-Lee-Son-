@@ -28,9 +28,14 @@
           data: { channel: "" },
           withCredentials: true,
         })
-      ).data.userInfo;
-      if (data2) writingUserInfo.username = data2.nick;
-      if (data2) writingUserInfo.userExists = true;
+      ).data;
+      if (data2.userinfo) writingUserInfo.username = data2.userinfo.nick;
+      if (data2.userinfo) writingUserInfo.userExists = true;
+      else {
+        writingUserInfo.username = "";
+        writingUserInfo.userExists = false;
+        writingUserInfo.isWriter = false;
+      }
     } catch (err) {
       writingUserInfo.username = "";
       writingUserInfo.userExists = false;
