@@ -26,20 +26,11 @@ export default async (req, res) => {
     res.json({ result: "ok" });
   } catch (err) {
     console.error(err);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fe1a391 (status)
     if (err.message == "not super admin") {
       res.status(403);
     } else {
       res.status(419);
     }
-<<<<<<< HEAD
-=======
->>>>>>> 180d9a7 (feedback and admin)
-=======
->>>>>>> fe1a391 (status)
     res.json({ error: err.message });
   }
 };

@@ -11,18 +11,8 @@ export default async (req, res) => {
     const chname = reqbody.channel;
 
     const reqcuery = req.query;
-<<<<<<< HEAD
-<<<<<<< HEAD
     const nowview = reqcuery.boardId;
     // const nowview = 1;
-=======
-    // const nowview = reqcuery.boardId;
-    const nowview = 1;
->>>>>>> 4090055 (feat:board complete)
-=======
-    const nowview = reqcuery.boardId;
-    // const nowview = 1;
->>>>>>> 180d9a7 (feedback and admin)
     const channel = await Channel.findOne({
       where: { engTitle: chname },
     });
@@ -43,10 +33,6 @@ export default async (req, res) => {
     res.json({ result: "ok" });
   } catch (err) {
     console.error(err);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fe1a391 (status)
     if (err.message == "not logged in") {
       res.status(401);
     } else if (err.message == "not match user") {
@@ -54,11 +40,6 @@ export default async (req, res) => {
     } else {
       res.status(419);
     }
-<<<<<<< HEAD
-=======
->>>>>>> 4090055 (feat:board complete)
-=======
->>>>>>> fe1a391 (status)
     res.json({ error: err.message });
   }
 };

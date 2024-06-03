@@ -6,17 +6,8 @@ export default async (req, res) => {
     if (!nowuser) {
       throw new Error("not logged in");
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
     const reqbody = req.body;
     const chname = reqbody.channel;
-=======
-    const chname = req.body.channel;
->>>>>>> 4090055 (feat:board complete)
-=======
-    const reqbody = req.body;
-    const chname = reqbody.channel;
->>>>>>> ec829b9 (임시)
 
     const reqquery = req.query;
     const commentid = reqquery.commentId;
@@ -27,21 +18,8 @@ export default async (req, res) => {
 
     const comment = await Comment.findOne({
       where: { id: commentid, userId: nowuser.id },
-<<<<<<< HEAD
-<<<<<<< HEAD
     });
     const channeladmin = await ChannelAdmin.findOne({
-=======
-      include: {
-        model: Category,
-      },
-    });
-    const channeladmin = await ChannelAdmin.findAll({
->>>>>>> 4090055 (feat:board complete)
-=======
-    });
-    const channeladmin = await ChannelAdmin.findOne({
->>>>>>> 180d9a7 (feedback and admin)
       where: { channelId: channel.id, userId: nowuser.id },
     });
     if (!comment || !channeladmin) {
@@ -54,10 +32,6 @@ export default async (req, res) => {
     res.json({ result: "ok" });
   } catch (err) {
     console.error(err);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fe1a391 (status)
     if (err.message == "not logged in") {
       res.status(401);
     } else if (err.message == "not match user") {
@@ -65,11 +39,6 @@ export default async (req, res) => {
     } else {
       res.status(419);
     }
-<<<<<<< HEAD
-=======
->>>>>>> 4090055 (feat:board complete)
-=======
->>>>>>> fe1a391 (status)
     res.json({ error: err.message });
   }
 };
