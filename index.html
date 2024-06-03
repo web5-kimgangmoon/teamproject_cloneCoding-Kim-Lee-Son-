@@ -330,8 +330,8 @@
       document.getElementById("channel").onclick = async (e) => {
         e.preventDefault();
         const nowch = await (
-          await axios.post(
-            "http://localhost:3001/b/view/like?boardId=2",
+          await axios.patch(
+            "http://localhost:3001/b/modifycheck",
             {},
             {
               withCredentials: true,

@@ -26,14 +26,20 @@ export default async (req, res) => {
     res.status(419);
 =======
   const reqbody = req.body;
-  const chname = reqbody.channel;
+  let chname = reqbody.channel;
+
+  if (!chname) {
+    chname = "main";
+  }
 
   const channel = await Channel.findOne({
     where: { engTitle: chname },
+    attributes: ["id"],
   });
 
   const category = await Category.findAll({
     where: { channelId: channel.id },
+    attributes: ["engTitle", "name"],
   });
 
   res.json({ category: category });

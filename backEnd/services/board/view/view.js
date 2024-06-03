@@ -289,8 +289,9 @@ export default async (req, res) => {
         },
         {
           model: Category,
+          attributes: ["engTitle", "name"],
         },
-        { model: User },
+        { model: User, attributes: ["nick", "profilImg"] },
       ],
     });
 
