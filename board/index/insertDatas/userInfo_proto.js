@@ -12,9 +12,9 @@
       })
     ).data;
 
-    if (data.userinfo[0]) username = data.userinfo[0].nick;
-    if (data.userinfo[0]) userExists = true;
-    if (data.userinfo[0]) userEmail = data.userinfo[0].email;
+    if (data.userinfo.userinfo[0]) username = data.userinfo.userinfo[0].nick;
+    if (data.userinfo.userinfo[0]) userExists = true;
+    if (data.userinfo.userinfo[0]) userEmail = data.userinfo.userinfo[0].email;
   } catch (err) {
     username = "";
     userExists = false;

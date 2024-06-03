@@ -320,8 +320,8 @@
         withCredentials: true,
       })
     ).data;
-    if (data.userinfo[0]) username = data.userinfo[0].nick;
-    if (data.userinfo[0]) userExists = true;
+    if (data.userinfo.userinfo[0]) username = data.userinfo.userinfo[0].nick;
+    if (data.userinfo.userinfo[0]) userExists = true;
   } catch (err) {
     username = "";
     userExists = false;
