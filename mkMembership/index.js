@@ -1,4 +1,22 @@
-
+axios({
+    method: "post",
+    url: `${reqHostPort}/u/regist`,
+    data: { channel: channel,
+strid:(idInputElem),
+pw: (pwInputElem),
+nick:(nickInputElem),
+email:(idInf.concat(target.options[target.selectedIndex].text)),
+},
+    withCredentials: true,
+  })
+.then((res) =>{
+alert("회원가입에 성공했습니다!");
+}).catch((err)=>{
+alert(err.response.data.error);
+}).finally((
+)=>{
+window.location.replace(`${clientAddress}/?channel=${channel}`);
+});
 
 // BTNElem.onclick = (e) => {
 //     // // 아이디적는 칸에 값을 입력했을때
@@ -43,7 +61,8 @@ function validateForm(e) {
     return isValid;
 };
 
-
+const idInputElem = document.getElementById("idInput");
+const nickInputElem = document.getElementById("nickInput");
 
 const formElem = document.getElementById("idForm");
 // 전체를 감싸는 폼
@@ -84,12 +103,16 @@ BTNElem.onclick = () => {
     <div>아이디 : 
       <input type="text" id="idInput" class="inputText" name="idInput" minlength="8" maxlength="64" spellcheck="false" autocomplete="on" >
     </div>
+    <div>닉네임 : 
+      <input type="text" id="nickInput" class="inputText" name="nickInput" minlength="8" maxlength="64" spellcheck="false" autocomplete="on" >
+    </div>
     <div>비밀번호 : 
       <input type="text" id="pwInput" class="inputText" name="pwInput" minlength="8" maxlength="64" spellcheck="false" autocomplete="on" >
     </div>
     <div>비밀번호 확인: 
       <input type="text" id="pwInputCheck" class="inputText" name="pwInput" minlength="8" maxlength="64" spellcheck="false" autocomplete="on" >
     </div>
+    <div class="mismatch-message hide">비밀번호가 일치하지 않습니다</div>
     <div>
       <button class="createdAccount" id="createdBtn" type="button">계정 생성</button>
     </div>
@@ -134,9 +157,33 @@ const pwInputElem = document.getElementById("pwInput");
 const pwInputCheckElem = document.getElementById("pwInputCheck");
 const createdBtnElem = document.getElementById("createdBtn");
 
-createdBtnElem.onclick = () => {
-    if(pwInputElem!=pwInputCheckElem){
-    alert("비밀번호를 확인하세요.")
-    // console.log("비밀번호를 확인하세요.")
-    };
-}
+// createdBtnElem.onclick = () => {
+//     function isMatch (pwInputElem, pwInputCheckElem) {
+//         return pwInputElem === pwInputCheckElem;
+//     }
+
+//     if(pwInputElem!=pwInputCheckElem){
+//     alert("비밀번호를 확인하세요.")
+//     // console.log("비밀번호를 확인하세요.")
+//     };
+// }
+
+let elInputPassword = document.querySelector('#password'); 
+let elMismatchMessage = document.querySelector('.mismatch-message');
+let elInputPasswordRetype = document.querySelector('#password-retype');
+
+elInputPasswordRetype.onkeyup = function () {
+
+    // console.log(elInputPasswordRetype.value);
+    if (elInputPasswordRetype.value.length !== 0) {
+      if(isMatch(elInputPassword.value, elInputPasswordRetype.value)) {
+        elMismatchMessage.classList.add('hidden'); // 실패 메시지가 가려져야 함
+      }
+      else {
+        elMismatchMessage.classList.remove('hidden'); // 실패 메시지가 보여야 함
+      }
+    }
+    else {
+      elMismatchMessage.classList.add('hidden'); // 실패 메시지가 가려져야 함
+    }
+  };

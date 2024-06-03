@@ -1,3 +1,20 @@
+axios({
+    method: "post",
+    url: `${reqHostPort}/u/login`,
+    data: { channel: channel,
+strid:(idInf),
+pw: (pwInputElem) },
+    withCredentials: true,
+})
+.then((res) =>{
+alert("로그인에 성공했습니다!");
+}).catch((err)=>{
+alert(err.response.data.error);
+}).finally((
+)=>{
+window.location.replace(`${clientAddress}/?channel=${channel}`);
+});
+
 const formElem = document.getElementById("idForm");
 // 전체를 감싸는 폼
 const BTNElem = document.getElementById("btn");
@@ -27,10 +44,7 @@ BTNElem.onclick = () => {
         </div>
         <button type="button" class="fallback" id="fallback"></button>
         <div class="blurry">비밀번호</div>
-        <input type="text" id="idInput" class="input" name="username" minlength="1" maxlength="64" spellcheck="false" autocomplete="on" >
-        <!-- <div class="input-b">
-            <input type="text" id="idInput" name="username" minlength="1" maxlength="64" spellcheck="false" enterkeyhint="next" autocomplete="username" data-listener-added_d090e0e7="true" class="" style="animation-duration: 0.5s;">
-        </div> -->
+        <input type="text" id="pwInput" class="input" name="username" minlength="1" maxlength="64" spellcheck="false" autocomplete="on" >
         <div class="Purple">아이디/비밀번호 찾기</div>
         <button type="button" class="btn-a center">로그인</button>
         <div class="createdId center Purple">계정 만들기</div>
@@ -58,7 +72,6 @@ BTNElem.onclick = () => {
 </div>`
     const fallback = document.getElementById("fallback");
     fallback.innerHTML = idInf;
-
 };
 
-
+const pwInputElem = document.getElementById("pwInput")
