@@ -1,3 +1,6 @@
+#idForm{
+    /* display: none; */
+}
 
 .sideCut{
     display: flex;
@@ -146,3 +149,29 @@ ul {list-style:inside;}
     font-size: 16px;
     float: right;
 }
+
+.idInfo{
+    display: block;
+}
+
+.addImage {
+    width: 400px;
+    height: 300px;
+    background-color: lightgray;
+    border-radius: 20px 20px / 20px 20px;
+    overflow: hidden;
+    margin: 0px 10px 10px 0px;
+}
+
+.inputImg {
+    width: 450px;
+    height: 350px;
+}
+
+.inputText{
+    margin: 1rem 0 1rem 0;
+}
+
+/* .inputText::after{
+    content: < ;
+} */
