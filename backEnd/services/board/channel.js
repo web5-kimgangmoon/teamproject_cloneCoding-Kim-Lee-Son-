@@ -28,16 +28,40 @@ export default async (req, res) => {
     if (!chname) {
       chname = "main";
     }
-    // include: [{ model: User, attributes: ["nick"] }],
+    let nowuserinfo;
+    if (nowuser) {
+      nowuserinfo = await User.findOne({
+        where: { id: nowuser.id },
+        attributes: ["nick"],
+      });
+    }
 
     let channel = await Channel.findOne({
       where: { engTitle: chname },
-      include: [{ model: ChannelAdmin, include: [{ model: User, attributes: ["nick"] }] }],
+      include: [
+        {
+          model: ChannelAdmin,
+          attributes: ["superAdmin"],
+          include: [{ model: User, attributes: ["nick"] }],
+        },
+      ],
+      attributes: {
+        exclude: ["createdAt", "updatedAt", "deletedAt"],
+      },
     });
     if (!channel) {
       channel = await Channel.findOne({
         where: { engTitle: "main" },
-        include: [{ model: ChannelAdmin, include: [{ model: User, attributes: ["nick"] }] }],
+        include: [
+          {
+            model: ChannelAdmin,
+            attributes: ["superAdmin"],
+            include: [{ model: User, attributes: ["nick"] }],
+          },
+        ],
+        attributes: {
+          exclude: ["createdAt", "updatedAt", "deletedAt"],
+        },
       });
     }
 
@@ -45,14 +69,14 @@ export default async (req, res) => {
     let category = await Category.findAll({
       where: { channelId: channel.id },
       attributes: {
-        exclude: ["createdAt", "updatedAt", "deletedAt"],
+        exclude: ["createdAt", "updatedAt", "deletedAt", "channelId"],
       },
     });
     if (catename) {
       category = await Category.findOne({
         where: { channelId: channel.id, engTitle: catename },
         attributes: {
-          exclude: ["createdAt", "updatedAt", "deletedAt"],
+          exclude: ["createdAt", "updatedAt", "deletedAt", "channelId"],
         },
       });
       catecheck = true;
@@ -61,7 +85,7 @@ export default async (req, res) => {
       category = await Category.findAll({
         where: { channelId: channel.id },
         attributes: {
-          exclude: ["createdAt", "updatedAt", "deletedAt"],
+          exclude: ["createdAt", "updatedAt", "deletedAt", "channelId"],
         },
       });
       catecheck = false;
@@ -158,7 +182,7 @@ export default async (req, res) => {
     }
     res.json({
       category: category,
-      user: nowuser,
+      user: nowuserinfo,
       channel: channel,
       boardlist: boardlist,
       boardcount: boardcount,
