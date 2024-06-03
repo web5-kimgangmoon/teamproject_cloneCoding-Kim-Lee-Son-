@@ -1,3 +1,4 @@
+
 (async () => {
   // recentChannel_data
 
@@ -10,23 +11,7 @@
 
   // categoryList_data
 
-  let categoryList = [
-    ["/link", "ㅇㅇ", false],
-    ["/link", "ㅇㅇ", false],
-    ["/link", "ㅇㅇ", true],
-    ["/link", "ㅇㅇ", false],
-    ["/link", "ㅇㅇ", false],
-    ["/link", "ㅇㅇ", false],
-    ["/link", "ㅇㅇ", false],
-    ["/link", "ㅇㅇ", false],
-    ["/link", "ㅇㅇ", false],
-    ["/link", "ㅇㅇ", false],
-    ["/link", "ㅇㅇ", false],
-    ["/link", "ㅇㅇ", false],
-    ["/link", "ㅇㅇ", false],
-    ["/link", "ㅇㅇ", false],
-    ["/link", "ㅇㅇ", false],
-  ];
+  let categoryList = [];
   // /b/category
 
   // channel보내줘야함 쿼리에서찾자
@@ -63,49 +48,12 @@
   // username, userExists는 top_data에서 받아온다.
   //${temp.getFullYear()}.${temp.getMonth() + 1}.${temp.getDate()}
   let channelBoardInformList = [
-    {
-      href: "/dsadk",
-      number: "1",
-      blackBox: "",
-      title: "ㅁㅁ",
-      commentCount: "3",
-      writer: "하하",
-      created_at: `212`,
-      looks: "43535",
-      recommendCount: "1234",
-      isSub: false,
-    },
   ];
 
   let channelBoardInformList_concealed = [
-    {
-      href: "/dsadk",
-      number: "1",
-      blackBox: "ㅇㅇ",
-      title: "ㅁㅁ",
-      commentCount: "3",
-      writer: "하하",
-      created_at: "212",
-      looks: "43535",
-      recommendCount: "1234",
-      isSub: true,
-    },
   ];
 
   let channelBoardList = [
-    {
-      href: "/dsadk",
-      number: "1",
-      blackBox: "ㅇㅇ",
-      title: "ㅁㅁ",
-      commentCount: "3",
-      writer: "하하",
-      created_at: "2132",
-      looks: "43535",
-      recommendCount: "1234",
-      isSub: true,
-      isAdmin: false,
-    },
   ];
 
   // channelPage_data
@@ -123,10 +71,10 @@
   // writing_Button
   let writingPagePath = `${clientAddress}/writing?channel=${channel}`;
 
+
   try {
     // categoryList_data
-    categoryList = [];
-    let count2 = 0;
+    let count = 0;
     let data2 = (
       await axios({
         method: "post",
@@ -135,34 +83,54 @@
         params: { page: page },
       })
     ).data;
+
     categoryList.push([
       `${clientAddress}?channel=${channel}`,
       "전체",
       category == "",
     ]);
-    for (let item of data2.category) {
-      categoryList.push([
-        `${clientAddress}?channel=${channel}&category=${item.engTitle}`,
-        item.name,
-        category == item.engTitle,
-      ]);
+    let data = (
+      await axios({
+        method: "post",
+        url: `${reqHostPort}/b/category`,
+        data: { channel: channel }
+      })
+    ).data.category;
+    if (Array.isArray(data)) {
+      for (let item of data) {
+        categoryList.push([
+          `${clientAddress}?channel=${channel}&category=${item.engTitle}`,
+          item.name,
+          category == item.engTitle,
+        ]);
+      }
+    } else {
+      categoryList.push([`${clientAddress}?channel=${channel}&category=${data.engTitle}`,
+      data.name,
+      category == data.engTitle])
     }
+
     channelBoardInformList = [];
     channelBoardInformList_concealed = [];
     channelBoardList = [];
+
     for (let item of data2.boardlist) {
       let boardCategoryName = "";
       let date = new Date(item.createdAt);
-      data2.category.forEach((searchId) => {
-        if (searchId.id == item.categoryId)
-          boardCategoryName = searchId.engTitle;
-        // console.log(searchId.engTitle);
-      });
+
+      if (Array.isArray(data)) {
+        data.forEach((searchId) => {
+          if (searchId.id == item.categoryId)
+            boardCategoryName = searchId.engTitle;
+          // console.log(searchId.engTitle);
+        });
+      } else {
+        boardCategoryName = data.id == item.categoryId ? data.engTitle : "";
+      }
       let boardObject = {
         href: `${clientAddress}/board?boardId=${item.id}&channel=${channel}&category=${boardCategoryName}`,
-        created_at: `${date.getFullYear()}.${
-          date.getMonth() + 1
-        }.${date.getDate()}`,
+        created_at: `${date.getFullYear()}.${date.getMonth() + 1
+          }.${date.getDate()}`,
         number: item.id,
         blackBox: "",
         title: item.title,
@@ -174,10 +142,10 @@
         isAdmin: item.notice,
       };
       if (boardObject.isSub || boardObject.isAdmin) {
-        count2 < 5
+        count < 5
           ? channelBoardInformList.push(boardObject)
           : channelBoardInformList_concealed.push(boardObject);
-        count2++;
+        count++;
       } else {
         channelBoardList.push(boardObject);
       }
@@ -188,6 +156,7 @@
       if (item.superAdmin) adminName = item.User.nick;
     }
   } catch (err) {
+    console.log(err)
   } finally {
     // recentChannelList_insert
     const recentChannelListBox = document.getElementById(
@@ -204,17 +173,13 @@
   <div class="imgIcon closeIcon"><img src="./../imgs/close.svg" /></div>
 </div>`;
     });
-
     // category_insert
 
-    const categoryListBox = document.getElementById("categoryListBox");
-    const categoryBoxWrapper = document.getElementById("categoryBoxWrapper");
 
     categoryList.forEach((item) => {
       categoryListBox.innerHTML += `
-    <div class="category ${!item[2] || "selected"}"><a href="${item[0]}" >${
-        item[1]
-      }</a></div>
+    <div class="category ${!item[2] || "selected"}"><a href="${item[0]}" >${item[1]
+        }</a></div>
   
   `;
     });
@@ -318,9 +283,8 @@
     <div class="titleColumn">
       <dlv class="titleContent">
         <div class="textWrapper">
-          <div class="blackBox ${item["blackBox"] == "" && "out"}">${
-        item["blackBox"]
-      }</div>
+          <div class="blackBox ${item["blackBox"] == "" && "out"}">${item["blackBox"]
+        }</div>
           <!-- <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div> --!>
           <div class="text">
           ${item["title"]}
@@ -333,11 +297,9 @@
   <div class="divideLineTwo ">
     <div class="writerColumn left_position">
       <div class="text">${item["writer"]}</div>
-      <div class="checkIcon imgIcon ${
-        item["isSub"] ? "blueCheckIcon" : "orangeCheckIcon"
-      }" title="${
-        item["isSub"] ? "부관리자" : "주관리자"
-      }"><img src="./../imgs/checkmark-outline.svg" /></div>
+      <div class="checkIcon imgIcon ${item["isSub"] ? "blueCheckIcon" : "orangeCheckIcon"
+        }" title="${item["isSub"] ? "부관리자" : "주관리자"
+        }"><img src="./../imgs/checkmark-outline.svg" /></div>
     </div>
     <div class="right_position">
       <div class="dataColumn">${item["created_at"]}</div>
@@ -351,17 +313,15 @@
     (() => {
       let channelBoardInformList_concealed_count = 0;
       channelBoardInformList_concealed.forEach((item) => {
-        boardTableBox.innerHTML += `<a href="${
-          item["href"]
-        }" class="out"><div class="boardInformRow boardRow">
+        boardTableBox.innerHTML += `<a href="${item["href"]
+          }" class="out"><div class="boardInformRow boardRow">
   <div class="divideLineOne">
     <div class="numberColumn">${item["number"]}</div>
     <div class="titleColumn">
       <dlv class="titleContent">
         <div class="textWrapper">
-          <div class="blackBox ${item["blackBox"] == "" && "out"}">${
-          item["blackBox"]
-        }</div>
+          <div class="blackBox ${item["blackBox"] == "" && "out"}">${item["blackBox"]
+          }</div>
           <!-- <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div> --!>
           <div class="text">
           ${item["title"]}
@@ -374,11 +334,9 @@
   <div class="divideLineTwo">
     <div class="writerColumn left_position">
       <div class="text">${item["writer"]}</div>
-      <div class="checkIcon imgIcon ${item["isSub"] || "orangeCheckIcon"} ${
-          item["isSub"] && "blueCheckIcon"
-        }" title="${item["isSub"] ? "" : "주관리자"} ${
-          item["isSub"] ? "부관리자" : ""
-        }"><img src="./../imgs/checkmark-outline.svg" /></div>
+      <div class="checkIcon imgIcon ${item["isSub"] || "orangeCheckIcon"} ${item["isSub"] && "blueCheckIcon"
+          }" title="${item["isSub"] ? "" : "주관리자"} ${item["isSub"] ? "부관리자" : ""
+          }"><img src="./../imgs/checkmark-outline.svg" /></div>
     </div>
     <div class="right_position">
       <div class="dataColumn">${item["created_at"]}</div>
@@ -406,9 +364,8 @@
       <div class="titleColumn">
         <dlv class="titleContent">
           <div class="textWrapper">
-            <div class="blackBox ${item["blackBox"] == "" && "out"}">${
-        item["blackBox"]
-      }</div>
+            <div class="blackBox ${item["blackBox"] == "" && "out"}">${item["blackBox"]
+        }</div>
             <!-- <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div> --!>
             <div class="text">
             ${item["title"]}
@@ -421,15 +378,13 @@
     <div class="divideLineTwo ">
       <div class="writerColumn left_position">
         <div class="text">${item["writer"]}</div>
-        <div class="${
-          item["isAdmin"]
-            ? item["isSub"]
-              ? "blueCheckIcon"
-              : "orangeCheckIcon"
-            : ""
-        } ${item["isAdmin"] ? "" : "greyCheckIcon"} checkIcon imgIcon" title="${
-        item["isAdmin"] ? (item["isSub"] ? "부관리자" : "주관리자") : ""
-      }
+        <div class="${item["isAdmin"]
+          ? item["isSub"]
+            ? "blueCheckIcon"
+            : "orangeCheckIcon"
+          : ""
+        } ${item["isAdmin"] ? "" : "greyCheckIcon"} checkIcon imgIcon" title="${item["isAdmin"] ? (item["isSub"] ? "부관리자" : "주관리자") : ""
+        }
         ${item["isAdmin"] ? "" : "사용자"}">
         <img src="./../imgs/checkmark-outline.svg" /></div>
     </div>
@@ -467,33 +422,29 @@
       `;
 
       while (page - count > 0 && count < 5) {
-        temp = `<a href="/?page=${
-          page - count
-        }&category=${category}&channel=${channel}">
+        temp = `<a href="/?page=${page - count
+          }&category=${category}&channel=${channel}">
         <div class="pageBox">${page - count}</div>
         </a>`.concat(temp);
         count++;
       }
       if (page - count > 0) {
-        temp = `<a href="/?page=${
-          page - count
-        }&category=${category}&channel=${channel}">
+        temp = `<a href="/?page=${page - count
+          }&category=${category}&channel=${channel}">
         <div class="pageBox">  <div class="imgIcon"><img src="./../imgs/chevron-back-outline.svg" /></div></div>
         </a>`.concat(temp);
       }
 
       while (pageCount + count < 11) {
-        temp += `<a href="/?page=${
-          page + pageCount
-        }&category=${category}&channel=${channel}">
+        temp += `<a href="/?page=${page + pageCount
+          }&category=${category}&channel=${channel}">
       <div class="pageBox">${page + pageCount}</div>
       </a>`;
         pageCount++;
       }
 
-      temp += `<a href="/?page=${
-        page + 1
-      }&category=${category}&channel=${channel}">
+      temp += `<a href="/?page=${page + 1
+        }&category=${category}&channel=${channel}">
   <div class="pageBox">
     <div class="imgIcon">
       <img src="./../imgs/chevron-forward-outline.svg" />
@@ -522,17 +473,17 @@
     document.getElementById("quickGoDate").innerHTML = `
 <input type="datetime-local" name="quickGoDate" class="quickSelectBox"
 data-datetime="${currentDate.getFullYear()}-${(currentDate.getMonth() + 1)
-      .toString()
-      .padStart(
-        2,
-        "0"
-      )}-${currentDate.getDate()}T${currentDate.getHours()}:${currentDate.getMinutes()}" data-format="Y-m-dTH:i" data-localdate="max"
+        .toString()
+        .padStart(
+          2,
+          "0"
+        )}-${currentDate.getDate()}T${currentDate.getHours()}:${currentDate.getMinutes()}" data-format="Y-m-dTH:i" data-localdate="max"
 max="${currentDate.getFullYear()}-${(currentDate.getMonth() + 1)
-      .toString()
-      .padStart(
-        2,
-        "0"
-      )}-${currentDate.getDate()}T${currentDate.getHours()}:${currentDate.getMinutes()}">
+        .toString()
+        .padStart(
+          2,
+          "0"
+        )}-${currentDate.getDate()}T${currentDate.getHours()}:${currentDate.getMinutes()}">
 <a href="/"><button type="button">시간으로 바로가기</button></a>`;
 
     // topButtonLine_Board_writing_routeAdd
@@ -559,13 +510,13 @@ max="${currentDate.getFullYear()}-${(currentDate.getMonth() + 1)
 
     document.getElementById("boardInformStretchButton")
       ? (document.getElementById("boardInformStretchButton").onclick = (e) => {
-          boardTableBox.childNodes.forEach((item) => {
-            item.classList = "";
-          });
-          document
-            .getElementById("boardInformStretchButton")
-            .classList.add("out");
-        })
+        boardTableBox.childNodes.forEach((item) => {
+          item.classList = "";
+        });
+        document
+          .getElementById("boardInformStretchButton")
+          .classList.add("out");
+      })
       : true;
   }
 })();

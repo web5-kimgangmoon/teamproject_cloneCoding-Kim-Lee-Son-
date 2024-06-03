@@ -120,9 +120,8 @@
           document.getElementById("categorySelectBox").appendChild(temp);
           boardWritingContent.categoryList.forEach((item) => {
             temp.innerHTML += `
-  <option value="${item.value}" ${item.selected ? 'selected=""' : ""}>${
-              item.name
-            }</option>
+  <option value="${item.value}" ${item.selected ? 'selected=""' : ""}>${item.name
+              }</option>
 `;
           });
           // 이미지는 포기하자. 구현하기엔 시간이 없다.
@@ -205,9 +204,9 @@
             })
           ).data;
           if (!writingUserInfo.userExists) {
-            alert("비회원은 글작성이 불가능합니다!");
-            window.location.replace(`${clientAddress}?channel=${channel}`);
-            return;
+            // alert("비회원은 글작성이 불가능합니다!");
+            // window.location.replace(`${clientAddress}?channel=${channel}`);
+            // return;
           }
           for (let item of data.channel.ChannelAdmins) {
             if (item.superAdmin) adminName_writing = item.User.nick;
@@ -269,9 +268,8 @@
           document.getElementById("categorySelectBox").appendChild(temp);
           boardWritingContent.categoryList.forEach((item) => {
             temp.innerHTML += `
-    <option value="${item.value}" ${item.selected ? 'selected=""' : ""}>${
-              item.name
-            }</option>
+    <option value="${item.value}" ${item.selected ? 'selected=""' : ""}>${item.name
+              }</option>
   `;
           });
           // 이미지는 포기하자. 구현하기엔 시간이 없다.
