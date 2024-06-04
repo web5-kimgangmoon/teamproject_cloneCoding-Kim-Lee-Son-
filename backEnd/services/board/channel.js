@@ -24,6 +24,8 @@ export default async (req, res) => {
     if (!nowpage) {
       nowpage = 1;
     }
+    console.log(catename);
+    console.log(req.query);
 
     if (!chname) {
       chname = "main";
@@ -49,7 +51,7 @@ export default async (req, res) => {
       },
     });
     if (catename) {
-      category = await Category.findAll({
+      category = await Category.findOne({
         where: { channelId: channel.id, engTitle: catename },
         attributes: {
           exclude: ["createdAt", "updatedAt", "deletedAt"],
@@ -58,7 +60,7 @@ export default async (req, res) => {
       catecheck = true;
     }
     if (!category) {
-      category = await Category.findOne({
+      category = await Category.findAll({
         where: { channelId: channel.id },
         attributes: {
           exclude: ["createdAt", "updatedAt", "deletedAt"],
