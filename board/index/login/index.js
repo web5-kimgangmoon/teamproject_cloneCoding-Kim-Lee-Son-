@@ -78,4 +78,4 @@ BTNElem.onclick = () => {
 };
 document.getElementById(
   "makeAccount"
-).innerHTML = `<a href="${clientAddress}/mkMembership?channel=${channel}}">계정 만들기</a>`;
+).innerHTML = `<a href="${clientAddress}/mkMembership?channel=${channel}">계정 만들기</a>`;
