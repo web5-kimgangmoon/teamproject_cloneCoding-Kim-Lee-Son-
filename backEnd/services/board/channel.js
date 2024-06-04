@@ -58,7 +58,7 @@ export default async (req, res) => {
       catecheck = true;
     }
     if (!category) {
-      category = await Category.findAll({
+      category = await Category.findOne({
         where: { channelId: channel.id },
         attributes: {
           exclude: ["createdAt", "updatedAt", "deletedAt"],
@@ -157,7 +157,7 @@ export default async (req, res) => {
       });
     }
     res.json({
-      category: category,
+      category: [category],
       user: nowuser,
       channel: channel,
       boardlist: boardlist,
