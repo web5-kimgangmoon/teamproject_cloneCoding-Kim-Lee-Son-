@@ -1,0 +1,19 @@
+name: Deploy Project
+
+on:
+  push:
+    branches:
+      - deploy_git
+
+jobs:
+  deploy_portpolio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./board/index
