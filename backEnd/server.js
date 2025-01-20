@@ -2,6 +2,8 @@ import express from "express";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import session from "express-session";
+import FileStoreSetter from "session-file-store";
 import multer from "multer";
 import cors from "cors";
 import crypto from "crypto";
@@ -26,14 +28,46 @@ const app = express();
 
 app.set("port", process.env.PORT || 3000);
 
+const FileStore = FileStoreSetter(session);
+app.use(
+  session({
+    resave: true,
+    saveUninitialized: false,
+    secret: "test",
+    name: "user-session",
+    store: new FileStore({
+      reapInterval: 10,
+      path: "./test-session",
+    }),
+    cookie: {
+      maxAge: 60 * 1000,
+    },
+  })
+);
+app.use(cookieParser("test"));
+
 app.use(morgan("dev"));
-app.use(cors({ origin: [/localhost\:?\d*/, /127.0.0.1\:?\d*/], credentials: true }));
+app.use(
+  cors({
+    origin: [
+      /localhost\:?\d*/,
+      /127.0.0.1\:?\d*/,
+      "https://server.clashcrash.com",
+    ],
+    credentials: true,
+  })
+);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cookieParser("test"));
-app.use("/imgs", express.static("/Users/lee/Desktop/kga/teamproject_cloneCoding/backEnd/uploads"));
 
-app.use(router);
+app.use(
+  "/imgs",
+  express.static(
+    "/Users/lee/Desktop/kga/teamproject_cloneCoding/backEnd/uploads"
+  )
+);
+
+app.use("/api/teamproject1", router);
 const force = true;
 
 try {
