@@ -1,0 +1,177 @@
+#idForm{
+    /* display: none; */
+}
+
+.sideCut{
+    display: flex;
+    margin: 2.5rem 5rem 0rem 5rem;
+}
+
+.MembershipBox{
+    border: 0.5px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.MembershipBoxSideCut{
+    margin: 1rem 1rem 4.5rem 1rem;
+}
+
+.headText{
+    font-size: 22px;
+}
+
+
+.AgreementsBox{
+    width: 100%;
+    max-height: 15rem;
+    overflow: auto;
+    border: 0.5px solid rgba(0, 0, 0, 0.3);
+}
+
+.AgreementsBox::-webkit-scrollbar-button {}
+
+
+/* * {font-size:18px;} */
+/* body {padding: 200px;} */
+/* ul,ol,dl {margin-left:100px;} */
+/* li {position:relative; margin-bottom:10px;}
+ul > li:first-child {list-style:none;}
+ul > li:first-child::after {content:""; position:absolute; width:5px; height:10px; left:-10px; top:25%; background:#0064a2;}
+ul > li:first-child::before {content:""; position:absolute; width:5px; height:10px; left:-10px; top:50%; background:#999999;} */
+
+ul > li:nth-child(5) {
+    list-style:circle;
+}
+ul > li:nth-child(24) {
+    list-style:inside;
+}   
+ul > span  {list-style:inside;}
+ul > li {list-style:circle;}
+/* ul > li {list-style:inside;} */
+ul {list-style:inside;}
+
+
+
+.labelInter{
+    padding-top: 1rem;
+}
+
+.labelInter:hover{
+    text-decoration-line: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+.hide-1{
+    display: flex;
+    color: orangered ;
+    font-size: small;
+    padding-bottom: 20px;
+}
+
+.hide{
+    display: flex;
+    color: orangered ;
+    font-size: small;
+    margin-left: 35%;
+}
+
+.mailAddress{
+    padding-top: 3rem;
+    padding-left: 1.5rem;
+    display: inline;
+}
+
+.email{
+    width: 30%;
+    height: 40px;
+    align-items: center;
+    justify-content: center;   
+    border: 0.5px solid rgba(0, 0, 0, 0.25);
+}
+
+.at{
+    border: 0.5px solid rgba(0, 0, 0, 0.25);
+    width: 6%;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 9px 9px 11px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.right{
+    float: right;
+}
+
+.inputEmail{
+    width: 30%;
+    height: 40px;
+    color:gray;
+    /* border: 1px solid B6BACB; */
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0,0.2);
+    background-color: white;
+    font-size: 16px;
+    padding: .5rem .6rem;
+    position: relative;
+    z-index: 6;
+}
+
+.inputEmail:onclick{
+    margin: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.isusse{
+    color: rgba(0, 0, 0, 0.5);
+    list-style:inside;
+    text-indent: -22px;
+    /* 들여쓰기 */
+    margin-left: 30%;
+}
+
+/* .mailAddress ul > li:nth-child(1), .mailAddress ul > li:nth-child(2){
+    list-style:inside;
+    text-indent: -22px;
+} */
+
+.createdAccount{
+    box-sizing: border-box;
+    background-color: blue;
+    /* background-color: 1px solid red; */
+    color: white;
+    height: 40px;
+    width: 90px;
+    font-size: 16px;
+    float: right;
+}
+
+.idInfo{
+    display: block;
+}
+
+.addImage {
+    width: 400px;
+    height: 300px;
+    background-color: lightgray;
+    border-radius: 20px 20px / 20px 20px;
+    overflow: hidden;
+    margin: 0px 10px 10px 0px;
+}
+
+.inputImg {
+    width: 450px;
+    height: 350px;
+}
+
+.inputText{
+    margin: 1rem 0 1rem 0;
+}
+
+/* .inputText::after{
+    content: < ;
+} */

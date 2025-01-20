@@ -1,0 +1,60 @@
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link rel="stylesheet" href="index.css">
+  <!-- <link href="import.css" media="screen and (min-width:512px) and (max-width:1024px)" rel="stylesheet"> -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <form action="" class="Login" id="idForm">
+    <div class="idBox">
+
+      <span class="left">
+        <div class="center">
+          <h1>아카라이브 로그인</h1>
+        </div>
+        <div class="username-block ">
+          <button class="username-wrap" data-tostage="1" type="button">
+            <span class="back-icon ion-chevron-left"></span>
+            <span class="will-fill-username">USERNAME</span>
+          </button>
+        </div>
+        <div>
+          <span class="blurry">아이디</span>
+          <!-- <span class="img">
+                        <img src="https://arca.live/static/assets/dist/karisuma_light.svg?t=721d65b87c04a2824dec85ce4389abbda8b16a18" alt="">
+                    </span> -->
+        </div>
+        <div class="cat">
+          <input type="text" id="idInput" class="input" name="username" minlength="1" maxlength="64" spellcheck="false"
+            autocomplete="on" style="animation-duration: 0.5s;">
+        </div>
+
+
+        <!-- <div class="innerText input"></div> -->
+        <div class="Purple">아이디/비밀번호 찾기</div>
+        <!-- <a from="/" class="input-a"><button type="button">다음</button></a> -->
+        <button type="button" class="btn-a center" id="btn">다음</button>
+        <div class="createdId center Purple" id="makeAccount">계정 만들기</div>
+      </span>
+
+      <span class="right">
+        <div class="QRcode">
+          <img src="./qrCode.png" alt="" class="QRcode">
+        </div>
+        <div class="blurry center">로그인 된 모바일 앱에서 QR 코드를 <br>스캔해서 바로 로그인하세요.</div>
+      </span>
+
+    </div>
+
+  </form>
+</body>
+
+<script src="./../insertDatas/makeSendData.js"></script>
+<script src="index.js"></script>
+
+</html>
