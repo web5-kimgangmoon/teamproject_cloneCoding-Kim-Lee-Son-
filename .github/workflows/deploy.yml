@@ -53,7 +53,8 @@ jobs:
           echo "nvm.sh not found"
           exit 1
           }
-          cd  /var/www/teamproject1
+          cd /
+          cd /var/www/teamproject1
           npm i --production
           echo PORT=3080 > .env
           echo NODE_ENV=deploy >> .env
