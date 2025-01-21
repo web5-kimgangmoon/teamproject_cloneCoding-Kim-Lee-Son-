@@ -59,11 +59,11 @@ jobs:
           cd /var/www/teamproject1/config
           echo { > config.json
           echo \"deploy\": { >> config.json
-          echo  \"username\": \"${{ secrets.EC2_MYSQL_USERNAME }}\" >> config.json
-          echo  \"password\": \"${{ secrets.EC2_MYSQL_PASSWORD }}\" >> config.json
-          echo  \"database\": \"${{ secrets.EC2_MYSQL_DATABASE }}\" >> config.json
-          echo  \"host\": \"127.0.0.1\" >> config.json
-          echo  \"port\": \"${{ secrets.EC2_MYSQL_PORT }}\" >> config.json
+          echo  \"username\": \"${{ secrets.EC2_MYSQL_USERNAME }}\", >> config.json
+          echo  \"password\": \"${{ secrets.EC2_MYSQL_PASSWORD }}\", >> config.json
+          echo  \"database\": \"${{ secrets.EC2_MYSQL_DATABASE }}\", >> config.json
+          echo  \"host\": \"127.0.0.1\", >> config.json
+          echo  \"port\": ${{ secrets.EC2_MYSQL_PORT }}, >> config.json
           echo  \"dialect\": \"mysql\" >> config.json
           echo  } >> config.json
           echo } >> config.json'
@@ -77,4 +77,5 @@ jobs:
           exit 1
           }        
           npm install -g pm2
+          pm2 delete teamproject1
           pm2 start /var/www/teamproject1/server.js --name teamproject1'
