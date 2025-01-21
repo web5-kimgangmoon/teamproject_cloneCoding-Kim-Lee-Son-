@@ -67,7 +67,7 @@ app.use(
   )
 );
 
-app.use("/api/teamproject1", router);
+app.use("/api", router);
 const force = true;
 
 try {
