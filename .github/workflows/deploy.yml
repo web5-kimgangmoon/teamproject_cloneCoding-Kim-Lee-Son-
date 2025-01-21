@@ -46,6 +46,7 @@ jobs:
             mkdir /var/www/teamproject1/sessions'
           rsync -avz -e "ssh" ./backEnd ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/teamproject1
           rsync -avz -e "ssh" ./backEnd/package.json ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/teamproject1/package.json
+          rsync -avz -e "ssh" ./backEnd/server.js ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/teamproject1/server.js
           ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} '
           export NVM_DIR="$HOME/.nvm"
           [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" || {
@@ -54,11 +55,9 @@ jobs:
           }
           cd  /var/www/teamproject1
           npm i --production
-          cd /var/www/teamproject1
           echo PORT=3080 > .env
           echo NODE_ENV=deploy >> .env
-          cd /
-          cd /var/www/teamproject1/config
+          cd /config
           echo { > config.json
           echo "deploy": { >> config.json
           echo  "username": "${{ secrets.EC2_MYSQL_USERNAME }}" >> config.json
