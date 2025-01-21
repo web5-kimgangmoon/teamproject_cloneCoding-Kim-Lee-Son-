@@ -78,6 +78,5 @@ jobs:
           echo "nvm.sh not found"
           exit 1
           }        
-          npm install -g pm2          
-          pm2 stop teamproject1
+          npm install -g pm2
           pm2 start /var/www/teamproject1/server.js --name teamproject1'
