@@ -53,20 +53,20 @@ jobs:
           echo "nvm.sh not found"
           exit 1
           }
-          cd /
           cd /var/www/teamproject1
           npm i --production
+          cd /var/www/teamproject1
           echo PORT=3080 > .env
           echo NODE_ENV=deploy >> .env
-          cd /config
+          cd /var/www/teamproject1/config
           echo { > config.json
-          echo "deploy": { >> config.json
-          echo  "username": "${{ secrets.EC2_MYSQL_USERNAME }}" >> config.json
-          echo  "password": "${{ secrets.EC2_MYSQL_PASSWORD }}" >> config.json
-          echo  "database": "${{ secrets.EC2_MYSQL_DATABASE }}" >> config.json
-          echo  "host": "127.0.0.1" >> config.json
-          echo  "port": "${{ secrets.EC2_MYSQL_PORT }}" >> config.json
-          echo  "dialect": "mysql" >> config.json
+          echo \"deploy\": { >> config.json
+          echo  \"username\": \"${{ secrets.EC2_MYSQL_USERNAME }}\" >> config.json
+          echo  \"password\": \"${{ secrets.EC2_MYSQL_PASSWORD }}\" >> config.json
+          echo  \"database\": \"${{ secrets.EC2_MYSQL_DATABASE }}\" >> config.json
+          echo  \"host\": \"127.0.0.1\" >> config.json
+          echo  \"port\": \"${{ secrets.EC2_MYSQL_PORT }}\" >> config.json
+          echo  \"dialect\": \"mysql\" >> config.json
           echo  } >> config.json
           echo } >> config.json'
 
