@@ -44,9 +44,7 @@ jobs:
             mkdir /var/www/teamproject1
             mkdir /var/www/teamproject1/config
             mkdir /var/www/teamproject1/sessions'
-          rsync -avz -e "ssh" ./backEnd ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/teamproject1
-          rsync -avz -e "ssh" ./backEnd/package.json ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/teamproject1/package.json
-          rsync -avz -e "ssh" ./backEnd/server.js ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/teamproject1/server.js
+          rsync -avz -e "ssh" ./backEnd/ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/teamproject1/
           ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} '
           export NVM_DIR="$HOME/.nvm"
           [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" || {
