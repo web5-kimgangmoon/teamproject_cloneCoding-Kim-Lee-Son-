@@ -1,4 +1,4 @@
-const reqHostPort = "https://server.clashcrash.com/api/teamproject1";
+const reqHostPort = "https://teamproject1Server.clashcrash.com/api";
 const clientAddress = "https://teamproject1.clashcrash.com";
 let query;
 let cookie = {};
