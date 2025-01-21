@@ -1,6 +1,5 @@
 import { Sequelize } from "sequelize";
 import mySQLConfig from "../config/config.json" with { type: "json" };
-import dotenv from "dotenv";
 
 import BoardModel from "./board/Board.js";
 import BoardLikeModel from "./board/BoardLike.js";
@@ -13,8 +12,6 @@ import ChannelAdminsModel from "./channel/ChannelAdmin.js";
 import ChannelsModel from "./channel/Channel.js";
 
 import UserModel from "./user/User.js";
-
-dotenv.config();
 
 const env = process.env.NODE_ENV || "development";
 const config = mySQLConfig[env];

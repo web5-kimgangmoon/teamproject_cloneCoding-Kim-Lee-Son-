@@ -58,7 +58,7 @@ jobs:
           echo NODE_ENV=deploy >> .env
           cd /var/www/teamproject1/config
           echo { > config.json
-          echo \"deploy\": { >> config.json
+          echo \"development\": { >> config.json
           echo  \"username\": \"${{ secrets.EC2_MYSQL_USERNAME }}\", >> config.json
           echo  \"password\": \"${{ secrets.EC2_MYSQL_PASSWORD }}\", >> config.json
           echo  \"database\": \"${{ secrets.EC2_MYSQL_DATABASE }}\", >> config.json
