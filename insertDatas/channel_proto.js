@@ -76,6 +76,7 @@
         url: `${reqHostPort}/b/`,
         data: { channel: channel, category: category },
         params: { page: page },
+        withCredentials: true,
       })
     ).data;
     categoryList.push([
@@ -88,6 +89,7 @@
         method: "post",
         url: `${reqHostPort}/b/category`,
         data: { channel: channel },
+        withCredentials: true,
       })
     ).data.category;
     if (Array.isArray(data)) {
@@ -410,25 +412,25 @@
     (() => {
       let count = 1;
       let pageCount = 5;
-      let temp = `<a href="/?page=${page}&category=${category}&channel=${channel}" class="selected">
+      let temp = `<a href="?page=${page}&category=${category}&channel=${channel}" class="selected">
       <div class="pageBox">${page}</div>
       </a>
-      <a href="/?page=${page + 1}&category=${category}&channel=${channel}">
+      <a href="?page=${page + 1}&category=${category}&channel=${channel}">
       <div class="pageBox selectedNext">${page + 1}</div>
       </a>
-      <a href="/?page=${page + 2}&category=${category}&channel=${channel}">
+      <a href="?page=${page + 2}&category=${category}&channel=${channel}">
       <div class="pageBox">${page + 2}</div>
       </a>
-      <a href="/?page=${page + 3}&category=${category}&channel=${channel}">
+      <a href="?page=${page + 3}&category=${category}&channel=${channel}">
       <div class="pageBox">${page + 3}</div>
       </a>
-      <a href="/?page=${page + 4}&category=${category}&channel=${channel}">
+      <a href="?page=${page + 4}&category=${category}&channel=${channel}">
       <div class="pageBox">${page + 4}</div>
       </a>
       `;
 
       while (page - count > 0 && count < 5) {
-        temp = `<a href="/?page=${
+        temp = `<a href="?page=${
           page - count
         }&category=${category}&channel=${channel}">
         <div class="pageBox">${page - count}</div>
@@ -436,7 +438,7 @@
         count++;
       }
       if (page - count > 0) {
-        temp = `<a href="/?page=${
+        temp = `<a href="?page=${
           page - count
         }&category=${category}&channel=${channel}">
         <div class="pageBox">  <div class="imgIcon"><img src="./../imgs/chevron-back-outline.svg" /></div></div>
@@ -444,7 +446,7 @@
       }
 
       while (pageCount + count < 11) {
-        temp += `<a href="/?page=${
+        temp += `<a href="?page=${
           page + pageCount
         }&category=${category}&channel=${channel}">
       <div class="pageBox">${page + pageCount}</div>
@@ -452,7 +454,7 @@
         pageCount++;
       }
 
-      temp += `<a href="/?page=${
+      temp += `<a href="?page=${
         page + 1
       }&category=${category}&channel=${channel}">
   <div class="pageBox">
