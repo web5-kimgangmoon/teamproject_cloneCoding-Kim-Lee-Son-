@@ -28,6 +28,14 @@ const app = express();
 
 app.set("port", process.env.PORT || 3000);
 
+app.use(morgan("dev"));
+app.use(
+  cors({
+    origin: "https://teamproject1.clashcrash.com",
+    credentials: true,
+  })
+);
+
 const FileStore = FileStoreSetter(session);
 app.use(
   session({
@@ -46,13 +54,6 @@ app.use(
 );
 app.use(cookieParser("test"));
 
-app.use(morgan("dev"));
-app.use(
-  cors({
-    origin: "https://teamproject1.clashcrash.com",
-    credentials: true,
-  })
-);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
