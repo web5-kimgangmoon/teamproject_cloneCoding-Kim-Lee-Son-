@@ -31,7 +31,11 @@ app.set("port", process.env.PORT || 3000);
 app.use(morgan("dev"));
 app.use(
   cors({
-    origin: "https://teamproject1.clashcrash.com",
+    origin: [
+      /localhost\:?\d*/,
+      /127.0.0.1\:?\d*/,
+      /teamproject1.clashcrash.com/,
+    ],
     credentials: true,
   })
 );
