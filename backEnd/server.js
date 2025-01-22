@@ -36,6 +36,7 @@ app.use(
       /127.0.0.1\:?\d*/,
       /teamproject1.clashcrash.com/,
     ],
+    methods: ["GET", "POST", "USE", "PUT", "DELETE", "OPTION"],
     credentials: true,
   })
 );
