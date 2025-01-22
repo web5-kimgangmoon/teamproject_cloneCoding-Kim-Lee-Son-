@@ -73,7 +73,7 @@
     let data2 = (
       await axios({
         method: "post",
-        url: `${reqHostPort}/b/`,
+        url: `${reqHostPort}/b`,
         data: { channel: channel, category: category },
         params: { page: page },
         withCredentials: true,
