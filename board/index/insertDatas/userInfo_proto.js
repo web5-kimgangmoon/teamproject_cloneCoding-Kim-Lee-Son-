@@ -19,7 +19,7 @@
     username = "";
     userExists = false;
     alert(err.response.data.error);
-    window.location.replace(`${clientAddress}/?channel=${channel}`);
+    window.location.replace(`${clientAddress}?channel=${channel}`);
   } finally {
     document.getElementById("userInfoBox").innerHTML = `
         <div class="bodyCenterContent" style="display:flex; align-items:center;
@@ -46,11 +46,11 @@
       })
         .then((res) => {
           alert("회원가입에 성공했습니다.");
-          window.location.replace(`${clientAddress}/?channel=${channel}`);
+          window.location.replace(`${clientAddress}?channel=${channel}`);
         })
         .catch((err) => {
           alert(err.response.data.error);
-          window.location.replace(`${clientAddress}/?channel=${channel}`);
+          window.location.replace(`${clientAddress}?channel=${channel}`);
         });
     };
   }

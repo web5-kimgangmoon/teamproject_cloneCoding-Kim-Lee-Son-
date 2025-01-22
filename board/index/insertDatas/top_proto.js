@@ -402,6 +402,7 @@
           method: "post",
           url: `${reqHostPort}/u/logout`,
           data: { channel: "" },
+          withCredentials: true,
         });
         window.location.replace(window.location.href);
         //백엔드에 요청을 보내고, 리다이렉트가 필요합니다.
