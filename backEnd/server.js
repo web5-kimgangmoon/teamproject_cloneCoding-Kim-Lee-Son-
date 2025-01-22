@@ -35,6 +35,7 @@ app.use(
       /localhost\:?\d*/,
       /127.0.0.1\:?\d*/,
       /teamproject1.clashcrash.com/,
+      /teamproject1server.clashcrash.com/,
     ],
     methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
