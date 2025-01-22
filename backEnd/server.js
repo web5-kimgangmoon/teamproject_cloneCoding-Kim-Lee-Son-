@@ -52,7 +52,7 @@ app.use(
     origin: [
       /localhost\:?\d*/,
       /127.0.0.1\:?\d*/,
-      "https://server.clashcrash.com",
+      "https://teamproject1.clashcrash.com",
     ],
     credentials: true,
   })
