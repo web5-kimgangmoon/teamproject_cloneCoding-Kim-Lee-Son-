@@ -142,8 +142,9 @@
           data.channel.commentPlaceholder;
         let date = new Date(data.view.createdAt);
         boardContent.boardHref = `${clientAddress}/board?boardId=${data.view.id}&channel=${data.channel.engTitle}&category=${data.view.Category.engTitle}&page=${page}`;
-        boardContent.createdAt = `${date.getFullYear()}.${date.getMonth() + 1
-          }.${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+        boardContent.createdAt = `${date.getFullYear()}.${
+          date.getMonth() + 1
+        }.${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
         boardContent.updateHref = `${clientAddress}/writing?boardId=${data.view.id}&channel=${data.channel.engTitle}&category=${data.view.Category.engTitle}`;
         boardContent.commentCount = data.view.Comments.length;
         // 테스트용
@@ -162,8 +163,9 @@
             isAdmin: false,
             isSub: false,
             isUpdated: item.createdAt != item.updatedAt,
-            created_at: `${date.getFullYear()}.${date.getMonth() + 1
-              }.${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
+            created_at: `${date.getFullYear()}.${
+              date.getMonth() + 1
+            }.${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
             isWriter: boardContent.username == item.User.nick,
           });
         }
@@ -171,7 +173,8 @@
       } finally {
         // boardContentBox_data_insert
         document.getElementById("boardContentBox").innerHTML = `
-          <div class="writerFunctionBox ${boardContent["isWriter"] ? "" : "out"
+          <div class="writerFunctionBox ${
+            boardContent["isWriter"] ? "" : "out"
           }">
           <a id="boardDeleteButton">
           <button class="writerFunctionButton first">
@@ -190,26 +193,30 @@
           </a>
           </div>
           <div class="title">
-            <div class="titleContent"><span class="${boardContent.blackBox ? "blackBox" : ""
-          }">${boardContent.blackBox}</span>
+            <div class="titleContent"><span class="${
+              boardContent.blackBox ? "blackBox" : ""
+            }">${boardContent.blackBox}</span>
               ${boardContent.title}
             </div>
             <div class="titleEtc">
               <div class="writerBox left_line">
                 <a href="${boardContent.userInfoHref}/">
                   <span>${boardContent.writer}</span></a>
-                  <div class="${boardContent["isAdmin"]
-            ? boardContent["isSub"]
-              ? "blueCheckIcon"
-              : "orangeCheckIcon"
-            : ""
-          } ${boardContent["isAdmin"] ? "" : "greyCheckIcon"
-          } checkIcon imgIcon" title="${boardContent["isAdmin"]
+                  <div class="${
+                    boardContent["isAdmin"]
+                      ? boardContent["isSub"]
+                        ? "blueCheckIcon"
+                        : "orangeCheckIcon"
+                      : ""
+                  } ${
+          boardContent["isAdmin"] ? "" : "greyCheckIcon"
+        } checkIcon imgIcon" title="${
+          boardContent["isAdmin"]
             ? boardContent["isSub"]
               ? "부관리자"
               : "주관리자"
             : ""
-          }
+        }
                     ${boardContent["isAdmin"] ? "" : "사용자"}">
                     <img src="./../imgs/checkmark-outline.svg" /></div>
                 <div class="userProfile imgIcon">
@@ -217,20 +224,26 @@
                 </div>
               </div>
               <div class="right_line">
-                <div class="viewBox recommendView"><span class="type">추천</span><span class="count">${boardContent.recommend
-          }</span></div>
-                <div class="viewBox unrecommendView"><span class="type">비추천</span><span class="count">${boardContent.unrecommend
-          }</span></div>
-                <div class="viewBox commentView"><span class="type">댓글</span><span class="count">${boardContent.commentCount
-          }</span></div>
-                <div class="viewBox looksView"><span class="type">조회수</span><span class="count">${boardContent.looks
-          }</span></div>
-                <div class="viewBox dateView"><span class="type">작성일</span><span class="count">${boardContent.createdAt
-          }</span></div>
+                <div class="viewBox recommendView"><span class="type">추천</span><span class="count">${
+                  boardContent.recommend
+                }</span></div>
+                <div class="viewBox unrecommendView"><span class="type">비추천</span><span class="count">${
+                  boardContent.unrecommend
+                }</span></div>
+                <div class="viewBox commentView"><span class="type">댓글</span><span class="count">${
+                  boardContent.commentCount
+                }</span></div>
+                <div class="viewBox looksView"><span class="type">조회수</span><span class="count">${
+                  boardContent.looks
+                }</span></div>
+                <div class="viewBox dateView"><span class="type">작성일</span><span class="count">${
+                  boardContent.createdAt
+                }</span></div>
               </div>
             </div>
           </div>
-          <div class="linkSite"><a href="${boardContent.boardHref
+          <div class="linkSite"><a href="${
+            boardContent.boardHref
           }"><span class="sharingLink">${boardContent.boardHref}</span>
               <div class="sharingIcon imgIcon">
                 <img src="./../imgs/share-social-sharp.svg">
@@ -247,15 +260,17 @@
           <!-- js에서 처리해줘야하는 목록 -->
           <div class="recommendButtonLine">
             <button type="button" class="recommendButton" id="boardRecommendButton">
-              <div class="textLine">추천!<span class="count"> ${boardContent.recommend
-          }</span></div>
+              <div class="textLine">추천!<span class="count"> ${
+                boardContent.recommend
+              }</span></div>
               <small class="imgLine"><span>(</span>
                 <div class="imgIcon"><img src="../imgs/help-outline.svg"></div><span class="recommendCount">0</span><span>)</span>
               </small>
             </button>
             <button type="button" class="unrecommendButton" id="boardUnrecommendButton">
-              <div class="textLine">비추!<span class="count"> ${boardContent.unrecommend
-          }</span></div>
+              <div class="textLine">비추!<span class="count"> ${
+                boardContent.unrecommend
+              }</span></div>
               <small class="imgLine">(<div class="imgIcon"><img src="../imgs/help-outline.svg"></div><span class="recommendCount">0</span>)
               </small>
             </button>
@@ -305,14 +320,17 @@
               <div class="commentBoard_top">
                 <div class="writerView left_line">
                   <a href="${item.userInfoHref}">${item.writer}</a>
-                        <div class="${item["isAdmin"]
-                ? item["isSub"]
-                  ? "blueCheckIcon"
-                  : "orangeCheckIcon"
-                : ""
-              } ${item["isAdmin"] ? "" : "greyCheckIcon"
-              } checkIcon imgIcon" title="${item["isAdmin"] ? (item["isSub"] ? "부관리자" : "주관리자") : ""
-              }
+                        <div class="${
+                          item["isAdmin"]
+                            ? item["isSub"]
+                              ? "blueCheckIcon"
+                              : "orangeCheckIcon"
+                            : ""
+                        } ${
+              item["isAdmin"] ? "" : "greyCheckIcon"
+            } checkIcon imgIcon" title="${
+              item["isAdmin"] ? (item["isSub"] ? "부관리자" : "주관리자") : ""
+            }
                           ${item["isAdmin"] ? "" : "사용자"}">
                           <img src="./../imgs/checkmark-outline.svg" /></div>
                 </div>
@@ -326,22 +344,25 @@
                       </div>
                       신고
                     </a></div>
-                  <div class="deleteButton etcBox ${item["isWriter"] ? "" : "out"
-              }" id="deleteButton${item.id}">
+                  <div class="deleteButton etcBox ${
+                    item["isWriter"] ? "" : "out"
+                  }" id="deleteButton${item.id}">
                       <div class="imgIcon">
                         <img src="./../imgs/trash.svg" />
                       </div>
                       삭제
                     </div>
-                  <div class="updateButton etcBox ${item["isWriter"] ? "" : "out"
-              }" id="updateButton${item.id}">
+                  <div class="updateButton etcBox ${
+                    item["isWriter"] ? "" : "out"
+                  }" id="updateButton${item.id}">
                     <div class="imgIcon">
                       <img src="./../imgs/create-outline.svg" />
                     </div>
                     수정
                   </div>
-                  <div class="replyButton etcBox ${boardContent.userExists ? "" : "out"
-              }" id="replyButton${item.id}">
+                  <div class="replyButton etcBox ${
+                    boardContent.userExists ? "" : "out"
+                  }" id="replyButton${item.id}">
                     <div class="imgIcon">
                       <img src="./../imgs/arrow-undo.svg" />
                     </div>
@@ -357,12 +378,14 @@
                 </div>
               </div>
               <div class="commentBoard_content">
-                <span class="remake_inform">${item["isUpdated"] ? "*수정됨" : ""
-              }</span>${item["content"]}
+                <span class="remake_inform">${
+                  item["isUpdated"] ? "*수정됨" : ""
+                }</span>${item["content"]}
               </div>
             </div>
-            <div class="commentWritingBox commentUpdateBox out" id="commentUpdateBox${item.id
-              }">
+            <div class="commentWritingBox commentUpdateBox out" id="commentUpdateBox${
+              item.id
+            }">
               <div class="commentWritingBox_top">
                 <div class="commentWritingBox_leftLine">
                   <div class="titleText">댓글 수정</div>
@@ -385,16 +408,21 @@
                 </div>
               </div>
               <div class="commentWritingBox_content">
-                <button type="button" class="commitButton" id="update_commitButton${item.id
-              }">작성</button>
-                <textarea class="commentInput" name="commentContent" id="update_commentContent${item.id
-              }" maxlength="8000" placeholder="${boardContent.channelCommentPlaceHolder
-              }"></textarea>
+                <button type="button" class="commitButton" id="update_commitButton${
+                  item.id
+                }">작성</button>
+                <textarea class="commentInput" name="commentContent" id="update_commentContent${
+                  item.id
+                }" maxlength="8000" placeholder="${
+              boardContent.channelCommentPlaceHolder
+            }"></textarea>
               </div>
             </div>
-            <div class="replyCommentBoardListBox" id="replyCommentBoardListBox${item.id
-              }">
-              <div class="commentWritingBox commentReplyWritingBox out" id="commentReplyWritingBox${item.id
+            <div class="replyCommentBoardListBox" id="replyCommentBoardListBox${
+              item.id
+            }">
+              <div class="commentWritingBox commentReplyWritingBox out" id="commentReplyWritingBox${
+                item.id
               }">
                 <div class="commentWritingBox_top">
                   <div class="commentWritingBox_leftLine">
@@ -418,11 +446,14 @@
                   </div>
                 </div>
                 <div class="commentWritingBox_content">
-                  <button type="button" class="commitButton" id="reply_commitButton${item.id
-              }">작성</button>
-                  <textarea class="commentInput" id="reply_commentContent${item.id
-              }" name="commentContent" maxlength="8000" placeholder="${boardContent.channelCommentPlaceHolder
-              }"></textarea>
+                  <button type="button" class="commitButton" id="reply_commitButton${
+                    item.id
+                  }">작성</button>
+                  <textarea class="commentInput" id="reply_commentContent${
+                    item.id
+                  }" name="commentContent" maxlength="8000" placeholder="${
+              boardContent.channelCommentPlaceHolder
+            }"></textarea>
                 </div>
               </div>
             </div>
@@ -466,7 +497,8 @@
         //구현 포기
 
         commentBoardListBox.innerHTML += `
-          <div class="commentWritingBox basic ${boardContent.userExists ? "" : "out"
+          <div class="commentWritingBox basic ${
+            boardContent.userExists ? "" : "out"
           }">
           <div class="commentWritingBox_top">
             <div class="commentWritingBox_leftLine">
@@ -497,8 +529,9 @@
           </div>
           <div class="commentWritingBox_content">
             <button type="button" class="commitButton" id="basic_commentCommitButton">작성</button>
-            <textarea class="commentInput" name="commentContent" maxlength="8000" placeholder="${boardContent.channelCommentPlaceHolder
-          }" id="basic_commentContent"></textarea>
+            <textarea class="commentInput" name="commentContent" maxlength="8000" placeholder="${
+              boardContent.channelCommentPlaceHolder
+            }" id="basic_commentContent"></textarea>
           </div>
           </div>`;
 
@@ -541,6 +574,7 @@
                 params: {
                   commeentId: Number(e.target.id.split("deleteButton")[1]),
                 },
+                withCredentials: true,
               });
               console.log(data);
               alert("댓글을 삭제했습니다!");
@@ -552,7 +586,8 @@
                 url: `${reqHostPort}/b/view/modify`,
                 data: {
                   contents: document.getElementById(
-                    `update_commentContent${e.target.id.split("update_commitButton")[1]
+                    `update_commentContent${
+                      e.target.id.split("update_commitButton")[1]
                     }`
                   ).value,
                 },
@@ -561,6 +596,7 @@
                     e.target.id.split("update_commitButton")[1]
                   ),
                 },
+                withCredentials: true,
               });
               alert("댓글을 수정했습니다!");
               window.location.replace(window.location.href);
@@ -571,7 +607,8 @@
                 url: `${reqHostPort}/b/view/add`,
                 data: {
                   contents: document.getElementById(
-                    `reply_commentContent${e.target.id.split("reply_commitButton")[1]
+                    `reply_commentContent${
+                      e.target.id.split("reply_commitButton")[1]
                     }`
                   ).value,
                 },
@@ -579,6 +616,7 @@
                   boardId: boardId,
                   commentId: e.target.id.split("reply_commitButton")[1],
                 },
+                withCredentials: true,
               });
               alert("답글을 작성했습니다!");
               window.location.replace(window.location.href);
@@ -600,6 +638,7 @@
             params: {
               boardId: boardId,
             },
+            withCredentials: true,
           })
             .then((res) => {
               alert("추천을 완료했습니다!");
@@ -619,6 +658,7 @@
             params: {
               boardId: boardId,
             },
+            withCredentials: true,
           })
             .then((res) => {
               alert("비추천을 완료했습니다!");
@@ -644,6 +684,7 @@
             params: {
               boardId: boardId,
             },
+            withCredentials: true,
           })
             .then(() => {
               alert("댓글을 작성했습니다!");
@@ -666,6 +707,7 @@
             params: {
               boardId: boardId,
             },
+            withCredentials: true,
           })
             .then(() => {
               alert("댓글을 작성했습니다!");
