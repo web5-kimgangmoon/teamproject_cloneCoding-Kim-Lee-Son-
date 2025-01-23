@@ -53,7 +53,7 @@ app.use(
     name: "user-session",
     store: new FileStore({
       reapInterval: 10,
-      path: `${__dirname}/.env`,
+      path: `${__dirname}/sessions`,
     }),
     cookie: {
       maxAge: 60 * 1000,
