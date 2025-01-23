@@ -9,7 +9,7 @@ import cors from "cors";
 import crypto from "crypto";
 import path from "path";
 
-import router from "./controllers/index.js";
+import router from "/controllers/index.js";
 import {
   sequelize,
   User,
@@ -20,9 +20,9 @@ import {
   ChannelAdmin,
   BoardDislike,
   BoardLike,
-} from "./models/index.js";
+} from "/models/index.js";
 
-dotenv.config();
+dotenv.config({ path: "/.env" });
 
 const app = express();
 
@@ -51,7 +51,7 @@ app.use(
     name: "user-session",
     store: new FileStore({
       reapInterval: 10,
-      path: "./sessions",
+      path: "/sessions",
     }),
     cookie: {
       maxAge: 60 * 1000,
