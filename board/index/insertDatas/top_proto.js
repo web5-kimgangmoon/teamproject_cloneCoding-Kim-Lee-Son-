@@ -325,6 +325,7 @@
   } catch (err) {
     username = "";
     userExists = false;
+    console.log(err);
   } finally {
     console.log(userExists);
     console.log(username);
