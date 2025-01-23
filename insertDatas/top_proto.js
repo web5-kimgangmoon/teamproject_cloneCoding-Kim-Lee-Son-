@@ -320,15 +320,13 @@
         withCredentials: true,
       })
     ).data;
+    console.log(data);
     if (data.userinfo.userinfo[0]) username = data.userinfo.userinfo[0].nick;
     if (data.userinfo.userinfo[0]) userExists = true;
   } catch (err) {
     username = "";
     userExists = false;
-    console.log(err);
   } finally {
-    console.log(userExists);
-    console.log(username);
     document.getElementById("top_login").innerHTML = `
     <div class="loginIconBox" title="Member menu" id="top_userInfoBoxButton">
       <span class="userName-login">${username}</span>
