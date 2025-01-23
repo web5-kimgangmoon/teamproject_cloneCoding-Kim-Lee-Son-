@@ -320,7 +320,6 @@
         withCredentials: true,
       })
     ).data;
-    console.log(data);
     if (data.userinfo[0]) username = data.userinfo[0].nick;
     if (data.userinfo[0]) userExists = true;
   } catch (err) {
