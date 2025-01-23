@@ -91,9 +91,8 @@
         withCredentials: true,
       })
     ).data;
-    if (data2.userinfo.userinfo[0])
-      boardContent.username = data2.userinfo.userinfo[0].nick;
-    if (data2.userinfo.userinfo[0]) boardContent.userExists = true;
+    if (data2.userinfo[0]) boardContent.username = data2.userinfo[0].nick;
+    if (data2.userinfo[0]) boardContent.userExists = true;
     else {
       boardContent.username = "";
       boardContent.userExists = false;

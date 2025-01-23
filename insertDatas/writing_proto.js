@@ -29,9 +29,8 @@
           withCredentials: true,
         })
       ).data;
-      if (data2.userinfo.userinfo[0])
-        writingUserInfo.username = data2.userinfo.userinfo[0].nick;
-      if (data2.userinfo.userinfo[0]) writingUserInfo.userExists = true;
+      if (data2.userinfo[0]) writingUserInfo.username = data2.userinfo[0].nick;
+      if (data2.userinfo[0]) writingUserInfo.userExists = true;
       else {
         writingUserInfo.username = "";
         writingUserInfo.userExists = false;
