@@ -22,6 +22,8 @@ import {
   BoardLike,
 } from "./models/index.js";
 
+const __dirname = import.meta.dirname;
+
 dotenv.config({ path: `${__dirname}/.env` });
 
 const app = express();
