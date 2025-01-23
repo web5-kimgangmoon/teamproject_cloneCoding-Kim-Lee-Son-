@@ -73,7 +73,7 @@
             placeholder: data.channel.writePlaceholder,
             categoryList: [],
           };
-          for (let item of data.category) {
+          for (let item of data.category[0]) {
             boardWritingContent.categoryList.push({
               value: item.engTitle,
               name: item.name,
@@ -224,7 +224,7 @@
             placeholder: data.channel.writePlaceholder,
             categoryList: [],
           };
-          for (let item of data.category) {
+          for (let item of data.category[0]) {
             boardWritingContent.categoryList.push({
               value: item.engTitle,
               name: item.name,
