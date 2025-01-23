@@ -3,7 +3,7 @@ import { Board, BoardDislike } from "../../../models/index.js";
 export default async (req, res) => {
   try {
     const nowuser = req.user;
-    if (nowuser) {
+    if (!nowuser) {
       throw new Error("not logged in");
     }
     const reqcuery = req.query;
