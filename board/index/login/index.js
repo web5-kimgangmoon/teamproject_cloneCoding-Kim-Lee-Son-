@@ -72,7 +72,8 @@ BTNElem.onclick = () => {
         alert(err.response.data.error);
       })
       .finally(() => {
-        window.location.replace(`${clientAddress}/?channel=${channel}`);
+        // window.location.replace(`${clientAddress}/?channel=${channel}`);
+        window.location.href = `${clientAddress}/?channel=${channel}`;
       });
   };
 };
