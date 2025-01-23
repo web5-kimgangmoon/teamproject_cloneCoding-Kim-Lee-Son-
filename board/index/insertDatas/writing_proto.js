@@ -186,7 +186,7 @@
           data: { channel: "" },
           withCredentials: true,
         })
-      ).data.userInfo;
+      ).data;
       if (data2.userinfo[0]) writingUserInfo.username = data2.userinfo[0].nick;
       if (data2.userinfo[0]) writingUserInfo.userExists = true;
     } catch (err) {
