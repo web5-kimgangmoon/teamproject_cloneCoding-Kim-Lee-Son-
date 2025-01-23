@@ -99,7 +99,7 @@
   right: 70px;
   width: 90px;
   height: 99px;
-  /* background-image: url('https://arca.live/static/assets/dist/karisuma_light.svg?t=721d65b87c04a2824dec85ce4389abbda8b16a18'); */
+  background-image: url("https://arca.live/static/assets/dist/karisuma_light.svg?t=721d65b87c04a2824dec85ce4389abbda8b16a18");
   content: "";
   background-size: cover;
   z-index: 5;
