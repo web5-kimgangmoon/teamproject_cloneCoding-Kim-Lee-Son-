@@ -135,7 +135,7 @@
         commentCount: item.commentCount,
         writer: item.User.nick,
         looks: item.viewPoint,
-        recommendCount: item.likeCount + item.dislikeCount,
+        recommendCount: item.likeCount - item.dislikeCount,
         isSub: item.superNotice,
         isAdmin: item.notice,
       };
