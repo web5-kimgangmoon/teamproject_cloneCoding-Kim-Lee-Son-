@@ -1,129 +1,128 @@
-*{
-    background-color: white;
-    /* display: flex; */
+* {
+  background-color: white;
+  /* display: flex; */
 }
 
 body.Login {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:rgba(0, 0, 0,0.1);
-    margin: 0;
-    background-color: white;
-    flex-direction: row
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 0;
+  background-color: white;
+  flex-direction: row;
 }
 
-.idBox , .pwBox{
-    /* background-color: white; */
-    margin: 0.5rem;
-    box-shadow: 0 0.3em 0.6em 0 rgba(0, 0, 0, .25);
-    border-radius: 50px 5px 5px 5px;
-    animation: blink 1s;
-    display: flex;
+.idBox,
+.pwBox {
+  /* background-color: white; */
+  margin: 0.5rem;
+  box-shadow: 0 0.3em 0.6em 0 rgba(0, 0, 0, 0.25);
+  border-radius: 50px 5px 5px 5px;
+  animation: blink 1s;
+  display: flex;
 }
 
 /* .idBox {
     display: none;
 } */
 
-.left{
-    padding: 60px;
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    min-width: 380px;
-    /* width: calc(100vw - var(60px)* 2); */
-    /* width: 380px; */
-    /* width:20vw; */
-    max-width: calc(var(360px) + var(60px)* 2);
-    -webkit-text-size-adjust: none;
+.left {
+  padding: 60px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  min-width: 380px;
+  /* width: calc(100vw - var(60px)* 2); */
+  /* width: 380px; */
+  /* width:20vw; */
+  max-width: calc(var(360px) + var(60px) * 2);
+  -webkit-text-size-adjust: none;
 }
-.center{
-    text-align: center;
-    align-items: center;
+.center {
+  text-align: center;
+  align-items: center;
 }
 .QRcode {
-    text-align: center;
-    align-items: center;
-    background-color: 1px solid gray;
+  text-align: center;
+  align-items: center;
+  background-color: 1px solid gray;
 }
 
 .username-block {
-    margin-top: 20px;
-    display: flex;
-    visibility: hidden;
-    padding: .5rem 0;
-    justify-content: center;
+  margin-top: 20px;
+  display: flex;
+  visibility: hidden;
+  padding: 0.5rem 0;
+  justify-content: center;
 }
 
 .input {
-    width: 100%;
-    height: 40px;
-    font-size: 32px;
-    color:gray;
-    /* border: 1px solid B6BACB; */
-    border-radius: 5px;
-    box-sizing: border-box;
-    border: 1px solid rgba(0, 0, 0,0.2);
-    background-color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    padding: .5rem .6rem;
-    position: relative;
-    animation: .5s linear 1s infinite alternate slidein;
-    z-index: 6;
-    
+  width: 100%;
+  height: 40px;
+  font-size: 32px;
+  color: gray;
+  /* border: 1px solid B6BACB; */
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 0.5rem 0.6rem;
+  position: relative;
+  animation: 0.5s linear 1s infinite alternate slidein;
+  z-index: 6;
 }
 
 .input:hover {
-    border: 2px solid rgba(0, 0, 0,0.8);
+  border: 2px solid rgba(0, 0, 0, 0.8);
 }
 
-.btn-a{
-    font-size: 16px;
-    height: 40px;
-    color:white;
-    background-color: blueviolet;
-    border-radius: 5px;
-    width: 100%;
-    /* padding: 32px 0; */
-    box-sizing: border-box;
-    border: 1px solid rgba(0, 0, 0,0.2);
+.btn-a {
+  font-size: 16px;
+  height: 40px;
+  color: white;
+  background-color: blueviolet;
+  border-radius: 5px;
+  width: 100%;
+  /* padding: 32px 0; */
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .cat::before {
-    display: block;
-    position: absolute;
-    bottom: 150px;
-    right: 20px;
-    width: 90px;
-    height: 99px;
-    background-image: url('https://arca.live/static/assets/dist/karisuma_light.svg?t=721d65b87c04a2824dec85ce4389abbda8b16a18');
-    content: "";
-    background-size: cover;
-    z-index: 5;
+  display: block;
+  position: absolute;
+  bottom: 150px;
+  right: 20px;
+  width: 90px;
+  height: 99px;
+  /* background-image: url('https://arca.live/static/assets/dist/karisuma_light.svg?t=721d65b87c04a2824dec85ce4389abbda8b16a18'); */
+  content: "";
+  background-size: cover;
+  z-index: 5;
 }
 
-.blurry{
-    display: flex;
-    padding-top: 30px;
-    margin-top: 30px;
-    /* border-top: 300px; */
-    color: gray;
-    /* justify-content: space-between; */
+.blurry {
+  display: flex;
+  padding-top: 30px;
+  margin-top: 30px;
+  /* border-top: 300px; */
+  color: gray;
+  /* justify-content: space-between; */
 }
 
-.Purple{
-    /* margin-top: 30px; */
-    padding-top: 15px;
-    padding-bottom: 15px;
-    color: blueviolet;
-    
+.Purple {
+  /* margin-top: 30px; */
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: blueviolet;
 }
 
-.Purple:hover{
-    text-decoration-line: underline;
-    cursor:pointer;
+.Purple:hover {
+  text-decoration-line: underline;
+  cursor: pointer;
 }
