@@ -24,7 +24,7 @@ import {
 
 const __dirname = import.meta.dirname;
 
-dotenv.config({ path: `${__dirname}/.env` });
+dotenv.config({ path: `${__dirname}` });
 
 const app = express();
 
