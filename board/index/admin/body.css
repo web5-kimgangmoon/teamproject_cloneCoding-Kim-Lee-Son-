@@ -526,8 +526,8 @@
 
 #container .body .bodyCenter .bodyContent .boardTableListBox .adBox {
   margin: 0.5rem auto;
-  max-width: 728;
-  height: 90;
+  max-width: 728px;
+  height: 180px;
   overflow: hidden;
   position: relative;
   padding: 0;
@@ -544,7 +544,7 @@
   top: 0;
   left: 0;
   width: 728px;
-  height: 90px;
+  height: 180px;
 }
 
 #container
